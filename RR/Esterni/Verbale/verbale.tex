@@ -1,0 +1,153 @@
+\documentclass[10 pt,a4paper, openany]{article}
+%titlepage
+\usepackage[hidelinks]{hyperref}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsfonts}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage{extarrows}
+\usepackage{cancel}
+\usepackage{eurosym}
+\usepackage{listingsutf8}
+\usepackage{lastpage}
+\usepackage{rotating} 
+\usepackage{multirow}
+
+\usepackage{caption}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{array}
+\date{}
+
+
+\usepackage{makeidx}
+\makeindex
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\includegraphics[width=.6cm]{../../../file_comuni/immagini/obelisk_sample_02.png}
+  Obelix Group}
+\chead{}
+\rhead{\rightmark }% \leftmark}%da rimettere
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage / \pageref*{LastPage}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{lipsum}
+\usepackage{../../../file_comuni/copertina}
+\nomedoc{Verbale esterno 2017-03-01}
+\versione{v1\_0\_0}
+\datacreazione{2017/03/01}
+\verifica{Riccardo Saggese}
+\approvazione{Nicolò Rigato}
+\redazione{Emanuele Crespan \eanche Federica Schifano}
+\uso{interno}
+\sommario{Verbale dell'incontro tra il gruppo \emph{Obelix} e il
+  proponente \emph{RedBabel} in data 2017-03-01}
+
+
+\begin{document}
+%\paginatitolo
+\section{Informazioni sulla riunione}
+
+\begin{itemize}
+\item[] Data: 2017-03-01
+\item[] Luogo: Residenza membro gruppo Obelix e sede Red Babel - videoconferenza
+\item[] Ora: 20:00
+\item[] Durata: 45'
+\item[] Partecipanti interni: Obelix
+  \begin{itemize}
+  \item[] Emanuele Crespan
+  \item[] Federica Schifano
+  \item[] Nicolò Rigato
+  \item[] Riccardo Saggese
+  \item[] Silvio Meneguzzo
+  \item[] Tomas Mali
+  \end{itemize}
+\item[] Partecipanti esterni: Red Babel
+  \begin{itemize}
+  \item[] Alessandro Maccagnan
+  \item[] Milo Ertola
+  \end{itemize}
+\end{itemize}
+
+\section{Domande e risposte}
+
+Di seguito vengono riportate in grassetto le domande effettuate dal gruppo Obelix
+nel corso della videoconferenza e in corsivo le risposte date dal Proponente Red Babel.\\
+
+\textbf{Quali documenti dovranno essere stilati in inglese?}\\
+\textit{Il capitolato chiede due cose: la libreria SDK che serve a fare delle bolle e una
+  demo che utilizza delle librerie per fare delle bolle complesse in un caso d'uso
+  complesso, non banale. Tutto ciò che riguarda l'uso dell'SDK e della demo
+  va scritto in inglese (ad es.il manuale dell'utente). Comunicazione essenziale e funzionale!}\\
+
+\textbf{A proposito dell'SDK, vorremmo capire esattamente cosa ci si
+  aspetti che venga fatto, dobbiamo intenderla come una libreria o come una sorta di template customizabile?}\\
+\textit{SDK sta per Software Development Kit, cioè un insieme di cose che qualcun
+  altro, cioè voi nel caso della demo dovete utilizzare per produrre delle bolle interattive
+  e non banali. Un esempio di bolla interattiva e non banale è il sondaggio
+  che prevede degli input, degli output, uno stato da mantenere e dei vari
+  permessi. Potrebbe tornare utile a chi scrive il sondaggio avere già delle
+  funzionalità pronte, tipo il layout, mantenere lo stato in qualche modo o
+  quella dei permessi. In base a quello che voi decidete, questa SDK (in base a
+  ciò che mette a disposizione) può essere un template o una libreria. Un altro
+  dei gruppi gestirà principalmente la parte di layout e meno la parte di gestione
+  dei dati e dei permessi, ma questo sta a voi.\\
+  Tenete presente che il capitolato consta di due elementi, la parte tecnologica
+  che è l'SDK, per produrre delle bolle con alcune bolle di esempio incluse
+  e la demo che utilizza l'SDK per fare qualcosa di non banale.\\
+  Dunque siete liberi, ma con certi vincoli tecnologici e stilistici. Avete vincoli
+  su come scrivere le cose, non tanto su cosa fare (ad es.niente call back).}\\
+
+\textbf{Vi interessa di più la demo o l'SDK?}\\
+\textit{A noi interessano entrambe. Con l'SDK c'è un lavoro più architetturale,
+  tecnico, mentre nella demo c'è un altro tipo di lavoro che è un po' più di
+  fantasia. L'idea è che con la demo vi mettiate nei panni di persone diverse
+  da voi che hanno un problema e che capiate come risolvere questo problema con
+  quello che avete fatto. L'idea è: ho inventato qualcosa e ne creo un utilizzo per
+  qualcuno. Questo è il tipo di lavoro che vogliamo che facciate, bisogna andare
+  oltre l'aspetto puramente tecnico (capacità che sviluppate con i progetti
+  dell'università) e usare quello che avete imparato per fare un prodotto.}\\
+
+\textbf{Potete farci un esempio di prodotto che potrebbe essere realizzato?}\\
+\textit{Vi do un esempio negativo, un esempio di ciò che NON dovete fare: avete creato
+  l'algoritmo più veloce del mondo per ordinare i numeri, ma l'algoritmo è
+  inutilizzabile, non è presentato, non c'è scritta nessuna complessità e la gente
+  non lo usa. Questo è quello che non dovete fare, vi chiedamo di fare invece
+  un prodotto che la gente può utilizzare.\\
+  Vari esempi positivi di bolle si evincono dal capitolato e dal link cola.io
+  che abbiamo allegato al capitolato, dove sono presentati dei casi di bolle che
+  possono essere utilizzate nella chat, su whatsapp piuttosto che su facebook.}\\
+
+\textbf{Un esempio che ci viene in mente è il bot di telegram}\\
+\textit{Si, è un buon esempio.
+  Per portare avanti il progetto è comunque necessario possedere le softskill
+  (comunicazione efficace ed entusiasmo), oltre alle hard skill (quelle di programmazione).}\\
+
+\textbf{Preferite che sviluppiamo alcune delle bolle tra quelle da voi proposte o delle bolle che abbiamo pensato noi? Ci sono delle bolle "necessarie" da realizzare?}\\
+\textit{A noi non interessa molto delle bolle predefinite ma ci interessa che quelle
+  che voi pensate abbiano un caso d'uso forte. Le bolle che fate sono legate al
+  caso d'uso, sta a voi decidere a che livello di astrazione spingere l'SDK. Vi
+  faccio un esempio: potete fare un SDK che vi permette di fare tutte le form,
+  oppure potete fare un SDK che vi permette di mettere diverse bolle insieme,
+  comporre le bolle. Sta a voi decidere il livello di astrazione: mettere nell'SDK
+  delle bolle predefinite o nell'SDK fare solo quell'insieme di regole che
+  vi permettono di creare le bolle che volete.\\
+  Quello che vogliamo è che in ogni singola bolla deve trasparire il vostro spirito!}\\
+
+\textbf{Per quanto riguarda le specifiche tecnologiche alcune sono raccomandate altre sono obbligatorie, giusto?}\\
+\textit{Quelle sicuramente obbligatorie sono: non usare callbacks ma promises, usare
+  Javascript 6. Obbligatori sono i punti: 1, 2, 5 e 6 della sezione 4.1 pag 7
+  del capitolato. L'SCSS è assolutamente da usare, probabilmente Meteor lo supporta già.
+  Consigliamo di seguire una serie di regole che si chiama GitFlow per usare
+  git, se vi attenete a quello non avrete problemi di gestione del codice.}\\
+
+\textbf{Come ci organizzeremo per le riunioni successive?}\\
+\textit{Potremmo fare altre call su Skype, ma possiamo continuare a sentirci tramite
+    messaggi su Slack. Probabilmente riusciremo anche ad organizzarci per un
+    incontro fisico a fine Aprile.}
+\end{document}

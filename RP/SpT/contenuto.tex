@@ -1,0 +1,222 @@
+%% SPECIFICA TECNICA
+
+%controllare gli svantaggi
+
+\section{Introduzione}
+\subsection{Scopo del documento}
+
+Questo documento ha come scopo quello di definire la progettazione ad alto livello
+per il prodotto Monolith. Verrà presentata l’architettura generale secondo la quale
+saranno organizzate le varie componenti software e i Design Pattern utilizzati nella
+creazione dell'SDK, delle bolle predefinite e della demo. Verrà inoltre dettagliato il tracciamento tra le componenti software individuate ed i requisiti.
+
+
+\subsection{Scopo del prodotto}
+
+Lo scopo del prodotto è quello di permettere la creazione di bolle
+interattive, che dovranno funzionare nell’ambiente Rocket.chat. Queste
+bolle permetteranno di aumentare l'interattività tra gli utenti della
+chat e aggiungeranno nuove funzionalità accessibili direttamente dalla conversazione 
+senza il bisogno di ricorrere all'apertura di applicazioni diverse.
+Il sistema offrirà agli sviluppatori un set di \glossario{API} per creare e
+rilasciare nuove bolle e agli utenti finali la possibilità di
+usufruire di un insieme di bolle predefinite.
+
+
+\subsection{Glossario}
+
+Al fine di evitare ogni ambiguità di linguaggio e massimizzare la
+comprensione dei documenti, i termini che necessitano di essere
+chiariti saranno scritti in corsivo e marcati con una |G| in pedice alla prima
+occorrenza e saranno riportati nel Glossario.
+
+\subsection{Riferimenti}
+
+\subsubsection{Normativi}
+\begin{itemize}
+	\item \textbf{Norme di Progetto}: \\ NormediProgetto\_v1.1.0
+	\item \textbf{Capitolato d'appalto C5}: \\ \url{http://www.math.unipd.it/~tullio/IS-1/2016/Progetto/C5.pdf}
+	\item \textbf{Analisi dei Requisiti}: \\ AnalisideiRequisiti\_v1.0.0
+	
+\end{itemize}
+
+
+\subsubsection{Informativi}
+\begin{itemize}
+	\item \textbf{Slide del corso di Ingegneria del Software}: \\  \url{http://www.math.unipd.it/~tullio/IS-1/2016/ }
+\end{itemize}
+
+\section{Tecnologie Utilizzate}
+
+In questa sezione verranno descritte le tecnologie su cui si basa lo sviluppo del progetto. Per ognuna di esse, verranno indicati l’ambito di utilizzo della tecnologia, i vantaggi e gli svantaggi che ne derivano.Alcune delle tecnologie che saranno usate sono richieste come requisito dal capitolato scelto.
+
+\subsection{Javascript 6th edition (ECMA SCRIPT 6)}
+
+JavaScript è un linguaggio di scripting orientato agli oggetti e agli eventi. \'E comunemente utilizzato nella programmazione Web lato client per la creazione, in siti web e applicazioni web, di effetti dinamici interattivi tramite l'uso di funzioni di script invocate da eventi innescati in vari modi dall'utente sulla pagina web in uso. \\ Come richiesto dal capitolato, per la realizzazione di Monolith, deve essere utilizzato Javascript 6th edition (ECMA SCRIPT 6). \\
+
+\textbf{Licenza}:  \\
+Non esiste una sola implementazione perché ECMAScript (o ES) è un linguaggio di programmazione standardizzato e mantenuto da Ecma International nell'ECMA-262 ed ISO/IEC 16262.
+
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	\item Gestione degli eventi asincroni tramite le promises
+	\item Possibilità di dichiarare classi
+	\item Supporto per le costanti(\emph{const})
+	\item Possibilità di isolare la definizione di variabili ad un blocco (\emph{let})
+	\item Possibilità di isolare lo scope di una funzione usando blocchi delimitati da parentesi graffe({}) come ambienti isolati (vs closure)
+	\item Uso di sintassi più espressiva per scrivere le funzioni anonime (\emph{Arrow Functions})
+	
+\end{itemize}
+
+\textbf{Svantaggi}: 
+\begin{itemize}
+	\item Il supporto di ES6 da parte dei browser è ancora incompleto
+	\item L’assenza di tipizzazione potrebbe ostacolare la valutazione della correttezza del codice
+\end{itemize}
+
+\subsection{Meteor}
+
+Meteor è un framework web JavaScript libero e open source  per lo sviluppo di applicazioni web e mobile. \'E una piattaforma basata su Node.js. Meteor utilizza, dunque, JavaScript sia lato client che lato server. 
+
+\textbf{Licenza}: MIT \\
+La licenza MIT è una delle licenze più permissive nel panorama open source. In modo più esplicito dichiara i diritti dati all'utente finale, incluso il diritto di utilizzare , copiare, modificare, incorporare, pubblicare, distribuire, sotto-licenziare, e/o vendere il software.
+
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	\item Integrazione con diverse tecnologie utilizzate nello sviluppo web:
+	\begin{itemize}
+		\item React
+		\item MongoDB
+	\end{itemize}
+	\item Isomorfismo: il codice javascript scritto funziona in modo trasparente sul client (browser), sul server (Node.js) o in entrambi i mondi
+	\item Ecosistema e modularità: la comunità di Meteor è molto attiva e molte funzionalità client o server potrebbero già essere pacchettizzate dal package manager ufficiale. 
+\end{itemize}
+
+\textbf{Svantaggi}: %controllareeeeeee 
+\begin{itemize}
+	\item Inizialmente sconosciuto ai membri del gruppo.
+	%\item Il modo in cui alcuni componenti core della tecnologia si interfacciano potrebbe limitare la libertà degli sviluppatori.
+\end{itemize}
+
+\subsection{Mongo DB}
+MongoDB è un database NoSQL orientato ai documenti, basato sul formato JSON per la memorizzazione e la rappresentazione dei dati. \'E distribuito come software libero open source. \\
+
+\textbf{Licenza}: GNU AGPL v3.0 \\
+\'E una licenza di software libero pubblicata da Free Software Foundation. \'E simile alla capostipite GNU GPL. 
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	\item \'E più flessibile di un database SQL e facilita la rappresentazione su un modello ad
+	oggetti
+	\item Supporta ricerche per campi, intervalli e regular expression. Le query possono restituire campi specifici del documento e anche includere funzioni definite dall'utente in JavaScript.
+	\item Qualunque campo in MongoDB può essere indicizzato 
+\end{itemize}
+
+
+\textbf{Svantaggi}: 
+\begin{itemize}
+	\item Inizialmente sconosciuto ai membri del gruppo.	
+\end{itemize}
+
+\subsection{HTML5}
+HTML5 è un linguaggio di markup per la strutturazione delle pagine web.
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	\item Codice più pulito e sintassi semplificata rispetto alle versioni precedenti
+	\item Interattività senza l’ausilio di plugin esterni valida per diversi formati multimediali
+	\item Semantica intuitiva grazie ai nuovi TAG di formattazione
+	\item Introduzione della geolocalizzazione, dovuta ad una forte espansione di sistemi operativi mobili
+	\item Sistema più efficiente alternativo ai normali cookie chiamato Web Storage 
+
+\end{itemize}
+
+\textbf{Svantaggi}: 
+\begin{itemize}
+	\item Non tutti i browser supportano HTML5.
+\end{itemize}
+
+\subsection{SCSS}
+
+SCSS è una sintassi per i fogli di stile introdotta da Sass 3 (Syntactically Awesome StyleSheets). \'E un'estensione del CSS .
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	\item Possibilità di utilizzare variabili
+	\item Possibilità di creare funzioni 
+	\item Possibilità di organizzare il foglio di stile in più file
+	\item Compatibilità completa con la sintassi del CSS
+\end{itemize}
+
+\textbf{Svantaggi}: 
+\begin{itemize}
+	\item  Sintassi più complessa.
+\end{itemize}
+
+\subsection{React}
+
+React è una libreria Javascript open source che permette di costruire interfacce utente. 
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	\item Semplificazione della realizzazione di interfacce UI dinamiche che possono reagire ai cambiamenti di dati in maniera autonoma attraverso opportuni componenti
+	\item Possibilità di utilizzare le viste per creare codice più facile da comprendere e su cui è più semplice effettuare il debuging.
+	
+\end{itemize}
+
+\textbf{Svantaggi}: 
+\begin{itemize}
+	\item Implementa solo il livello view è quindi necessario utilizzare altre librerie per implemntare altrie parti dell'applicazione
+	\item Curva di apprendimento ripida
+	\item \'E una libreia relativamente nuova
+\end{itemize}
+
+\subsection{Node.js}
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	\item Facile apprendimento
+	\item 
+\end{itemize}
+
+\textbf{Svantaggi}: 
+\begin{itemize}
+	\item Non supporta database relazionali
+	
+\end{itemize}
+
+\subsection{Rochet.chat}
+
+Rocket.chat è una Web chat server sviluppata in Javascript utilizzando in \glossario{Framework} Meteor.
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+\item Indirizzato a team di sviluppatori che devono coordinarsi e parlare di codice
+\item Possibilità di creare chat di gruppo, con tanto di audio, video e la possibilità di caricare e inviare file
+\item La feature \textit{Text math rendering} permette agli sviluppatori di scrivere codice includendovi numeri e complessi calcoli, condividendo poi lo schermo con altri utenti	
+\item La funzionalità di \textit{Helpdesk} permette ai clienti di porvi delle domande; è un’ottima soluzione per fornire risposte e facilitare il team di supporto
+\end{itemize}
+
+\textbf{Svantaggi}: 
+\begin{itemize}
+	\item Parzialmente documentata
+\end{itemize}
+
+\subsection{Bootstrap}
+
+\section{Descrizione Architettura}
+\subsection{Metodo e formalismo di specifica}
+
+Nell’esposizione dell’architettura dell’applicazione si procederà con un approccio top-down, descrivendo l’architettura iniziando dal generale ed andando al particolare.
+Si procederà quindi alla descrizione dei package, per poi descrivere
+nel dettaglio le singole classi, specificando per ognuna il tipo, l’obiettivo, la funzione e
+le relazioni in ingresso ed in uscita.
+Successivamente si illustreranno degli esempi di uso dei Design Pattern nell’architettura del sistema, rimandando la spiegazione generale alla sezione dedicata.
+L'architettura dell' SDK e della demo sono state progettate separatamente.  
+
+ 
+\subsection{Architettura generale}
+
+
