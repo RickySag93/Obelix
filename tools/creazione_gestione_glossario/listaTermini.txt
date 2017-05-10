@@ -1,0 +1,46 @@
+API
+Abstract Syntax Tree
+Astah
+Baseline
+Bolla interattiva
+Bug
+CSSHint
+Committente
+Complexity-report
+Demo
+Design Pattern
+Diagramma di Gantt
+Git
+GitHub
+Google Calendar
+Google Chrome DevTools
+Google Drive
+Halstead
+JSHint
+JavaScript
+Karma
+LATEX
+Linguaggio di scripting
+Linus Torvalds
+Linux
+Mac OS
+Microsoft Project
+Microsoft Windows
+Milestone
+MySQL
+Node.js
+PDCA
+Package
+Peer-to-peer
+Proponente
+Repository
+Rocket.chat
+SDK
+SQL
+Slack
+Software Quality Management
+Team
+Telegram
+UML
+W3C
+Webapp
