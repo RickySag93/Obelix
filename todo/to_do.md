@@ -31,3 +31,10 @@ NB: le cose senza link sono in gdrive
 + [documentazione delle API di Rocket](https://rocket.chat/docs/developer-guides/)
 + [Repo di Rocket](https://github.com/RocketChat/Rocket.Chat.git) guardate in  Rocket.Chat/packages/ [read](https://github.com/RocketChat/Rocket.Chat/issues/6048)
 + [Repo Redbabel con esempio](https://github.com/redbabel/monolith) DA VEDERE!!!!!!!!
+
+
+
+
+## ALTRO
+
++ [meteo api](https://openweathermap.org/)
