@@ -104,7 +104,7 @@ La licenza MIT è una delle licenze più permissive nel panorama open source. In
 MongoDB è un database NoSQL orientato ai documenti, basato sul formato JSON per la memorizzazione e la rappresentazione dei dati. \'E distribuito come software libero open source. \\
 
 \textbf{Licenza}: GNU AGPL v3.0 \\
-\'E una licenza di software libero pubblicata da Free Software Foundation. \'E simile alla capostipite GNU GPL. 
+\'E una licenza pubblicata da Free Software Foundation. \'E simile alla capostipite GNU GPL, una licenza fortemente copyleft per software libero.
 
 \textbf{Vantaggi}: 
 \begin{itemize}
@@ -123,6 +123,10 @@ MongoDB è un database NoSQL orientato ai documenti, basato sul formato JSON per
 \subsection{HTML5}
 HTML5 è un linguaggio di markup per la strutturazione delle pagine web.
 
+\textbf{Licenza}:  \\
+Non esiste una sola implementazione perché HTML5 è un linguaggio di markup standardizzato e mantenuto da W3C.
+
+
 \textbf{Vantaggi}: 
 \begin{itemize}
 	\item Codice più pulito e sintassi semplificata rispetto alle versioni precedenti
@@ -135,12 +139,15 @@ HTML5 è un linguaggio di markup per la strutturazione delle pagine web.
 
 \textbf{Svantaggi}: 
 \begin{itemize}
-	\item Non tutti i browser supportano HTML5.
+	\item Non tutti i browser supportano HTML5
 \end{itemize}
 
 \subsection{SCSS}
 
 SCSS è una sintassi per i fogli di stile introdotta da Sass 3 (Syntactically Awesome StyleSheets). \'E un'estensione del CSS .
+
+\textbf{Licenza}: MIT \\
+La licenza MIT è una delle licenze più permissive nel panorama open source. In modo più esplicito dichiara i diritti dati all'utente finale, incluso il diritto di utilizzare , copiare, modificare, incorporare, pubblicare, distribuire, sotto-licenziare, e/o vendere il software.
 
 \textbf{Vantaggi}: 
 \begin{itemize}
@@ -159,26 +166,42 @@ SCSS è una sintassi per i fogli di stile introdotta da Sass 3 (Syntactically Aw
 
 React è una libreria Javascript open source che permette di costruire interfacce utente. 
 
+\textbf{Licenza}: BSD-3-Clause \\
+Le licenze BSD sono una famiglia di licenze permissive, senza copyleft, per software.
+Le tre clausole della licenza BSD-3-Clause sono:
+
+\begin{itemize}
+	\item Libertà di eseguire il programma per qualsiasi scopo
+	\item Libertà di studiare il programma e modificarlo
+	\item Libertà di ridistribuire copie del programma in modo da aiutare il prossimo
+	
+\end{itemize}
+
 \textbf{Vantaggi}: 
 \begin{itemize}
 	\item Semplificazione della realizzazione di interfacce UI dinamiche che possono reagire ai cambiamenti di dati in maniera autonoma attraverso opportuni componenti
-	\item Possibilità di utilizzare le viste per creare codice più facile da comprendere e su cui è più semplice effettuare il debuging.
+	\item Possibilità di utilizzare le viste per creare codice più facile da comprendere e su cui è più semplice effettuare il debugging.
 	
 \end{itemize}
 
 \textbf{Svantaggi}: 
 \begin{itemize}
-	\item Implementa solo il livello view è quindi necessario utilizzare altre librerie per implemntare altrie parti dell'applicazione
+	\item Implementa solo il livello view è quindi necessario utilizzare altre librerie per implementare altre parti dell'applicazione
 	\item Curva di apprendimento ripida
-	\item \'E una libreia relativamente nuova
+	\item \'E una libreria relativamente nuova
 \end{itemize}
 
 \subsection{Node.js}
 
+Node.js è una piattaforma event-driven per il motore JavaScript V8. Essa permette di realizzare applicazioni web utilizzando il linguaggio JavaScript, tipicamente client-side, per la scrittura anche della parte server-side.
+
+\textbf{Licenza}: MIT \\
+La licenza MIT è una delle licenze più permissive nel panorama open source. In modo più esplicito dichiara i diritti dati all'utente finale, incluso il diritto di utilizzare , copiare, modificare, incorporare, pubblicare, distribuire, sotto-licenziare, e/o vendere il software.
+
 \textbf{Vantaggi}: 
 \begin{itemize}
 	\item Facile apprendimento
-	\item 
+	\item Possibilità di realizzare applicazioni server-side senza dover imparare linguaggi di programmazione “tradizionali”
 \end{itemize}
 
 \textbf{Svantaggi}: 
@@ -189,14 +212,21 @@ React è una libreria Javascript open source che permette di costruire interfacc
 
 \subsection{Rochet.chat}
 
-Rocket.chat è una Web chat server sviluppata in Javascript utilizzando in \glossario{Framework} Meteor.
+Rocket.chat è una Web chat server sviluppata in Javascript utilizzando il \glossario{Framework} Meteor.
+
+\textbf{Licenza}: MIT \\
+La licenza MIT è una delle licenze più permissive nel panorama open source. In modo più esplicito dichiara i diritti dati all'utente finale, incluso il diritto di utilizzare , copiare, modificare, incorporare, pubblicare, distribuire, sotto-licenziare, e/o vendere il software.
 
 \textbf{Vantaggi}: 
 \begin{itemize}
-\item Indirizzato a team di sviluppatori che devono coordinarsi e parlare di codice
-\item Possibilità di creare chat di gruppo, con tanto di audio, video e la possibilità di caricare e inviare file
-\item La feature \textit{Text math rendering} permette agli sviluppatori di scrivere codice includendovi numeri e complessi calcoli, condividendo poi lo schermo con altri utenti	
-\item La funzionalità di \textit{Helpdesk} permette ai clienti di porvi delle domande; è un’ottima soluzione per fornire risposte e facilitare il team di supporto
+
+	\item Codice open source
+	\item Possibilità di creare chat di gruppo
+	\item Possibilità di inviare audio, video e file
+	\item Possibilità di effettuare video chiamate
+	\item Community molto attiva
+
+	
 \end{itemize}
 
 \textbf{Svantaggi}: 
@@ -205,6 +235,29 @@ Rocket.chat è una Web chat server sviluppata in Javascript utilizzando in \glos
 \end{itemize}
 
 \subsection{Bootstrap}
+
+Bootstrap è una raccolta di strumenti liberi per la creazione di siti e applicazioni per il Web. Essa contiene modelli di progettazione basati su HTML e CSS, sia per la tipografia, che per le varie componenti dell'interfaccia, come moduli, pulsanti e navigazione, così come alcune estensioni opzionali di JavaScript.
+
+\textbf{Licenza}: MIT \\
+La licenza MIT è una delle licenze più permissive nel panorama open source. In modo più esplicito dichiara i diritti dati all'utente finale, incluso il diritto di utilizzare , copiare, modificare, incorporare, pubblicare, distribuire, sotto-licenziare, e/o vendere il software.
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	
+	\item Piattaforma ben standardizzata 
+	\item Non richiede l’appoggio né di un linguaggio di programmazione server side, né di un database
+	\item Ottima documentazione
+	\item Responsive Design	
+	\item \'E supportato dai browser moderni
+	
+\end{itemize}
+
+\textbf{Svantaggi}: 
+\begin{itemize}
+	\item I plugin di jQuery sono limitati
+	\item Le modifiche dovute al continuo sviluppo non sono sempre facili da integrare
+\end{itemize}
+
 
 \section{Descrizione Architettura}
 \subsection{Metodo e formalismo di specifica}
