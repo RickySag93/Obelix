@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.22)  5 JUN 2017 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.22)  14 JUN 2017 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**VerbaleEsterno_20170503.tex
-(./VerbaleEsterno_20170503.tex
+**VerbaleEsterno_20170531.tex
+(./VerbaleEsterno_20170531.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -443,14 +443,17 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count140
 \LT@p@ftn=\toks30
 )
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 )
 \@indexfile=\write3
-\openout3 = `VerbaleEsterno_20170503.idx'.
+\openout3 = `VerbaleEsterno_20170531.idx'.
 
 
-Writing index file VerbaleEsterno_20170503.idx
+Writing index file VerbaleEsterno_20170531.idx
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip58
 \f@ncyO@elh=\skip59
@@ -462,30 +465,30 @@ Writing index file VerbaleEsterno_20170503.idx
 \f@ncyO@olf=\skip65
 \f@ncyO@orf=\skip66
 )
-(../../../../../file_comuni/copertina.sty)
+(../../../../../file_comuni/copertina2.sty)
 
 LaTeX Warning: Unused global option(s):
     [openany].
 
-(./VerbaleEsterno_20170503.aux)
-\openout1 = `VerbaleEsterno_20170503.aux'.
+(./VerbaleEsterno_20170531.aux)
+\openout1 = `VerbaleEsterno_20170531.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
 \AtBeginShipoutBox=\box62
-Package hyperref Info: Link coloring OFF on input line 52.
+Package hyperref Info: Link coloring OFF on input line 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -495,16 +498,16 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count141
 )
-LaTeX Info: Redefining \ref on input line 52.
-LaTeX Info: Redefining \pageref on input line 52.
-LaTeX Info: Redefining \nameref on input line 52.
+LaTeX Info: Redefining \ref on input line 54.
+LaTeX Info: Redefining \pageref on input line 54.
+LaTeX Info: Redefining \nameref on input line 54.
 
-(./VerbaleEsterno_20170503.out) (./VerbaleEsterno_20170503.out)
+(./VerbaleEsterno_20170531.out) (./VerbaleEsterno_20170531.out)
 \@outlinefile=\write4
-\openout4 = `VerbaleEsterno_20170503.out'.
+\openout4 = `VerbaleEsterno_20170531.out'.
 
-LaTeX Info: Redefining \it@ocap on input line 52.
-LaTeX Info: Redefining \it@ccap on input line 52.
+LaTeX Info: Redefining \it@ocap on input line 54.
+LaTeX Info: Redefining \it@ccap on input line 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
@@ -540,7 +543,7 @@ e
 \c@lstlisting=\count148
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 52.
+(lastpage)             ! on input line 54.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
 
@@ -549,43 +552,50 @@ Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
 
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-)
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+<../../../../../file_comuni/immagini/monolith.png, id=16, 458.513pt x 466.543pt
+>
+File: ../../../../../file_comuni/immagini/monolith.png Graphic file (type png)
+ <use ../../../../../file_comuni/immagini/monolith.png>
+Package pdftex.def Info: ../../../../../file_comuni/immagini/monolith.png used 
+on input line 55.
+(pdftex.def)             Requested size: 62.09747pt x 63.1799pt.
 
- []
-
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-Underfull \hbox (badness 10000) in paragraph at lines 82--85
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--89
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--95
-
- []
-
-
-<../../../../../file_comuni/immagini/obelisk_sample_02.png, id=16, 301.125pt x 
+<../../../../../file_comuni/immagini/obelisk_sample_02.png, id=18, 301.125pt x 
 500.87125pt>
 File: ../../../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (t
 ype png)
  <use ../../../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../../../file_comuni/immagini/obelisk_sample_02.
-png used on input line 95.
+png used on input line 55.
+(pdftex.def)             Requested size: 75.90042pt x 126.24925pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 55.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 55.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../../../../../file_comuni
+/immagini/monolith.png> <../../../../../file_comuni/immagini/obelisk_sample_02.
+png>]
+File: ../../../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (t
+ype png)
+
+<use ../../../../../file_comuni/immagini/obelisk_sample_02.png>
+Package pdftex.def Info: ../../../../../file_comuni/immagini/obelisk_sample_02.
+png used on input line 86.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
 
 
@@ -594,95 +604,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
- <../../../../../file_comuni/immagini/obelisk_sample_02.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 97--99
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--102
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 103--105
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--111
-
- []
-
-! Illegal parameter number in definition of \reserved@a.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
-                   L
-l.114 }
-       \\
-You meant to type ## instead of #, right?
-Or maybe a } was forgotten somewhere earlier, and things
-are all screwed up? I'm going to assume that you meant ##.
+                   \relax 
+l.86 	\clearpage
+                 [1] <img/es.png, id=40, 856.53334pt x 481.13083pt>
+File: img/es.png Graphic file (type png)
 
-! You can't use `macro parameter character #' in horizontal mode.
-<argument> ...aster/rc-is-2017-2/rc-is-2017-2.js##
-                                                  L15) 
-l.114 }
-       \\
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
+<use img/es.png>
+Package pdftex.def Info: img/es.png used on input line 95.
+(pdftex.def)             Requested size: 385.43645pt x 216.50687pt.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--115
-
+Overfull \hbox (40.43645pt too wide) in paragraph at lines 95--96
+ [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 116--118
-
- []
-
-File: ../../../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (t
-ype png)
-<use ../../../../../file_comuni/immagini/obelisk_sample_02.png>
-Package pdftex.def Info: ../../../../../file_comuni/immagini/obelisk_sample_02.
-png used on input line 118.
-(pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 119--122
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--128
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 129--131
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 136.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 106.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 136.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 106.
 
 
 AED: lastpage setting LastPage
@@ -690,37 +634,42 @@ File: ../../../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (t
 ype png)
 <use ../../../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../../../file_comuni/immagini/obelisk_sample_02.
-png used on input line 143.
+png used on input line 120.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 143.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 143.
+ [2
 
-(./VerbaleEsterno_20170503.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 143.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 143.
-Package rerunfilecheck Info: File `VerbaleEsterno_20170503.out' has not changed
+ <./img/es.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 120.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 120.
+ (./VerbaleEsterno_20170531.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 120.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 120.
+Package rerunfilecheck Info: File `VerbaleEsterno_20170531.out' has not changed
 .
-(rerunfilecheck)             Checksum: 4AE16E73EFABCB7063D9D0BE95A834E6;160.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 143.
+(rerunfilecheck)             Checksum: AF321F3B0079EB27C4F5704BAD7B512B;165.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 120.
  ) 
 Here is how much of TeX's memory you used:
- 11035 strings out of 493029
- 158794 string characters out of 6136234
- 268961 words of memory out of 5000000
- 14408 multiletter control sequences out of 15000+600000
- 7408 words of font info for 19 fonts, out of 8000000 for 9000
+ 10852 strings out of 493029
+ 157174 string characters out of 6136234
+ 267149 words of memory out of 5000000
+ 14200 multiletter control sequences out of 15000+600000
+ 12108 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,15n,43p,928b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,15n,43p,928b,638s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/
-type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
-r/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr
-/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on VerbaleEsterno_20170503.pdf (3 pages, 123917 bytes).
+type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/t
+ype1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super
+/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfti1000.pfb>
+Output written on VerbaleEsterno_20170531.pdf (3 pages, 265175 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 30 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 87 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
+ 40 words of extra memory for PDF output out of 10000 (max. 10000000)
 
