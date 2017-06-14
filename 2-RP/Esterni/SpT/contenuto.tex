@@ -259,6 +259,76 @@ La licenza MIT è una delle licenze più permissive nel panorama open source. In
 \end{itemize}
 
 
+
+\subsection{polyglot.js}
+Polyglot.js è una libreria per la traduzione scritta in JavaScript, eseguita sia per il browser che per gli ambienti CommonJS(Node).
+
+\textbf{Licenza}: MIT \\
+La licenza MIT è una delle licenze più permissive nel panorama open source. In modo più esplicito dichiara i diritti dati all'utente finale, incluso il diritto di utilizzare , copiare, modificare, incorporare, pubblicare, distribuire, sotto-licenziare, e/o vendere il software.
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	\item Non è rischiesta una iscrizione per l'utilizzo
+	\item \'E una libreria non a pagamento
+	\item Il Polyglot ha zero dipendenze
+	\item Copre una traduzione di 30 lingue diverse
+\end{itemize}
+
+
+
+
+\subsection{Money.js}
+
+Money.js è una libreria semplice con l'unico obiettivo di convertire un valore di denaro da qualsiasi valuta in qualsiasi altra valuta. Money.js utilizza una fusione algoritmica per calcolare un insieme di tassi costantemente preciso per 165 valute mondiali. 
+
+\textbf{Licenza}: MIT \\
+La licenza MIT è una delle licenze più permissive nel panorama open source. In modo più esplicito dichiara i diritti dati all'utente finale, incluso il diritto di utilizzare , copiare, modificare, incorporare, pubblicare, distribuire, sotto-licenziare, e/o vendere il software.
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	\item Non è rischiesta una iscrizione per l'utilizzo
+	\item \'E una libreria non a pagamento
+	\item \'E una libreria semplice da integrare nel codice JavaScript
+\end{itemize}
+
+
+\subsection{weather.js}
+
+Weather.js è una libreria che recupera i dati da openweathermap.org e fa la ricerca di tutti i tipi di informazioni relative alle condizioni meteo.
+
+\textbf{Licenza}: MIT \\
+La licenza MIT è una delle licenze più permissive nel panorama open source. In modo più esplicito dichiara i diritti dati all'utente finale, incluso il diritto di utilizzare , copiare, modificare, incorporare, pubblicare, distribuire, sotto-licenziare, e/o vendere il software.
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	\item Non è rischiesta una iscrizione per l'utilizzo
+	\item \'E una libreria non a pagamento
+	\item \'E una libreria semplice da integrare nel codice JavaScript
+\end{itemize}
+
+\textbf{Svantaggi}: 
+\begin{itemize}
+	\item Ha bisogno di 11 dipendenze 
+\end{itemize}
+
+
+\subsection{classNames}
+
+classNames è una semplice utility raccomandata per l'uso con React per l'unione condizionata di className
+
+\textbf{Licenza}: MIT \\
+La licenza MIT è una delle licenze più permissive nel panorama open source. In modo più esplicito dichiara i diritti dati all'utente finale, incluso il diritto di utilizzare , copiare, modificare, incorporare, pubblicare, distribuire, sotto-licenziare, e/o vendere il software.
+
+\textbf{Vantaggi}: 
+\begin{itemize}
+	\item Semplifica la gestione dei className dinamici 
+	\item Non possiede ulteriori dipendenze 
+\end{itemize}
+
+
+
+
+
 \section{Descrizione Architettura}
 \subsection{Metodo e formalismo di specifica}
 
@@ -268,8 +338,83 @@ nel dettaglio le singole classi, specificando per ognuna il tipo, l’obiettivo,
 le relazioni in ingresso ed in uscita.
 Successivamente si illustreranno degli esempi di uso dei Design Pattern nell’architettura del sistema, rimandando la spiegazione generale alla sezione dedicata.
 L'architettura dell' SDK e della demo sono state progettate separatamente.  
-
+Per i diagrammi delle componenti di classe e di attività, si utilizza il formalismo UML 2.0. Le classi e componenti presenti in librerie o framework esterni vengono contraddistinte da colori diversi. I framework esterni verranno rappresentati con un colore viola, mentre le classi e componenti proprie invece, saranno rappresentate con un colore giallo.
+L'intera applicazione è progettata utilizzando il framework \glossario{Meteor} che permette di utilizzare il linguaggio JavaScript sia per il lato client che per quello server(tramite NodeJS).
+I diagrammi delle classi che permettono di mostrare l’architettura generale del sistema vengono affiancati anche dai diagrammi di sequenza e attività, che permettono di definire le interazioni tra le componenti, senza preoccuparsi della loro classificazione.
  
 \subsection{Architettura generale}
+
+
+
+\section{Standard di Progetto}
+
+\subsection{Standard di progettazione architetturale}
+
+
+\subsection{Standard di documentazione del codice}
+
+\subsection{Standard di denominazione di entità e relazioni }
+
+\subsection{Standard di programmazione}
+
+\subsection{Strumenti di lavoro}
+
+
+\section{Diagrammi di Attività}
+
+
+\section{Design Pattern}
+
+\section{Tracciamento}
+
+
+
+
+\appendix
+
+
+
+\section{Descrizione Design Pattern}
+
+Un design pattern è una soluzione progettuale elegante e generale ad un problema ricorrente. In particolare si tratta di una descrizione o modello logico da applicare per la risoluzione di un problema che può presentarsi in diverse situazioni durante la fase di progettazione e sviluppo del software, ancora prima della definizione dell'algoritmo ricorsivo della parte computazionale. Essi si suddividono in quattro categorie: \
+
+\begin{itemize}
+	\item \textbf{Architetturali :} esprimono schemi di base per impostare l'organizzazione strutturale di un sistema software;
+	\item \textbf{Creazionali :} forniscono un'astrazione del processo di istanziazione degli oggetti;
+	\item \textbf{Strutturali :} si occupano delle modalità di composizione di classi e oggetti per formare strutture complesse;
+	\item \textbf{Comportamentali :} si occupano di algoritmi e dell'assegnamento di responsabilità tra oggetti collaboranti.
+
+\end{itemize}
+
+\subsection{Design Pattern Comportamentali}
+
+
+
+
+
+polyglot.js
+money.js
+weather.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
