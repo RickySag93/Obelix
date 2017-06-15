@@ -386,10 +386,30 @@ Un design pattern è una soluzione progettuale elegante e generale ad un problem
 
 \end{itemize}
 
-\subsection{Design Pattern Comportamentali}
+\subsection{Design Pattern Utilizzati}
+
+\subsubsection{Factory Method}
+Rappresenta uno dei pattern creazionali adottati dal gruppo Obelix, esso  indirizza il problema della creazione di oggetti senza specificarne l'esatta classe. Questo pattern raggiunge il suo scopo fornendo un'interfaccia per creare un oggetto, ma lascia che le sottoclassi decidano quale oggetto istanziare.
+
+	\FloatBarrier
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=0.45]{img/method.jpg}
+		\caption{factory method}
+	\end{figure}
 
 
+Product definisce l'interfaccia implementata da ConcreteProduct, creator definisce il factory method che restituisce una interfaccia di tipo product, ConcreteCreator definisce il metodo factory effettivo per la creazione di un’istanza particolare di tipo Product.
 
+
+I motivi che portano alla scelta del suo utilizzo sono:
+
+\begin{itemize}
+\item La creazione di un oggetto preclude il suo riuso senza una significativa duplicazione di codice
+\item  La creazione di un oggetto richiede l'accesso ad informazioni o risorse che non dovrebbero essere contenute nella classe di composizione
+\item La gestione del ciclo di vita degli oggetti gestiti deve essere centralizzata in modo da assicurare un comportamento coerente all'interno dell'applicazione
+
+\end{itemize}
 
 
 polyglot.js
