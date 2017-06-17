@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.2)  17 JUN 2017 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.2)  17 JUN 2017 19:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -604,20 +604,29 @@ Overfull \hbox (0.90843pt too wide) in alignment at lines 13--14
  []
 
 
-Overfull \hbox (0.90843pt too wide) in alignment at lines 14--32
+Overfull \hbox (4.76884pt too wide) in paragraph at lines 19--19
+ [] 
+ []
+
+
+Overfull \hbox (0.90843pt too wide) in alignment at lines 14--35
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 32
+Underfull \vbox (badness 10000) detected at line 35
  []
 
-)
+
+Overfull \hbox (0.90843pt too wide) in alignment at lines 35--44
+ [] [] [] [] 
+ []
+
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
 g)
- <use ../../../file_comuni/immagini/obelisk_sample_02.png>
+<use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 56.
+ed on input line 44.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
 
 
@@ -630,10 +639,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.56 \include{controcopertina}
-                               [1
+l.44   \end{longtable}
+                       [1
 
-] (./pdp.toc
+])
+File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
+g)
+
+<use ../../../file_comuni/immagini/obelisk_sample_02.png>
+Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
+ed on input line 56.
+(pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
+ [2] (./pdp.toc
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
 g)
 
@@ -641,7 +658,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 48.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [2
+ [3
 
 ])
 \tf@toc=\write5
@@ -654,7 +671,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 58.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [3] (./pdp.lof)
+ [4] (./pdp.lof)
 \tf@lof=\write6
 \openout6 = `pdp.lof'.
 
@@ -666,7 +683,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 19.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [4
+ [5
 
 ])
 \tf@lot=\write7
@@ -679,7 +696,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 62.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [5]
+ [6]
 \openout2 = `contenuto.aux'.
 
  (./contenuto.tex
@@ -714,7 +731,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 62.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [6
+ [7
 
 
 ]
@@ -725,7 +742,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 100.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [7]
+ [8]
 Overfull \hbox (30.43303pt too wide) in paragraph at lines 123--139
  [] 
  []
@@ -741,7 +758,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 175.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [8]
+ [9]
 Overfull \hbox (30.43303pt too wide) in paragraph at lines 183--198
  [] 
  []
@@ -752,7 +769,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 200.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [9]
+ [10]
 Overfull \hbox (30.43303pt too wide) in paragraph at lines 205--220
  [] 
  []
@@ -768,7 +785,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 252.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [10]
+ [11]
 Overfull \hbox (30.43303pt too wide) in paragraph at lines 257--279
  [] 
  []
@@ -789,7 +806,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 341.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [11]
+ [12]
 Overfull \hbox (30.43303pt too wide) in paragraph at lines 349--368
  [] 
  []
@@ -800,8 +817,8 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 376.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [12]
-<img/1-AR.png, id=562, 2067.725pt x 928.46875pt>
+ [13]
+<img/1-AR.png, id=566, 2067.725pt x 928.46875pt>
 File: img/1-AR.png Graphic file (type png)
  <use img/1-AR.png>
 Package pdftex.def Info: img/1-AR.png used on input line 408.
@@ -813,7 +830,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 436.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [13]
+ [14]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
 g)
 
@@ -821,7 +838,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 436.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [14 <./img/1-AR.png>] <img/2-AD.png, id=572, 1073.00874pt x 486.81876pt>
+ [15 <./img/1-AR.png>] <img/2-AD.png, id=576, 1073.00874pt x 486.81876pt>
 File: img/2-AD.png Graphic file (type png)
  <use img/2-AD.png>
 Package pdftex.def Info: img/2-AD.png used on input line 453.
@@ -832,7 +849,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 454.
 See the caption package documentation for explanation.
 
-<img/3-PA.png, id=573, 1426.32875pt x 406.51875pt>
+<img/3-PA.png, id=577, 1426.32875pt x 406.51875pt>
 File: img/3-PA.png Graphic file (type png)
  <use img/3-PA.png>
 Package pdftex.def Info: img/3-PA.png used on input line 467.
@@ -854,7 +871,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 468.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [15 <./img/2-AD.png>] <img/4-PD.png, id=579, 1607.00375pt x 426.59375pt>
+ [16 <./img/2-AD.png>] <img/4-PD.png, id=583, 1607.00375pt x 426.59375pt>
 File: img/4-PD.png Graphic file (type png)
  <use img/4-PD.png>
 Package pdftex.def Info: img/4-PD.png used on input line 482.
@@ -865,7 +882,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 483.
 See the caption package documentation for explanation.
 
-<img/5-CO.png, id=580, 1133.23375pt x 687.56876pt>
+<img/5-CO.png, id=584, 1133.23375pt x 687.56876pt>
 File: img/5-CO.png Graphic file (type png)
  <use img/5-CO.png>
 Package pdftex.def Info: img/5-CO.png used on input line 497.
@@ -882,7 +899,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 498.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [16 <./img/3-PA.png> <./img/4-PD.png>] <img/6-VA.png, id=587, 1944.26375pt x 3
+ [17 <./img/3-PA.png> <./img/4-PD.png>] <img/6-VA.png, id=591, 1944.26375pt x 3
 66.36874pt>
 File: img/6-VA.png Graphic file (type png)
 
@@ -906,13 +923,13 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 529.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [17 <./img/5-CO.png> <./img/6-VA.png>]
+ [18 <./img/5-CO.png> <./img/6-VA.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 541.
 See the caption package documentation for explanation.
 
-<img/grafico1.png, id=594, 210.7875pt x 211.54031pt>
+<img/grafico1.png, id=599, 210.7875pt x 211.54031pt>
 File: img/grafico1.png Graphic file (type png)
  <use img/grafico1.png>
 Package pdftex.def Info: img/grafico1.png used on input line 542.
@@ -928,7 +945,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 564.
 See the caption package documentation for explanation.
 
-<img/grafico2.png, id=595, 213.04594pt x 211.54031pt>
+<img/grafico2.png, id=600, 213.04594pt x 211.54031pt>
 File: img/grafico2.png Graphic file (type png)
  <use img/grafico2.png>
 Package pdftex.def Info: img/grafico2.png used on input line 565.
@@ -945,13 +962,13 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 573.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [18 <./img/grafico1.png> <./img/grafico2.png>]
+ [19 <./img/grafico1.png> <./img/grafico2.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 585.
 See the caption package documentation for explanation.
 
-<img/grafico3.png, id=603, 209.28188pt x 210.7875pt>
+<img/grafico3.png, id=607, 209.28188pt x 210.7875pt>
 File: img/grafico3.png Graphic file (type png)
  <use img/grafico3.png>
 Package pdftex.def Info: img/grafico3.png used on input line 586.
@@ -967,7 +984,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 606.
 See the caption package documentation for explanation.
 
-<img/grafico4.png, id=604, 211.54031pt x 211.54031pt>
+<img/grafico4.png, id=608, 211.54031pt x 211.54031pt>
 File: img/grafico4.png Graphic file (type png)
  <use img/grafico4.png>
 Package pdftex.def Info: img/grafico4.png used on input line 607.
@@ -984,13 +1001,13 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 613.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [19 <./img/grafico3.png> <./img/grafico4.png>]
+ [20 <./img/grafico3.png> <./img/grafico4.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 626.
 See the caption package documentation for explanation.
 
-<img/grafico5.png, id=611, 213.79875pt x 212.29312pt>
+<img/grafico5.png, id=615, 213.79875pt x 212.29312pt>
 File: img/grafico5.png Graphic file (type png)
  <use img/grafico5.png>
 Package pdftex.def Info: img/grafico5.png used on input line 627.
@@ -1006,7 +1023,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 644.
 See the caption package documentation for explanation.
 
-<img/grafico6.png, id=612, 210.7875pt x 210.7875pt>
+<img/grafico6.png, id=616, 210.7875pt x 210.7875pt>
 File: img/grafico6.png Graphic file (type png)
  <use img/grafico6.png>
 Package pdftex.def Info: img/grafico6.png used on input line 645.
@@ -1023,13 +1040,13 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 651.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [20 <./img/grafico5.png> <./img/grafico6.png>]
+ [21 <./img/grafico5.png> <./img/grafico6.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 665.
 See the caption package documentation for explanation.
 
-<img/grafico7.png, id=620, 210.03468pt x 210.03468pt>
+<img/grafico7.png, id=624, 210.03468pt x 210.03468pt>
 File: img/grafico7.png Graphic file (type png)
  <use img/grafico7.png>
 Package pdftex.def Info: img/grafico7.png used on input line 666.
@@ -1040,7 +1057,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 667.
 See the caption package documentation for explanation.
 
-<img/grafico8.png, id=621, 212.29312pt x 212.29312pt>
+<img/grafico8.png, id=625, 212.29312pt x 212.29312pt>
 File: img/grafico8.png Graphic file (type png)
  <use img/grafico8.png>
 Package pdftex.def Info: img/grafico8.png used on input line 668.
@@ -1057,13 +1074,13 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 682.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [21 <./img/grafico7.png> <./img/grafico8.png>]
+ [22 <./img/grafico7.png> <./img/grafico8.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 702.
 See the caption package documentation for explanation.
 
-<img/fig1.png, id=628, 488.82625pt x 373.395pt>
+<img/fig1.png, id=632, 488.82625pt x 373.395pt>
 File: img/fig1.png Graphic file (type png)
  <use img/fig1.png>
 Package pdftex.def Info: img/fig1.png used on input line 703.
@@ -1085,7 +1102,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 729.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [22 <./img/fig1.png>] <img/fig2.png, id=634, 486.81876pt x 370.38374pt>
+ [23 <./img/fig1.png>] <img/fig2.png, id=638, 486.81876pt x 370.38374pt>
 File: img/fig2.png Graphic file (type png)
  <use img/fig2.png>
 Package pdftex.def Info: img/fig2.png used on input line 730.
@@ -1101,7 +1118,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 756.
 See the caption package documentation for explanation.
 
-<img/fig3.png, id=635, 484.81125pt x 372.39125pt>
+<img/fig3.png, id=639, 484.81125pt x 372.39125pt>
 File: img/fig3.png Graphic file (type png)
  <use img/fig3.png>
 Package pdftex.def Info: img/fig3.png used on input line 757.
@@ -1118,13 +1135,13 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 758.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [23 <./img/fig2.png>]
+ [24 <./img/fig2.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 783.
 See the caption package documentation for explanation.
 
-<img/fig4.png, id=641, 481.8pt x 371.3875pt>
+<img/fig4.png, id=646, 481.8pt x 371.3875pt>
 File: img/fig4.png Graphic file (type png)
  <use img/fig4.png>
 Package pdftex.def Info: img/fig4.png used on input line 784.
@@ -1141,13 +1158,13 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 785.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [24 <./img/fig3.png>]
+ [25 <./img/fig3.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 810.
 See the caption package documentation for explanation.
 
-<img/fig5.png, id=648, 482.80376pt x 374.39874pt>
+<img/fig5.png, id=652, 482.80376pt x 374.39874pt>
 File: img/fig5.png Graphic file (type png)
  <use img/fig5.png>
 Package pdftex.def Info: img/fig5.png used on input line 811.
@@ -1164,13 +1181,13 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 812.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [25 <./img/fig4.png>]
+ [26 <./img/fig4.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 837.
 See the caption package documentation for explanation.
 
-<img/fig6.png, id=654, 480.79625pt x 370.38374pt>
+<img/fig6.png, id=658, 480.79625pt x 370.38374pt>
 File: img/fig6.png Graphic file (type png)
  <use img/fig6.png>
 Package pdftex.def Info: img/fig6.png used on input line 838.
@@ -1187,7 +1204,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 839.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [26 <./img/fig5.png>]
+ [27 <./img/fig5.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 843--844
 
  []
@@ -1213,7 +1230,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 892.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [27 <./img/fig6.png>]
+ [28 <./img/fig6.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 894--895
 
  []
@@ -1228,7 +1245,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 910.
 See the caption package documentation for explanation.
 
-<img/1-AnalisiRequisiti.png, id=665, 209.28188pt x 209.28188pt>
+<img/1-AnalisiRequisiti.png, id=669, 209.28188pt x 209.28188pt>
 File: img/1-AnalisiRequisiti.png Graphic file (type png)
 
 <use img/1-AnalisiRequisiti.png>
@@ -1261,7 +1278,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 932.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [28 <./img/1-AnalisiRequisiti.png>] <img/2-AnalisiDettaglio.png, id=671, 210.7
+ [29 <./img/1-AnalisiRequisiti.png>] <img/2-AnalisiDettaglio.png, id=675, 210.7
 875pt x 209.28188pt>
 File: img/2-AnalisiDettaglio.png Graphic file (type png)
 
@@ -1289,7 +1306,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 954.
 See the caption package documentation for explanation.
 
-<img/3-ProgArchitetturale.png, id=672, 210.7875pt x 209.28188pt>
+<img/3-ProgArchitetturale.png, id=676, 210.7875pt x 209.28188pt>
 File: img/3-ProgArchitetturale.png Graphic file (type png)
 
 <use img/3-ProgArchitetturale.png>
@@ -1317,7 +1334,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 961.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [29 <./img/2-AnalisiDettaglio.png> <./img/3-ProgArchitetturale.png>]
+ [30 <./img/2-AnalisiDettaglio.png> <./img/3-ProgArchitetturale.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 976.
@@ -1348,7 +1365,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 999.
 See the caption package documentation for explanation.
 
-<img/5-Codifica.png, id=679, 210.03468pt x 211.54031pt>
+<img/5-Codifica.png, id=684, 210.03468pt x 211.54031pt>
 File: img/5-Codifica.png Graphic file (type png)
 
 <use img/5-Codifica.png>
@@ -1366,7 +1383,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 1001.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [30]
+ [31]
 Underfull \hbox (badness 10000) in paragraph at lines 1005--1006
 
  []
@@ -1381,7 +1398,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 1020.
 See the caption package documentation for explanation.
 
-<img/6-Validazione.png, id=685, 212.29312pt x 208.52907pt>
+<img/6-Validazione.png, id=689, 212.29312pt x 208.52907pt>
 File: img/6-Validazione.png Graphic file (type png)
 
 <use img/6-Validazione.png>
@@ -1409,13 +1426,13 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 1029.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [31 <./img/5-Codifica.png> <./img/6-Validazione.png>]
+ [32 <./img/5-Codifica.png> <./img/6-Validazione.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 1044.
 See the caption package documentation for explanation.
 
-<img/7-Totale.png, id=692, 210.7875pt x 209.28188pt>
+<img/7-Totale.png, id=696, 210.7875pt x 209.28188pt>
 File: img/7-Totale.png Graphic file (type png)
  <use img/7-Totale.png>
 Package pdftex.def Info: img/7-Totale.png used on input line 1045.
@@ -1437,7 +1454,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 1088.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [32 <./img/7-Totale.png>]
+ [33 <./img/7-Totale.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 1121.
@@ -1454,7 +1471,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 1153.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [33]
+ [34]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
 g)
 
@@ -1462,8 +1479,8 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 1161.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [34]
-<../../../file_comuni/firme/nr.jpg, id=708, 153.33286pt x 46.37325pt>
+ [35]
+<../../../file_comuni/firme/nr.jpg, id=712, 153.33286pt x 46.37325pt>
 File: ../../../file_comuni/firme/nr.jpg Graphic file (type jpg)
 
 <use ../../../file_comuni/firme/nr.jpg>
@@ -1492,7 +1509,7 @@ Overfull \hbox (3.79337pt too wide) in paragraph at lines 1187--1197
  [] 
  []
 
-<../../../file_comuni/firme/ec.jpg, id=709, 173.08665pt x 65.64525pt>
+<../../../file_comuni/firme/ec.jpg, id=713, 173.08665pt x 65.64525pt>
 File: ../../../file_comuni/firme/ec.jpg Graphic file (type jpg)
 
 <use ../../../file_comuni/firme/ec.jpg>
@@ -1500,7 +1517,7 @@ Package pdftex.def Info: ../../../file_comuni/firme/ec.jpg used on input line 1
 210.
 (pdftex.def)             Requested size: 103.50105pt x 39.2532pt.
 
-<../../../file_comuni/firme/tm.jpg, id=710, 137.91525pt x 47.33685pt>
+<../../../file_comuni/firme/tm.jpg, id=714, 137.91525pt x 47.33685pt>
 File: ../../../file_comuni/firme/tm.jpg Graphic file (type jpg)
 
 <use ../../../file_comuni/firme/tm.jpg>
@@ -1508,7 +1525,7 @@ Package pdftex.def Info: ../../../file_comuni/firme/tm.jpg used on input line 1
 214.
 (pdftex.def)             Requested size: 103.50105pt x 35.52493pt.
 
-<../../../file_comuni/firme/sm.jpg, id=711, 156.94635pt x 30.71475pt>
+<../../../file_comuni/firme/sm.jpg, id=715, 156.94635pt x 30.71475pt>
 File: ../../../file_comuni/firme/sm.jpg Graphic file (type jpg)
 
 <use ../../../file_comuni/firme/sm.jpg>
@@ -1522,7 +1539,7 @@ Package pdftex.def Info: ../../../file_comuni/firme/nr.jpg used on input line 1
 222.
 (pdftex.def)             Requested size: 103.50105pt x 31.3027pt.
 
-<../../../file_comuni/firme/rs.jpg, id=712, 189.94965pt x 51.19125pt>
+<../../../file_comuni/firme/rs.jpg, id=716, 189.94965pt x 51.19125pt>
 File: ../../../file_comuni/firme/rs.jpg Graphic file (type jpg)
 
 <use ../../../file_comuni/firme/rs.jpg>
@@ -1530,7 +1547,7 @@ Package pdftex.def Info: ../../../file_comuni/firme/rs.jpg used on input line 1
 226.
 (pdftex.def)             Requested size: 103.50105pt x 27.89359pt.
 
-<../../../file_comuni/firme/fs.jpg, id=713, 212.11246pt x 52.15485pt>
+<../../../file_comuni/firme/fs.jpg, id=717, 212.11246pt x 52.15485pt>
 File: ../../../file_comuni/firme/fs.jpg Graphic file (type jpg)
 
 <use ../../../file_comuni/firme/fs.jpg>
@@ -1549,7 +1566,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 1238.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [35
+ [36
 
  <../../../file_comuni/firme/nr.jpg> <../../../file_comuni/firme/ec.jpg> <../..
 /../file_comuni/firme/tm.jpg> <../../../file_comuni/firme/sm.jpg> <../../../fil
@@ -1566,7 +1583,7 @@ g)
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
 ed on input line 64.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [36
+ [37
 
 ]
 
@@ -1581,9 +1598,9 @@ Package rerunfilecheck Info: File `pdp.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
  ) 
 Here is how much of TeX's memory you used:
- 11523 strings out of 493029
- 166642 string characters out of 6136235
- 289985 words of memory out of 5000000
+ 11524 strings out of 493029
+ 166649 string characters out of 6136235
+ 296984 words of memory out of 5000000
  14652 multiletter control sequences out of 15000+600000
  14160 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1599,10 +1616,10 @@ ic/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700
 mf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/publi
 c/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.
 pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on pdp.pdf (37 pages, 1967356 bytes).
+Output written on pdp.pdf (38 pages, 1969182 bytes).
 PDF statistics:
- 806 PDF objects out of 1000 (max. 8388607)
- 685 compressed objects within 7 object streams
- 169 named destinations out of 1000 (max. 500000)
+ 810 PDF objects out of 1000 (max. 8388607)
+ 688 compressed objects within 7 object streams
+ 170 named destinations out of 1000 (max. 500000)
  747 words of extra memory for PDF output out of 10000 (max. 10000000)
 
