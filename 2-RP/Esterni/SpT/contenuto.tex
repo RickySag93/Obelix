@@ -361,6 +361,30 @@ I diagrammi delle classi che permettono di mostrare l’architettura generale de
 
 
 \section{Diagrammi di Attività}
+Il diagramma delle attività è un diagramma definito all'interno dello Unified Modeling Language (UML) che definisce le attività da svolgere per realizzare una data funzionalità. Può essere utilizzato durante la progettazione del software per dettagliare un determinato algoritmo. Più in dettaglio, un activity diagram definisce una serie di attività o flusso, anche in termini di relazioni tra le attività, i responsabili per le singole attività e i punti di decisione. L'activity diagram è spesso usato come modello complementare allo Use Case Diagram, per descrivere le dinamiche con cui si sviluppano i diversi use case.
+
+\subsection{Configurazione sondaggio}
+Questo diagramma rappresenta la configurazione e l'invio della bolla sondaggio. L’utente inserisce il titolo del sondaggio, dopodichè avviene l’inserimento delle opzioni. L’utente ha la possibilità di inserire più opzioni (rappresentato nel diagramma con la freccia che parte dal nodo decisione e raggiunge il nodo azione chiamato inserisci opzioni). Una volta compiuto il processo di configurazione l’utente decide di inviare la bolla (rappresentato dal nodo invia). Se il numero delle opzioni inserite è minore di due allora il flusso ritorna al nodo azione chiamato “inserisci opzione” per poter permettere all’utente di incrementare il numero delle opzioni del sondaggio. Altrimenti (il numero di opzioni è maggiore di uno) il flusso arriva al nodo di fine dell’attività.
+\begin{center}
+  \includegraphics[scale=0.5]{img/Sondaggio.png}
+  \captionof{figure}{Diagramma di attività per la bolla sondaggio} 
+\end{center}
+
+
+
+
+\subsection{configurazione ListBubble}
+Questo diagramma rappresenta la configurazione della bolla ListBubble. Il flusso inizia con l’inserimento del titolo della lista. Dopo questo processo il flusso raggiunge il nodo decisione dove l’utente sceglie il modo di inserimento degli elementi. L’inserimento degli elementi avviene o manualmente (inserisci elemento manualmente) oppure con la selezione nella lista degli elementi predefiniti (inserisci elemento da checklist). Nel caso l’utente scegliesse di inserire un elemento dalla checklist predefinita, il flusso raggiunge il nodo decisione. Da questo punto l’utente può scegliere di inviare la bolla già configurata e il flusso raggiunge il nodo terminale, oppure scegliere di ritornare nel nodo decisione raggiunto precedentemente per poter inserire un altro elemento. Anche nel caso in cui l’utente scegliesse di inserire un elemento manualmente il flusso segue lo stesso percorso, ovvero l’utente inserisce l’elemento e decide di inviare la bolla con il raggiungendo il nodo terminale oppure inserire un altro elemento.
+
+\begin{center}
+  \includegraphics[scale=0.5]{img/ListBubble.png}
+  \captionof{figure}{Diagramma di attività per la bolla ListBubble}
+\end{center}
+
+
+
+\section{Diagramma di Sequenza}
+
 
 
 \section{Design Pattern}

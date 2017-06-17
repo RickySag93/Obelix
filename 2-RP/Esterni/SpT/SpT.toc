@@ -1,0 +1,41 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {section}{\numberline {1}Introduzione}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Scopo del documento}{4}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Scopo del prodotto}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Glossario}{4}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Riferimenti}{4}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Normativi}{4}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}Informativi}{4}{subsubsection.1.4.2}
+\contentsline {section}{\numberline {2}Tecnologie Utilizzate}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Javascript 6th edition (ECMA SCRIPT 6)}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Meteor}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Mongo DB}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}HTML5}{6}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}SCSS}{7}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}React}{7}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Node.js}{8}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}Rochet.chat}{8}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}Bootstrap}{8}{subsection.2.9}
+\contentsline {subsection}{\numberline {2.10}polyglot.js}{9}{subsection.2.10}
+\contentsline {subsection}{\numberline {2.11}Money.js}{9}{subsection.2.11}
+\contentsline {subsection}{\numberline {2.12}weather.js}{10}{subsection.2.12}
+\contentsline {subsection}{\numberline {2.13}classNames}{10}{subsection.2.13}
+\contentsline {section}{\numberline {3}Descrizione Architettura}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Metodo e formalismo di specifica}{10}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Architettura generale}{11}{subsection.3.2}
+\contentsline {section}{\numberline {4}Standard di Progetto}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}Standard di progettazione architetturale}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Standard di documentazione del codice}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Standard di denominazione di entit\IeC {\`a} e relazioni }{11}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Standard di programmazione}{11}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Strumenti di lavoro}{11}{subsection.4.5}
+\contentsline {section}{\numberline {5}Diagrammi di Attivit\IeC {\`a}}{11}{section.5}
+\contentsline {subsection}{\numberline {5.1}Configurazione sondaggio}{11}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}configurazione ListBubble}{12}{subsection.5.2}
+\contentsline {section}{\numberline {6}Diagramma di Sequenza}{13}{section.6}
+\contentsline {section}{\numberline {7}Design Pattern}{13}{section.7}
+\contentsline {section}{\numberline {8}Tracciamento}{13}{section.8}
+\contentsline {section}{\numberline {A}Descrizione Design Pattern}{13}{appendix.Alph1}
+\contentsline {subsection}{\numberline {A.1}Design Pattern Utilizzati}{14}{subsection.Alph1.1}
+\contentsline {subsubsection}{\numberline {A.1.1}Factory Method}{14}{subsubsection.Alph1.1.1}
