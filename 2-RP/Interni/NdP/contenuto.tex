@@ -139,14 +139,10 @@ dipendono il meno possibile le une dalle altre. Ogni componente dovrà
 soddisfare almeno un requisito e tutti i requisiti dovranno essere
 soddisfatti. 
 
-I documenti derivanti da questa attività sono: Specifica Tecnica e Definizione di Prodotto.
+Il documento derivante da questa attività è Definizione di Prodotto. Alcune sezioni del documento saranno dedicate alla descrizione della progettazione ad alto livello del
+sistema e dei singoli componenti. Le altre sezioni del documento dovranno riguardare la progettazione di dettaglio del sistema: ogni singola unità di cui è composto il sistema sarà definita in modo dettagliato. 
 
-\paragraph{Specifica Tecnica}
-
-I  \emph{Progettisti}  devono descrivere la progettazione ad alto livello del
-sistema e dei singoli componenti nella Specifica Tecnica. Devono
-essere definiti, inoltre, opportuni test di integrazione tra le varie
-componenti.
+\paragraph{Descrizione progettazione ad alto livello}
 
 I contenuti da coprire sono i seguenti:
 
@@ -171,18 +167,9 @@ I contenuti da coprire sono i seguenti:
   soddisfatti tutti i requisiti e che ogni componente soddisfi almeno
   un requisito.  
 
-\item \textbf{Test di integrazione}:
-
-  Devono essere definite delle strategie di verifica per poter
-  dimostrare la corretta integrazione tra le varie componenti. 
 \end{itemize}
 
-\paragraph{Definizione di Prodotto}
-
-I  \emph{Progettisti}  produrranno la Definizione di Prodotto integrando quanto
-scritto nella Specifica Tecnica. Sarà descritta la progettazione di
-dettaglio del sistema: ogni singola unità di cui è composto il sistema
-sarà definita in modo dettagliato. 
+\paragraph{Descrizione progettazione di dettaglio}
 
 I contenuti da coprire sono i seguenti:
 
@@ -208,10 +195,6 @@ I contenuti da coprire sono i seguenti:
   requisiti siano soddisfatti e che ogni classe soddisfi almeno un
   requisito.  
 
-\item \textbf{Test di unità}:
-
-  Dovranno essere definiti dei test d’unità per poter verificare che i componenti
-  del sistema funzionino in modo corretto.
 \end{itemize}
 
 \subsubsection{Codifica}
@@ -1069,14 +1052,6 @@ comuni (chat, salvataggio delle conversazioni, trasferimento di file)
 ad un sistema di telefonate basato su un network Peer-to-peer. 
 
 
-
-
-
-
-
-
-
-
 \clearpage
 
 \appendix
@@ -1089,61 +1064,72 @@ ad un sistema di telefonate basato su un network Peer-to-peer.
 
 \begin{itemize}
 
-\item \textbf{Norme stilistiche}\\
+\item \textbf{Norme stilistiche}
 
-- norme documento: non viene indicata la versione del documento relativo dove  necessaria;\\
-- elenchi numerati e puntati: non terminano con il punto e virgola se è l’ultimo elemento; \\
-- elenco puntato: non inizia con la lettera maiuscola;\\
-- elenco puntato: aggiunta di punto alla fine della frase;\\
-- ISO/IEC: mancanza della prima “I”, SO/IEC anziché ISO/IEC;\\
-- mancanza di punto alla fine della frase;\\
-- inizio del paragrafo senza la lettera maiuscola;\\
-- mancanza di due punti: “Parametri utilizzati” anziché “Parametri utilizzati:”;\\
-- parole troppo distanti in una frase: utilizzo di due spazi consecutivi anziché uno;\\
-
-
-\item \textbf{Italiano}\\
-
-- frasi troppo lunghe rendono i concetti di difficile comprensione; \\
-- utilizzo ridondante delle virgole lì dove non sarebbe necessario;\\
-- utilizzo erroneo degli articoli determinativi;\\
-- utilizzo erroneo del termine “fase”;\\
-- carattere ‘\'E’: non viene scritto correttamente utilizzando il comando apposito;\\
-- vengono utilizzate frasi troppo lunghe creando difficoltà nel comprendere il significato di quest’ultime;\\
-- caratteri accentati vengono erroneamente scritti con l’accento acuto anziché grave;\\
+	\begin{itemize}
+	
+	\item norme documento: non viene indicata la versione del documento relativo dove  necessaria
+	\item mancanza di punto alla fine della frase
+	\item inizio del paragrafo senza la lettera maiuscola
+	\item mancanza di due punti per introdurre un elenco
+	\item parole troppo distanti in una frase: utilizzo di due spazi consecutivi anziché uno
+	
+	\end{itemize}
 
 
-\item \textbf{UML}\\
+\item \textbf{Italiano}
 
-- mancanza del nome del caso d’uso di riferimento nelle figure chiamandolo UC anziché il suo proprio nome;\\
-- didascalia dei diagrammi ambigua;
+	\begin{itemize}
+
+	\item frasi troppo lunghe rendono i concetti di difficile comprensione 
+	\item utilizzo ridondante delle virgole lì dove non sarebbe necessario
+	\item utilizzo erroneo degli articoli determinativi
+	\item utilizzo erroneo del termine “fase”
+	\item carattere ‘\'E’: non viene scritto correttamente utilizzando il comando apposito
+	\item vengono utilizzate frasi troppo lunghe creando difficoltà nel comprendere il significato di quest’ultime
+	\item caratteri accentati erroneamente scritti con l’accento acuto anziché grave
+	
+	\end{itemize}
 
 
+\item \textbf{UML}
 
-\item \textbf{LaTex}\\
 
-- mancanza di utilizzo del comando "empf" per le parole in corsivo;\\
-- mancanza di utilizzo del comando per andare a capo;\\
-- indirizzi URL non “cliccabili”;\\
-- utilizzo erroneo del comando “item”;\\
-- calcolo erroneo delle lettere dell’appendice;\\
-- calcolo erroneo dei sottoparagrafi; \\
-- numero elevato di commenti lasciati nei documenti .tex inquinando l’ambiente di lavoro;\\
-- termini presenti nel glossario ma non segnati con l’apposito comando nel documento, o viceversa;\\
-- termini in lingua inglese non segnati con l’apposito comando nel documento;\\
+	\begin{itemize}
+	\item mancanza del nome del caso d’uso di riferimento nelle figure chiamandolo UC anziché con il proprio nome
+	\item didascalia dei diagrammi ambigua
+	\end{itemize}
 
 
 
-\item \textbf{Tracciamento dei requisiti}\\
+\item \textbf{LaTex}
+
+	\begin{itemize}
+	
+	\item mancanza di utilizzo del comando "empf" per le parole in corsivo
+	\item mancanza di utilizzo del comando per andare a capo
+	\item indirizzi URL non “cliccabili”
+	\item utilizzo erroneo del comando “item”
+	\item calcolo erroneo dei sottoparagrafi 
+	\item numero elevato di commenti lasciati nei documenti .tex inquinando l’ambiente di lavoro
+	
+	\end{itemize}
 
 
-- ad ogni requisito deve corrispondere almeno una fonte;\\
-- ad ogni caso d’uso deve corrispondere almeno un elemento;\\
+
+\item \textbf{Tracciamento dei requisiti}
+
+	\begin{itemize}
+	\item ad ogni requisito deve corrispondere almeno una fonte
+	\item ad ogni caso d’uso deve corrispondere almeno un elemento
+	\end{itemize}
 
 
-\item \textbf{Glossario}\\
+\item \textbf{Glossario}
 
-- termini presenti nei documenti sono mancanti nel glossario;
+	\begin{itemize}
+	\item termini presenti nei documenti mancanti nel glossario
+	\end{itemize}
 
 
 

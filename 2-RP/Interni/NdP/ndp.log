@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.2.22)  12 JUN 2017 12:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.2)  17 JUN 2017 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -695,7 +695,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 166.
+ed on input line 162.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [6]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -703,7 +703,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 229.
+ed on input line 219.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [7]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -711,7 +711,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 278.
+ed on input line 270.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [8]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -719,7 +719,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 332.
+ed on input line 328.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [9]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -727,7 +727,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 404.
+ed on input line 391.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [10]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -735,7 +735,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 453.
+ed on input line 440.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [11]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -743,10 +743,10 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 503.
+ed on input line 493.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [12]
-Overfull \hbox (13.86168pt too wide) in paragraph at lines 532--535
+Overfull \hbox (13.86168pt too wide) in paragraph at lines 515--518
 []\T1/cmr/m/n/10 Ore: le ore pre-sen-ti nei do-cu-men-ti de-vo-no se-gui-re lo 
 stan-dard \T1/cmr/bx/n/10 ISO 8601:2004
  []
@@ -755,10 +755,10 @@ File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
 g)
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 560.
+ed on input line 543.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [13]
-Overfull \hbox (12.75609pt too wide) in paragraph at lines 596--597
+Overfull \hbox (12.75609pt too wide) in paragraph at lines 579--580
 \T1/cmr/m/n/10 get-to è sta-to de-ci-so di af-fi-dar-si ad al-cu-ni \T1/cmr/m/i
 t/10 re-po-si-to-ry$[]$ \T1/cmr/m/n/10 su Gi-tHub. L'\T1/cmr/m/it/10 Amministra
 tore
@@ -768,7 +768,7 @@ File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
 g)
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 607.
+ed on input line 590.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [14]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -776,10 +776,10 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 663.
+ed on input line 646.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [15]
-Overfull \hbox (1.44456pt too wide) in paragraph at lines 693--694
+Overfull \hbox (1.44456pt too wide) in paragraph at lines 676--677
  []\T1/cmr/bx/n/10 Analisi di-na-mi-ca [] \T1/cmr/m/n/10 L'a-na-li-si di-na-mi-
 ca con-si-ste nel-l'e-sa-mi-na-re il soft-ware quan-
  []
@@ -788,7 +788,7 @@ File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
 g)
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 712.
+ed on input line 695.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [16]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -796,7 +796,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 751.
+ed on input line 734.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [17]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -804,7 +804,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 789.
+ed on input line 772.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [18]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -812,7 +812,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 836.
+ed on input line 819.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [19]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -820,7 +820,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 871.
+ed on input line 854.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [20]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -828,7 +828,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 909.
+ed on input line 892.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [21]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -836,7 +836,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 947.
+ed on input line 930.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [22]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -844,7 +844,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 987.
+ed on input line 970.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [23]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -852,7 +852,7 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 1034.
+ed on input line 1017.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [24]
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
@@ -860,74 +860,19 @@ g)
 
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 1080.
+ed on input line 1055.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1092--1093
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1094--1103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1105--1106
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1107--1114
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1116--1117
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1123--1124
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1125--1134
-
- []
-
+ [25])
 File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
 g)
+
 <use ../../../file_comuni/immagini/obelisk_sample_02.png>
 Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 1134.
+ed on input line 58.
 (pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
  [26
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1137--1138
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1140--1142
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1144--1145
-
- []
-
-)
-File: ../../../file_comuni/immagini/obelisk_sample_02.png Graphic file (type pn
-g)
- <use ../../../file_comuni/immagini/obelisk_sample_02.png>
-Package pdftex.def Info: ../../../file_comuni/immagini/obelisk_sample_02.png us
-ed on input line 58.
-(pdftex.def)             Requested size: 17.07182pt x 28.39252pt.
- [27]
 
 AED: lastpage setting LastPage
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 60.
@@ -940,8 +885,8 @@ Package rerunfilecheck Info: File `ndp.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 60.
  ) 
 Here is how much of TeX's memory you used:
- 11236 strings out of 493029
- 161908 string characters out of 6136234
+ 11235 strings out of 493029
+ 161901 string characters out of 6136235
  277973 words of memory out of 5000000
  14418 multiletter control sequences out of 15000+600000
  14809 words of font info for 35 fonts, out of 8000000 for 9000
@@ -959,10 +904,10 @@ m-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb
 onts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on ndp.pdf (28 pages, 333729 bytes).
+Output written on ndp.pdf (27 pages, 332351 bytes).
 PDF statistics:
- 671 PDF objects out of 1000 (max. 8388607)
- 616 compressed objects within 7 object streams
- 167 named destinations out of 1000 (max. 500000)
+ 667 PDF objects out of 1000 (max. 8388607)
+ 613 compressed objects within 7 object streams
+ 166 named destinations out of 1000 (max. 500000)
  603 words of extra memory for PDF output out of 10000 (max. 10000000)
 
