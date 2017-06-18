@@ -1,0 +1,871 @@
+\subsection{CurrencyBubble::CurrencyConversion}
+\textbf{Descrizione}:\\
+Classe predisposta per la conversione di un importo da una valuta di partenza a una valuta di arrivo.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +convert(value : float) : float 
+\\
+Metodo che effettua la conversione del valore utilizzando l'utility money.js.
+\item +setInputCurrency(inCurr : string) : void 
+\\
+Metodo che imposta la valuta di partenza.
+\item +setOutputCurrency(outCurr : string) : void 
+\\
+Metodo che imposta la valuta di arrivo.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per effettuare la conversione di un importo dalla valuta di partenza a quella di arrivo. Si serve dell'utility money.js. 
+
+
+\subsection{CurrencyBubble::CurrencyBubbleSender}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal mittente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della bolla da parte del mittente.
+La classe è composta da Monolith::UI::UI-Layouts::HorizontalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label) che dispone i componenti visuali uno accanto all'altro. 
+
+
+\subsection{CurrencyBubble::CurrencyBubbleCreator}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla convertitore di valuta, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +doMakeBubbleSender() : CurrencyBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal mittente.
+\item +doMakeBubbleReceiver() : CurrencyBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal ricevente.
+\item +doMakeConfigurationMenu() : CurrencyBubbleConfig 
+\\
+Metodo che gestisce la creazione dell'area di configurazione della bolla.
+\item +doMakeButton() : CurrencyBubbleCreationButton 
+\\
+Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per gestire la creazione della specifica bolla convertitore di valuta, della specifica area di configurazione della bolla e dello specifico pulsante. 
+
+
+\subsection{CurrencyBubble::CurrencyBubbleReceiver}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal ricevente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della bolla da parte del ricevente.
+La classe è composta da Monolith::UI::UI-Layouts::HorizontalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label) che dispone i componenti visuali uno accanto all'altro. 
+
+
+\subsection{CurrencyBubble::CurrencyBubbleConfigMenu}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleConfig che rappresenta l'area di configurazione della bolla. 
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item + handleSubmit() : void
+Metodo che viene invocato quando la configurazione della bolla è terminata ed è pronta per essere inviata.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::LineEditComboBox e Monolith::UI::UI-SingleComponents::LabelComboBox) che dispone i componenti visivi uno sotto l'altro. 
+
+
+\subsection{DiceBubble::DiceRoller}
+\textbf{Descrizione}:\\
+Classe predisposta per l'estrazione del numero casuale.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +roll(max : int) : int
+Metodo che effettua l'estrazione del numero casuale utilizzando la funzione Javascript Math.random().
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per l'estrazione del numero casuale compreso tra 0 e max. Si serve della funzione Javascript Math.random(). 
+
+
+\subsection{DiceBubble::DiceBubbleSender}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal mittente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della bolla da parte del mittente.
+La classe è composta da Monolith::UI::UI-SingleComponents::Label. 
+
+
+\subsection{DiceBubble::DiceBubbleCreator}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla estrazione numero casuale, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +doMakeBubbleSender() : DiceBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal mittente.
+\item +doMakeBubbleReceiver() : DiceBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal ricevente.
+\item +doMakeConfigurationMenu() : DiceBubbleConfig 
+\\
+Metodo che gestisce la creazione dell'area di configurazione della bolla.
+\item +doMakeButton() : DiceBubbleCreationButton 
+\\
+Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per gestire la creazione della specifica bolla estrazione numero casuale, della specifica area di configurazione della bolla e dello specifico pulsante. 
+
+
+\subsection{DiceBubble::DiceBubbleReceiver}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal ricevente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della bolla da parte del ricevente.
+La classe è composta da Monolith::UI::UI-SingleComponents::Label. 
+
+
+\subsection{DiceBubble::DiceBubbleConfigMenu}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleConfig che rappresenta l'area di configurazione della bolla. 
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +handleSubmit() : void
+Metodo che viene invocato quando la configurazione della bolla è terminata ed è pronta per essere inviata.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
+La classe è composta da Monolith::UI::UI-SingleComponents::LineEditPushButton. 
+
+
+\subsection{ListBubble::CheckListCreation::CheckListCreator}
+\textbf{Descrizione}:\\
+Componente React che rappresenta l'area di visualizzazione delle check list e un pulsante per poterne aggiungere di nuove. 
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +handleAdd() : void
+Metodo che gestisce l'aggiunta di una nuova check list. 
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzato per rappresentare l'area di visualizzazione delle check list e un pulsante per poterne aggiungere di nuove. 
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::PushButton e CheckListComponent) che dispone i componenti visuali uno sotto l'altro. 
+
+
+\subsection{ListBubble::CheckListCreation::CheckListComponent}
+\textbf{Descrizione}:\\
+Componente React che rappresenta una lista di check list.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzato per rappresentare una lista di check list.
+La classe è composta da Monolith::UI::UI-SingleComponents::PushButton. 
+
+
+\subsection{ListBubble::CheckListCreation::CheckListItemsDefinition}
+\textbf{Descrizione}:\\
+Componente React che rappresenta l'area di configurazione di una check list.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzato per rappresentare l'area di configurazione di una check list. 
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI:UI-SingleComponents::LineEdit e Monolith::UI::UI-SingleComponents::LineEditPushButton) che dispone i componenti visivi uno sotto l'altro. 
+
+
+\subsection{ListBubble::CheckListReading::CheckList}
+\textbf{Descrizione}:\\
+Componente React che gestisce l'aggiunta di un elemento alla lista.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM 
+\\
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +handleAdd() : void 
+\\
+Metodo che gestisce l'aggiunta di un elemento alla lista.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per gestire l'aggiunta di un elemento alla lista.
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::LabelEditPushButton) che dispone i componenti visivi uno sotto l'altro. 
+
+
+\subsection{ListBubble::CheckListReading::ListOfCheckLists}
+\textbf{Descrizione}:\\
+Componente React che rappresenta una lista di check list.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della lista di check list.
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::PushButton) che dispone gli elementi uno sotto l'altro. 
+
+
+\subsection{ListBubble::Configuration::ListCreationButton}
+\textbf{Descrizione}:\\
+Istanziazione della classe Monolith::UI::Bubbles::BubbleCreationButton che rappresenta lo specifico pulsante da inserire nel menu iniziale di creazione.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per rappresentare lo specifico pulsante da inserire nel menu iniziale di creazione. 
+
+
+\subsection{ListBubble::Configuration::ListBubbleMenuConfig}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleConfig che rappresenta l'area di configurazione della bolla. 
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM 
+\\
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +handleSubmit() : void 
+\\
+Metodo che viene invocato quando la configurazione della bolla è terminata ed è pronta per essere inviata.
+
+\item +handleAdd() : void 
+\\
+Metodo che viene invocato quando si vuole aggiungere un elemento alla lista.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-Layouts::HorizontalLayout con un LineEdit e un PushButton, Monolith::UI::UI-SingleComponents::LineEditPushButton, Monolith::UI::UI-SingleComponents::PushButton) che dispone i componenti visivi uno sotto l'altro. 
+
+
+\subsection{ListBubble::DataManagement::ListBubbleCreator}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla lista, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +doMakeBubbleSender() : ListBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal mittente.
+\item +doMakeBubbleReceiver() : ListBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal ricevente.
+\item +doMakeConfigurationMenu() : ListBubbleConfig 
+\\
+Metodo che gestisce la creazione dell'area di configurazione della bolla.
+\item +doMakeButton() : ListBubbleCreationButton 
+\\
+Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu iniziale di creazione.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per gestire la creazione della specifica bolla lista, della specifica area di configurazione della bolla e dello specifico pulsante. 
+
+
+\subsection{ListBubble::Receiver::ListBubbleReceiver}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal ricevente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM 
+\\
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +handleCheck() : void 
+\\
+Metodo che gestisce la spunta di un elemento della lista.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della bolla da parte del ricevente.
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label e Monolith::UI::UI-SingleComponents::CheckBoxList) che dispone i componenti visuali uno sotto l'altro. 
+
+
+\subsection{ListBubble::Sender::ListBubbleSender}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal mittente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM 
+\\
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +handleAdd() : void 
+\\
+Metodo che gestisce l'aggiunta di un nuovo elemento alla lista.
+\item +handleCheck() : void 
+\\
+Metodo che gestisce la spunta di un elemento della lista.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della bolla da parte del mittente.
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label, Monolith::UI::UI-SingleComponents::PushButton, Monolith::UI::UI-SingleComponents::CheckBoxList, Monolith::UI::UI-SingleComponents::LineEditPushButton) che dispone i componenti visuali uno sotto l'altro. 
+
+
+\subsection{MeteoBubble::MeteoItem}
+\textbf{Descrizione}:\\
+Componente React predisposto per la visualizzazione delle previsioni meteo di un determinato giorno.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione delle previsioni meteo di un determinato giorno. \'E composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Image e Monolith::UI::UI-SingleComponents::Label) che dispone i componenti visuali uno sotto l'altro. 
+
+
+\subsection{MeteoBubble::MeteoDelivery}
+\textbf{Descrizione}:\\
+Classe predisposta per il recupero dei dati relativi alle previsioni meteo.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +getData(location : string) : Object
+Metodo che recupera i dati relativi alle previsioni meteo della località selezionata utilizzando l'utility weather.js.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per recuperare i dati relativi alle previsioni meteo della località scelta. Si serve dell'utility weather.js. 
+
+
+\subsection{MeteoBubble::MeteoBubbleSender}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal mittente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della bolla da parte del mittente.
+La classe è composta da Monolith::UI::UI-Layouts::HorizontalLayout (composta a sua volta da MeteoItem) che dispone i componenti visuali uno accanto all'altro. 
+
+
+\subsection{MeteoBubble::MeteoBubbleCreator}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla meteo, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +doMakeBubbleSender() : MeteoBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal mittente.
+\item +doMakeBubbleReceiver() : MeteoBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal ricevente.
+\item +doMakeConfigurationMenu() : MeteoBubbleConfig 
+\\
+Metodo che gestisce la creazione dell'area di configurazione della bolla.
+\item +doMakeButton() : MeteoBubbleCreationButton 
+\\
+Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per gestire la creazione della specifica bolla meteo, della specifica area di configurazione della bolla e dello specifico pulsante. 
+
+
+\subsection{MeteoBubble::MeteoBubbleReceiver}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal ricevente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della bolla da parte del ricevente.
+La classe è composta da Monolith::UI::UI-Layouts::HorizontalLayout (composta a sua volta da MeteoItem) che dispone i componenti visuali uno accanto all'altro. 
+
+
+\subsection{MeteoBubble::MeteoBubbleConfigMenu}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleConfig che rappresenta l'area di configurazione della bolla. 
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +handleSubmit() : void
+Metodo che viene invocato quando la configurazione della bolla è terminata ed è pronta per essere inviata.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
+La classe è composta da Monolith::UI::UI-SingleComponents::LineEditPushButton. 
+
+
+\subsection{SurveyBubble::ResultsViewer}
+\textbf{Descrizione}:\\
+Componente React che rappresenta il risultato del sondaggio.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzato per la visualizzazione del risultato del sondaggio. 
+
+
+\subsection{SurveyBubble::SurveyManager}
+\textbf{Descrizione}:\\
+Classe predisposta per la gestione del sondaggio.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +databaseUpdate(item : int) : void
+Metodo che gestisce l'aggiornamento del database al cambiare dei voti nel sondaggio.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per gestire l'aggiornamento del database al cambiare dei voti nel sondaggio. \'E composta da Monolith::UI::UI-Layouts::VerticalLayout (a sua volta composta da Monolith::UI::UI-SingleComponents::Label e Monolith::UI::UI-SingleComponents::RadioButtonGroup, ResultsViewer) che dispone i componenti visuali uno sotto l'altro. 
+
+
+\subsection{SurveyBubble::SurveyBubbleSender}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal mittente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +handleVote() : void
+Metodo che viene invocato quando è stata selezionata un'opzione. 
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della bolla da parte del mittente. 
+
+
+\subsection{SurveyBubble::SurveyBubbleCreator}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla sondaggio, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +doMakeBubbleSender() : SurveyBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal mittente.
+\item +doMakeBubbleReceiver() : SurveyBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal ricevente.
+\item +doMakeConfigurationMenu() : SurveyBubbleConfig 
+\\
+Metodo che gestisce la creazione dell'area di configurazione della bolla.
+\item +doMakeButton() : SurveyBubbleCreationButton 
+\\
+Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per gestire la creazione della specifica bolla sondaggio, della specifica area di configurazione della bolla e dello specifico pulsante. 
+
+
+\subsection{SurveyBubble::SurveyBubbleReceiver}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal ricevente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +handleVote() : void
+Metodo che viene invocato quando è stata selezionata un'opzione. 
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della bolla da parte del ricevente. 
+
+
+\subsection{SurveyBubble::SurveyBubbleConfigMenu}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleConfig che rappresenta l'area di configurazione della bolla. 
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +handleSubmit() : void
+Metodo che viene invocato quando la configurazione della bolla è terminata ed è pronta per essere inviata.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI:UI-SingleComponents::LineEdit, Monolith::UI::UI-SingleComponents::PushButton, Monolith::UI::UI-SingleComponents::LabelEditPushButton) che dispone i componenti visivi uno sotto l'altro. 
+
+
+\subsection{TranslationBubble::MessageTranslation}
+\textbf{Descrizione}:\\
+Classe predisposta per l'effettiva traduzione del messaggio.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +translate(msg : string) : string 
+\\
+Metodo che effettua la traduzione del messaggio utilizzando l'utility Polygloth.js.
+\item +setInputLanguage(inLang : string) : void 
+\\
+Metodo che imposta la lingua di partenza.
+\item +setOutputlanguage(outLang : string) : void 
+\\
+Metodo che imposta la lingua di arrivo.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per effettuare la traduzione del messaggio di testo dalla lingua di partenza a quella di arrivo. Si serve dell'utility Polygloth.js. 
+
+
+\subsection{TranslationBubble::TranslationBubbleSender}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal mittente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzato per la visualizzazione della bolla da parte del mittente.
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label) che dispone i componenti visuali uno sotto l'altro. 
+
+
+\subsection{TranslationBubble::TranslationBubbleCreator}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla traduttore, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +doMakeBubbleSender() : TranslationBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal mittente.
+\item +doMakeBubbleReceiver() : TranslationBubble 
+\\
+Metodo che gestisce la creazione della bolla vista dal ricevente.
+\item +doMakeConfigurationMenu() : TranslationBubbleConfig 
+\\
+Metodo che gestisce la creazione dell'area di configurazione della bolla.
+\item +doMakeButton() : TranslationBubbleCreationButton 
+\\
+Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per gestire la creazione della specifica bolla traduttore, della specifica area di configurazione della bolla e dello specifico pulsante. 
+
+
+\subsection{TranslationBubble::TranslationBubbleReceiver}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::Bubbles::Bubble che rappresenta la bolla vista dal ricevente.
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione della bolla da parte del ricevente.
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label) che dispone i componenti visuali uno sotto l'altro. 
+
+
+\subsection{TranslationBubble::TranslationBubbleConfigMenu}
+\textbf{Descrizione}:\\
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleConfig che rappresenta l'area di configurazione della bolla. 
+\\
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +handleSubmit() : void
+Metodo che viene invocato quando la configurazione della bolla è terminata ed è pronta per essere inviata.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}:\\
+Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
+La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::TextAreaComboBox, Monolith::UI::UI-SingleComponents::ComboBox e Monolith::UI::UI-SingleComponents::PushButton) che dispone i componenti visivi uno sotto l'altro. 
+
+

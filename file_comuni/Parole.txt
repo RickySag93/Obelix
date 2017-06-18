@@ -162,3 +162,17 @@ Asana
 React
 : è una libreria Javascript open source che permette di costruire interfacce utente. 
 
+tabbar
+: in Rocket.Chat è la parte della finestra di chat più a destra su cui si trovano alcuni pulsanti. \'E qui che Monolith aggiunge i suoi pulsanti.
+
+sidearea
+: per sidearea si intende una delle due aree che Monolith crea in Rocket.Chat alla pressione dei pulsanti nella tabbar. Si tratta di una parte dello schermo sulla destra che diventa fullscreen in visualizzazione mobile.
+
+responsive
+: paradigma di progettazione di interfacce, in particolare web. Col termine responsive ci si riferisce a interfacce pensate per essere visualizzate automaticamente in modo diverso a seconda delle dimensioni dello schermo del dispositivo su cui sono visualizzati.
+
+BSON
+: per esteso Binary JSON. \'E il formato binario in cui MongoDb memorizza i dati
+
+room
+: in Rocket.Chat è una qualunque situazione in cui utenti possono comunicare tramite la chat. Queste includono chat 1:1 o di gruppo.

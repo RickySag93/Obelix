@@ -21,10 +21,9 @@
 \usepackage{array}
 \usepackage{rotating}
 \usepackage{placeins}
-\usepackage{rotating} 
+\usepackage{rotating}
 \usepackage{multirow}
 \date{}
-
 
 \usepackage{makeidx}
 \makeindex
@@ -33,7 +32,7 @@
 \lhead{\includegraphics[width=.6cm]{../../../file_comuni/immagini/obelisk_sample_02.png}
   Obelix Group}
 \chead{}
-\rhead{\rightmark }% \leftmark}%da rimettere
+\rhead{\leftmark }% \leftmark}%da rimettere
 \lfoot{}
 \cfoot{}
 \rfoot{\thepage / \pageref*{LastPage}}
@@ -49,7 +48,8 @@
 \uso{esterno}
 \distribuzione{Prof. Tullio Vardanega \eanche Prof. Riccardo Cardin \eanche Red Babel \eanche Gruppo Obelix}
 \sommario{Questo documento descrive l’architettura generale del prodotto Monolith che verrà
-	sviluppato dal gruppo Obelix.}
+  sviluppato dal gruppo Obelix.}
+
 
 
 \begin{document}
@@ -57,9 +57,14 @@
 %\input{copertina}
 \paginatitolo
 \include{controcopertina}
+
+%\hyphenchar\font=-1 % disable hyphen
 \tableofcontents
 \clearpage
+\listoffigures
 \listoftables
+
+%\hyphenchar\font=`\- % reset hyphen
 \clearpage
 
 \include{contenuto}
