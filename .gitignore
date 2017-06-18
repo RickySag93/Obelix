@@ -1,0 +1,10 @@
+*.aux
+*.log
+*.pdf
+*.idx
+*.toc
+*.lot
+*.lof
+*.out
+*.synctex.gz
+!/1-RR/**

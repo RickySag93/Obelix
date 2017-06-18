@@ -9,7 +9,7 @@ Lo scopo del prodotto è quello di permettere la creazione di bolle
 interattive, che dovranno funzionare nell’ambiente Rocket.chat. Queste
 bolle permetteranno di aumentare l'interattività tra gli utenti della
 chat e aggiungeranno nuove funzionalità accessibili
-direttamente dalla conversazione senza il bisogno di ricorrere
+direttamente dalla room senza il bisogno di ricorrere
 all'apertura di applicazioni diverse.
 Il sistema offrirà agli sviluppatori un set di \glossario{API} per creare e
 rilasciare nuove bolle e agli utenti finali la possibilità di
@@ -36,7 +36,9 @@ occorrenza e saranno riportati nel Glossario.
   \textbf{Capitolato d'appalto C5}: Monolith \\
   \url{http://www.math.unipd.it/~tullio/IS-1/2016/Progetto/C5.pdf}
 \item \textbf{Ingegneria del Software - Ian Sommerville - Decima edizione}
-\item \textbf{Slide dell’insegnamento - Diagrammi dei casi d’uso}: \\ \url{http://www.math.unipd.it/~tullio/IS-1/2016/Dispense/E01b.pdf}
+\item \textbf{Slide dell’insegnamento - Diagrammi dei casi d’uso}:
+  \\ \url{http://www.math.unipd.it/~tullio/IS-1/2016/Dispense/E01b.pdf}
+
 \end{itemize}
 
 
@@ -45,12 +47,12 @@ occorrenza e saranno riportati nel Glossario.
 
 Il prodotto consiste in una SDK per creare bolle interattive
 in ambiente \glossario{Rocket.chat}.
-L'utilizzo dell'SDK parte da un processo di inizializzazione che crea
+L'utilizzo dell'SDK parte da un processo di inizializzazione 
+o la copia di alcuni file pronti che permette di lavorare su
 una bolla vuota a cui si possono aggiungere funzionalità tramite
 l'API.
 Le funzionalità comprendono la definizione facilitata della vista
-grafica, la gestione di azioni a tempo e la gestione dei permessi
-degli utenti.
+grafica e la gestione dei permessi degli utenti.
 %% spiegone su bolla vuota
 
 La procedura di inizializzazione consiste nella creazione automatica di una bolla
@@ -85,14 +87,19 @@ Nelle API gli elementi grafici sono aggiunti in un sistema di contenitori:
 
 Altre funzionalità offerte sono:
 \begin{itemize}
-\item \textbf{Gestione di azioni a tempo (timer)}\\
-Viene fornita la possibilità di impostare un timer per svolgere azioni
-automaticamente dopo un certo periodo o con cadenza regolare.
 
 \item \textbf{Gestione dei permessi tra mittente e riceventi}\\
 L'unica differenza rilevante tra utenti è quella tra mittente e
 ricevente. Quindi l'API fornisce  la possibilità di distinguere con
 facilità le due tipologie.
+
+\item \textbf{Gestione della persistenza dei dati} \\
+Lo sviluppatore deve essere in grado di memorizzare informazioni senza
+doversi preoccupare dei dettagli del database.
+
+\item \textbf{Menù di accesso alle bolle}\\
+L'Sdk include anche un'interfaccia grafica per l'utilizzo delle
+bolle. \'E generica e estensibile per utilizzare nuove bolle.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,18 +111,26 @@ facilità le due tipologie.
 \subsubsection{Caratteristiche degli utenti}
 Il prodotto si rivolge a sviluppatori di bolle per il sistema di chat
 Rocket.chat.
-Nei casi d'uso relativi all'SDK è presente un unico attore: lo
-sviluppatore di bolle.
+Nei casi d'uso relativi all'SDK sono presenti due attori: lo
+sviluppatore e l'utente di Rocket.Chat.
  %% DIAGRAMMA
 
    \FloatBarrier
    \begin{figure}[ht]
    \centering
-   \includegraphics[scale=0.45]{img/attori_sdk.png}
-   \caption{Diagramma degli attori per l'SDK.}
+   \includegraphics[scale=0.45]{img/solo_attori_sviluppatore.png}
+   \caption{Diagramma per l'attore sviluppatore.}
 \end{figure}
 
-\clearpage
+
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[scale=0.45]{img/solo_attori_utente.png}
+   \caption{Diagramma per l'attore utente.}
+\end{figure}
+
+%\clearpage
 \subsection{Contesto d'uso e funzionalità delle bolle}
 \begin{itemize}
 \item \textbf{Convertitore di valuta}\\
@@ -134,23 +149,11 @@ Una bolla che traduce il testo inserito nelle lingue selezionate.
 
 \subsubsection{Caratteristiche degli utenti}
 I prodotti realizzati con l'SDK, ovvero le bolle, sono rivolti agli
-utenti e agli amministratori  di Rocket.chat.
+utenti di Rocket.chat.
 
 
 Tra gli utenti si distingue tra mittente e ricevente del messaggio che
-contiene la bolla. Gli amministratori sono quelli che installano e
-configurano il server di chat e possono preimpostare alcune
-caratteristiche delle bolle. 
-
-
-
-   \FloatBarrier
-   \begin{figure}[ht]
-   \centering
-   \includegraphics[scale=0.45]{img/attori_bolle.png}
-   \caption{Diagramma generale degli attori per le bolle.}
-\end{figure}
-
+contiene la bolla. 
 
 
 

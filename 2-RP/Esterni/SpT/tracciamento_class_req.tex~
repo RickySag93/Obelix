@@ -1,0 +1,11 @@
+\begin{center}
+\begin{longtable}{|
+*{1}{>{\centering\arraybackslash}p{7cm}|}
+*{1}{>{\centering\arraybackslash}p{3cm}|}}
+\hline \textbf{Class} & \textbf{Requisiti}\\
+\hline \endhead
+\hline \endfoot
+
+\caption{Tracciamento classi - requisiti}
+\end{longtable}
+\end{center}
