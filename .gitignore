@@ -6,5 +6,6 @@
 *.lot
 *.lof
 *.out
+*.tex~
 *.synctex.gz
 !/1-RR/**
