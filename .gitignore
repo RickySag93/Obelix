@@ -7,3 +7,4 @@
 *.lof
 *.out
 *.synctex.gz
+!/1-RR/**
