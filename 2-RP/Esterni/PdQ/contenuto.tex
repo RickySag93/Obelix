@@ -820,57 +820,76 @@ In questo periodo (antecedente la consegna di tale revisione) sono stati verific
 \item L’avanzamento dei processi è stato controllato e verificato secondo le metodiche descritte nelle \emph{Norme di Progetto vxxx}.
 
 \end{itemize}
-\subsubsection{Esiti verifiche automatizzate}
+\subsubsection{Processi}
 
-Vengono qui riportati gli esiti delle verifiche automatizzate per il calcolo dell’indice Gulpease, alle quali sono stati sottoposti tutti i documenti.
+Vengono qui riportati gli esiti delle verifiche sui processi produttivi.\\
 
+
+\textbf{Budget Variance / Schedule Variance}
 
 \begin{center}
 \begin{tabular}{|c|c|c|}
 
 \hline
-\textbf{Documento} & \textbf{Valore indice} & \textbf{Esito} \\
+\textbf{Attività} & \textbf{SV} & \textbf{BV} \\
 \hline
-\emph{Analisi dei Requisiti vxxx} & valore & superato \\
+\emph{Analisi dei Requisiti vxxx} & 0€ & 0€ \\
 \hline
-\emph{Norme di Progetto vxxx} & valore & superato \\
+\emph{Norme di Progetto vxxx} & +10€ & +70€ \\
 \hline
-\emph{Piano di Progetto vxxx} & valore & superato \\
+\emph{Piano di Progetto vxxx} & 0€ & 0€ \\
 \hline
-\emph{Studio di Fattibilità vxxx} & valore & superato \\
+\emph{Definizione di prodotto vxxx} & +25€ & -110€ \\
+\hline
+\emph{Piano di qualifica vxxx} & -10€ & 0€ \\
+\hline
+\emph{Glossario vxxx} & 0€ & 0€ \\
 \hline
 \end{tabular}
-\captionof{table}{Tabella risultati test Gulpease}
+\captionof{table}{Tabella risultati Budget Variance / Schedule Variance}
 \end{center}
 
+Complessivamente, la fase di Revisione di Progettazione ha:
+\begin{itemize}
+\item SV = 25€
+\item BV = -40€
+\end{itemize}
+
+Da valori di tali indici possiamo dedurre che:
+\begin{itemize}
+\item La data di fine della Revisione di Progettazione si è dimostrata essere 1
+giorno prima di quella pianificata nel Piano di Progetto v3.0.0 .
+Aumentando il numero di ore di lavoro giornaliere ed utilizzando tutti gli slack
+inseriti durante la pianificazione il gruppo ha compresso i tempi con conseguente
+SV positivo;
+\item  Il limite inferiore di accettabilità del BV è pari a -436€.
+Il valore ottenuto è quindi accettabile. Come già precisato, il gruppo per portare a termine gli obbiettivi entro le date imposte ha aumentato il numero di ore di lavoro giornaliere.
+Questo ha quindi causato un aumento del BV in quanto le ore complessive di
+lavoro sono state vicine a quelle preventivate, ma il periodo di lavoro è stato
+compresso.
+\end{itemize}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsubsection{Documenti}
+Vengono qui riportati i valori dell’indice Gulpease per ogni documento durante l’analisi e relativo
+esito basato sui range stabiliti nella sezione \emph{2.8.2}
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Documento} & \textbf{Valore indice} & \textbf{Esito} \\
+    \hline
+    \emph{Analisi dei Requisiti vxxx}  &  & superato \\
+    % \hline
+    %  \emph{Glossario v1.0.0}  & n & superato \\
+    \hline
+    \emph{Norme di Progetto vxxx}   &   & superato \\
+    \hline
+    \emph{Piano di Progetto vxxx}   &  & superato \\
+    \hline
+    \emph{Piano di Qualifica vxxx}   &  & superato \\
+    \hline
+    \emph{Studio di Fattibilità vxxx}  &  & superato \\
+    \hline
+  \end{tabular}
+  \captionof{table}{Tabella risultati test Gulpease}
+  \end{center}
