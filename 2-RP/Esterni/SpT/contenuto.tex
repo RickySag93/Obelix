@@ -515,6 +515,44 @@ oppure inserire un altro elemento.
 
 \section{Diagramma di Sequenza}
 
+\subsection{Creazione Bolla}
+
+\begin{center}
+	\includegraphics[scale=0.33]{img/CreationBubble.png}
+	\captionof{figure}{Diagramma di sequenza per la creazione di una bolla}
+\end{center}
+
+\newpage
+
+\textbf{Scenario:} 
+Questo scenario rappresenta la creazione di una bolla con l’utente invia la richiesta per 	accedere al menù di creazione. La richiesta passa per il bubbleDiscriminator che capisce la 	tipologia di bolla e passa la richiesta al TBubbleCreator e TBubbleConfig che costruiscono il 	menù di configurazione adatto. 
+Una volta compilati i campi la richiesta torna al bubbleDiscriminator e al TBubbleCreator che 	creano la bolla aggiungendola alla SentBubbleHistory. \\
+
+\subsection{Cancellazione Bolla}
+
+\begin{center}
+	\includegraphics[scale=0.36]{img/DeleteBubble.png}
+	\captionof{figure}{Diagramma di sequenza per la cancellazione di una bolla}
+\end{center}
+
+
+
+\textbf{Scenario:} 
+Questo scenario rappresenta la cancellazione, da parte di un utente, di una delle proprie bolle 	inviate precedentemente. L’utente in questione accede alla propria area di bolle inviate e 	seleziona la bolla da cancellare. La richiesta arriva al database dove avviene la cancellazione, 	successivamente, Meteor, gestisce l’aggiornamento dei dati nello storico delle bolle inviate 	(dell’utente attore) e in quello delle bolle ricevute degli altri utenti. 
+\newpage
+
+\subsection{Voto Bolla-Sondaggio}
+
+\begin{center}
+	\includegraphics[scale=0.4]{img/PollVote.png}
+	\captionof{figure}{Diagramma di sequenza per il voto in una bolla-sondaggio}
+\end{center}
+
+
+
+\textbf{Scenario:} 
+Questo scenario rappresenta il voto di un utente ad una bolla sondaggio.
+L’utente accede all’area delle bolle ricevute e vota l’opzione che desidera, il voto viene salvato 	nel database e, attraverso Meteor, vengono aggiornati i dati della bolla in questione di ogni 	utente. \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tracciamento}
