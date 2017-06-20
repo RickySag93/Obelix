@@ -1,7 +1,7 @@
 \clearpage
 
 \subsection{Architettura di dettaglio - Classi del sistema Monolith}\subsubsection{check}
-\textbf{Componente}Monolith::Database::informationStorage::Checks\\
+\textbf{Componente:}  Monolith::Database::informationStorage::Checks\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -22,7 +22,7 @@ Interfaccia che viene utilizzata come rappresentazione di concreteCheck.
 \clearpage
 
 \subsubsection{checkCreator}
-\textbf{Componente}Monolith::Database::informationStorage::Checks\\
+\textbf{Componente:}  Monolith::Database::informationStorage::Checks\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -31,7 +31,7 @@ Interfaccia che viene utilizzata come rappresentazione di concreteCheck.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe astratta di concreteCheckCreator.
+Classe astratta di concreteCheckCreator. \\\\ 
 \textbf{Metodi:} \begin{itemize}\item +doMakeCheck() : check \\Ritorna un'istanza di check.\end{itemize} 
 
 
@@ -42,7 +42,7 @@ Viene utilizzata quando viene richiesto un controllo.
 \clearpage
 
 \subsubsection{concreteCheck}
-\textbf{Componente}Monolith::Database::informationStorage::Checks\\
+\textbf{Componente:}  Monolith::Database::informationStorage::Checks\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -51,7 +51,7 @@ Viene utilizzata quando viene richiesto un controllo.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che effettua un controllo e ne ritorna il risultato.
+Classe che effettua un controllo e ne ritorna il risultato. \\\\
 \textbf{Metodi:} \begin{itemize} \item +doCheck() : bool \\Ritorna il risultato di un controllo, true se positivo false se negativo.\end{itemize} 
 
 
@@ -62,7 +62,7 @@ Viene utilizzata per effettuare controlli sui dati.
 \clearpage
 
 \subsubsection{checkDiscriminator}
-\textbf{Componente}Monolith::Database::informationStorage::Checks\\
+\textbf{Componente:}  Monolith::Database::informationStorage::Checks\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -71,8 +71,8 @@ Viene utilizzata per effettuare controlli sui dati.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che effettua il controllo in base alla stringa considerata.
-\textbf{Attributi:} \begin{itemize}\item -checkMap : Map$<$ string , concreteCheckCreator $>$ \\Struttura che mappa il nome del check con l'istanza del check.\end{itemize}
+Classe che effettua il controllo in base alla stringa considerata. \\\\ 
+\textbf{Attributi:} \begin{itemize}\item -checkMap : Map$<$ string , concreteCheckCreator $>$ \\Struttura che mappa il nome del check con l'istanza del checkCreator.\end{itemize}
 \textbf{Metodi:} \begin{itemize}
 \item +useDoMakeCheck(checkName : string) : bool \\Ritorna il risultato del controllo corrispondete alla stringa passata.
 \end{itemize} 
@@ -85,7 +85,7 @@ Viene utilizzata quando viene richiesto un controllo.
 \clearpage
 
 \subsubsection{concreteCheckCreator}
-\textbf{Componente}Monolith::Database::informationStorage::Checks\\
+\textbf{Componente:}  Monolith::Database::informationStorage::Checks\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -94,7 +94,7 @@ Viene utilizzata quando viene richiesto un controllo.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che rappresenta istanze concrete di tipo check.
+Classe che rappresenta istanze concrete di tipo check. \\\\ 
 \textbf{Metodi:} \begin{itemize}\item +doMakeCheck() : concreteCheck \\Ritorna un'istanza di concreteCheck.\end{itemize} 
 
 
@@ -105,7 +105,7 @@ Viene utilizzata per creare istanze di controlli.
 \clearpage
 
 \subsubsection{Bubble}
-\textbf{Componente}Monolith::UI::Bubbles\\
+\textbf{Componente:}  Monolith::UI::Bubbles\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -124,7 +124,7 @@ Viene utilizzata come interfaccia generica di bolla.
 \clearpage
 
 \subsubsection{BubbleConfig}
-\textbf{Componente}Monolith::UI::Bubbles\\
+\textbf{Componente:}  Monolith::UI::Bubbles\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -143,7 +143,7 @@ Interfaccia che viene utilizzata come rappresentazione di ConcreteBubbleConfig.
 \clearpage
 
 \subsubsection{bubbleCreator}
-\textbf{Componente}Monolith::UI::Bubbles\\
+\textbf{Componente:}  Monolith::UI::Bubbles\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -152,7 +152,7 @@ Interfaccia che viene utilizzata come rappresentazione di ConcreteBubbleConfig.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe astratta di concreteBubbleCreator.
+Classe astratta di concreteBubbleCreator. \\\\ 
 \textbf{Metodi:} \\
 \begin{itemize}\item +doMakeBubbleSender() : ConcreteBubble \\Ritorna il componente React per visualizzare una bolla inviata.\item +doMakeBubbleReceiver() : ConcreteBubble \\Ritorna il componente React per visualizzare una bolla ricevuta.\item +doMakeConfigurationMenu() : ConcreteBubbleConfig \\Ritorna il componente React per visualizzare il menù di creazione di una bolla da inviare.\item +doMakeButton() : ConcreteBubbleCreationButton \\Ritorna il componente React per visualizzare il bottone di creazione del menù di configurazione di una bolla da inviare.
 
@@ -166,7 +166,7 @@ Interfaccia che viene utilizzata come rappresentazione di concreteBubbleCreator.
 \clearpage
 
 \subsubsection{ConcreteBubble}
-\textbf{Componente}Monolith::UI::Bubbles\\
+\textbf{Componente:}  Monolith::UI::Bubbles\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -183,13 +183,13 @@ Classe React che rappresenta una bolla inviata o ricevuta.
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata da concreteBubbleCreator per creare una bolla inviata o ricevuto dai dati recuperati da meteor. 
+Viene utilizzata da concreteBubbleCreator per creare una bolla inviata o ricevuta dai dati recuperati da meteor. 
 
 
 \clearpage
 
 \subsubsection{bubbleDiscriminator}
-\textbf{Componente}Monolith::UI::Bubbles\\
+\textbf{Componente:}  Monolith::UI::Bubbles\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -198,7 +198,7 @@ Viene utilizzata da concreteBubbleCreator per creare una bolla inviata o ricevut
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-classe che contiene i metodi che ritornano le funzionalità necessarie per la rappresentazione della delle bolle.
+Classe che contiene i metodi che ritornano le funzionalità necessarie per la rappresentazione delle bolle.
 
 \textbf{Attributi:}
 \begin{itemize}\item -bubbleMap : Map$<$ string,concreteBubbleCreator$>$ \\Struttura che mappa il nome di una bolla con l'istanza di concreteBubbleCreator per quella bolla.\end{itemize}
@@ -214,7 +214,7 @@ Viene utilizzata quando si deve creare una nuova bolla, ritornando l'oggetto del
 \clearpage
 
 \subsubsection{BubbleCreationButton}
-\textbf{Componente}Monolith::UI::Bubbles\\
+\textbf{Componente:}  Monolith::UI::Bubbles\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -233,7 +233,7 @@ Interfaccia che viene utilizzata come rappresentazione di ConcreteBubbleCreation
 \clearpage
 
 \subsubsection{ConcreteBubbleConfig}
-\textbf{Componente}Monolith::UI::Bubbles\\
+\textbf{Componente:}  Monolith::UI::Bubbles\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -257,7 +257,7 @@ Viene utilizzata da concreteBubbleCreator per creare un istanza del menù di cre
 \clearpage
 
 \subsubsection{concreteBubbleCreator}
-\textbf{Componente}Monolith::UI::Bubbles\\
+\textbf{Componente:}  Monolith::UI::Bubbles\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -266,7 +266,7 @@ Viene utilizzata da concreteBubbleCreator per creare un istanza del menù di cre
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che contiene i factory method utilizzati per la creazione degli oggetti concreti di tipo bubble, BubbleConfig e BubbleCreationButton.
+Classe che contiene i factory method utilizzati per la creazione degli oggetti concreti di tipo Bubble, BubbleConfig e BubbleCreationButton.
 
 \textbf{Metodi:} \begin{itemize}
 \item +doMakeBubbleSender() : ConcreteBubble \\Ritorna il componente React per visualizzare una bolla inviata.\item +doMakeBubbleReceiver() : ConcreteBubble \\Ritorna il componente React per visualizzare una bolla ricevuta.\item +doMakeConfigurationMenu() : ConcreteBubbleConfig \\Ritorna il componente React per visualizzare il menù di creazione di una bolla da inviare.\item +doMakeButton() : ConcreteBubbleCreationButton \\Ritorna il componente React per visualizzare il bottone di creazione del menù di configurazione di una bolla da inviare.
@@ -276,13 +276,13 @@ Classe che contiene i factory method utilizzati per la creazione degli oggetti c
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata da bubbleleDisciminator per creare le bolle ricevute e inviate, i menù di configurazione delle bolle e i bottoni per aprire il menù di configurazione delle bolle. 
+Viene utilizzata da bubbleDiscriminator per creare le bolle ricevute e inviate, i menù di configurazione delle bolle e i bottoni per aprire il menù di configurazione delle bolle. 
 
 
 \clearpage
 
 \subsubsection{ConcreteBubbleCreationButton}
-\textbf{Componente}Monolith::UI::Bubbles\\
+\textbf{Componente:}  Monolith::UI::Bubbles\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -306,7 +306,7 @@ Viene utilizzata da concreteBubbleCreator per creare un istanza di un bottone ne
 \clearpage
 
 \subsubsection{SideArea1}
-\textbf{Componente}Monolith::UI::SideAreas::SideArea1\_pkg\\
+\textbf{Componente:}  Monolith::UI::SideAreas::SideArea1\_pkg\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -315,18 +315,18 @@ Viene utilizzata da concreteBubbleCreator per creare un istanza di un bottone ne
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che rappresenta il componente React per la visualizzazione del contenuto della prima barra laterale.
+Classe che rappresenta il componente React per la visualizzazione del contenuto della prima area laterale. \\\\ 
 \textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata all'apertura della prima barra laterale per visualizzare il menù di creazione delle bolle e lo storico delle bolle inviate. 
+Viene utilizzata all'apertura della prima area laterale per visualizzare il menù di creazione delle bolle e lo storico delle bolle inviate. 
 
 
 \clearpage
 
 \subsubsection{SentBubbleHistory}
-\textbf{Componente}Monolith::UI::SideAreas::SideArea1\_pkg\\
+\textbf{Componente:}  Monolith::UI::SideAreas::SideArea1\_pkg\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -347,7 +347,7 @@ Viene utilizzata dalla SideArea1 per la visualizzazione dello storico delle boll
 \clearpage
 
 \subsubsection{BubbleCreationMenu}
-\textbf{Componente}Monolith::UI::SideAreas::SideArea1\_pkg\\
+\textbf{Componente:}  Monolith::UI::SideAreas::SideArea1\_pkg\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -367,7 +367,7 @@ Viene utilizzata dalla SideArea1 per la visualizzazione del menù di creazione d
 \clearpage
 
 \subsubsection{SideArea2}
-\textbf{Componente}Monolith::UI::SideAreas::SideArea2\_pkg\\
+\textbf{Componente:}  Monolith::UI::SideAreas::SideArea2\_pkg\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -376,20 +376,20 @@ Viene utilizzata dalla SideArea1 per la visualizzazione del menù di creazione d
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che rappresenta il componente React per la visualizzazione del contenuto della seconda barra laterale.
+Classe che rappresenta il componente React per la visualizzazione del contenuto della seconda area laterale. \\\\
 \textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
 
 \end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata all'apertura della seconda barra laterale per visualizzare dello storico delle bolle ricevute. 
+Viene utilizzata all'apertura della seconda area laterale per visualizzare dello storico delle bolle ricevute. 
 
 
 \clearpage
 
 \subsubsection{ReceivedBubbleHistory}
-\textbf{Componente}Monolith::UI::SideAreas::SideArea2\_pkg\\
+\textbf{Componente:}  Monolith::UI::SideAreas::SideArea2\_pkg\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -398,18 +398,18 @@ Viene utilizzata all'apertura della seconda barra laterale per visualizzare dell
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che rappresenta il componente React per la visualizzazione dello storico delle bolle ricevute.
+Classe che rappresenta il componente React per la visualizzazione dello storico delle bolle ricevute. \\\\
 \textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata dalla SideArea2 per la visualizzazione dello storico delle bolle ricevuto. 
+Viene utilizzata dalla SideArea2 per la visualizzazione dello storico delle bolle ricevute. 
 
 
 \clearpage
 
 \subsubsection{VerticalLayout}
-\textbf{Componente}Monolith::UI::UI-Layouts\\
+\textbf{Componente:}  Monolith::UI::UI-Layouts\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -418,7 +418,7 @@ Viene utilizzata dalla SideArea2 per la visualizzazione dello storico delle boll
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe contenitore che dispone i componenti contenuti uno sotto l'altro
+Classe contenitore che dispone i componenti contenuti uno sotto l'altro \\\\
 \textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
@@ -429,7 +429,7 @@ Utilizzata per assegnare l'attributo className bootstrap a tutti i componenti fi
 \clearpage
 
 \subsubsection{ContainedElement}
-\textbf{Componente}Monolith::UI::UI-Layouts\\
+\textbf{Componente:}  Monolith::UI::UI-Layouts\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -438,18 +438,18 @@ Utilizzata per assegnare l'attributo className bootstrap a tutti i componenti fi
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che rappresenta un oggetto figlio dei Layout
+Classe che rappresenta un oggetto figlio dei Layout \\\\
 \textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento. \item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata dalle classi HorizontalLayout, VerticalLayout e ConditionalRendering per rappresentare un oggetto generico. 
+Viene utilizzata dalle classi HorizontalLayout, VerticalLayout e ConditionalRendering per contenere un componente generico 
 
 
 \clearpage
 
 \subsubsection{HorizontalLayout}
-\textbf{Componente}Monolith::UI::UI-Layouts\\
+\textbf{Componente:}  Monolith::UI::UI-Layouts\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -458,8 +458,8 @@ Viene utilizzata dalle classi HorizontalLayout, VerticalLayout e ConditionalRend
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe contenitore che dispone i componenti contenuti in Horizontale. 
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\item +countMyChildren() : int \\Metodo che ritorna un intero contente in numero di componenti figli, utilizzato per impostare la classe bootstrap corretta.\end{itemize} 
+Classe contenitore che dispone i componenti contenuti in orizzontale. \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\item +countMyChildren() : int \\Metodo che ritorna un intero contente il numero di componenti figli, utilizzato per impostare la classe bootstrap corretta.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -469,7 +469,7 @@ Utilizzata per assegnare l'attributo className bootstrap a tutti i componenti fi
 \clearpage
 
 \subsubsection{ConditionalRendering}
-\textbf{Componente}Monolith::UI::UI-Layouts\\
+\textbf{Componente:}  Monolith::UI::UI-Layouts\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -478,19 +478,19 @@ Utilizzata per assegnare l'attributo className bootstrap a tutti i componenti fi
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che fornisce i metodi per rendere un componente visibile o invisibile
+Classe che fornisce i metodi per nascondere un componente contenuto all'esecuzione di un suo metodo \\\\
 \textbf{Metodi:} \\
 \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +setVisible(vis : boolean): void \\Imposta l'attributo che indica se il componente è visibile o meno in base al valore di vis.\item +isVisible() : boolean \\Metodo che ritorna true se il componente è visibile altrimenti ritorna false.\item +setVisible( vis : boolean ) : void \\Imposta l'attributo che indica se il componente è visibile o meno in base al valore del parametro.\item +isVisible() : bool \\Metodo che ritorna true se il componente è visibile altrimenti ritorna false.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visibilità di un componente. 
+Viene utilizzata per nascondere un componente a necessità. 
 
 
 \clearpage
 
 \subsubsection{Image}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -499,7 +499,7 @@ Viene utilizzata per la visibilità di un componente.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta un'immagine.
+Componente React che rappresenta un'immagine. \\\\
 \textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
@@ -510,7 +510,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{ComboBox}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -519,8 +519,8 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta un combobox.
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +optChange(event : String) : void  \\Cambia lo state del componente tenendo traccia dell'elemento selezionato e viene invocato il metodo del genitore per trasferirvi il cambiamento di stato\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
+Componente React che rappresenta un combobox. \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +optChange(event : String) : void  \\Comunica l’opzione selezionata tramite il metodo del genitore. \item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -530,7 +530,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{LineEdit}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -539,8 +539,8 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta un input di testo.
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +handleChange(event : String) : void  \\Viene invocato il metodo del genitore per trasferirvi il cambiamento di stato\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
+Componente React che rappresenta un input di testo. \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +handleChange(event : String) : void  \\Comunica l’opzione selezionata tramite il metodo del genitore. \item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -550,7 +550,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{LabelEdit}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -559,8 +559,8 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta un testo modificabile.
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +handleClick(event : String) : void  \\Viene invocato il metodo del genitore per trasferirvi il cambiamento di stato\item +changeEdit() : void \\Cambia lo state del componente rendendolo (o meno) modificabile\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
+Componente React che rappresenta una label che quando viene cliccata diventa un campo di inserimento testo. \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +handleClick(event : String) : void  \\Viene invocato il metodo del genitore per trasferirvi il cambiamento di stato\item +changeEdit() : void \\Cambia lo stato del componente rendendolo (o meno) modificabile\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -570,7 +570,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{PushButton}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -579,7 +579,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta un pulsante cliccabile.
+Componente React che rappresenta un pulsante cliccabile. \\\\
 \textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +handleClick(): void \\Viene invocato il metodo passato dal genitore\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
@@ -590,7 +590,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{CheckButton}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -599,8 +599,8 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta un elemento di checkbox.
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +changeCheck(event : String) : void  \\Cambia lo state del componente tenendo traccia se l'elemento viene selezionato \item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
+Componente React che rappresenta un elemento di checkbox. \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +changeCheck(event : String) : void  \\Comunica l’opzione selezionata tramite il metodo del genitore. \item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -610,7 +610,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{ImageButton}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -619,8 +619,8 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta un immagine che funge da pulsante.
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +handleClick(event : String) : void  \\Viene invocato il metodo passato dal genitore. \item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
+Componente React che rappresenta un immagine che funge da pulsante. \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +handleClick(event : String) : void  \\Comunica l’opzione selezionata tramite il metodo del genitore. \item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -630,7 +630,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{CheckBoxList}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -639,7 +639,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta una lista di CheckBox. 
+Componente React che rappresenta una lista di CheckBox. \\\\
 \textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
 
 \end{itemize} 
@@ -652,7 +652,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{LabelComboBox}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -661,8 +661,8 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta una lista di item selezionabile affiancata da una Label.
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +OptSelected(text : String) : void \\Modifica lo state tenendo traccia del item selezionato.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
+Componente React che rappresenta una lista di item selezionabile affiancata da una Label. \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +OptSelected(text : String) : void \\ Comunica l’opzione selezionata tramite il metodo del genitore. \item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -672,7 +672,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{TextAreaButton}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -681,8 +681,8 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta un'area di testo con un pulsante.
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +textField(text : String) : void \\Modifica lo state tenendo traccia del testo inserito nel Label\item +handleClick(event : String) : void  \\Viene invocato il metodo passato dal genitore\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
+Componente React che rappresenta un'area di testo con un pulsante. \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +textField(text : String) : void \\Comunica l’opzione selezionata tramite il metodo del genitore.\item +handleClick(event : String) : void  \\Comunica l’opzione selezionata tramite il metodo del genitore. \item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -692,7 +692,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{LabelPushButton}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -701,8 +701,8 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta un Label affiancato da un bottone cliccabile.
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +handleClick(event : String) : void  \\Viene invocato il metodo passato dal genitore\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
+Componente React che rappresenta un Label affiancato da un bottone cliccabile. \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +handleClick(event : String) : void  \\Comunica l’opzione selezionata tramite il metodo del genitore.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -712,7 +712,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{LineEditComboBox}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -721,8 +721,8 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta una lista di aree di testo selezionabile.
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +textField(text : String) : void \\Modifica lo state tenendo traccia del testo inserito in ciascuna area.\item +OptSelected(event : String) : void  \\Viene invocato il metodo passato dal genitore\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
+Componente React che rappresenta una LineEdit con a fianco un ComboBox. \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +textField(text : String) : void \\Comunica il contenuto della textarea tramite il metodo del genitore. \item +OptSelected(event : String) : void  \\Comunica l’opzione selezionata tramite il metodo del genitore.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -732,7 +732,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{RadioButtonGroup}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -741,7 +741,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta un'area di testo con un pulsante.
+Componente React che rappresenta un insieme di radio button tra cui è possibile scegliere tra opzioni mutualmente esclusive.\\\\
 \textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +handleChange(): void \\Viene invocato il metodo passato dal genitore\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
@@ -752,7 +752,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{TextAreaComboBox}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -761,8 +761,8 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta una lista di TextArea selezionabile.
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +OptSelected(text : String) : void \\Modifica lo state 'selected' tenendo traccia del TextArea selezionata ed aggiorna il metodo invocato dal genitore.\item +textChange(event : String) : void  \\Modifica lo state 'value' tenendo traccia del testo digitato nel TextAre ed aggiorna il metodo invocato dal genitore.\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
+Componente React che rappresenta una TextArea con a fianco un ComboBox \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +OptSelected(text : String) : void \\ Comunica l'opzione selezionata tramite il metodo del genitore.\item +textChange(event : String) : void  \\ Comunica il contenuto della textarea tramite il metodo del genitore \item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -772,7 +772,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{LineEditPushButton}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -781,7 +781,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta un combobox.
+Componente React che rappresenta un campo di inserimento testo affiancato ad un pulsante. \\\\
 \textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +handleClick(event : String) : void  \\Viene invocato il metodo passato dal genitore\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
@@ -792,7 +792,7 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \clearpage
 
 \subsubsection{LabelEditPushButton}
-\textbf{Componente}Monolith::UI::UI-SingleComponents\\
+\textbf{Componente:}  Monolith::UI::UI-SingleComponents\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -801,8 +801,8 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta del testo con un pulsante.
-\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +textField(text : String) : void \\Modifica lo state tenendo traccia del testo inserito nel Label\item +handleClick(event : String) : void  \\Viene invocato il metodo passato dal genitore\item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
+Componente React che rappresenta del testo con un pulsante. \\\\
+\textbf{Metodi:} \begin{itemize}\item +constructor(props : Object) : React.Component \\Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.\item +textField(text : String) : void \\Comunica l’opzione selezionata tramite il metodo del genitore.\item +handleClick(event : String) : void  \\Comunica l’opzione selezionata tramite il metodo del genitore. \item +render() : React.DOM \\Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -810,12 +810,12 @@ Viene utilizzato per costruire le interfacce grafiche delle bolle.
 
 
 \subsection{Architettura di dettaglio - Classi delle bolle demo}\subsubsection{CurrencyConversion}
-\textbf{Componente}CurrencyBubble\\
+\textbf{Componente:}  CurrencyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-CurrencyConversion}
-   \caption{{Diagramma per CurrencyConversion in }}
+   \caption{{Diagramma per CurrencyConversion in CurrencyBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -843,12 +843,12 @@ Viene utilizzata per effettuare la conversione di un importo dalla valuta di par
 \clearpage
 
 \subsubsection{CurrencyBubbleSender}
-\textbf{Componente}CurrencyBubble\\
+\textbf{Componente:}  CurrencyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-CurrencyBubbleSender}
-   \caption{{Diagramma per CurrencyBubbleSender in }}
+   \caption{{Diagramma per CurrencyBubbleSender in CurrencyBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -868,23 +868,22 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visualizzazione della bolla da parte del mittente.
-La classe è composta da Monolith::UI::UI-Layouts::HorizontalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label) che dispone i componenti visuali uno accanto all'altro. 
+Viene utilizzata per la visualizzazione della bolla da parte del mittente. 
 
 
 \clearpage
 
 \subsubsection{CurrencyBubbleCreator}
-\textbf{Componente}CurrencyBubble\\
+\textbf{Componente:}  CurrencyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-CurrencyBubbleCreator}
-   \caption{{Diagramma per CurrencyBubbleCreator in }}
+   \caption{{Diagramma per CurrencyBubbleCreator in CurrencyBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla convertitore di valuta, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della singola istanza di bolla convertitore di valuta, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
 \\
 \\
 \textbf{Metodi:} 
@@ -900,23 +899,23 @@ Metodo che gestisce la creazione della bolla vista dal ricevente.
 Metodo che gestisce la creazione dell'area di configurazione della bolla.
 \item +doMakeButton() : CurrencyBubbleCreationButton 
 \\
-Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
+Metodo che gestisce la creazione della singola istanza di pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
 \end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per gestire la creazione della specifica bolla convertitore di valuta, della specifica area di configurazione della bolla e dello specifico pulsante. 
+Viene utilizzata per gestire la creazione della singola istanza di bolla convertitore di valuta, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante. 
 
 
 \clearpage
 
 \subsubsection{CurrencyBubbleReceiver}
-\textbf{Componente}CurrencyBubble\\
+\textbf{Componente:}  CurrencyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-CurrencyBubbleReceiver}
-   \caption{{Diagramma per CurrencyBubbleReceiver in }}
+   \caption{{Diagramma per CurrencyBubbleReceiver in CurrencyBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -936,19 +935,18 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visualizzazione della bolla da parte del ricevente.
-La classe è composta da Monolith::UI::UI-Layouts::HorizontalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label) che dispone i componenti visuali uno accanto all'altro. 
+Viene utilizzata per la visualizzazione della bolla da parte del ricevente. 
 
 
 \clearpage
 
 \subsubsection{CurrencyBubbleConfigMenu}
-\textbf{Componente}CurrencyBubble\\
+\textbf{Componente:}  CurrencyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-CurrencyBubbleConfigMenu}
-   \caption{{Diagramma per CurrencyBubbleConfigMenu in }}
+   \caption{{Diagramma per CurrencyBubbleConfigMenu in CurrencyBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -972,18 +970,17 @@ Metodo che viene invocato quando la configurazione della bolla è terminata ed �
 
 \textbf{Applicazioni}\\
 Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::LineEditComboBox e Monolith::UI::UI-SingleComponents::LabelComboBox) che dispone i componenti visivi uno sotto l'altro. 
 
 
 \clearpage
 
 \subsubsection{DiceRoller}
-\textbf{Componente}DiceBubble\\
+\textbf{Componente:}  DiceBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-DiceRoller}
-   \caption{{Diagramma per DiceRoller in }}
+   \caption{{Diagramma per DiceRoller in DiceBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1004,12 +1001,12 @@ Viene utilizzata per l'estrazione del numero casuale compreso tra 0 e max. Si se
 \clearpage
 
 \subsubsection{DiceBubbleSender}
-\textbf{Componente}DiceBubble\\
+\textbf{Componente:}  DiceBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-DiceBubbleSender}
-   \caption{{Diagramma per DiceBubbleSender in }}
+   \caption{{Diagramma per DiceBubbleSender in DiceBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1029,23 +1026,22 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visualizzazione della bolla da parte del mittente.
-La classe è composta da Monolith::UI::UI-SingleComponents::Label. 
+Viene utilizzata per la visualizzazione della bolla da parte del mittente. 
 
 
 \clearpage
 
 \subsubsection{DiceBubbleCreator}
-\textbf{Componente}DiceBubble\\
+\textbf{Componente:}  DiceBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-DiceBubbleCreator}
-   \caption{{Diagramma per DiceBubbleCreator in }}
+   \caption{{Diagramma per DiceBubbleCreator in DiceBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla estrazione numero casuale, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della singola istanza di bolla estrazione di numero casuale, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
 \\
 \\
 \textbf{Metodi:} 
@@ -1061,23 +1057,23 @@ Metodo che gestisce la creazione della bolla vista dal ricevente.
 Metodo che gestisce la creazione dell'area di configurazione della bolla.
 \item +doMakeButton() : DiceBubbleCreationButton 
 \\
-Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
+Metodo che gestisce la creazione della singola istanza di pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
 \end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per gestire la creazione della specifica bolla estrazione numero casuale, della specifica area di configurazione della bolla e dello specifico pulsante. 
+Viene utilizzata per gestire la creazione della singola istanza di bolla estrazione di numero casuale, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante. 
 
 
 \clearpage
 
 \subsubsection{DiceBubbleReceiver}
-\textbf{Componente}DiceBubble\\
+\textbf{Componente:}  DiceBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-DiceBubbleReceiver}
-   \caption{{Diagramma per DiceBubbleReceiver in }}
+   \caption{{Diagramma per DiceBubbleReceiver in DiceBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1097,19 +1093,18 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visualizzazione della bolla da parte del ricevente.
-La classe è composta da Monolith::UI::UI-SingleComponents::Label. 
+Viene utilizzata per la visualizzazione della bolla da parte del ricevente. 
 
 
 \clearpage
 
 \subsubsection{DiceBubbleConfigMenu}
-\textbf{Componente}DiceBubble\\
+\textbf{Componente:}  DiceBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-DiceBubbleConfigMenu}
-   \caption{{Diagramma per DiceBubbleConfigMenu in }}
+   \caption{{Diagramma per DiceBubbleConfigMenu in DiceBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1133,13 +1128,12 @@ Metodo che viene invocato quando la configurazione della bolla è terminata ed �
 
 \textbf{Applicazioni}\\
 Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
-La classe è composta da Monolith::UI::UI-SingleComponents::LineEditPushButton. 
 
 
 \clearpage
 
 \subsubsection{CheckListCreator}
-\textbf{Componente}ListBubble::CheckListCreation\\
+\textbf{Componente:}  ListBubble::CheckListCreation\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -1167,13 +1161,12 @@ Metodo che gestisce l'aggiunta di una nuova check list.
 
 \textbf{Applicazioni}\\
 Viene utilizzato per rappresentare l'area di visualizzazione delle check list e un pulsante per poterne aggiungere di nuove. 
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::PushButton e CheckListComponent) che dispone i componenti visuali uno sotto l'altro. 
 
 
 \clearpage
 
 \subsubsection{CheckListComponent}
-\textbf{Componente}ListBubble::CheckListCreation\\
+\textbf{Componente:}  ListBubble::CheckListCreation\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -1198,14 +1191,13 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per rappresentare una lista di check list.
-La classe è composta da Monolith::UI::UI-SingleComponents::PushButton. 
+Viene utilizzato per rappresentare una lista di check list. 
 
 
 \clearpage
 
 \subsubsection{CheckListItemsDefinition}
-\textbf{Componente}ListBubble::CheckListCreation\\
+\textbf{Componente:}  ListBubble::CheckListCreation\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -1231,13 +1223,12 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 \textbf{Applicazioni}\\
 Viene utilizzato per rappresentare l'area di configurazione di una check list. 
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI:UI-SingleComponents::LineEdit e Monolith::UI::UI-SingleComponents::LineEditPushButton) che dispone i componenti visivi uno sotto l'altro. 
 
 
 \clearpage
 
 \subsubsection{CheckList}
-\textbf{Componente}ListBubble::CheckListReading\\
+\textbf{Componente:}  ListBubble::CheckListReading\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -1266,14 +1257,13 @@ Metodo che gestisce l'aggiunta di un elemento alla lista.
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per gestire l'aggiunta di un elemento alla lista.
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::LabelEditPushButton) che dispone i componenti visivi uno sotto l'altro. 
+Viene utilizzata per gestire l'aggiunta di un elemento alla lista. 
 
 
 \clearpage
 
 \subsubsection{ListOfCheckLists}
-\textbf{Componente}ListBubble::CheckListReading\\
+\textbf{Componente:}  ListBubble::CheckListReading\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -1298,14 +1288,13 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visualizzazione della lista di check list.
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::PushButton) che dispone gli elementi uno sotto l'altro. 
+Viene utilizzata per la visualizzazione della lista di check list. 
 
 
 \clearpage
 
 \subsubsection{ListCreationButton}
-\textbf{Componente}ListBubble::Configuration\\
+\textbf{Componente:}  ListBubble::Configuration\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -1314,7 +1303,7 @@ La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a su
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Istanziazione della classe Monolith::UI::Bubbles::BubbleCreationButton che rappresenta lo specifico pulsante da inserire nel menu iniziale di creazione.
+Istanziazione della classe Monolith::UI::Bubbles::BubbleCreationButton che rappresenta la singola istanza di pulsante da inserire nel menu iniziale di creazione.
 \\
 \\
 \textbf{Metodi:} 
@@ -1330,13 +1319,13 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per rappresentare lo specifico pulsante da inserire nel menu iniziale di creazione. 
+Viene utilizzata per rappresentare la singola istanza di pulsante da inserire nel menu iniziale di creazione. 
 
 
 \clearpage
 
 \subsubsection{ListBubbleMenuConfig}
-\textbf{Componente}ListBubble::Configuration\\
+\textbf{Componente:}  ListBubble::Configuration\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -1370,13 +1359,12 @@ Metodo che viene invocato quando si vuole aggiungere un elemento alla lista.
 
 \textbf{Applicazioni}\\
 Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-Layouts::HorizontalLayout con un LineEdit e un PushButton, Monolith::UI::UI-SingleComponents::LineEditPushButton, Monolith::UI::UI-SingleComponents::PushButton) che dispone i componenti visivi uno sotto l'altro. 
 
 
 \clearpage
 
 \subsubsection{ListBubbleCreator}
-\textbf{Componente}ListBubble::DataManagement\\
+\textbf{Componente:}  ListBubble::DataManagement\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -1385,7 +1373,7 @@ La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a su
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla lista, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della singola istanza di bolla lista, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
 \\
 \\
 \textbf{Metodi:} 
@@ -1406,13 +1394,13 @@ Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu i
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per gestire la creazione della specifica bolla lista, della specifica area di configurazione della bolla e dello specifico pulsante. 
+Viene utilizzata per gestire la creazione della singola istanza di bolla lista, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante. 
 
 
 \clearpage
 
 \subsubsection{ListBubbleReceiver}
-\textbf{Componente}ListBubble::Receiver\\
+\textbf{Componente:}  ListBubble::Receiver\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -1441,14 +1429,13 @@ Metodo che gestisce la spunta di un elemento della lista.
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visualizzazione della bolla da parte del ricevente.
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label e Monolith::UI::UI-SingleComponents::CheckBoxList) che dispone i componenti visuali uno sotto l'altro. 
+Viene utilizzata per la visualizzazione della bolla da parte del ricevente. 
 
 
 \clearpage
 
 \subsubsection{ListBubbleSender}
-\textbf{Componente}ListBubble::Sender\\
+\textbf{Componente:}  ListBubble::Sender\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
@@ -1480,23 +1467,22 @@ Metodo che gestisce la spunta di un elemento della lista.
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visualizzazione della bolla da parte del mittente.
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label, Monolith::UI::UI-SingleComponents::PushButton, Monolith::UI::UI-SingleComponents::CheckBoxList, Monolith::UI::UI-SingleComponents::LineEditPushButton) che dispone i componenti visuali uno sotto l'altro. 
+Viene utilizzata per la visualizzazione della bolla da parte del mittente. 
 
 
 \clearpage
 
 \subsubsection{MeteoItem}
-\textbf{Componente}MeteoBubble\\
+\textbf{Componente:}  MeteoBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-MeteoItem}
-   \caption{{Diagramma per MeteoItem in }}
+   \caption{{Diagramma per MeteoItem in MeteoBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React predisposto per la visualizzazione delle previsioni meteo di un determinato giorno.
+Componente React predisposto per la visualizzazione delle previsioni meteo.
 \\
 \\
 \textbf{Metodi:} 
@@ -1512,18 +1498,18 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visualizzazione delle previsioni meteo di un determinato giorno. \'E composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Image e Monolith::UI::UI-SingleComponents::Label) che dispone i componenti visuali uno sotto l'altro. 
+Viene utilizzata per la visualizzazione delle previsioni meteo di un determinato giorno. 
 
 
 \clearpage
 
 \subsubsection{MeteoDelivery}
-\textbf{Componente}MeteoBubble\\
+\textbf{Componente:}  MeteoBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-MeteoDelivery}
-   \caption{{Diagramma per MeteoDelivery in }}
+   \caption{{Diagramma per MeteoDelivery in MeteoBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1545,12 +1531,12 @@ Viene utilizzata per recuperare i dati relativi alle previsioni meteo della loca
 \clearpage
 
 \subsubsection{MeteoBubbleSender}
-\textbf{Componente}MeteoBubble\\
+\textbf{Componente:}  MeteoBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-MeteoBubbleSender}
-   \caption{{Diagramma per MeteoBubbleSender in }}
+   \caption{{Diagramma per MeteoBubbleSender in MeteoBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1570,23 +1556,22 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visualizzazione della bolla da parte del mittente.
-La classe è composta da Monolith::UI::UI-Layouts::HorizontalLayout (composta a sua volta da MeteoItem) che dispone i componenti visuali uno accanto all'altro. 
+Viene utilizzata per la visualizzazione della bolla da parte del mittente. 
 
 
 \clearpage
 
 \subsubsection{MeteoBubbleCreator}
-\textbf{Componente}MeteoBubble\\
+\textbf{Componente:}  MeteoBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-MeteoBubbleCreator}
-   \caption{{Diagramma per MeteoBubbleCreator in }}
+   \caption{{Diagramma per MeteoBubbleCreator in MeteoBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla meteo, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della singola istanza di bolla meteo, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
 \\
 \\
 \textbf{Metodi:} 
@@ -1607,18 +1592,18 @@ Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu i
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per gestire la creazione della specifica bolla meteo, della specifica area di configurazione della bolla e dello specifico pulsante. 
+Viene utilizzata per gestire la creazione della singola istanza di bolla meteo, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante. 
 
 
 \clearpage
 
 \subsubsection{MeteoBubbleReceiver}
-\textbf{Componente}MeteoBubble\\
+\textbf{Componente:}  MeteoBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-MeteoBubbleReceiver}
-   \caption{{Diagramma per MeteoBubbleReceiver in }}
+   \caption{{Diagramma per MeteoBubbleReceiver in MeteoBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1638,19 +1623,18 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visualizzazione della bolla da parte del ricevente.
-La classe è composta da Monolith::UI::UI-Layouts::HorizontalLayout (composta a sua volta da MeteoItem) che dispone i componenti visuali uno accanto all'altro. 
+Viene utilizzata per la visualizzazione della bolla da parte del ricevente. 
 
 
 \clearpage
 
 \subsubsection{MeteoBubbleConfigMenu}
-\textbf{Componente}MeteoBubble\\
+\textbf{Componente:}  MeteoBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-MeteoBubbleConfigMenu}
-   \caption{{Diagramma per MeteoBubbleConfigMenu in }}
+   \caption{{Diagramma per MeteoBubbleConfigMenu in MeteoBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1674,18 +1658,17 @@ Metodo che viene invocato quando la configurazione della bolla è terminata ed �
 
 \textbf{Applicazioni}\\
 Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
-La classe è composta da Monolith::UI::UI-SingleComponents::LineEditPushButton. 
 
 
 \clearpage
 
 \subsubsection{ResultsViewer}
-\textbf{Componente}SurveyBubble\\
+\textbf{Componente:}  SurveyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-ResultsViewer}
-   \caption{{Diagramma per ResultsViewer in }}
+   \caption{{Diagramma per ResultsViewer in SurveyBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1711,12 +1694,12 @@ Viene utilizzato per la visualizzazione del risultato del sondaggio.
 \clearpage
 
 \subsubsection{SurveyManager}
-\textbf{Componente}SurveyBubble\\
+\textbf{Componente:}  SurveyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-SurveyManager}
-   \caption{{Diagramma per SurveyManager in }}
+   \caption{{Diagramma per SurveyManager in SurveyBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1738,18 +1721,18 @@ Metodo che gestisce l'aggiornamento del database al cambiare dei voti nel sondag
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per gestire l'aggiornamento del database al cambiare dei voti nel sondaggio. \'E composta da Monolith::UI::UI-Layouts::VerticalLayout (a sua volta composta da Monolith::UI::UI-SingleComponents::Label e Monolith::UI::UI-SingleComponents::RadioButtonGroup, ResultsViewer) che dispone i componenti visuali uno sotto l'altro. 
+Viene utilizzata per gestire l'aggiornamento del database al cambiare dei voti nel sondaggio. 
 
 
 \clearpage
 
 \subsubsection{SurveyBubbleSender}
-\textbf{Componente}SurveyBubble\\
+\textbf{Componente:}  SurveyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-SurveyBubbleSender}
-   \caption{{Diagramma per SurveyBubbleSender in }}
+   \caption{{Diagramma per SurveyBubbleSender in SurveyBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1778,16 +1761,16 @@ Viene utilizzata per la visualizzazione della bolla da parte del mittente.
 \clearpage
 
 \subsubsection{SurveyBubbleCreator}
-\textbf{Componente}SurveyBubble\\
+\textbf{Componente:}  SurveyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-SurveyBubbleCreator}
-   \caption{{Diagramma per SurveyBubbleCreator in }}
+   \caption{{Diagramma per SurveyBubbleCreator in SurveyBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla sondaggio, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della singola istanza di bolla sondaggio, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
 \\
 \\
 \textbf{Metodi:} 
@@ -1803,23 +1786,23 @@ Metodo che gestisce la creazione della bolla vista dal ricevente.
 Metodo che gestisce la creazione dell'area di configurazione della bolla.
 \item +doMakeButton() : SurveyBubbleCreationButton 
 \\
-Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
+Metodo che gestisce la creazione della singola istanza di pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
 \end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per gestire la creazione della specifica bolla sondaggio, della specifica area di configurazione della bolla e dello specifico pulsante. 
+Viene utilizzata per gestire la creazione della singola istanza di bolla sondaggio, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante. 
 
 
 \clearpage
 
 \subsubsection{SurveyBubbleReceiver}
-\textbf{Componente}SurveyBubble\\
+\textbf{Componente:}  SurveyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-SurveyBubbleReceiver}
-   \caption{{Diagramma per SurveyBubbleReceiver in }}
+   \caption{{Diagramma per SurveyBubbleReceiver in SurveyBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1848,12 +1831,12 @@ Viene utilizzata per la visualizzazione della bolla da parte del ricevente.
 \clearpage
 
 \subsubsection{SurveyBubbleConfigMenu}
-\textbf{Componente}SurveyBubble\\
+\textbf{Componente:}  SurveyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-SurveyBubbleConfigMenu}
-   \caption{{Diagramma per SurveyBubbleConfigMenu in }}
+   \caption{{Diagramma per SurveyBubbleConfigMenu in SurveyBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1877,18 +1860,17 @@ Metodo che viene invocato quando la configurazione della bolla è terminata ed �
 
 \textbf{Applicazioni}\\
 Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI:UI-SingleComponents::LineEdit, Monolith::UI::UI-SingleComponents::PushButton, Monolith::UI::UI-SingleComponents::LabelEditPushButton) che dispone i componenti visivi uno sotto l'altro. 
 
 
 \clearpage
 
 \subsubsection{MessageTranslation}
-\textbf{Componente}TranslationBubble\\
+\textbf{Componente:}  TranslationBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-MessageTranslation}
-   \caption{{Diagramma per MessageTranslation in }}
+   \caption{{Diagramma per MessageTranslation in TranslationBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1916,12 +1898,12 @@ Viene utilizzata per effettuare la traduzione del messaggio di testo dalla lingu
 \clearpage
 
 \subsubsection{TranslationBubbleSender}
-\textbf{Componente}TranslationBubble\\
+\textbf{Componente:}  TranslationBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-TranslationBubbleSender}
-   \caption{{Diagramma per TranslationBubbleSender in }}
+   \caption{{Diagramma per TranslationBubbleSender in TranslationBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -1941,23 +1923,22 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per la visualizzazione della bolla da parte del mittente.
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label) che dispone i componenti visuali uno sotto l'altro. 
+Viene utilizzato per la visualizzazione della bolla da parte del mittente. 
 
 
 \clearpage
 
 \subsubsection{TranslationBubbleCreator}
-\textbf{Componente}TranslationBubble\\
+\textbf{Componente:}  TranslationBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-TranslationBubbleCreator}
-   \caption{{Diagramma per TranslationBubbleCreator in }}
+   \caption{{Diagramma per TranslationBubbleCreator in TranslationBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della specifica bolla traduttore, della specifica area di configurazione della bolla e dello specifico pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della singola istanza di bolla traduttore, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
 \\
 \\
 \textbf{Metodi:} 
@@ -1973,23 +1954,23 @@ Metodo che gestisce la creazione della bolla vista dal ricevente.
 Metodo che gestisce la creazione dell'area di configurazione della bolla.
 \item +doMakeButton() : TranslationBubbleCreationButton 
 \\
-Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
+Metodo che gestisce la creazione della singola istanza di pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
 \end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per gestire la creazione della specifica bolla traduttore, della specifica area di configurazione della bolla e dello specifico pulsante. 
+Viene utilizzata per gestire la creazione della singola istanza di bolla traduttore, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante. 
 
 
 \clearpage
 
 \subsubsection{TranslationBubbleReceiver}
-\textbf{Componente}TranslationBubble\\
+\textbf{Componente:}  TranslationBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-TranslationBubbleReceiver}
-   \caption{{Diagramma per TranslationBubbleReceiver in }}
+   \caption{{Diagramma per TranslationBubbleReceiver in TranslationBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -2009,19 +1990,18 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per la visualizzazione della bolla da parte del ricevente.
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::Label) che dispone i componenti visuali uno sotto l'altro. 
+Viene utilizzata per la visualizzazione della bolla da parte del ricevente. 
 
 
 \clearpage
 
 \subsubsection{TranslationBubbleConfigMenu}
-\textbf{Componente}TranslationBubble\\
+\textbf{Componente:}  TranslationBubble\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-TranslationBubbleConfigMenu}
-   \caption{{Diagramma per TranslationBubbleConfigMenu in }}
+   \caption{{Diagramma per TranslationBubbleConfigMenu in TranslationBubble}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -2045,6 +2025,5 @@ Metodo che viene invocato quando la configurazione della bolla è terminata ed �
 
 \textbf{Applicazioni}\\
 Viene utilizzata per la visualizzazione dell'area di configurazione della bolla. 
-La classe è composta da Monolith::UI::UI-Layouts::VerticalLayout (composta a sua volta da Monolith::UI::UI-SingleComponents::TextAreaComboBox, Monolith::UI::UI-SingleComponents::ComboBox e Monolith::UI::UI-SingleComponents::PushButton) che dispone i componenti visivi uno sotto l'altro. 
 
 

@@ -22,20 +22,20 @@
 
 \newcommand{\paginatitolo}{%
   \begin{titlepage}
-
-    \includegraphics[width=0.18\textwidth]{../../../file_comuni/immagini/monolith.png}\\[0.08in]
+\begin{samepage}
+    \includegraphics[width=0.18\textwidth]{../../../file_comuni/immagini/monolith.png}\\[0.07in]
 
     \begin{center}
 
       \includegraphics[width=0.22\textwidth]{../../../file_comuni/immagini/obelisk_sample_02.png}\\[0.08in]
                       {\Large Obelix Group \\% \vspace{.01in}
                         obelixswe@gmail.com \\}
-                      \vspace{.15in}
+                      \vspace{.1in}
                              {\textbf{\Huge {\@nomedoc}}}
-
-                             \vspace{.15in}
+                             \vfill
+                             %\vspace{.15in}
                              \bgroup
-                             \def\arraystretch{1.2}
+                             \def\arraystretch{1.1}
                              \begin{tabular}{r|l}
                                \textbf{Versione}     & \emph{\@versione}  \\%\hline
                                \textbf{Data creazione} & \@datacreazione  \\%\hline
@@ -56,6 +56,7 @@
                              \end{abstract}
 
     \end{center}
+\end{samepage}
   \end{titlepage}
 }
 \endinput

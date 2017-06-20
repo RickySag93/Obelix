@@ -12,10 +12,10 @@ programmatore
 programmatori
 
 #documento
-Analisi dei requisiti v1.0.0
-Piano di progetto v1.0.0
-Piano di qualifica v1.0.0
-Norme di progetto v1.0.0
-Glossario v1.0.0
+Analisi dei requisiti v2.0.0
+Piano di progetto v3.0.0
+Piano di qualifica v3.0.0
+Norme di progetto v3.0.0
+Glossario v2.0.0
 Studio di fattibilità v1.0.0
 

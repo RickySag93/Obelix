@@ -6,9 +6,13 @@
 
 Questo documento ha come scopo quello di definire la progettazione ad
 alto  e a basso livello
-per il prodotto Monolith. Verrà presentata l'architettura generale secondo la quale
+per il prodotto Monolith. Verranno presentate l'architettura generale e
+di dettaglio secondo le quali
 saranno organizzate le varie componenti software e i Design Pattern utilizzati nella
-creazione dell'SDK, delle bolle predefinite e della demo. Verrà inoltre dettagliato il tracciamento tra le componenti software individuate ed i requisiti.
+creazione dell'SDK, delle bolle predefinite e della demo. Verrà
+inoltre dettagliato il tracciamento tra le componenti software
+individuate ed i requisiti, i requisiti e i componenti, le classi e i
+requisiti e i requisiti e le classi.
 
 
 \subsection{Scopo del prodotto}
@@ -83,7 +87,8 @@ International nell'ECMA-262 ed ISO/IEC 16262. \\
 	\item Possibilità di dichiarare classi
 	\item Supporto per le costanti(\emph{const})
 	\item Possibilità di isolare la definizione di variabili ad un blocco (\emph{let})
-	\item Possibilità di isolare lo scope di una funzione usando blocchi delimitati da parentesi graffe({}) come ambienti isolati (vs closure)
+	\item Possibilità di isolare lo scope di una funzione usando
+     blocchi delimitati da parentesi graffe \{\} come ambienti isolati (vs closure)
 	\item Uso di sintassi più espressiva per scrivere le funzioni anonime (\emph{Arrow Functions})
 	
 \end{itemize}
@@ -116,8 +121,10 @@ software.
 		\item React
 		\item MongoDB
 	\end{itemize}
-	\item Isomorfismo: il codice javascript scritto funziona in modo trasparente sul client (browser), sul server (Node.js) o in entrambi i mondi
-	\item Ecosistema e modularità: la comunità di Meteor è molto attiva e molte funzionalità client o server potrebbero già essere pacchettizzate dal package manager ufficiale. 
+	\item Isomorfismo: il codice javascript scritto funziona in modo trasparente sul client (browser), sul server (Node.js) o in entrambi
+	\item Ecosistema e modularità: la comunità di Meteor è molto attiva
+     e molte funzionalità client o server potrebbero già essere
+     pacchettizzate dal package manager ufficiale 
 \end{itemize}
 
 \paragraph{Svantaggi} %controllareeeeeee 
@@ -143,7 +150,10 @@ MongoDB è un database NoSQL orientato ai documenti, basato sul formato BSON per
 
 \paragraph{Svantaggi} 
 \begin{itemize}
-	\item Inizialmente sconosciuto ai membri del gruppo.	
+	\item Inizialmente sconosciuto ai membri del gruppo
+     \item Non è possibile eseguire query complesse a causa
+       dell'assenza di schema dei dati. A causa di questo parte della
+       complessità non può essere demandata al sistema di database
 \end{itemize}
 
 \subsection{HTML5}
@@ -326,7 +336,7 @@ software. \\
 \paragraph{Vantaggi}
 \begin{itemize}
 	\item Non è richiesta una iscrizione per l'utilizzo
-	\item \'E una libreria non a pagamento
+	\item \'E un servizio non a pagamento
 	\item Il Polyglot ha zero dipendenze
 	\item Copre una traduzione di 30 lingue diverse
 \end{itemize}
@@ -352,7 +362,7 @@ software.\\
 \paragraph{Vantaggi}
 \begin{itemize}
 	\item Non è richiesta una iscrizione per l'utilizzo
-	\item \'E una libreria non a pagamento
+	\item \'E un servizio non a pagamento
 	\item \'E una libreria semplice da integrare nel codice JavaScript
 \end{itemize}
 
@@ -373,7 +383,7 @@ software. \\
 \paragraph{Vantaggi}
 \begin{itemize}
 	\item Non è richiesta una iscrizione per l'utilizzo
-	\item \'E una libreria non a pagamento
+	\item \'E un servizio non a pagamento
 	\item \'E una libreria semplice da integrare nel codice JavaScript
 \end{itemize}
 
@@ -408,18 +418,17 @@ software.
 Nell’esposizione dell’architettura dell’applicazione si procederà con
 un approccio top-down, descrivendo l’architettura iniziando dal
 generale ed andando al particolare. 
-Si procederà quindi alla descrizione dei package, per poi descrivere
+Si procederà quindi alla descrizione dei componenti software, per poi descrivere
 nel dettaglio le singole classi, specificando per ognuna il tipo, l’obiettivo, la funzione e
 le relazioni in ingresso ed in uscita.
 Successivamente si illustreranno degli esempi di uso dei Design
-Pattern nell’architettura del sistema, rimandando la spiegazione
-generale alla sezione dedicata. 
+Pattern nell’architettura del sistema. 
 L'architettura dell' SDK e della demo sono state progettate separatamente.  
 Per i diagrammi delle componenti di classe e di attività, si utilizza
 il formalismo UML 2.0. Le classi e componenti presenti in librerie o
 framework esterni vengono contraddistinte da colori diversi. I
-framework esterni verranno rappresentati con un colore azzurro, mentre
-le classi e componenti proprie invece, saranno rappresentate con un
+framework esterni verranno rappresentati con un colore azzurro, invece
+le classi e componenti proprie saranno rappresentate con un
 colore giallo. Nella demo le componenti dell'SDK sono in verde.
 L'intera applicazione è progettata utilizzando il framework
 \glossario{Meteor} che permette di utilizzare il linguaggio JavaScript
@@ -441,19 +450,19 @@ componenti, senza preoccuparsi della loro classificazione.
 %\subsection{Standard di progettazione architetturale}
 
 \subsection{Standard di documentazione del codice}
-Gli standard di documentazione del codice sono definiti nel nel
-documento NormeDiProgetto %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Gli standard di documentazione del codice sono definiti nel
+documento Norme di Progetto v3.0.0.
 
 \subsection{Standard di denominazione di entità e relazioni }
 Gli standard di denominazione sono definiti nel nel
-documento NormeDiProgetto
+documento Norme di Progetto v3.0.0.
 
 %\subsection{Standard di programmazione}
 %Gli standard di programmazione sono definiti nel nel
 %documento NormeDiProgetto
 \subsection{Strumenti di lavoro}
 Gli strumenti da utilizzare e le procedure da seguire sono descritti
-nel documento NormeDiProgetto
+nel documento Norme di Progetto v3.0.0.
 
 
 \section{Diagrammi di Attività}
@@ -503,7 +512,7 @@ oppure scegliere di ritornare nel nodo decisione raggiunto
 precedentemente per poter inserire un altro elemento. Anche nel caso
 in cui l’utente scegliesse di inserire un elemento manualmente il
 flusso segue lo stesso percorso, ovvero l’utente inserisce l’elemento
-e decide di inviare la bolla con il raggiungendo il nodo terminale
+e decide di inviare la bolla con il raggiungere il nodo terminale
 oppure inserire un altro elemento. 
 
 \begin{center}
@@ -525,7 +534,11 @@ oppure inserire un altro elemento.
 \newpage
 
 \textbf{Scenario:} 
-Questo scenario rappresenta la creazione di una bolla con l’utente invia la richiesta per 	accedere al menù di creazione. La richiesta passa per il bubbleDiscriminator che capisce la 	tipologia di bolla e passa la richiesta al TBubbleCreator e TBubbleConfig che costruiscono il 	menù di configurazione adatto. 
+Questo scenario rappresenta la creazione di una bolla con l’utente che
+invia la richiesta per 	accedere al menù di creazione. La richiesta
+passa per il bubbleDiscriminator che capisce la 	tipologia di bolla
+e passa la richiesta al TBubbleCreator e TBubbleConfig che
+costruiscono il 	menù di configurazione adatto.  
 Una volta compilati i campi la richiesta torna al bubbleDiscriminator e al TBubbleCreator che 	creano la bolla aggiungendola alla SentBubbleHistory. \\
 
 \subsection{Cancellazione Bolla}
