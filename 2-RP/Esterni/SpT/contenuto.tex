@@ -8,7 +8,7 @@ Questo documento ha come scopo quello di definire la progettazione ad
 alto  e a basso livello
 per il prodotto Monolith. Verranno presentate l'architettura generale e
 di dettaglio secondo le quali
-saranno organizzate le varie componenti software e i Design Pattern utilizzati nella
+saranno organizzate le varie componenti software e i \glossario{Design Pattern} utilizzati nella
 creazione dell'SDK, delle bolle predefinite e della demo. Verrà
 inoltre dettagliato il tracciamento tra le componenti software
 individuate ed i requisiti, i requisiti e i componenti, le classi e i
@@ -66,13 +66,13 @@ derivano. Alcune delle tecnologie che saranno usate sono richieste come requisit
 
 \subsection{Javascript 6th edition (ECMA SCRIPT 6)}
 
-JavaScript è un linguaggio di scripting orientato agli oggetti e agli
+JavaScript è un \glossario{linguaggio di scripting} orientato agli oggetti e agli
 eventi. \'E comunemente utilizzato nella programmazione Web lato
 client per la creazione, in siti web e applicazioni web, di effetti
 dinamici interattivi tramite l'uso di funzioni di script invocate da
 eventi innescati in vari modi dall'utente sulla pagina web in
 uso. \\ Come richiesto dal capitolato, per la realizzazione di
-Monolith, deve essere utilizzato Javascript 6th edition (ECMA SCRIPT
+Monolith, deve essere utilizzato \glossario{Javascript} 6th edition (ECMA SCRIPT
 6). \\ 
 
 \paragraph{Licenza}  
@@ -124,7 +124,7 @@ software.
 	\item Isomorfismo: il codice javascript scritto funziona in modo trasparente sul client (browser), sul server (Node.js) o in entrambi
 	\item Ecosistema e modularità: la comunità di Meteor è molto attiva
      e molte funzionalità client o server potrebbero già essere
-     pacchettizzate dal package manager ufficiale 
+     pacchettizzate dal \glossario{package} manager ufficiale 
 \end{itemize}
 
 \paragraph{Svantaggi} %controllareeeeeee 
@@ -134,14 +134,14 @@ software.
 \end{itemize}
 
 \subsection{Mongo DB}
-MongoDB è un database NoSQL orientato ai documenti, basato sul formato BSON per la memorizzazione e la rappresentazione dei dati. \'E distribuito come software libero open source. \\
+MongoDB è un database NoSQL orientato ai documenti, basato sul formato \glossario{BSON} per la memorizzazione e la rappresentazione dei dati. \'E distribuito come software libero open source. \\
 
 \paragraph{Licenza} GNU AGPL v3.0 \\
 \'E una licenza pubblicata da Free Software Foundation. \'E simile alla capostipite GNU GPL, una licenza fortemente copyleft per software libero.
 
 \paragraph{Vantaggi}
 \begin{itemize}
-	\item \'E più flessibile di un database SQL e facilita la rappresentazione su un modello ad
+	\item \'E più flessibile di un database \glossario{SQL} e facilita la rappresentazione su un modello ad
 	oggetti
 	\item Supporta ricerche per campi, intervalli e regular expression. Le query possono restituire campi specifici del documento e anche includere funzioni definite dall'utente in JavaScript.
 	\item Qualunque campo in MongoDB può essere indicizzato 
@@ -168,7 +168,7 @@ Non esiste una sola implementazione perché HTML5 è un linguaggio di markup sta
 \begin{itemize}
 	\item Codice più pulito e sintassi semplificata rispetto alle versioni precedenti
 	\item Interattività senza l’ausilio di plugin esterni valida per diversi formati multimediali
-	\item Semantica intuitiva grazie ai nuovi TAG di formattazione
+	\item Semantica intuitiva grazie ai nuovi \glossario{TAG} di formattazione
 	\item Introduzione della geo localizzazione, dovuta ad una forte espansione di sistemi operativi mobili
 	\item Sistema più efficiente alternativo ai normali cookie chiamato Web Storage 
 
@@ -310,7 +310,7 @@ software.
 	\item Piattaforma ben standardizzata 
 	\item Non richiede l’appoggio né di un linguaggio di programmazione server side, né di un database
 	\item Ottima documentazione
-	\item Responsive Design	
+	\item \glossario{Responsive} Design	
 	\item \'E supportato dai browser moderni
 	
 \end{itemize}
@@ -395,7 +395,7 @@ software. \\
 
 \subsection{classNames}
 
-classNames è una semplice utility raccomandata per l'uso con React per l'unione condizionata di className
+classNames è una semplice utility raccomandata per l'uso con \glossario{React} per l'unione condizionata di className
 
 \paragraph{Licenza} MIT \\
 La licenza MIT è una delle licenze più permissive nel panorama open
@@ -423,9 +423,9 @@ nel dettaglio le singole classi, specificando per ognuna il tipo, l’obiettivo,
 le relazioni in ingresso ed in uscita.
 Successivamente si illustreranno degli esempi di uso dei Design
 Pattern nell’architettura del sistema. 
-L'architettura dell' SDK e della demo sono state progettate separatamente.  
+L'architettura dell' \glossario{SDK} e della \glossario{demo} sono state progettate separatamente.  
 Per i diagrammi delle componenti di classe e di attività, si utilizza
-il formalismo UML 2.0. Le classi e componenti presenti in librerie o
+il formalismo \glossario{UML} 2.0. Le classi e componenti presenti in librerie o
 framework esterni vengono contraddistinte da colori diversi. I
 framework esterni verranno rappresentati con un colore azzurro, invece
 le classi e componenti proprie saranno rappresentate con un
@@ -451,18 +451,18 @@ componenti, senza preoccuparsi della loro classificazione.
 
 \subsection{Standard di documentazione del codice}
 Gli standard di documentazione del codice sono definiti nel
-documento Norme di Progetto v3.0.0.
+documento  \emph{Norme di Progetto v3.0.0} .
 
 \subsection{Standard di denominazione di entità e relazioni }
 Gli standard di denominazione sono definiti nel nel
-documento Norme di Progetto v3.0.0.
+documento  \emph{Norme di Progetto v3.0.0} .
 
 %\subsection{Standard di programmazione}
 %Gli standard di programmazione sono definiti nel nel
 %documento NormeDiProgetto
 \subsection{Strumenti di lavoro}
 Gli strumenti da utilizzare e le procedure da seguire sono descritti
-nel documento Norme di Progetto v3.0.0.
+nel documento  \emph{Norme di Progetto v3.0.0} .
 
 
 \section{Diagrammi di Attività}
@@ -533,7 +533,7 @@ oppure inserire un altro elemento.
 
 \newpage
 
-\textbf{Scenario:} 
+\textbf{Scenario}: 
 Questo scenario rappresenta la creazione di una bolla con l’utente che
 invia la richiesta per 	accedere al menù di creazione. La richiesta
 passa per il bubbleDiscriminator che capisce la 	tipologia di bolla
@@ -550,7 +550,7 @@ Una volta compilati i campi la richiesta torna al bubbleDiscriminator e al TBubb
 
 
 
-\textbf{Scenario:} 
+\textbf{Scenario}: 
 Questo scenario rappresenta la cancellazione, da parte di un utente, di una delle proprie bolle 	inviate precedentemente. L’utente in questione accede alla propria area di bolle inviate e 	seleziona la bolla da cancellare. La richiesta arriva al database dove avviene la cancellazione, 	successivamente, Meteor, gestisce l’aggiornamento dei dati nello storico delle bolle inviate 	(dell’utente attore) e in quello delle bolle ricevute degli altri utenti. 
 \newpage
 
@@ -563,7 +563,7 @@ Questo scenario rappresenta la cancellazione, da parte di un utente, di una dell
 
 
 
-\textbf{Scenario:} 
+\textbf{Scenario}: 
 Questo scenario rappresenta il voto di un utente ad una bolla sondaggio.
 L’utente accede all’area delle bolle ricevute e vota l’opzione che desidera, il voto viene salvato 	nel database e, attraverso Meteor, vengono aggiornati i dati della bolla in questione di ogni 	utente. \\
 

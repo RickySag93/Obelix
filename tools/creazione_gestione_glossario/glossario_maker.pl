@@ -107,5 +107,12 @@ close $out;
 sub sostituzioni_utili {
 my $s = shift @_;
 $s =~ s/\’/\'/g;
+#$s =~ s/à/\\'a/g;
+#$s =~ s/è/\\'e/g;
+#$s =~ s/ì/\\'i/g;
+#$s =~ s/ò/\\'o/g;
+$s =~ s/ù/\\'u/g;
+$s =~ s/à/\\'a/g;
+$s =~ s/É/\\'E/g;
 return $s;
 }

@@ -72,7 +72,7 @@ JSHint
 : è uno strumento di community-driven che rileva gli errori e potenziali problemi nel codice JavaScript.
 
 CSSHint
-: è uno strumento che aiuta a rilevare possibili errori nel codice CSS.
+: è uno strumento che aiuta a rilevare possibili errori nel codice CSS.
 
 Complexity-report
 : è un software di analisi della complessità dei progetti JavaScript.
@@ -81,10 +81,10 @@ Google Chrome DevTools
 : gli strumenti di Chrome Developer, sono un insieme di web authoring e strumenti di debug integrati in Google Chrome. 
 
 Karma
-: è un test runner per JavaScript che viene eseguito su Node.js. \’E adatto per eseguire test qualsiasi progetto di JavaScript. Karma esegue dei test utilizzando una delle suite di test JavaScript (Gelsomino, Mocha, QUnit, etc) su tutti i browsers e su diverse tipologie di piattaforma. É altamente configurabile ed ha un eccellente supporto di plug-in.
+: è un test runner per JavaScript che viene eseguito su Node.js. \’E adatto per eseguire test qualsiasi progetto di JavaScript. Karma esegue dei test utilizzando una delle suite di test JavaScript (Gelsomino, Mocha, QUnit, etc) su tutti i browsers e su diverse tipologie di piattaforma. É altamente configurabile ed ha un eccellente supporto di plug-in.
 
 Node.js
-: è un framework relativo all’utilizzo lato server di JavaScript. La caratteristica principale di Node.js risiede nella possibilità di accedere alle risorse del sistema operativo in modalità event-driven e non sfruttando il classico modello basato su processi o threads concorrenti, utilizzato dai classici web server. Il modello event-driven si basa su un concetto piuttosto semplice: si lancia una azione quando accade qualcosa. Ogni azione quindi risulta asincrona a differenza dei pattern di programmazione più comune in cui una azione succede ad un’altra solo dopo che essa è stata completata.
+: è un framework relativo all’utilizzo lato server di JavaScript. La caratteristica principale di Node.js risiede nella possibilità di accedere alle risorse del sistema operativo in modalità event-driven e non sfruttando il classico modello basato su processi o threads concorrenti, utilizzato dai classici web server. Il modello event-driven si basa su un concetto piuttosto semplice: si lancia una azione quando accade qualcosa. Ogni azione quindi risulta asincrona a differenza dei pattern di programmazione più comune in cui una azione succede ad un’altra solo dopo che essa è stata completata.
 
 Slack
 : è una piattaforma per la comunicazione tra gruppi di lavoro. \’E organizzato in canali, proprio come le chat IRC, e funziona in tutto e per tutto allo stesso modo. In più, Slack aggiunge la possibilità di condividere file in modo facile e veloce ma soprattutto l’integrazione con servizi esterni.
@@ -148,7 +148,7 @@ Tag
 
 Task
 : è la parola inglese per “compito”. In informatica è spesso utilizzato per identificare tanti piccoli compiti oppure
-una attività da eseguire. È un termine usato anche in Asana con la stessa accezione.
+una attività da eseguire. è un termine usato anche in Asana con la stessa accezione.
 
 Ticket
 : elemento di una lista di compiti produttivi o correttivi, viene utilizzato per organizzare e distribuire il lavoro di un gruppo in maniera centralizzata.

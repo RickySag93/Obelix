@@ -1,6 +1,8 @@
 API
 Abstract Syntax Tree
+Asana
 Astah
+BSON
 Baseline
 Bolla interattiva
 Bug
@@ -33,14 +35,23 @@ PDCA
 Package
 Peer-to-peer
 Proponente
+React
 Repository
 Rocket.chat
 SDK
 SQL
 Slack
 Software Quality Management
+Tag
+Task
 Team
 Telegram
+Ticket
+Ticketing
 UML
 W3C
 Webapp
+responsive
+room
+sidearea
+tabbar
