@@ -29,11 +29,12 @@
 \headcommand {\sectionentry {4}{Preventivo e Consultivo}{10}{Preventivo e Consultivo}{0}}
 \headcommand {\beamer@sectionpages {4}{9}}
 \headcommand {\beamer@subsectionpages {4}{9}}
-\headcommand {\beamer@subsectionentry {0}{4}{1}{10}{Progettazione Architetturale}}\headcommand {\beamer@subsectionpages {10}{9}}
-\headcommand {\slideentry {4}{1}{1}{10/10}{Progettazione Architetturale}{0}}
+\headcommand {\slideentry {4}{0}{1}{10/10}{}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\beamer@partpages {1}{10}}
-\headcommand {\beamer@subsectionpages {10}{10}}
-\headcommand {\beamer@sectionpages {10}{10}}
-\headcommand {\beamer@documentpages {10}}
-\headcommand {\def \inserttotalframenumber {10}}
+\headcommand {\slideentry {4}{0}{2}{11/11}{}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@partpages {1}{11}}
+\headcommand {\beamer@subsectionpages {10}{11}}
+\headcommand {\beamer@sectionpages {10}{11}}
+\headcommand {\beamer@documentpages {11}}
+\headcommand {\def \inserttotalframenumber {11}}
