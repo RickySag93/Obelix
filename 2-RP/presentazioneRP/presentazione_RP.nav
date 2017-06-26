@@ -55,24 +55,36 @@
 \headcommand {\beamer@framepages {19}{19}}
 \headcommand {\slideentry {4}{2}{5}{20/20}{Visione di dettaglio}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\sectionentry {5}{Modifiche Apportate}{21}{Modifiche Apportate}{0}}
+\headcommand {\sectionentry {5}{Descrizione Architettura Demo}{21}{Descrizione Architettura Demo}{0}}
 \headcommand {\beamer@sectionpages {14}{20}}
 \headcommand {\beamer@subsectionpages {16}{20}}
-\headcommand {\beamer@subsectionentry {0}{5}{1}{21}{Generali}}\headcommand {\beamer@subsectionpages {21}{20}}
-\headcommand {\slideentry {5}{1}{1}{21/21}{Generali}{0}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{21}{Visione ad alto livello}}\headcommand {\beamer@subsectionpages {21}{20}}
+\headcommand {\slideentry {5}{1}{1}{21/21}{Visione ad alto livello}{0}}
 \headcommand {\beamer@framepages {21}{21}}
-\headcommand {\beamer@subsectionentry {0}{5}{2}{22}{Documenti}}\headcommand {\beamer@subsectionpages {21}{21}}
-\headcommand {\slideentry {5}{2}{1}{22/22}{Documenti}{0}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{22}{}}\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\slideentry {5}{2}{1}{22/22}{}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\sectionentry {6}{Preventivo e Consuntivo}{23}{Preventivo e Consuntivo}{0}}
-\headcommand {\beamer@sectionpages {21}{22}}
-\headcommand {\beamer@subsectionpages {22}{22}}
-\headcommand {\slideentry {6}{0}{1}{23/23}{}{0}}
+\headcommand {\beamer@subsectionentry {0}{5}{3}{23}{}}\headcommand {\beamer@subsectionpages {22}{22}}
+\headcommand {\slideentry {5}{3}{1}{23/23}{}{0}}
 \headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {6}{0}{2}{24/24}{}{0}}
+\headcommand {\sectionentry {6}{Modifiche Apportate}{24}{Modifiche Apportate}{0}}
+\headcommand {\beamer@sectionpages {21}{23}}
+\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\beamer@subsectionentry {0}{6}{1}{24}{Generali}}\headcommand {\beamer@subsectionpages {24}{23}}
+\headcommand {\slideentry {6}{1}{1}{24/24}{Generali}{0}}
 \headcommand {\beamer@framepages {24}{24}}
-\headcommand {\beamer@partpages {1}{24}}
-\headcommand {\beamer@subsectionpages {23}{24}}
-\headcommand {\beamer@sectionpages {23}{24}}
-\headcommand {\beamer@documentpages {24}}
-\headcommand {\def \inserttotalframenumber {24}}
+\headcommand {\beamer@subsectionentry {0}{6}{2}{25}{Documenti}}\headcommand {\beamer@subsectionpages {24}{24}}
+\headcommand {\slideentry {6}{2}{1}{25/25}{Documenti}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\sectionentry {7}{Preventivo e Consuntivo}{26}{Preventivo e Consuntivo}{0}}
+\headcommand {\beamer@sectionpages {24}{25}}
+\headcommand {\beamer@subsectionpages {25}{25}}
+\headcommand {\slideentry {7}{0}{1}{26/26}{}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\slideentry {7}{0}{2}{27/27}{}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\beamer@partpages {1}{27}}
+\headcommand {\beamer@subsectionpages {26}{27}}
+\headcommand {\beamer@sectionpages {26}{27}}
+\headcommand {\beamer@documentpages {27}}
+\headcommand {\def \inserttotalframenumber {27}}
