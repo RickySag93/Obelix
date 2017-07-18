@@ -63,6 +63,25 @@ capitolato scelto:
 Infine saranno presentate le motivazioni che hanno condotto il gruppo
 nella scelta del capitolato.
 
+%aggiunto in RQ ------begin
+
+
+\subsubsection{Processi di controllo}
+
+\'E compito dei membri del gruppo eseguire i processi descritti in questo documento e di moritorarne lo stato al fine di individuare, analizzare e risolvere i problemi che potrebbero verificarsi.
+
+\subsubsection{Verificazione e Validazione}
+
+\'E compito dei Verificatori attuare le attività di verifica e validazione dei documenti e dei processi per il prodotto.
+Con i risultati ottenuti si deve valutare lo stato dei processi e nel caso qualche processo non superi la verifica si dovrà discutere con i membri del gruppo Obelix su come intervenire per migliare la qualità del processo in questione.
+
+
+
+
+%---------------------end
+
+
+
 \subsection{Sviluppo}
 
 \subsubsection{Analisi dei requisiti}
@@ -167,6 +186,24 @@ I contenuti da coprire sono i seguenti:
   soddisfatti tutti i requisiti e che ogni componente soddisfi almeno
   un requisito.  
 
+%aggiunto in RQ ------------begin
+
+
+I \textit{Progettisti} devono definire dei test per verificare la corretta integrazione tra le componenti del prodotto.
+
+\item \textbf{Definizione test di Sistema}:
+
+I \textit{Progettisti} devono definire dei test per verificare che tutti i requisiti siano verificati.
+
+\item \textbf{Definizione test di Validazione}:
+
+I \textit{Progettisti} devono definire dei test che coprano tutte le funzionalità offerte dal prodotto in modo da mostrarne la correttezza.
+
+
+%---------------------------end
+
+
+
 \end{itemize}
 
 \paragraph{Descrizione progettazione di dettaglio}
@@ -193,7 +230,14 @@ I contenuti da coprire sono i seguenti:
   Ogni classe deve essere tracciata ed associata ad almeno un
   requisito, in questo modo è possibile avere la certezza che tutti i
   requisiti siano soddisfatti e che ogni classe soddisfi almeno un
-  requisito.  
+  requisito.
+
+%aggiunto in RQ------
+\item \textbf{Definizione test di Unità}:
+
+I \textit{Progettisti} devono definire dei test per verificare il corretto funzionamento di una classe.
+Tali test verranno poi implementati dai \textit{Programmatori}.
+%------------
 
 \end{itemize}
 
@@ -286,6 +330,27 @@ muoversi nell’ambiente di sviluppo, come aggiungere classi, diagrammi e relazi
 molto utile che l’editor mette a disposizione è quello di poter esportare il diagramma realizzato in
 un file immagine. Questo software verrà utilizzato nelle attività di analisi e progettazione per la creazione
 di tutti i diagrammi \glossario{UML} necessari.
+
+%aggiunto in RQ -------------begin
+
+
+\subsubsection{Integrazione}
+
+In questo periodo si cerca di integrare le varie componenti del nostro sdk in modo che si interfaccino correttamente tra di loro.
+Per verificare ciò vengono utilizzati degli appositi test elencani nel documento "Definizione di Prodotto vXXX" nel capitolo XXXX.
+
+I Progettisti sono responsabili delle attività di integrazione e devono:
+\begin{itemize}
+	\item avere piena conoscenza di quello che hanno sviluppato
+	\item saper appostare modifiche del proprio codice o sviluppato da altri per migliorarne l'integrazione
+	\item saper sviluppare le parti di software che permettono l'itegrazione con le varie parti del prodotto software
+	\item saper individuare e correggere bug e requisiti non sodisfatti
+\end{itemize}
+
+L'obiettivo di questo perido è quello di itegrare tutte le parti software sviluppate dai vari progettisti ed correggere eventuali errori che potrebbero apparire durante l'integrazione.
+
+%----------------------------end
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -642,6 +707,86 @@ repository bisogna specificarne le motivazioni. Questo avviene utilizzando il co
 \end{itemize}
 Prima di eseguire tale procedura, va aggiornato il diario delle modifiche, secondo le regole viste in \S 3.1.5.
 
+%%&inserimento in fase di RQ
+\newpage
+
+\subsection{Processo di garanzia di qualità del prodotto}
+Per garantire la qualità del prodotto vengono adottato varie metodologie tra le quali ritroviamo i processi di verifica e di validazione successivamente illustrati. \\
+Nel caso in cui i task assegnati al team non siano soddisfatti per eventuali problematiche, questi devono essere riportati nella lista di problemi menzionata nel \textit{processo di soluzione di problemi}. \\
+Un ulteriore garanzia di qualità è data dall'assicurarsi che i requisiti principali del progetto siano soddisfatti alla fine dello sviluppo del software. Ci si può assicurare di questo attraverso una documentazione valida ed un incontro con i committenti ed i proponenti che dovranno accertarsi della validità del prodotto finale. \\
+Infine per stabilire in maniera quantitativa la qualità ottenuta abbiamo individuato delle metriche che andremo ora a esplicitare, indicando i range accettabili e quelli ottimali. Il loro valore effettivo è invece indicato nel Piano di qualifica.
+Le metriche individuate sono state suddivise in
+\begin{itemize}
+	\item\textbf{Qualità funzionale}
+	\item\textbf{Qualità di affidabilità}
+	\item\textbf{Qualità di usabilità}
+	\item\textbf{Qualità di efficienza}
+	\item\textbf{Qualità di manutenibilità}
+\end{itemize}
+
+\subsubsection{Qualità funzionale}
+
+\paragraph{Completezza dell'implementazione funzionale}
+Indica la percentuale di requisiti funzionali coperti dall'implementazione.
+\begin{itemize}
+	\item \textbf{Misurazione}: 
+	$$C=\left(1-\mathlarger{\frac{N_{FM}}{N_{FI}}}\right) \cdot 100$$ 
+	dove $N_{FM}$ è il numero di funzionalità mancanti nell'implementazione e $N_{FI}$ è il numero di funzionalità individuate nell'attività di analisi.
+\end{itemize}
+
+\paragraph{Accuratezza rispetto alle attese}
+Indica la percentuale di risultati concordi alle attese.
+\begin{itemize}
+	\item \textbf{Misurazione}: 
+	$$A=\left(1-\mathlarger{\frac{N_{RD}}{N_{TE}}}\right) \cdot 100$$
+	dove $N_{RD}$ è il numero di test che producono risultati discordanti rispetto alle attese e $N_{TE}$ è il numero di test-case eseguiti.
+\end{itemize}
+
+\subsubsection{Qualità di affidabilità}
+\paragraph{Densità di \textit{failure}}
+Indica la percentuale di operazioni di testing che si sono concluse in fallimenti.
+
+\begin{itemize}
+	\item \textbf{Misurazione}: 
+	$$F=\mathlarger{\frac{N_{FR}}{N_{TE}}} \cdot 100$$
+	dove $N_{FR}$ è il numero di fallimenti rilevati durante l'attività di testing e $N_{TE}$ è il numero di test-case eseguiti.
+\end{itemize}
+
+\paragraph{Blocco di operazioni non corrette}
+Indica la percentuale di funzionalità in grado di gestire correttamente i \textit{fault} che potrebbero verificarsi.
+\begin{itemize}
+	\item \textbf{Misurazione}: 
+	$$B=\mathlarger{\frac{N_{FE}}{N_{ON}}} \cdot 100$$
+	dove $N_{FE}$ è il numero di \textit{failure} evitati durante i test effettuati e $N_{ON}$ è il numero di test-case eseguiti che prevedono l'esecuzione di operazioni non corrette, causa di possibili \textit{failure}.
+\end{itemize}
+
+\subsubsection{Qualità di efficienza}
+
+\paragraph{Tempo di risposta}
+Indica il periodo temporale medio che intercorre fra la richiesta al software di una determinata funzionalità e la restituzione del risultato all'utente.
+\begin{itemize}
+	\item \textbf{Misurazione}: 
+	$$T_{RISP} = \mathlarger{\frac{\sum_{i=1}^{n} T_{i}}{n}}$$ 
+	con $T_{RISP}$ misurato in secondi, e dove $T_{i}$ è il tempo intercorso fra la richiesta $i$ di una funzionalità ed il completamento delle operazioni necessarie a restituire un risultato a tale richiesta.
+\end{itemize}
+\subsubsection{Qualità di manutenibilità}
+
+\paragraph{Capacità di analisi di \textit{failure}}
+Indica la percentuale di \textit{failure} registrate delle quali sono state individuate le cause.
+\begin{itemize}
+	\item \textbf{Misurazione}: 
+	$$I=\mathlarger{\frac{N_{FI}}{N_{FR}}} \cdot 100$$
+	dove $N_{FI}$ è il numero di \textit{failure} delle quali sono state individuate le cause e $N_{FR}$ è il numero di \textit{failure} rilevate.
+\end{itemize}
+
+\paragraph{Impatto delle modifiche}
+Indica la percentuale di modifiche effettuate in risposta a \textit{failure} che hanno portato all'introduzione di nuove \textit{failure} in altre componenti del sistema.
+\begin{itemize}
+	\item \textbf{Misurazione}: 
+	$$I=\mathlarger{\frac{N_{FRF}}{N_{FR}}} \cdot 100$$
+	dove $N_{FRF}$ è il numero di \textit{failure} risolte con l'introduzione di nuove \textit{failure} e $N_{FR}$ è il numero di \textit{failure} risolte.
+\end{itemize}
+%%%%%%%
 
 \subsection{Verifica}
 
@@ -651,6 +796,197 @@ La verifica di processi, documenti e prodotti è un’attività da eseguire cont
 durante lo sviluppo del progetto. Di conseguenza, servono modalità operative chiare
 e dettagliate, in modo da uniformare le attività di verifica svolte ed ottenere il miglior
 risultato possibile.
+
+%%%%%%%inserite in fase di RQ
+\paragraph{Metriche per la pianificazione}
+Qualsiasi eventuale valore negativo ottenuto dalle  metriche: Schedule Variance o/e Budget Variance dovrà essere  compensato entro la fine dell'attività di progetto modficando e revisionando in modo coerente il Piano di Progetto, in quanto non è possbile eccedere le ore di lavoro finali e il budget finale indicato nella pianificazione.
+
+\subparagraph{Schedule Variance}
+Indica se si è in linea, in anticipo o in ritardo rispetto la pianificazione temporale prevista dal Piano di Progetto.
+Per calcolare questa metrica utilizziamo la seguente formuala: SV = BCWP −BCWS, dove BCWP sono le attività completate ad un certo momento e BCWS
+le attività che, secondo la pianificazione, dovrebbero essere state completate a quel momento.
+Il range di accettazione per questa metrica è un valore superiore o uguale a zero in questo modo ci si assicura di non avere accumulato eventuali ritardi per la consegna.
+
+\subparagraph{Budget Variance}
+Indica se alla data corrente si è speso di più o di meno rispetto a quanto pianificato.
+Per calcolare questa metrica utilizziamo la seguente forumal: BV = BCWS − ACWP , dove BCWS è il costo pianificato per realizzare le attività di progetto
+alla data corrente e ACWP è il costo effettivamente sostenuto alla data corrente.
+Il range di accettazione per questa metrica è un valore superiore o ugale a zero, segnale che i costi sono stati preventivati in maniera corretta e non si esce dal budget prefeissato all'inizio
+
+
+\subparagraph{Ottimalità delle misurazioni}
+Questa metrica misura quante metriche misurate sono ottimali e assicura che almeno una buona quantita lo siano.
+\textbf{Misurazione:} 
+\begin{displaymath}
+{\text{Misurazioni Ottimali}}\over{\text{Misurazioni Ottimali} + \text{Misurazioni Accettabili}}
+\end{displaymath} 
+Il valore di accettazione è pari a 0.3 mentre il valore ottimale è 0.4 questo per garantire l'ottimo range per almeno un numero cospicuo di metriche così da aumentare la qualità del software.
+
+\subparagraph{Requisiti obbligatori soddisfatti}
+Indica il numero di requisiti obbligatori ottenuti dall'attività di analisi.
+\begin{itemize}
+	\item \textbf{Misurazione}: 
+	$$C=\left(1-\mathlarger{\frac{N_{FM}}{N_{FI}}}\right) \cdot 100$$ 
+\end{itemize}
+dove $N_{FM}$ è il numero di funzionalità mancanti nell'implementazione e $N_{FI}$ è il numero di funzionalità individuate nell'attività di analisi. 
+
+
+
+\paragraph{Metriche per i documenti}
+\subparagraph{indice di Gulpease}
+L'indice Gulpease rispetto ad altri indici di leggibilità possiede il vantaggio di utilizzare la lunghezza delle parole in lettere anziché in sillabe, semplificando il calcolo dell'indice stesso. Esso considera due variabili linguistiche:
+\begin{itemize}
+	\item La lunghezza della parola.
+	\item La lunghezza della frase rispetto al numero delle lettere.
+\end{itemize}
+
+I valori dell'indice sono compresi tra 0 e 100, dove il valore 100 indica la leggibilità più alta e 0 la leggibilità più bassa.
+
+\paragraph{Metriche per la progettazione dell'architettura di sistema}
+
+\subparagraph{Livello di instabilità}
+Per comprendere questa metrica è necessario dare una semplice spiegazione di accoppiamento afferente e di accoppiamento efferente.
+\begin{itemize}
+	\item
+	\textbf{Accoppiamento afferente}: indica il numero di classi esterne ad un package che dipendono da classi interne ad esso.
+	Un alto valore implica un alto grado di dipendenza del resto del software dal package. Un valore eccessivamente basso, invece, potrebbe evidenziare che un package fornisce poche funzionalità.
+	\item
+	\textbf{Accoppiamento efferente}: indica il numero di classi interne al package che dipendono da classi esterne ad esso.
+	Mantenendo il valore di tale indice basso è possibile garantire funzionalità di base indipendentemente dal resto del sistema.
+\end{itemize}
+
+La stabilità di un package indica la possibilità di effettuare modifiche a tale package senza influenzarne altri all'interno dell'applicazione. Tale indice è strettamente legato all'accoppiamento efferente ed afferente e viene calcolato dalla seguente formula:
+
+\begin{displaymath}
+{\text{Accoppiamento Efferente}}\over{\text{Accoppiamento Afferente} + \text{Accoppiamento Efferente}}
+\end{displaymath}
+
+\subparagraph{Astrattezza}
+Questa metrica misura l'astrattezza di ogni package tramite il seguente rapporto 
+\begin{displaymath}
+{\text{Numero classi astratte e interfacce}}\over{\text{Numero totale classi}}
+\end{displaymath}
+In questa metrica non esiste un valore accettabile ma solo un valore che si vorrà ottenere. esso sarà indicato nel Piano di qualifica.
+
+\subparagraph{Distanza dalla sequenza principale}
+Questa metrica misura il bilanciamento tra l'astrattezza e la stabilità del package da noi sviluppato. I package idealmente perfetti sono infatti quelli o compleatamente concreti e instabili(I=1, A=0) o quelli astratti e stabili (I=0, A=1). Per misurare questa metrica si utilizza quindi la seguente formula matematica:
+
+\begin{displaymath}
+{|\text{Astratezza} + \text{Livello di stabilità} - 1|}
+\end{displaymath}
+
+La sequenza principale menzionata nel titolo è infatti la linea retta A+I=1 e la formula appena descritta misura la distanza del nostro package da esso.
+
+\paragraph{Metriche per la progettazione dell'architettura in dettaglio}
+
+\subparagraph{Numero di metodi per classe}
+Rappresenta il numero di metodi per ogni classe.
+Un numero molto elevato potrebbe evidenziare la necessità di spezzettare le varie componenti della gerarchia in più classi distinte.
+Per contro un se ogni classe ha un indice abbastanza basso, questa metrica potrebbe indicare un analogo errore di progettazione, in quanto abbiamo classi che potrebbero essere raggruppate in classi più complesse e funzionali.
+
+\subparagraph{Numero di attributi per classe}
+Questa metrica prevede di valutare la qualità del software in base al numero di attributi presenti in una classe.
+Un numero elevato di attributi potrebbe evidenziare un possibile errore di progettazione con conseguente necessità di suddividere la classe in più classi in relazione tra loro seguendo il principio dell'incapsulamento.
+
+\subparagraph{Numero di parametri per metodo}
+Rappresenta il numero di parametri da passare per la chiamata di un metodo.
+Un numero elevato per un dato metodo potrebbe evidenziare la necessità di ridurne le funzionalità associate e/o suddividerle in altri metodi ausiliari.
+Un alto valore di questo indice potrebbe evidenziare pertanto un possibile errore di progettazione.
+
+\paragraph{Metriche per la codifica del Software}
+
+\subparagraph{Complessità ciclomatica}
+Questo indice viene utilizzato per misurare la complessità di un programma. Esso misura direttamente il numero di cammini linearmente indipendenti attraverso il grafo di controllo di flusso. I nodi del grafo corrispondono a gruppi indivisibili di istruzioni, mentre gli archi connettono due nodi se il secondo gruppo di istruzioni può essere eseguito immediatamente dopo il primo gruppo.
+Alti valori di complessità ciclomatica implicano una ridotta manutenibilità del codice. Valori bassi potrebbero però determinare  una scarsa efficienza dei metodi. McCabe, ideatore di questa metrica, raccomandava che i programmatori contassero la complessità dei moduli in sviluppo, e li dividessero in moduli più piccoli, qualora tale complessità superi 10 ma osservando che in certe circostanze può essere appropriato rilassare tale restrizione e permettere moduli con una complessità anche di 15.
+
+\subparagraph{Linee di commento per linee di codice}
+Questo indice indica il rapporto tra linee di commento e linee di codice ed è utile per stimare la manutenibilità e la comprensibilità del codice. 
+
+\subparagraph{Numero di livelli di annidamento per metodo}
+Rappresenta il numero di strutture di controllo, annidate tra loro internamente ad un metodo.
+Un valore elevato per questa metrica potrebbe essere indice di una complessità troppo elevata del metodo stesso, e di un basso livello di astrazione del codice.
+
+
+
+\paragraph{Metriche per la validazione}
+
+
+\subparagraph{Test di Unità eseguiti}
+Indica la percentuale di test di unità eseguiti.
+\begin{itemize}
+	\item \textbf{Misurazione}: $UE=\frac{N_{TUE}}{N_{TUP}} \cdot 100$
+\end{itemize}
+dove $N_{TUE}$ è il numero di test di unità eseguiti e $N_{TUP}$ è il numero di test di unità pianificati.
+Il valore di accettazione richiesto è un intrevallo tra 90-100, il valore ottimale è 100 per garantire che tutti o la maggior parte dei test di Unità siano eseguiti effettivamente.
+
+\subparagraph{Test di Integrazione eseguiti}
+Indica la percentuale di test di integrazione eseguiti. \\
+\begin{itemize}
+	\item \textbf{Misurazione}: $IE=\frac{N_{TIE}}{N_{TIP}} \cdot 100$
+\end{itemize}
+dove $N_{TIE}$ è il numero di test di integrazione eseguiti e $N_{TIP}$ è il numero di test di Integrazione pianificati.
+Il valore di accettazione richiesto è 60-100 mentre quello ottimale è un range di 70-100 per	garantire che tutti o la maggior parte dei test di Integrazione siano eseguiti effettivamente. 
+
+\subparagraph{Test di Validazione eseguiti}
+Indica la percentuale di test di validazione eseguiti manualmente.
+\begin{itemize}
+	\item \textbf{Misurazione}: $VE=\frac{N_{TVE}}{N_{TVP}} \cdot 100$
+\end{itemize}
+dove $N_{TVE}$ è il numero di test di validazione eseguiti e $N_{TVP}$ è il numero di test di Validazione pianificati.
+Il Valore di accettazione richiesto è 100, come il valore ottimale . questo per garantire che tutti o la maggior parte dei test di Validazione siano eseguiti effettivamente. 
+
+\subparagraph{Test di Sistema eseguiti}
+Indica la percentuale di test di sistema eseguiti in modo automatico.
+\begin{itemize}
+	\item \textbf{Misurazione}: $SE=\frac{N_{TSE}}{N_{TSP}} \cdot 100$
+\end{itemize}
+dove $N_{TSE}$ è il numero di test di sistema eseguiti e $N_{TSP}$ è il numero di test di sistema pianificati.
+Il valore di accettazion è un range tra 70-100 mentre il valore ottimale è 80-100 per garantire che tutti o la maggior parte dei test di Sistema siano eseguiti effettivamente.
+
+\subparagraph{Test superati}
+
+Indica la percentuale di test superati.
+\begin{itemize}
+	\item \textbf{Misurazione}: $S=\frac{N_{TS}}{N_{TE}} \cdot 100$
+\end{itemize}
+dove $N_{TS}$ è il numero di test superati e $N_{TE}$ è il numero di test eseguiti.
+Il valore di accettazione è un range tra 90-100, il valore ottimale è 100. La motivazione è  garantire che il numero di test totali eseguiti sia uguale o quasi a quelli preventivati per garantire tutte le funzionalità previste. \\
+
+\subparagraph{Copertura dei test}
+Questo indice indica la percentuale di istruzioni del prodotto che vengono eseguite durante i test.
+Un valore percentuale alto indica una maggiore copertura dei test e quindi una maggiore probabilità che le componenti abbiano una ridotta quantità di errori.
+Tale indice può però essere abbassato da metodi molto semplici che non richiedono testing come ad esempio metodi \texttt{getter} e/o \texttt{setter}.
+
+\subparagraph{Branch coverage}
+Il \textit{Branch converage} indica, in percentuale, la quantità di decisioni coperte durante l'esecuzione dei test. Una decisione avviene ogni qualvolta vi è una possibilità di variazione di esecuzione, ad esempio una condizione \texttt{if-then-else} o qualsiasi cosa che potrebbe dare TRUE o FALSE a seconda dei dati inseriti.
+\begin{itemize}
+	\item \textbf{Misurazione}:
+	\begin{displaymath}
+	{\text{Condizioni eseguite}}\over{\text{Condizioni totali}}
+	\end{displaymath} 
+\end{itemize}
+
+\subparagraph{Statement coverage}
+Lo \textit{Statement coverage} indica, in percentuale, la quantità di codice che viene eseguita quando vengono eseguiti i test. Un programma con un alto livello di copertura ha minori possibilità di contenere malfunzionamenti o comportamenti inaspettati.
+\begin{itemize}
+	\item \textbf{Misurazione}:
+	\begin{displaymath}
+	{\text{Codice Testato}}\over{\text{Codice totale}}
+	\end{displaymath} 
+\end{itemize}
+
+
+\paragraph{Metriche per l'integrazione}
+\subparagraph{Componenti integrate}
+\textbf{Misurazione}: $I=\frac{N_{CI}}{N_{CP}} \cdot 100$, dove $N_{CI}$ è il numero di componenti attualmente integrate nel sistema e $N_{CP}$ è il numero di componenti delineate nell'attività di progettazione.
+Per avere un buon soddisfacimento dei requisiti abbiamo deciso di avere un valore di accettazione pari a quello ottimale cioè di 100.
+
+\paragraph{Metriche per la gestione dei rischi}
+
+\subparagraph{Rischi non preventivati}
+Indicatore che evidenzia i rischi non preventivati.
+Per questa metrica l'indice numerico viene incrementato nel momento in cui si manifesta un rischio non individuato nell’attività di analisi dei rischi; il valore di accettazione è tra 0 e 5.
+%%%%%%%%%%%
 
 \subsubsection{Analisi}
 
@@ -676,7 +1012,7 @@ l’esecuzione del codice a mano (si attraversa (walkthrough) il codice). Si pre
 L’analisi dinamica consiste nell’esaminare il software  quando è in esecuzione ed è tipicamente effettuata dopo aver compiuto l’analisi statica di base.
 
 \subsubsection{Test}
-
+Di seguito verranno elencate tutte le tipologie di Test che il gruppo ha deciso di implementare
 \paragraph{Test di unità}
 
 Lo scopo del test di unità è quello di verificare che tutte le componenti
@@ -759,6 +1095,25 @@ seguente sintassi:
 
 $$ TV[\text{Codice requisito}] $$
 
+%%aggiunto in fase RQ
+
+\subsubsection{Strumenti per l'analisi dinamica}
+
+\begin{itemize}
+	\item \textbf{Mocha}: framework che permette di eseguire test di unità e di integrazione andando a creare dei mock che simulino il comportamento delle varie parti, con lo scopo di testare ogni dettaglio in modo indipendente dal resto
+	\item \textbf{Chai}: libreria per formulare asserzioni sull'output atteso
+	\item \textbf{Sinon}: libreria per simulare delle risposte di richieste a server remoti
+\end{itemize}
+
+\subsection{Processi per la risoluzione dei problemi}
+Per ogni problema trovato all'interno del progetto (sia esso di qualunque natura e importanza), esso viene inserito all'interno di un documento non ufficiale presente nella repository di documenti. \\
+All'interno di esso sarà presente uno schema concettuale per dividere i problemi a seconda della loro priorità e natura. Il problema dovrà essere descritto in maniera precisa e chiara, inoltre sarà presente un campo dove verrà inserito se il problema in questione è in uno dei seguenti tre stati
+\begin{itemize}
+	\item \textit{Identificato}: il problema è stato trovato ma non è ancora stato preso in carica da nessun componente del team.
+	\item\textit{In lavorazione}: il problema è stato già analizzato ed è stato preso in carica da uno più componenti del team per la sua risoluzione. una volta che entra in questo stato devono essere indicati anche i componenti del team che stanno lavorando su di esso.
+	\item \textit{Risolto}: il problema è già stato risolto.
+\end{itemize}
+
 \section{Processi Organizzativi}
 
 \subsection{Scopo}
@@ -839,7 +1194,7 @@ l'applicazione \glossario{Slack} dove è stato creato un gruppo di lavoro
 "Obelix" all'interno del quale i membri del gruppo possono comunicare
 attraverso la chat principale.\\ 
 Per quanto riguarda la comunicazione su argomenti specifici è possibile la creazione di alcune chat "interne" per mandare messaggi solo ai membri interessati.
-Nel caso fosse necessaria una video-chiamata verrà utilizzata l'applicazione \emph{Skype}.
+Mel caso fosse necessaria una video-chiamata verrà utilizzata l'applicazione \emph{Skype}.
 \subsubsection{Comunicazioni esterne}
 Per le comunicazioni esterne è stato creato un indirizzo email
 apposito: \href{mailto:obelixswe@gmail.com}{obelixswe@gmail.com}.\\Il
