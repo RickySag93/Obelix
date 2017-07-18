@@ -50,37 +50,39 @@ saranno riportati nel Glossario.
 \item \textbf{Slide del corso di Ingegneria del Software}: \\  \url{http://www.math.unipd.it/~tullio/IS-1/2016/ }
 \end{itemize}
 
-\subsection{Ciclo di Vita}
+\subsection{Modello di sviluppo}
 
-Il modello di ciclo di vita scelto è il Modello Incrementale. Questo prevede la suddivisione dello svolgimento del progetto in più fasi il cui termine è segnato da una \textit{milestone}. \\
-%\begin{itemize}
-%\item L’Analisi e la Progettazione Architetturale costituiscano una base solida: i requisiti e l’architettura del sistema sono identificati e fissati definitivamente e sono essenziali per la
-%  pianificazione dei cicli incrementali
-%\item La Progettazione di Dettaglio, la codifica e i test vengono ripetuti più volte, permettendo
-%  sia il miglioramento di parti del sistema già esistenti che l’aggiunta di nuove funzionalità
-%\end{itemize}
+Il modello di sviluppo scelto è il Modello Incrementale. Esso prevede la suddivisione dello svolgimento del progetto in più periodi il cui termine è segnato da una \textit{milestone}:
+
+\begin{itemize}
+	\item \textbf{Analisi preliminare}: inizialmente avviene la ricerca degli strumenti utili per redigere la documentazione. Successivamente si definiscono i documenti relativi alle normative e alle scelte interne. Come ultima parte vengono redatti i documenti riguardanti le scelte strategiche, qualitative e di analisi del progetto.
+	\item \textbf{Analisi di Dettaglio}: in questo periodo avviene un miglioramento dell'analisi dei requisiti. Gli analisti correggono gli eventuali requisiti che non rispecchiano le aspettative del \glossario{proponente} e ne trovano di nuovi.
+	\item \textbf{Progettazione architetturale e di Dettaglio}: durante lo svolgimento della Progettazione architetturale si individua una soluzione generale per soddisfare i requisiti richiesti. Verranno inoltre sistemati ed incrementati gli altri documenti.
+	\item \textbf{Codifica e test}: questo periodo termina con la Revisione di Qualifica. Qui viene svolta la codifica dei requisiti obbligatori, opzionali e desiderabili. Verranno incrementati altri documenti. 
+	\item \textbf{Validazione e collaudo}: in questo periodo il progetto raggiunge la sua terminazione. Viene effettuata l'attività di validazione del software e successivo collaudo. Questo periodo termina con la Revisione  di Accettazione. 
+\end{itemize}
+
+Il Modello Incrementale prevede che:
+\begin{itemize}
+\item L’Analisi e la Progettazione Architetturale costituiscano una base solida: i requisiti e l’architettura del sistema sono identificati e fissati definitivamente e sono essenziali per la pianificazione dei cicli incrementali
+\item La Progettazione di Dettaglio, la codifica e i test vengano ripetuti più volte, permettendo sia il miglioramento di parti del sistema già esistenti che l’aggiunta di nuove funzionalità
+\end{itemize}
 
 I vantaggi attesi dalla scelta di tale modello sono i seguenti:
 
 \begin{itemize}
-\item I requisiti utente sono organizzati in base all’importanza strategica, ovvero vengono soddisfatti per primi quelli di maggiore rilevanza
+\item I requisiti utente sono organizzati in base all'importanza strategica, ovvero vengono soddisfatti per primi quelli di maggiore rilevanza
 \item Ogni incremento può produrre valore e riduce il rischio di fallimento, in quanto esso
 consolida ulteriormente la base ed eventualmente ne aumenta la qualità
 \item Minimizza i rischi di ritardo rispetto ai tempi stabiliti dato che le fasi hanno durata breve e sono precedentemente pianificate
 \item Attività di verifica più semplice
-%\item Esecuzione più dettagliata dei test che quindi risulteranno essere maggiormente esaustivi
-%\item Rilasci multipli e in successione, che inizialmente punteranno a soddisfare i requisiti di primaria importanza mentre successivamente andranno ad adempiere a possibili funzionalità
-%aggiuntive o opzionali. Grazie a questi prototipi il \glossario{proponente} avrà la possibilità di fornire
-%una prima valutazione del lavoro nel periodo di produzione
+\item Rilasci multipli e in successione, che inizialmente punteranno a soddisfare i requisiti di primaria importanza mentre successivamente andranno ad adempiere a possibili funzionalità aggiuntive o opzionali.
+\item Il favoreggiamento della creazione di prototipi, ovvero di parti di prodotto funzionanti, che a loro volta favoriscono
+il dialogo con il cliente.
+
 \end{itemize}
-Lo sviluppo è diviso nelle seguenti fasi:
-\begin{itemize}
-\item \textbf{Analisi preliminare}: Inizialmente avviene la ricerca degli strumenti utili per redigere la documentazione. Successivamente si definiscono i documenti relativi alle normative e alle scelte interne. Come ultima parte vengono redatti i documenti riguardanti le scelte strategiche, qualitative e di analisi del progetto.
-\item \textbf{Analisi di Dettaglio}: in questa fase avviene un miglioramento dell'analisi dei requisiti. Gli analisti correggono gli eventuali requisiti che non rispecchiano le aspettative del \glossario{proponente} e ne trovano di nuovi.
-\item \textbf{Progettazione architetturale e di Dettaglio}: durante lo svolgimento della Progettazione architetturale si individua una soluzione generale per soddisfare i requisiti richiesti. Verranno inoltre sistemati ed incrementati gli altri documenti.
-\item \textbf{Codifica e test}: Questa fase termina con la Revisione di Qualifica. Qui viene svolta la codifica dei requisiti obbligatori, opzionabili e desiderabili. Verranno incrementati altri documenti. 
-\item \textbf{Validazione e collaudo}: in questa fase il progetto raggiunge la sua terminazione. Viene effettuata l'attività di validazione del software e successivo collaudo. Questa fase termina con la Revisione  di Accettazione. 
-\end{itemize}
+
+
 
 \subsection{Scadenze}
 
@@ -410,7 +412,7 @@ Le sotto-attività possono essere critiche o non critiche.
 \end{sidewaysfigure}
 
 Periodo: da 2017-02-20 a 2017-04-18 \\
-Questo periodo inizia in concomitanza alla formazione del gruppo e termina con la Revisione dei Requisiti.\\
+Questo periodo inizia in concomitanza alla formazione del gruppo e termina con la Revisione dei Requisiti. Il gruppo deve scegliere un capitolato e cominciare a lavorare con il fine ultimo di aggiudicarselo.\\
 I documenti che saranno stilati in questo periodo sono:
 
 \begin{itemize}
@@ -444,7 +446,7 @@ I documenti che saranno stilati in questo periodo sono:
 
 Dopo essere stati redatti, tutti i documenti verranno  verificati. La verifica dei
 documenti è considerata un'attività critica.\\
-In questa fase i ruoli maggiormente coinvolti sono:  \emph{Amministratore} ,  \emph{Responsabile} ,
+In questa periodo i ruoli maggiormente coinvolti sono:  \emph{Amministratore} ,  \emph{Responsabile} ,
  \emph{Analista}  e  \emph{Verificatore} .
 
 \subsection{Analisi dei Requisiti in Dettaglio}
@@ -457,9 +459,9 @@ In questa fase i ruoli maggiormente coinvolti sono:  \emph{Amministratore} ,  \e
 Periodo: da 2017-04-19 a 2017-04-30 \\
 Questo periodo inizia dopo la Revisione dei Requisiti e termina con l’inizio del periodo
 successivo, quello di Progettazione Architetturale.
-Questo periodo viene utilizzato per consolidare i requisiti richiesti dal sistema e per
-migliorare il documento di Analisi dei Requisiti.\\
-In questa fase i ruoli maggiormente coinvolti sono:  \emph{Analista}  e  \emph{Verificatore} .
+Il gruppo in questo periodo si impegnerà ad identificare, ampliare e fissare definitivamente i requisiti richiesti dal sistema.
+Verranno inoltre effettuate le modifiche necessarie, rilevate in seguito all’esito della Revisione dei Requisiti nei vari documenti. \\
+In questa periodo i ruoli maggiormente coinvolti sono:  \emph{Analista}  e  \emph{Verificatore} .
 
 \subsection{Progettazione Architetturale}
 
@@ -472,13 +474,10 @@ Periodo: da 2017-05-01 a 2017-05-25 \\
 Il periodo di Progettazione Architetturale inizia dopo quello di Analisi dei Requisiti
 in Dettaglio e si conclude con la milestone interna di Revisione di Progettazione minima.
 L’obiettivo di questo periodo è la stesura della progettazione ad alto livello del sistema.
-\'E prevista la stesura delle sezioni del documento Definizione di Prodotto riguardanti l'Architettura di alto livello. \\
+\'E prevista la stesura delle sezioni del documento Definizione di Prodotto riguardanti l'Architettura di alto livello. 
+I Progettisti dovranno descrivere le scelte progettuali, i design-pattern scelti per la realizzazione dell’architettura generale del prodotto, i principali flussi di controllo e il tracciamento dei requisiti. \\
 In questa fase i ruoli maggiormente coinvolti sono:  \emph{Amministratore} ,  \emph{Responsabile} ,
  \emph{Progettista}  e  \emph{Verificatore} . \\
- Il Progettista redige la Definizione di Prodotto che contiene le scelte
- progettuali, analizzate sullo specifico, che il prodotto dovrà avere. Verranno descritti all’interno del documento i design pattern utilizzati nella creazione del prodotto,
- l’architettura generale del software, i principali flussi di controllo e il tracciamento
- dei requisiti.
 
 \subsection{Progettazione di Dettaglio}
 
@@ -491,7 +490,8 @@ Periodo: da 2017-05-26 a 2017-06-20 \\
 Il periodo di Progettazione in Dettaglio inizia dopo quello di Progettazione Architetturale
 e si conclude con la scadenza di consegna per la Revisione di Progettazione massima.
 L’obiettivo di questo periodo è la progettazione dettagliata del sistema.
-\'E prevista la stesura delle sezioni del documento Definizione di Prodotto riguardanti l'architettura di dettaglio del sistema. \\
+\'E prevista la stesura delle sezioni del documento Definizione di Prodotto riguardanti l'architettura di dettaglio del sistema.
+I Progettisti dovranno descrivere le classi per ogni componente del sistema, i design-pattern scelti per la realizzazione dell’architettura di dettaglio del prodotto e il tracciamento dei requisiti. \\
 In questa fase i ruoli maggiormente coinvolti sono:  \emph{Amministratore} ,  \emph{Responsabile} ,
  \emph{Progettista}  e  \emph{Verificatore} .
 
@@ -504,12 +504,20 @@ In questa fase i ruoli maggiormente coinvolti sono:  \emph{Amministratore} ,  \e
 
 Periodo: da 2017-06-21 a 2017-08-22 \\
 Il periodo di Codifica inizia dopo quello di Progettazione in Dettaglio e si conclude
-con la consegna del prodotto per la Revisione di Qualifica. \'E prevista l'attività di
-Codifica che deve seguire quanto riportato nel documento Definizione
-di Prodotto e la stesura del Manuale Utente. 
-Verranno eseguiti automaticamente tutti i test di unità ed
-integrazione previsti e codificati, e monitorati i risultati di tale attività.
-\\
+con la consegna del prodotto per la Revisione di Qualifica. 
+\'E prevista la realizzazione incrementale del prodotto, ovvero verranno realizzati prima i requisiti essenziali, poi quelli desiderabili e infine quelli facoltativi per ridurre il rischio di fallimento.
+L’obiettivo finale consiste nel consegnare un prodotto software completo. Le attività che ad ogni incremento verranno eseguite sono le seguenti:
+\begin{itemize}
+	\item Aggiornare il documento Definizione di Prodotto
+	\item Incrementare i documenti Norme di Progetto, Piano di Progetto, Piano di Qualifica e Glossario.
+	\item I Programmatori devono sviluppare il codice del prodotto software attenendosi il più possibile a quanto scritto dai Progettisti nel documento Definizione di Prodotto. \\
+    L’attività di Codifica deve essere svolta seguendo, iterativamente, i seguenti passi:
+    \begin{itemize}
+    	\item Codifica dell’incremento svolto dai Progettisti
+    	\item Verifica dell’incremento
+	\end{itemize}
+	\item Stesura del Manuale Utente
+\end{itemize}
 
 In questa fase i ruoli maggiormente coinvolti sono:  \emph{Amministratore} ,  \emph{Responsabile} ,
  \emph{Progettista} ,  \emph{Programmatore}  e  \emph{Verificatore} .
@@ -525,9 +533,14 @@ Periodo: da 2017-08-23 a 2017-09-12 \\
 Il periodo di Validazione inizia dopo quello di Codifica e si conclude con la Revisione
 di Accettazione.
 L'obbiettivo di questo periodo è quello di effettuare tutti i test necessari per garantire
-che il prodotto soddisfi tutti i requisiti. Verranno, inoltre, effettuati i test di sistema. 
-Verrà quindi svolta una esecuzione dei test (non eseguiti durante la Revisione di Qualifica), con successivo collaudo e correzione di eventuali bug.
-\\
+che il prodotto soddisfi tutti i requisiti. 
+Le attività previste per questo periodo sono:
+\begin{itemize}
+\item Effettuare i test di sistema
+\item Incrementare, correggere o aggiornare e verificare i documenti: Manuale Utente, Norme di Progetto, Piano di Progetto, Piano di Qualifica, Definizione di Prodotto e Glossario
+\item Verificare il corretto funzionamento del prodotto correggendo eventuali errori
+\end{itemize}
+
 In questa fase i ruoli maggiormente coinvolti sono:  \emph{Responsabile} ,  \emph{Progettista} 
 e  \emph{Verificatore} .
 
