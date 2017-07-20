@@ -13,7 +13,7 @@
 RObFu10 & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter accedere alle bolle dall'interfaccia di Rocket.Chat. & \makecell{UC3}\\
 \hline
 
-RObFu10.1 & \makecell{Obbligatorio \\ Funzionale} & All'interfaccia standard di Rocket.Chat devono essere aggiunti due pulsanti nella tabbar laterale che permettano di accedere alle SideAreas. & \makecell{UC3.1}\\
+RObFu10.1 & \makecell{Obbligatorio \\ Funzionale} & All'interfaccia standard di Rocket.Chat devono essere aggiunti due pulsanti nella tabbar laterale che permettano di accedere alle SideAreas. & \makecell{UC3.1\\UC3.4}\\
 \hline
 
 RObFu10.2 & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter utilizzare la SideArea1 che permette di creare, inviare, visualizzare e modificare le bolle inviate. & \makecell{UC3.2}\\
@@ -37,9 +37,6 @@ RObFu10.2.5 & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visual
 RObFu10.2.5.1 & \makecell{Obbligatorio \\ Funzionale} & L'utente deve visualizzare un messaggio appropriato nel caso non ci siano bolle nello storico in uscita. & \makecell{UC3.2.7}\\
 \hline
 
-RObFu10.2.6 & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter interagire con le bolle inviate. & \makecell{UC3.2.6}\\
-\hline
-
 RObFu10.2.7 & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare un messaggio di errore nel caso in cui la configurazione della bolla non fosse andata a buon fine. & \makecell{UC3.2.8}\\
 \hline
 
@@ -50,9 +47,6 @@ RObFu10.3.1 & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visual
 \hline
 
 RObFu10.3.1.1 & \makecell{Obbligatorio \\ Funzionale} & L'utente deve visualizzare un messaggio appropriato nel caso in cui non ci siano bolle nello storico in ingresso. & \makecell{UC3.3.3}\\
-\hline
-
-RObFu10.3.2 & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter interagire con le bolle che ha ricevuto. & \makecell{UC3.3.2}\\
 \hline
 
 RObFu11 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve avere a disposizione gli strumenti per creare una bolla funzionante. & \makecell{UC0}\\
@@ -88,16 +82,16 @@ RObFu11.2.1.1.5 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve p
 RObFu11.2.1.1.6 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter inserire un componente radiobutton. & \makecell{Interno\\UC2.1.1}\\
 \hline
 
-RObFu11.2.1.2 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter inserire un contenitore. & \makecell{UC2.1.1}\\
+RObFu11.2.1.2 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter inserire un contenitore. & \makecell{UC2.1.5}\\
 \hline
 
-RObFu11.2.1.2.1 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter inserire un contenitore che posiziona gli elementi figli uno accanto all'altro dando a ciascuno uguale spazio. Il massimo numero di elementi accostabili è 12 a causa dei limiti del grid system di Bootstap. & \makecell{Interno\\UC2.1.1}\\
+RObFu11.2.1.2.1 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter inserire un contenitore che posiziona gli elementi figli uno accanto all'altro dando a ciascuno uguale spazio. Il massimo numero di elementi accostabili è 12 a causa dei limiti del grid system di Bootstap. & \makecell{Interno\\UC2.1.5}\\
 \hline
 
-RObFu11.2.1.2.2 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter inserire un contenitore che posiziona gli elementi figli uno sotto l'altro. & \makecell{Interno\\UC2.1.1}\\
+RObFu11.2.1.2.2 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter inserire un contenitore che posiziona gli elementi figli uno sotto l'altro. & \makecell{Interno\\UC2.1.5}\\
 \hline
 
-RObFu11.2.1.2.3 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter inserire un contenitore il cui contenuto possa essere visualizzato o meno in base all'esecuzione di un comando. & \makecell{Interno\\UC2.1.1}\\
+RObFu11.2.1.2.3 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter inserire un contenitore il cui contenuto possa essere visualizzato o meno in base all'esecuzione di un comando. & \makecell{Interno\\UC2.1.5}\\
 \hline
 
 RObFu11.2.1.3 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter modificare le proprietà di un componente grafico. & \makecell{UC2.1.2}\\
@@ -133,13 +127,25 @@ RObFu11.2.2 & \makecell{Obbligatorio \\ Funzionale} & Deve essere possibile dist
 RObFu11.2.3 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter gestire la persistenza dei dati della bolla. & \makecell{UC2.3}\\
 \hline
 
-RObFu11.2.3.1 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter impostare la memorizzazione di dati nella bolla. & \makecell{Interno\\UC2.3}\\
+RObFu11.2.3.1 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter impostare la memorizzazione di dati nella bolla. & \makecell{Interno\\UC2.3\\UC2.3.3}\\
 \hline
 
-RObFu11.2.3.2 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter impostare la modifica dei dati memorizzati nella bolla. & \makecell{Interno\\UC2.3}\\
+RObFu11.2.3.2 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter impostare la modifica dei dati memorizzati nella bolla. & \makecell{Interno\\UC2.3\\UC2.3.3}\\
 \hline
 
-RObFu11.2.3.3 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter impostare l'eliminazione dei dati memorizzati nella bolla. & \makecell{Interno\\UC2.3}\\
+RObFu11.2.3.3 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter impostare l'eliminazione dei dati memorizzati nella bolla. & \makecell{Interno\\UC2.3\\UC2.3.3}\\
+\hline
+
+RObFu11.2.3.4 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter specificare i parametri di accettazione dell'input. & \makecell{UC2.3.1}\\
+\hline
+
+RObFu11.2.3.5 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter specificare come gestire l'input non accettabile. & \makecell{UC2.3.2}\\
+\hline
+
+RObFu11.2.3.5.1 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter specificare come il sistema deve gestire gli errori sull'input. & \makecell{UC2.3.2.1}\\
+\hline
+
+RObFu11.2.3.5.2 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter specificare un messaggio d'errore per l'utente in caso di input errato. & \makecell{UC2.3.2.2}\\
 \hline
 
 RObFu20 & \makecell{Obbligatorio \\ Funzionale} & I dati relativi alle singole istanze di bolla vengono memorizzati separatamente senza che lo sviluppatore debba operare la distinzione. & \makecell{Interno}\\
@@ -157,6 +163,15 @@ RObFu22.1 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve essere 
 RObFu23 & \makecell{Obbligatorio \\ Funzionale} & Vengono forniti allo sviluppatore una serie di componenti grafici di base. & \makecell{Interno}\\
 \hline
 
+RDeFu24 & \makecell{Desiderabile \\ Funzionale} & L'utente deve riceve notifiche per eventi di rilievo. & \makecell{}\\
+\hline
+
+RDeFu24.1 & \makecell{Desiderabile \\ Funzionale} & L'utente deve ricevere una notifica per la ricezione di una bolla. & \makecell{}\\
+\hline
+
+RDeFu24.2 & \makecell{Desiderabile \\ Funzionale} & Lo sviluppatore deve poter impostare notifiche per eventi di rilievo per un nuovo tipo di bolla. & \makecell{}\\
+\hline
+
 RObFu01-cv & \makecell{Obbligatorio \\ Funzionale} & L'utente può convertire importi da una valuta all'altra. & \makecell{UC0-cv}\\
 \hline
 
@@ -172,13 +187,22 @@ RObFu01.3-cv & \makecell{Obbligatorio \\ Funzionale} & I tassi di conversione ve
 RObFu01.4-cv & \makecell{Obbligatorio \\ Funzionale} & Il mittente e il ricevente devono poter visualizzare gli importi convertiti. & \makecell{UC3-cv}\\
 \hline
 
+RObFu01.5-cv & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare il menu di configurazione per la bolla convertitore di valuta. & \makecell{UC4-cv}\\
+\hline
+
+RObFu01.6-cv & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter inviare la bolla convertitore di valuta. & \makecell{UC5-cv}\\
+\hline
+
+RObFu01.7-cv & \makecell{Obbligatorio \\ Funzionale} & L'utente non deve poter inviare la bolla nel caso in cui non siano state selezionate le valute in ingresso e in uscita o l'importo da convertire. & \makecell{UC5-cv}\\
+\hline
+
 ROpFu02-cv & \makecell{Opzionale \\ Funzionale} & L'utente può convertire importi da valori di pacchetti azionari. & \makecell{Interno}\\
 \hline
 
 RObFu01-dd & \makecell{Obbligatorio \\ Funzionale} & La bolla estrae un numero casualmente dal range impostato. & \makecell{UC0-dd}\\
 \hline
 
-RObFu01.1-dd & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter impostare il range da cui estrarre il numero casuale. & \makecell{UC1-dd}\\
+RObFu01.1-dd & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter inserire un numero intero positivo. & \makecell{UC1-dd}\\
 \hline
 
 RObFu01.2-dd & \makecell{Obbligatorio \\ Funzionale} & Il mittente e il ricevente devono poter visualizzare il numero casuale generato. & \makecell{UC2-dd}\\
@@ -187,7 +211,16 @@ RObFu01.2-dd & \makecell{Obbligatorio \\ Funzionale} & Il mittente e il ricevent
 ROpFu01.2.1-dd & \makecell{Opzionale \\ Funzionale} & Il mittente e il ricevente devono poter visualizzare il numero casuale sotto forma di immagine (per esempio le facce di uno o più dadi). & \makecell{Interno}\\
 \hline
 
-RObFu01.3-dd & \makecell{Obbligatorio \\ Funzionale} & Il sistema genera lato server un numero casuale nel range specificato utilizzando la libreria Math inclusa in Javascript. & \makecell{Interno}\\
+RObFu01.3-dd & \makecell{Obbligatorio \\ Funzionale} & Il sistema genera lato server un numero intero casuale nel range tra 0 e il numero inserito. L'estrazione avviene utilizzando la libreria Math inclusa in Javascript. & \makecell{Interno}\\
+\hline
+
+RObFu01.4-dd & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare il menu di configurazione della bolla estrazione di numero casuale. & \makecell{UC3-dd}\\
+\hline
+
+RObFu01.5-dd & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter inviare la bolla estrazione di numero casuale. & \makecell{UC4-dd}\\
+\hline
+
+RObFu01.6-dd & \makecell{Obbligatorio \\ Funzionale} & L'utente non deve poter inviare la bolla senza aver impostato il range. & \makecell{UC4-dd}\\
 \hline
 
 RObFu01-ls & \makecell{Obbligatorio \\ Funzionale} & Il mittente deve poter definire una lista da inviare. & \makecell{UC1-ls}\\
@@ -199,7 +232,52 @@ RObFu01.1-ls & \makecell{Obbligatorio \\ Funzionale} & Il mittente deve poter in
 RObFu01.2-ls & \makecell{Obbligatorio \\ Funzionale} & Il mittente deve poter inserire un elemento prelevandolo da una delle liste predefinite. & \makecell{UC1.2-ls}\\
 \hline
 
+RObFu01.3-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter inserire un titolo per la lista da inviare. & \makecell{UC1.3-ls}\\
+\hline
+
+RObFu01.4-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter rimuove un elemento dalla lista. & \makecell{UC1.4-ls}\\
+\hline
+
+RObFu01.5-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter modificare un elemento della lista. & \makecell{UC1.5-ls}\\
+\hline
+
+RObFu01.6-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare l'elenco delle checklists. & \makecell{UC1.6-ls}\\
+\hline
+
+RObFu01.7-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare la singola checklist. & \makecell{UC1.7-ls}\\
+\hline
+
 RObFu02-ls & \makecell{Obbligatorio \\ Funzionale} & Il mittente deve poter definire una lista predefinita. & \makecell{UC2-ls}\\
+\hline
+
+RObFu02.1-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter accedere al menu di gestione delle checklists. & \makecell{UC2.1-ls}\\
+\hline
+
+RObFu02.2-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare la singola checklist. & \makecell{UC2.2-ls}\\
+\hline
+
+RObFu02.3-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter accedere al menu di creazione di una nuova checklist. & \makecell{UC2.3-ls}\\
+\hline
+
+RObFu02.4-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente non deve poter creare una checklist vuota. & \makecell{UC2.4-ls}\\
+\hline
+
+RDeFu02.4.1-ls & \makecell{Desiderabile \\ Funzionale} & L'utente deve visualizzare un messaggio che lo informa del non avvenuto salvataggio di una checklist vuota. & \makecell{UC2.4-ls}\\
+\hline
+
+RObFu02.5-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter inserire un titolo alla checklist. & \makecell{UC2.5-ls}\\
+\hline
+
+RObFu02.6-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter aggiungere un elemento alla checklist. & \makecell{UC2.6-ls}\\
+\hline
+
+RObFu02.7-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter eliminare un elemento dalla checklist. & \makecell{UC2.7-ls}\\
+\hline
+
+RObFu02.8-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter modificare un elemento della checklist. & \makecell{UC2.8-ls}\\
+\hline
+
+RObFu02.9-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter eliminare una checklist. & \makecell{UC2.9-ls}\\
 \hline
 
 RObFu03-ls & \makecell{Obbligatorio \\ Funzionale} & Il mittente e il ricevente devono poter spuntare una voce dalla lista inviatagli. & \makecell{UC3-ls}\\
@@ -208,10 +286,22 @@ RObFu03-ls & \makecell{Obbligatorio \\ Funzionale} & Il mittente e il ricevente 
 RObFu04-ls & \makecell{Obbligatorio \\ Funzionale} & Il mittente e il ricevente devono poter visualizzare le spunte effettuate. & \makecell{UC4-ls}\\
 \hline
 
+RObFu05-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare il menu di configurazione della bolla lista. & \makecell{UC5-ls}\\
+\hline
+
+RObFu06-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter inviare la bolla lista. & \makecell{UC6-ls}\\
+\hline
+
+RObFu07-ls & \makecell{Obbligatorio \\ Funzionale} & L'utente non deve poter inviare una lista bolla senza averla definita con almeno un elemento. & \makecell{UC6-ls}\\
+\hline
+
+RDeFu08-ls & \makecell{Desiderabile \\ Funzionale} & L'utente riceve una notifica al completamento di una lista. & \makecell{}\\
+\hline
+
 RObFu01-mt & \makecell{Obbligatorio \\ Funzionale} & La bolla deve restituire le previsioni meteo per la località scelta. & \makecell{UC0-mt}\\
 \hline
 
-RObFu01.1-mt & \makecell{Obbligatorio \\ Funzionale} & Il mittente deve poter selezionare la località desiderata. & \makecell{UC1-mt}\\
+RObFu01.1-mt & \makecell{Obbligatorio \\ Funzionale} & Il mittente deve poter inserire il nome della località desiderata. & \makecell{UC1-mt}\\
 \hline
 
 RObFu01.2-mt & \makecell{Obbligatorio \\ Funzionale} & Le previsioni meteorologiche vengono fornite tramite la libreria weather.js. & \makecell{Interno}\\
@@ -220,34 +310,70 @@ RObFu01.2-mt & \makecell{Obbligatorio \\ Funzionale} & Le previsioni meteorologi
 RObFu01.3-mt & \makecell{Obbligatorio \\ Funzionale} & Il mittente e il ricevente devono poter visualizzare il meteo per la località selezionata. & \makecell{UC2-mt}\\
 \hline
 
+RObFu01.4-mt & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare il menu di configurazione. & \makecell{UC3-mt}\\
+\hline
+
+RObFu01.5-mt & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter inviare la bolla meteo. & \makecell{UC4-mt}\\
+\hline
+
+RObFu01.6-mt & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare i risultati della ricerca effettuata utilizzando in nome della località di cui si vuole conoscere il meteo. & \makecell{UC5-mt}\\
+\hline
+
+RObFu01.7-mt & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare un opportuno messaggio di errore nel caso in cui la ricerca non abbia dato esito. & \makecell{UC7-mt}\\
+\hline
+
+RObFu01.8-mt & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter selezionare il risultato desiderato tra i risultati della ricerca. & \makecell{UC6-mt}\\
+\hline
+
+RObFu01.9-mt & \makecell{Obbligatorio \\ Funzionale} & L'utente non deve poter inviare la bolla prima di aver selezionato un risultato della ricerca effettuata utilizzando il nome della località di cui si vuole conoscere il meteo. & \makecell{UC4-mt}\\
+\hline
+
 RObFu01-sd & \makecell{Obbligatorio \\ Funzionale} & Il mittente può definire le opzioni tra cui i riceventi possono scegliere. & \makecell{UC1-sd}\\
 \hline
 
 RObFu02-sd & \makecell{Obbligatorio \\ Funzionale} & Il ricevente deve poter votare nel sondaggio. & \makecell{UC2-sd}\\
 \hline
 
-RObFu03-sd & \makecell{Obbligatorio \\ Funzionale} & Il mittente deve poter votare nel proprio sondaggio. & \makecell{UC2-sd}\\
+RObFu03-sd & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare il menu di configurazione per la bolla sondaggio. & \makecell{UC4-sd}\\
 \hline
 
 RObFu04-sd & \makecell{Obbligatorio \\ Funzionale} & Il mittente e il ricevente devono poter visualizzare i risultati del sondaggio. & \makecell{UC3-sd}\\
 \hline
 
+RObFu05-sd & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter inviare la bolla sondaggio. & \makecell{UC5-sd}\\
+\hline
+
+RObFu06-sd & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter inserire un titolo per il sondaggio. & \makecell{UC6-sd}\\
+\hline
+
+RObFu07-sd & \makecell{Obbligatorio \\ Funzionale} & L'utente non deve poter inviare la bolla nel caso in cui non siano stati inseriti il titolo e almeno due opzioni. & \makecell{UC5-sd}\\
+\hline
+
+RDeFu08-sd & \makecell{Desiderabile \\ Funzionale} & L'utente deve ricevere una notifica quando tutti i partecipanti hanno espresso il voto. & \makecell{}\\
+\hline
+
 RObFu01-tr & \makecell{Obbligatorio \\ Funzionale} & La bolla deve tradurre il testo inserito nelle lingue selezionate. & \makecell{UC0-tr}\\
 \hline
 
-RObFu01.1-tr & \makecell{Obbligatorio \\ Funzionale} & Il mittente deve poter configurare la lingua in cui sarà scritto il messaggio. & \makecell{UC1-tr}\\
+RObFu01.1-tr & \makecell{Obbligatorio \\ Funzionale} & Il mittente deve poter configurare la lingua in cui sarà scritto il messaggio e quella in cui dovrà essere tradotto. & \makecell{UC1-tr}\\
 \hline
 
 RObFu01.2-tr & \makecell{Obbligatorio \\ Funzionale} & Il mittente deve poter inserire il testo da tradurre. & \makecell{UC2-tr}\\
 \hline
 
-RObFu01.3-tr & \makecell{Obbligatorio \\ Funzionale} & Il mittente deve poter configurare la lingua in cui il messaggio sarà tradotto. & \makecell{UC3-tr}\\
+RObFu01.3-tr & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visualizzare il menu di configurazione. & \makecell{UC3-tr}\\
 \hline
 
 RObFu01.4-tr & \makecell{Obbligatorio \\ Funzionale} & La traduzione deve essere fornita tramite la libreria polyglot.js. & \makecell{Interno}\\
 \hline
 
 RObFu01.5-tr & \makecell{Obbligatorio \\ Funzionale} & Il mittente e il ricevente devono poter visualizzare la traduzione. & \makecell{UC4-tr}\\
+\hline
+
+RObFu01.6-tr & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter inviare la bolla traduttore. & \makecell{UC5-tr}\\
+\hline
+
+RObFu01.7-tr & \makecell{Obbligatorio \\ Funzionale} & L'utente non deve poter inviare la bolla nel caso in cui non siano state impostate le lingue o inserito il messaggio. & \makecell{UC5-tr}\\
 \hline
 
 \hline
@@ -276,9 +402,6 @@ RObQu08 & \makecell{Obbligatorio \\ Qualitativo} & Monolith deve essere corredat
 \hline
 
 RObQu08.1 & \makecell{Obbligatorio \\ Qualitativo} & Il manuale deve spiegare come installare Monolith in ambiente Rochet.Chat. & \makecell{Capitolato\\Interno}\\
-\hline
-
-RObQu15 & \makecell{Obbligatorio \\ Qualitativo} & Il framework è realizzato con uso di promise per la programmazione asincrona. & \makecell{Capitolato}\\
 \hline
 
 RObQu16 & \makecell{Obbligatorio \\ Qualitativo} & La documentazione formale standard deve essere
@@ -332,7 +455,7 @@ RObDi07.1 & \makecell{Obbligatorio \\ Dichiarativo} & I dati dei componenti Reac
 RObDi09 & \makecell{Obbligatorio \\ Dichiarativo} & La demo deve essere installabile su Heroku. & \makecell{Capitolato}\\
 \hline
 
-RObDi11.2.1.2.4 & \makecell{Obbligatorio \\ Dichiarativo} & I layout offerti dai contenitori sono realizzati utilizzando il grid system di Bootstrap. & \makecell{Interno\\UC2.1.1}\\
+RObDi11.2.1.2.4 & \makecell{Obbligatorio \\ Dichiarativo} & I layout offerti dai contenitori sono realizzati utilizzando il grid system di Bootstrap. & \makecell{Interno\\UC2.1.5}\\
 \hline
 
 RObDi12 & \makecell{Obbligatorio \\ Dichiarativo} & Il codice sorgente di Monolith e delle bolle deve essere disponibile su GitHub. & \makecell{Capitolato}\\
@@ -342,6 +465,9 @@ RObDi13 & \makecell{Obbligatorio \\ Dichiarativo} & Monolith deve supportare i b
 \hline
 
 RObDi14 & \makecell{Obbligatorio \\ Dichiarativo} & L'interfaccia del sistema Monolith deve essere responsive. & \makecell{Interno}\\
+\hline
+
+RObDi15 & \makecell{Obbligatorio \\ Dichiarativo} & Il framework è realizzato con uso di promise per la programmazione asincrona. & \makecell{Capitolato}\\
 \hline
 
 RObDi18 & \makecell{Obbligatorio \\ Dichiarativo} & L'utilizzo di callbacks nel codice Javascript deve essere giustificato. & \makecell{Capitolato}\\
@@ -356,16 +482,16 @@ RObDi19 & \makecell{Obbligatorio \\ Dichiarativo} & La modifica del nome delle c
 \end{center}
 \subsection{Riepilogo requisiti}
 
-I 102 requisiti individuati si suddividono come segue:
+I 144 requisiti individuati si suddividono come segue:
 \begin{center}
   \centering
   \begin{tabular}{|l|c|c|c|}
     \hline
       & Funzionali & Qualitativi & Dichiarativi   \\
 \hline
-Obbligatori &      78     &    7     & 15       \\
+Obbligatori &      114     &    6     & 16       \\
 \hline
-Desiderabili &     0     &     0     & 0    \\
+Desiderabili &     6     &     0     & 0    \\
 \hline
 Opzionali   &      2     &    0     & 0    \\
 \hline
