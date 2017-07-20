@@ -176,3 +176,6 @@ BSON
 
 room
 : in Rocket.Chat è una qualunque situazione in cui utenti possono comunicare tramite la chat. Queste includono chat 1:1 o di gruppo.
+
+SQA
+
