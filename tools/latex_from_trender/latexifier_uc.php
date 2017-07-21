@@ -1,7 +1,7 @@
 <?php
 
-include_once("tracciamento.php");
-
+include_once("lib/lib_core.php");
+global $pathOutAdR;
 
 $db = new database();
 // WHERE usecase  LIKE \"%-%\"
@@ -20,17 +20,24 @@ while($res = $ans->fetch_assoc()){
     */
 
    $uc = $res["usecase"];
-   $dad = $res["dad"];
+   $uc = 'UC' . $uc;
+   // $dad = $res["dad"];
    $title = check_punto($res["title"]);
    $des = check_punto($res["description"]);
    $pre = check_punto($res["precondition"]);
    $post = check_punto($res["postcondition"]);
    $img = $res["imagePath"];
-   $imgdid = check_punto($res["didascalia"]);
+   $img = trim($img);
+   //   $imgdid = $res["didascalia"];
+   $imgdid = "Diagramma per il caso d'uso $uc.";
    $act = check_punto($res["actors"]);
    $scen = $res["scene"];
-   $altsc = $res["alternativeScene"];
+   $altsc = $res["extensions"];
 
+   /* if(!preg_match('/UC0-/i',$uc)){
+      $imgdid = "Diagramma per il caso d'uso $uc.";
+      }
+    */
    //////////////////////////////
    // Latex non permette più di un punto nell'estensione dei file immagine
    $img = str_replace(".","_",$img);
@@ -41,12 +48,26 @@ while($res = $ans->fetch_assoc()){
    if($img != '' && !preg_match('/^UC0$/',$uc)){
       $txt .= "\\clearpage\n\n";
    }
-   $txt .= "\\subsection{Caso d'uso $uc: $title}\n";
-   $txt .= "\\begin{itemize}\n";
-
-
-   if($img != ''){
+   // preg_match('/^UC0$/',$uc)
+   if($uc == 'UC0'){
       $txt .=<<<EOF
+   \\FloatBarrier
+   \\begin{figure}[ht]
+   \\centering
+   \\includegraphics[scale=0.45]{img/$img}
+   \\caption{Visione generale dei casi d'uso}
+\\end{figure}
+\\FloatBarrier
+
+EOF;
+   }
+   else{
+      $txt .= "\\subsection{Caso d'uso $uc: $title}\n";
+      $txt .= "\\begin{itemize}\n";
+
+
+      if($img != ''){
+         $txt .=<<<EOF
    \\FloatBarrier
    \\begin{figure}[ht]
    \\centering
@@ -56,16 +77,21 @@ while($res = $ans->fetch_assoc()){
 \\FloatBarrier
 
 EOF;
+      }
+      $txt .= "\\item[]\\textbf{Descrizione:} $des\n";
+      $txt .= "\\item[]\\textbf{Attori:} $act \n";
+      $txt .= "\\item[]\\textbf{Precondizione:} $pre \n";
+      $txt .= "\\item[]\\textbf{Postcondizione:} $post \n";
+      if($scen != ''){
+         $txt .= "\\item[]\\textbf{Scenario:}\n";
+         $txt .= "$scen \n";
+      }
+      if($altsc != ''){
+         $txt .= "\\item[]\\textbf{Estensioni:}\n";
+         $txt .= "$altsc \n";
+      }
+      $txt .= "\\end{itemize}\n\n";
    }
-   $txt .= "\\item[]\\textbf{Descrizione:} $des\n";
-   $txt .= "\\item[]\\textbf{Attori:} $act \n";
-   $txt .= "\\item[]\\textbf{Precondizione:} $pre \n";
-   $txt .= "\\item[]\\textbf{Postcondizione:} $post \n";
-   if($scen != ''){
-      $txt .= "\\item[]\\textbf{Scenario:}\n";
-      $txt .= "$scen \n";
-   }
-   $txt .= "\\end{itemize}\n\n";
    // Elimina gli a capo stile windows creati da PHPmyadmin
    $txt = str_replace("\r\n","\n",$txt);
    $txt = str_replace("\r","\n",$txt);
@@ -77,7 +103,10 @@ EOF;
 $ks = array_keys($data);
 // riordino con la mia funzione  di confronto
 usort($ks,"compare_uc");
-$FH = fopen("uccases.tex", "w");
+$FH = fopen($pathOutAdR."uccases.tex", "w");
+if($FH ===false){
+	die("ERRORE FILE");
+}
 // scrivere nell'ordine giusto
 foreach($ks as $k){
    fwrite($FH,$data[$k]);
