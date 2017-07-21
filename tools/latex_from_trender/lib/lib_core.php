@@ -159,4 +159,15 @@ function argumentHandler(){
 }
 
 
+/*
+function dumpDB(){
+	global $username ,$passwd;
+	$port = argumentHandler();
+	//
+	$return_var = NULL;
+	$output = NULL;
+	$command = "/usr/bin/mysqldump -u $username -h 127.0.0.1 -p$pass nrigato-ES > $dump_directory";
+	exec($command, $output, $return_var);
+}
+*/
 ?>
