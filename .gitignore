@@ -11,3 +11,6 @@
 *.tex~
 *.synctex.gz
 !/1-RR/**
+configurazione.php
+Makefile~
+*.php~

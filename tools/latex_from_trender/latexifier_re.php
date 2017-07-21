@@ -1,8 +1,7 @@
 <?php
 
-include_once("tracciamento.php");
-
-
+include_once("lib/lib_core.php");
+global $pathOutAdR;
 
 $db = new database();
 // WHERE usecase  LIKE \"%-%\"
@@ -14,12 +13,13 @@ $dic = array();
 while($res = $ans->fetch_assoc()){
 
    $req = $res["requirement"];
-   $imp = $res["importanza"];
-   $tipo = $res["tipo"];
+   $imp = $res["importance"];
+   $tipo = $res["type"];
    $des = check_punto($res["description"]);
-   $src = $res["source"];
+   // SORGENTI
+   //$src = $res["source"];
 
-   echo $req ."           ". $des ."<br/>";
+  // echo $req ."           ". $des ."<br/>";
 
    //////////////////////////////
    /*
@@ -65,7 +65,17 @@ while($res = $ans->fetch_assoc()){
 
    $txt .= ' & \\makecell{' . "$imp \\\\ $tipo} & $des & \\makecell{";;
    // fonti:
-   $txt .= implode('\\\\',explode('+',$src))."}\\\\\n\\hline\n";
+
+   $src = array();
+   $ans1 = $db->query("SELECT CONCAT('UC',uc) AS source FROM UcReq WHERE req='$req' UNION SELECT source FROM SourceReq WHERE req='$req'");
+   while($res1 = $ans1->fetch_assoc()){
+      array_push($src, $res1['source']);
+   }
+
+   sort($src);
+
+   $txt .= implode('\\\\',$src)."}\\\\\n\\hline\n";
+
    // Elimina gli a capo stile windows creati da PHPmyadmin
    $txt = str_replace("\r\n","\n",$txt);
    $txt = str_replace("\r","\n",$txt);
@@ -98,15 +108,20 @@ $inizioTabella =<<<EOF
 \\hline \\endfoot
 
 EOF;
-
-$fineTabella =<<<EOF
+function fineTabella($caption){
+   $fineTabella =<<<EOF
 \\hline
 \\end{longtable}
+\\captionof{table}{{$caption}}
 \\end{center}
 EOF;
 
-$FH = fopen("requirements.tex", "w");
-
+   return $fineTabella;
+}
+$FH = fopen($pathOutAdR . "requirements.tex", "w");
+if($FH ===false){
+	die("ERRORE FILE");
+}
 
 if(count($fun)){
    $inizio = "\\subsection{Requisiti funzionali}\n\n";
@@ -121,7 +136,7 @@ if(count($fun)){
    foreach($ks as $k){
       fwrite($FH,$fun[$k]."\n");
    }
-   fwrite($FH,$fineTabella."\n");
+   fwrite($FH,fineTabella('Requisiti funzionali')."\n");
 }
 if(count($qua)){
    $inizio = "\\subsection{Requisiti qualitativi}\n\n";
@@ -136,7 +151,7 @@ if(count($qua)){
    foreach($ks as $k){
       fwrite($FH,$qua[$k]."\n");
    }
-   fwrite($FH,$fineTabella."\n");
+   fwrite($FH,fineTabella('Requisiti qualitativi')."\n");
 }
 if(count($dic)){
    $inizio = "\\subsection{Requisiti dichiarativi}\n\n";
@@ -151,8 +166,61 @@ if(count($dic)){
    foreach($ks as $k){
       fwrite($FH,$dic[$k]."\n");
    }
-	fwrite($FH,$fineTabella."\n");
+   fwrite($FH,fineTabella('Requisiti dichiarativi')."\n");
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+// RIASSUNTO
+
+function conta_riepilogo($i,$t){
+   $db = new database();
+   $risposta = $db->query("select count(*) as num from Requirements WHERE importance='$i' AND type='$t'");
+   $r = $risposta->fetch_assoc();
+   $r = $r['num'];
+   if($r){
+      return $r;
+   }
+   else{
+      return 0;
+   }
+}
+
+$risposta = $db->query("select count(*) as num from Requirements");
+$r = $risposta->fetch_assoc();
+$tot = $r['num'];
+
+$obfu = conta_riepilogo('ob','fu');
+$obqu = conta_riepilogo('ob','qu');
+$obdi = conta_riepilogo('ob','di');
+$defu = conta_riepilogo('de','fu');
+$dequ = conta_riepilogo('de','qu');
+$dedi = conta_riepilogo('de','di');
+$opfu = conta_riepilogo('op','fu');
+$opqu = conta_riepilogo('op','qu');
+$opdi = conta_riepilogo('op','di');
+
+fwrite($FH,"\\subsection{Riepilogo requisiti}\n\n");
+$txttex =<<<EOF
+\\begin{center}
+  \\centering
+  \\begin{tabular}{|l|c|c|c|}
+    \\hline
+      & Funzionali & Qualitativi & Dichiarativi   \\\\
+\\hline
+Obbligatori &      $obfu     &    $obqu     & $obdi       \\\\
+\\hline
+Desiderabili &     $defu     &     $dequ     & $dedi    \\\\
+\\hline
+Opzionali   &      $opfu     &    $opqu     & $opdi    \\\\
+\\hline
+  \\end{tabular}
+  \\captionof{table}{Riepilogo del numero di requisiti individuati.}
+\\end{center}
+EOF;
+
+fwrite($FH,"I $tot requisiti individuati si suddividono come segue:\n");
+
+fwrite($FH,"$txttex\n\n");
 
 
 fclose($FH);
