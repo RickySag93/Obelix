@@ -51,3 +51,7 @@ Il database va popolato con phpmyadmin. Si trova all'indirizzo:
 
 + https://localhost:20443/phpmyadmin su rete interna
 + https://localhost:30443/phpmyadmin su rete esterna
+
+
+NB: per la connessione a phpmyadmin da rete esterna è sufficiente il primo terminale
+NB: con la connessione a phpmyadmin da rete esterna a me non riesce una connessione sicura. bisogna dunque accettare di accedere al sito con connessione non sicura
