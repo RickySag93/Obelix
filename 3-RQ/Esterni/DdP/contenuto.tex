@@ -630,6 +630,7 @@ Product definisce l'interfaccia implementata da ConcreteProduct,
 creator definisce il factory method che restituisce una interfaccia di
 tipo product, ConcreteCreator definisce il metodo factory effettivo
 per la creazione di un’istanza particolare di tipo Product. 
+Utilizzato in tal modo nella classe BubbleCreator dal gruppo Obelix.
 
 
 I motivi che portano alla scelta del suo utilizzo sono:
@@ -641,6 +642,90 @@ I motivi che portano alla scelta del suo utilizzo sono:
 
 \end{itemize}
 
+\subsubsection{Template Method}
+Questo pattern permette di definire la struttura di un algoritmo lasciando alle sottoclassi il compito di implementarne alcuni passi come preferiscono. In questo modo si può ridefinire e personalizzare parte del comportamento nelle varie sottoclassi senza dover riscrivere più volte il codice in comune.
+
+	\FloatBarrier
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=0.45]{img/template-pattern.png}
+		\caption{Diagramma del Template method}
+	\end{figure}
+
+
+Questo pattern è composto dai seguenti partecipanti:
+\begin{itemize}
+	\item AbstractClass: definisce il metodo concreto ed i metodi primitivi astratti. Il metodo concreto richiama i metodi primitivi implementati nelle sottoclassi
+	\item ConcreteClass: implementa i metodi primitivi per svolgere i passi specifici dell’algoritmo ed eventualmente i metodi hook
+\end{itemize}
+
+Tale pattern presenta i seguenti vantaggi/svantaggi:
+\begin{itemize}
+	\item definizione di metodi comuni: occorre comprendere quali sono i comportamenti comunemente implementati dalle sottoclassi e “promuoverli” come comportamenti della superclasse in modo da centralizzarli ed evitare la duplicazione del codice.
+	\item definizione dei metodi hook: occorre permettere alle sottoclassi di poter definire un comportamento durante l’esecuzione dell’algoritmo tramite l’introduzione di un metodo “hook” che POSSONO ma NON SONO OBBLIGATE a ridefinire.
+\end{itemize}
+
+Utilizzato dal gruppo nella classe BubbleDatabase con una funzione polimorfa che ritorna il nome della bolla in base all'istanza.
+Questa scelta è dovuta al fatto di dover sviluppare comportamenti comuni a più bolle, quindi si è deciso di far in modo da centralizzarli ed evitare la duplicazione del codice.
+
+\subsubsection{Proxy Pattern}
+Invece che chiamare direttamente i metodi di un oggetto li facciamo chiamare da un terzo attore che si occupa di invocare concretamente i metodi sull'oggetto e di restituirci i valori in caso di metodi con valori di ritorno. 
+Di solito questo è utilizzato quando esiste una dipendenza da una risorsa remota (con conseguente latenza di rete) o quando un oggetto richiede molto tempo per caricare.
+Quindi si applica il modello Proxy e si crea un oggetto proxy che "si accende" per l'oggetto originale. Il proxy inoltra la richiesta a un oggetto di destinazione. L'interfaccia dell'oggetto Proxy è uguale all'oggetto originale e i client potrebbero non essere nemmeno consapevoli di trattare con un proxy piuttosto che l'oggetto reale
+
+	\FloatBarrier
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=0.45]{img/javascript-proxy.jpg}
+		\caption{Diagramma del Proxy Pattern}
+	\end{figure}
+	
+	Partecipanti:
+	\begin{itemize}
+		\item Client
+			\begin{itemize}
+				\item Chiama Proxy richiedendo un'operazione
+			\end{itemize}
+		\item Proxy
+			\begin{itemize}
+				\item Fornisce un'interfaccia simile all'oggetto reale
+				\item Mantiene un riferimento che consente l'accesso proxy all'oggetto reale
+				\item Gestisce le richieste e li inoltra all'oggetto reale
+			\end{itemize}
+		\item RealSubject
+			\begin{itemize}
+				\item Definisce l'oggetto reale per cui è richiesto il servizio
+			\end{itemize}
+	\end{itemize}
+
+Meteor call utilizza il Pattern Proxy, infatti simula lato client una risorsa che si trova lato server gestendo in modo trasparente la comunicazione tra le due.
+
+\subsubsection{Composite Pattern}
+Questo pattern permette di trattare un gruppo di oggetti come se fossero l'istanza di un oggetto singolo. Il design pattern Composite organizza gli oggetti in una struttura ad albero, nella quale i nodi sono delle composite e le foglie sono oggetti semplici.
+
+È utilizzato per dare la possibilità ai client di manipolare oggetti singoli e composizioni in modo uniforme.
+
+	\FloatBarrier
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[scale=0.45]{img/Composite_Pattern.png}
+		\caption{Diagramma del Composite Pattern}
+	\end{figure}
+
+
+Struttura:
+\begin{itemize}
+	\item Client: manipola gli oggetti attraverso l'interfaccia Component
+	\item Component: dichiara l'interfaccia per gli oggetti nella composizione, per l'accesso e la manipolazione di questi, imposta un comportamento di default per l'interfaccia comune a tutte le classi e può definire un'interfaccia per l'accesso al padre del componente e la implementa se è appropriata
+	\item Composite: definisce il comportamento per i componenti aventi figli, salva i figli e implementa le operazioni ad essi connesse nell'interfaccia Component
+	\item Leaf: definisce il comportamento degli oggetti primitivi, cioè delle foglie.
+\end{itemize}
+
+Attraverso l'interfaccia Component, il Client interagisce con gli oggetti della composite. Se l'oggetto desiderato è una Leaf, la richiesta è processata direttamente; altrimenti, se è una Composite, viene rimandata ai figli cercando di svolgere le operazioni prima e dopo del rimando.
+
+In questo modo, si semplifica il Client, si creano delle gerarchie di classi, si semplifica l'aggiunta di nuovi componenti, anche se il design diventa troppo generale. \\
+Questo Design Pattern è adottato da React, libreria utilizzata dal gruppo Obelix all'interno di Monolith.
+ 
 
 %polyglot.js
 %money.js
