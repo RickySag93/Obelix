@@ -835,8 +835,28 @@ $$
     Queste attività sono programmate nel  \emph{Piano di Progetto vxxx}
   \end{itemize}
 
+\section{Pianificazione dei Test}
 
+Vengono riportati e descritti in questa sezione i test da implementare per garantire che il
+software prodotto rispecchi le funzionalità a fronte dei risultati attesi. 
+Tutte le attività di testing prodotte devono poter essere ripetibili e devono essere deterministiche, al fine di poter fornire delle informazioni utili a intraprendere azioni di correzione nel caso in cui i risultati ottenuti siano diversi da quelli attesi.
+Ogni test è identificato da un codice univoco la cui sintassi viene descritta nel documento Norme di Progetto vXXX
 
+\subsection{Test di Unità}
+
+Tale tipologia di test serve per testare il corretto funzionamento delle singole unità, ossia delle più piccole componenti software singolarmente verificabili. Solitamente l’unità trova corrispondenza in un metodo di una classe tra quelli descritti nel documento Definizione di Prodotto. Per ogni test viene specificato il proprio codice univoco, la descrizione, lo stato di implementazione attuale e il risultato (Superato/Non Superato).
+
+\subsection{Test di Integrazione}
+
+Tale tipologia di test serve per verificare che le varie componenti del sistema software interagiscano tra loro nel modo atteso. Per ogni test viene specificato il proprio codice univoco, la descrizione, il componente cui si fa riferimento, lo stato di implementazione attuale e il risultato (Superato/Non Superato).
+
+\subsection{Test di Sistema}
+
+Tale tipologia di test serve per verificare che il comportamento dinamico complessivo dell’intero sistema sia conforme ai requisiti definiti nel documento Analisi dei Requisiti vXXX. Per ogni test viene specificato il proprio codice univoco, la descrizione,lo stato di implementazione attuale e il risultato (Superato/Non Superato).
+
+\subsection{Test di Validazione}
+
+Tale tipologia di test viene utilizzata durante l’attività di collaudo del prodotto finale, per accertare che il prodotto sia conforme alle attese del committente. Per ogni test viene specificato il proprio codice univoco, la descrizione, il requisito cui si fa riferimento, lo stato di implementazione attuale e il risultato (Superato/Non Superato).
 
   \clearpage
 

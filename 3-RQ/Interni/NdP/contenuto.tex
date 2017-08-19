@@ -1071,18 +1071,6 @@ punti:
 
 \subsubsection{Verifica del codice} 
 Per la verifica del codice al Verificatore è richiesto l’avvio dei test statici e dinamici e l’analisi dei risultati ottenuti.
-Di seguito un elenco degli strumenti da usare: 
-
-\begin{itemize}
-	\item  JSHint: è uno strumento che aiuta a rilevare errori possibili nel codice JavaScript. Verrà installato come modulo per Node.js
-	\item  CSSHint: è uno strumento che aiuta a rilevare possibili errori nel codice CSS. Verrà installato come modulo per Node.js
-	\item  Complexity-report: è un’applicazione che verrà installata come modulo per Node.js e serve a misurare metriche riguardanti codice JavaScript
-	\item  Google Chrome DevTools: gli strumenti offerti da Google Chrome agli sviluppatori servono a tenere sotto controllo l’utilizzo di CPU e di memoria da parte degli oggetti e funzioni JavaScript
-	\item  Karma: è uno strumento per eseguire test di unità e sarà utilizzato
-	per eseguire test sugli script realizzati. Verrà installato come
-	modulo per Node.js
-%	\item Velocity G : esegue i test sul framework G MeteorJS 
-\end{itemize}
 
 
 \subsection{Validazione}
@@ -1097,12 +1085,13 @@ $$ TV[\text{Codice requisito}] $$
 
 %%aggiunto in fase RQ
 
-\subsubsection{Strumenti per l'analisi dinamica}
+\subsection{Strumenti per l'analisi dinamica}
 
 \begin{itemize}
 	\item \textbf{Mocha}: framework che permette di eseguire test di unità e di integrazione andando a creare dei mock che simulino il comportamento delle varie parti, con lo scopo di testare ogni dettaglio in modo indipendente dal resto
 	\item \textbf{Chai}: libreria per formulare asserzioni sull'output atteso
-	\item \textbf{Sinon}: libreria per simulare delle risposte di richieste a server remoti
+	\item \textbf{Jest}: framework sviluppato ed utilizzato da facebook per il testing di codice JavaScript che non ha bisogno di configurazione
+	\item \textbf{Enzyme}: utility per React per il testing di codice JavaScript
 \end{itemize}
 
 \subsection{Processi per la risoluzione dei problemi}
