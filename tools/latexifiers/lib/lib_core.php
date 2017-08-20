@@ -5,6 +5,7 @@ require_once("configurazione.php");
 global $repoPath;
 $pathOutDdP = $repoPath.'3-RQ/Esterni/DdP/';
 $pathOutAdR = $repoPath.'3-RQ/Esterni/AdR/';
+$pathOutPdQ = $repoPath.'3-RQ/Esterni/PdQ/';
 
 class database
 {
@@ -158,6 +159,30 @@ function argumentHandler(){
 
 }
 
+
+function colorTestStatus($status){
+  $status = trim($status);
+  if($status == 'Implementato'){
+    $status = "\\textcolor{ForestGreen}{". $status. "}";
+  }
+  if($status == 'Non Implementato'){
+    $status = "\\textcolor{Red}{".$status."}";
+  }
+	return $status;
+}
+
+
+function str_lreplace($search, $replace, $subject)
+{
+    $pos = strrpos($subject, $search);
+
+    if($pos !== false)
+    {
+        $subject = substr_replace($subject, $replace, $pos, strlen($search));
+    }
+
+    return $subject;
+}
 
 /*
 function dumpDB(){
