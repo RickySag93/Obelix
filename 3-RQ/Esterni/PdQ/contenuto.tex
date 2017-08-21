@@ -172,23 +172,7 @@ dettagliata della metrica utilizzata si faccia riferimento
 alla metrica "Indice di Gulpease" alla sezione
 \emph{2.8.2}. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subparagraph{Correttezza ortografica}
-Per capire quanto i documenti siano effettivamente corretti a livello
-ortografico viene utilizzata la metrica "Percentuale di errori
-ortografici rinvenuti e non corretti" . Si desidera che tutti gli
-errori ortografici che sono stati trovati siano corretti. Per una
-descrizione dettagliata della metrica utilizzata si faccia riferimento
-alla metrica "Errori ortografici rinvenuti e non corretti" alla
-sezione \emph{2.8.2}. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
-\subparagraph{Correttezza concettuale}
-Per capire quanto i documenti siano effettivamente corretti a livello
-concettuale viene utilizzata la metrica "Percentuale di errori
-concettuali rinvenuti e non corretti". L'obiettivo ottimale è quello
-di correggere tutti gli errori trovati. Per una descrizione
-dettagliata della metrica utilizzata si faccia riferimento alla
-metrica "Errori concettuali rinvenuti e non corretti" alla sezione
-\emph{2.8.2}.%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \paragraph{Qualità del software}
@@ -464,17 +448,7 @@ Dove:
 \item Range-ottimale:$ [≥100]$
 \end{itemize}
 
-\subparagraph{Produttività di test}
-Indica la produttività media nell'effettuare test.
-$$
-\text{Produttività di test} = \frac{\text{Numero di test}}{\text{Ore persona}}
-$$
-Dove:
-\begin{itemize}
-\item \textbf{Numero di test}: indica il numero di test eseguiti
-\item  \textbf{Ore persona}: indica il numero di ore produttive
-  impiegate per l'esecuzione di tali test
-\end{itemize}
+
 
 \subparagraph{Produttività di codifica}
 Indica la produttività media nelle attività di codifica.
@@ -487,6 +461,10 @@ Dove:
   (Lines Of Code)
 \item \textbf{Ore persona}: indica il numero di ore produttive
   impiegate per produrre tale codice
+\end{itemize}
+\subparagraph{Parametri utilizzati}
+\begin{itemize}
+	\item Range-ottimale:$ [≥100]$
 \end{itemize}
 
 \paragraph{Copertura del test}
@@ -543,28 +521,7 @@ considerare secondo le seguenti fasce:
 \item Range ottimale [50-90]
 \end{itemize}
 
-\subparagraph{Errori ortografici rinvenuti e non corretti}
-Questa metrica è necessaria per capire quanto un documento sia
-corretto dal punto di vista ortografico. Gli strumenti automatici
-possono trovare la maggior parte degli errori ortografici all'interno
-di un testo ma non sono molto attendibili poichè si basano sul numero
-degli errori rinvenuti ma non successivamente corretti. Vengono di
-seguito riportati i range stabiliti per quest'ultima metrica:
-\begin{itemize}
-\item una percentuale di errori non corretti maggiore allo 0\% è ritenuta negativa
-\item una percentuale di errori non corretti pari allo 0\% è ritenuta accettabile
-\item una percentuale di errori non corretti minore allo 0\% è ritenuta ottimale
-\end{itemize}
 
-\subparagraph{Errori concettuali rinvenuti e non corretti}
-Questa metrica è necessaria per capire quanto un documento sia
-corretto dal punto di vista concettuale. Vengono di seguito i range
-stabiliti per la metrica appena introdotta:
-\begin{itemize}
-\item una percentuale di errori non corretti maggiore al 5\% è ritenuta negativa
-\item una percentuale di errori non corretti minore del 5\% è ritenuta accettabile
-\item una percentuale di errori non corretti pari allo 0\% è ritenuta ottimale
-\end{itemize}
 
 
 
@@ -625,7 +582,7 @@ scomposizione del package. \\
 
 Parametri utilizzati:
 \begin{itemize}
-\item Range-accettazione: $[3 - 10]$
+\item Range-accettazione: $[3 - 15]$
 \item Range-ottimale: $[3 - 7]$
 \end{itemize}
 
@@ -1255,3 +1212,144 @@ verificare i possibili effetti.
     \end{tabular}
     \captionof{table}{Tabella risultati test Gulpease}
   \end{center}
+  
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+  
+  \subsection{Revisione di Qualifica}
+  
+    In questo periodo (antecedente la consegna di tale revisione) sono stati verificati i documenti ed i processi.
+    
+    \begin{itemize}
+    	\item Sono stati verificati i documenti applicando la procedura descritta nel documento \emph{Norme di progetto vxxx}
+    	\item \'E stata applicata \emph{l'analisi statica} secondo i criteri e le modalità indicata alla sezione \emph{2.7.1}.
+    	% \item Si è applicato il ciclo PDCA per rendere più efficiente ed efficace il processo di verifica.
+    	\item Si sono calcolate per i documenti le metriche descritte nella sezione \emph{2.8}.
+   
+    	\item L’avanzamento dei processi è stato controllato e verificato secondo le metodiche descritte nelle \emph{Norme di Progetto vxxx}.
+    	
+    \end{itemize}
+    \subsubsection{Verifiche sui processi}
+    
+    Vengono qui riportati gli esiti delle verifiche sui processi produttivi.\\
+    
+    
+    \textbf{Budget Variance / Schedule Variance}
+     \begin{longtable}{|>{\centering}m{2cm}|c|c|c|c|c|}
+     	\hline
+     	\textbf{Metrica} & \textbf{Unità di misura} & \textbf{Risultato} & \textbf{Risultato massimo} & \textbf{Esito} & \textbf{Valore}\\
+     	\hline
+     	\endhead
+     	\emph{Schedule Variance} & {Attività} & \textcolor{Green}{0} & / & Superato & Ottimale\\ \hline
+     	\emph{Budget Variance} & {Euro} & \textcolor{Orange}{-687} & / & Non superato & /\\ \hline
+    
+    	\caption{RQ- BV e SV}\\
+    \end{longtable}
+    
+    
+    
+    
+    \begin{itemize}
+    	\item La data di fine della Revisione di Progettazione si è dimostrata essere il
+    	giorno stabilito nel Piano di Progetto v4.0.0 .
+    	%% Aumentando il numero di ore di lavoro giornaliere ed utilizzando tutti gli slack
+    	%% inseriti durante la pianificazione il gruppo ha compresso i tempi con conseguente
+    	%% SV positivo;
+    	\item  Il limite inferiore di accettabilità del Budget Variance è pari a -396€.
+    	Il valore ottenuto risulta essere quindi non accettabile. 
+    	%% Come già precisato, il
+    	%% gruppo per portare a termine gli obbiettivi entro le date imposte
+    	%% ha aumentato il numero di ore di lavoro giornaliere. 
+    	%% Questo ha quindi causato un aumento del BV in quanto le ore
+    	%% complessive di 
+    	%% lavoro sono state vicine a quelle preventivate, ma il periodo di lavoro è stato
+    	%% compresso.
+    \end{itemize}
+    
+    \subsubsection{Produttività}
+    
+    \begin{longtable}{|>{\centering}m{2cm}|c|c|c|c|c|}
+    	\hline
+    	\textbf{Metrica} & \textbf{Unità di misura} & \textbf{Risultato} & \textbf{Risultato massimo} & \textbf{Esito} & \textbf{Valore}\\
+    	\hline
+    	\endhead
+    	
+    		\emph{Produttività di documentazione} & {n° parole/h} & \textcolor{Green}{116} & / & Superato & Ottimale \\ \hline
+    	
+   
+    		
+    		\emph{Produttività di codifica} & {n° linee codice/h} & \textcolor{Green}{86} & / & Superato & Accettabile \\ \hline
+    		
+    			\emph{Copertura del test} & {Percentuale} & \textcolor{Green}{73\%} & / & Superato & Accettabile \\ \hline
+	    	
+	    	
+    	  	\caption{RQ-Produttività}\\
+    	  \end{longtable}
+    	  
+	
+
+	
+	
+    
+
+
+    \subsubsection{Verifica dei Documenti}
+    Vengono qui riportati i valori dell’indice Gulpease per ogni documento durante l’analisi e relativo
+    esito basato sui range stabiliti nella sezione \emph{2.8.2}
+    \begin{center}
+    	\begin{tabular}{|c|c|c|}
+    		\hline
+    		\textbf{Documento} & \textbf{Valore indice} & \textbf{Esito} \\
+    		\hline
+    		\emph{Analisi dei Requisiti 2.0.0}  & 60.1 & superato \\
+    		\hline
+    		\emph{Norme di Progetto 3.0.0}   & 56.4  & superato \\
+    		\hline
+    		\emph{Piano di Progetto 3.0.0}   & 67.5 & superato \\
+    		\hline
+    		\emph{Piano di Qualifica 3.0.0}   & 61.4 & superato \\
+    		\hline
+    		\emph{Definizione di Prodotto 1.0.0}  & 76.9 & superato \\
+    		\hline
+    	\end{tabular}
+    	\captionof{table}{Tabella risultati test Gulpease}
+    \end{center}
+  
+  \subsubsection{Metriche per software}
+  \small{
+  	Si noti che alcune componenti e i test a loro correlati non sono ancora state sviluppate, e che la loro assenza peserà nelle misurazioni.}
+ 
+  
+ 
+  \begin{longtable}{|>{\centering}m{2cm}|c|c|c|c|c|}
+  	\hline
+  	\textbf{Metrica} & \textbf{Unità di misura} & \textbf{Risultato} & \textbf{Risultato massimo} & \textbf{Esito} & \textbf{Valore}\\
+  	\hline
+  	\endhead
+  	
+  
+  		\emph{Complessità Ciclomatica media} & {Cammini} & \textcolor{Green}{2.1} & / & Superato & Ottimale\\ \hline
+  	\emph{Numero di metodi per package (max)} & {Metodi} & / & \textcolor{Green}{14} & Superato & Accettabile\\ \hline
+  	\emph{Variabili non utilizzate e non definite} & {Variabili} & / & \textcolor{Green}{0} & Superato & Ottimale\\ \hline
+  	\emph{Numero parametri per metodo (max)} & {Parametri} & / & \textcolor{Green}{5} & Superato & Accettabile\\ \hline
+  	
+  	
+  
+  	\emph{Halstead difficulty per-function (media) } & {indice complessità} & \textcolor{Green}{3.42} & / & Superato & Ottimale\\ \hline
+  	\emph{Halstead volume per-function (media)} & {indice complessità} & \textcolor{Green}{100.76} & / & Superato & Ottimale\\ \hline
+  	\emph{Halstead effort per-function} & {indice complessità} & \textcolor{Green}{344,59} & / & Superato & Accettabile\\ \hline
+  	
+  	
+  	\emph{Maintainability index} & {Valore} & \textcolor{Green}{71.98} & / & Superato  & Accettabile \\ \hline
+  	
+  	\emph{Statement Coverage} & {Percentuale} & \textcolor{Green}{77.4\%} & / & Superato & Accettabile\\ \hline
+  		
+  		
+  	\emph{Branch Coverage} & {Percentuale} & \textcolor{Green}{83\%} & / & Superato & Accettabile\\ \hline
+  	
+  	
+  	\emph{Copertura dei test} & {Percentuale} & \textcolor{Green}{???\%} & / & Superato & Ottimale\\ \hline
+  	
+  	 
+  	\caption{RQ-Metriche per Software}\\
+  \end{longtable}
