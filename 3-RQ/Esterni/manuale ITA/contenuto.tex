@@ -27,6 +27,7 @@ Layout verticale che conterrà i componenti della bolla e li posizionerà ognuno
 </VerticalLayout>
 \end{lstlisting}
 \end{center}
+\newpage
 
 \subsubsection{HorizontalalLayout}
 Layout orizzontale che conterrà i componenti della bolla e li posizionerà ognuno di fianco al proprio precedente. La props \textit{hide} permette di nascondere la vista del layout (tramite valori \textit{true/false}).
@@ -134,7 +135,7 @@ handleClick={this.fun}
 />
 \end{lstlisting}
 \end{center}
-
+\newpage
 
 \subsubsection{LineEdit}
 Casella di testo editabile. La funzione "fun" salva il testo digitato e viene chiamata ad ogni modifica.
@@ -230,7 +231,7 @@ buttonName= // button name
 />
 \end{lstlisting}
 \end{center}
-
+\newpage
 \subsubsection{TextAreaComboBox}
 Elemento area di testo editabile ed un ComboBox.\\
 La funzione "fun1" riceve il testo dalla TextArea mentre "fun2" l'opzione selezionata dal ComboBox.
@@ -250,3 +251,45 @@ comboUpdate={this.fun2}
 />	
 \end{lstlisting}
 \end{center}
+
+\section{Bolle}
+Vengono fornite alcune bolle tipo le quali vengono create tramite il menù presente nella SideArea1.\\
+
+\includegraphics[scale=0.75]{img/menu.png}
+\newpage
+\subsection{CurrencyBubble}
+La \textit{CurrencyBubble} è una bolla che funge da convertitore di valuta.
+\\Una volta selezionata dal menù la si può configurare impostando la valuta di base, di uscita ed il valore da convertire.\\
+
+\includegraphics[scale=0.75]{img/currConfig.png}
+\\
+Una volta inviata cliccando su \textbf{Send} il risultato sarà:\\
+
+\includegraphics[scale=0.75]{img/curr.png} 
+\subsection{ListBubble}
+La \textit{ListBubble} è una bolla che permette di creare una propria lista di elementi \textit{CheckButton}. \\
+Può essere usata, ad esempio, per una classica lista della spesa o per una "ToDoList".
+
+\subsection{PollBubble}
+La \textit{PollBubble} è una bolla che permette di creare un sondaggio da lanciare ai membri della chat in questione.\\
+Una volta arrivati al menù di configurazione si impostano la domanda e le varie opzioni (che si possono aggiungere con il pulsante \textbf{Add}).
+\\
+
+\includegraphics[scale=0.75]{img/pollConfig.png}
+\\
+Una volta inviata cliccando su \textbf{Send} il risultato sarà:\\
+
+\includegraphics[scale=0.74]{img/poll.png}
+\\ 
+Ora che la bolla è stata creata sarà possibile votare cliccando sull'opzione desiderata.
+\subsection{DiceBubble}
+La \textit{DiceBubble} è una bolla che lancia un certo tipo di dado (a scelta in base al numero di facce) e ne ritorna un risultato casuale.\\
+Dal menù di configurazione bisognerà scegliere il numero di facce del dado.\\
+
+\includegraphics[scale=0.75]{img/randConfig.png}
+\\
+Una volta inviata cliccando su \textbf{Send} il risultato sarà:\\
+
+\includegraphics[scale=0.75]{img/rand.png}
+\\
+Attraverso il pulsante \textbf{Re-roll} si potrà ri-lanciare il dado.
