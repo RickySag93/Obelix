@@ -112,17 +112,15 @@ riferimento all'appendice \emph{B.1}
 
 \paragraph{Rispetto della pianificazione}
 Per capire se le attività di un processo sono in ritardo rispetto a
-quanto pianificato all'interno del documento \emph{Piano di Progetto
-  vxxx} viene utilizzata la metrica Schedule Variance. Si desidera che
+quanto pianificato all'interno del documento \emph{\pianodiprogetto} viene utilizzata la metrica Schedule Variance. Si desidera che
 il ritardo accumulato sia minore del 5\% rispetto al totale
 pianificato. Sarebbe invece ottimale essere esattamente in linea con
-quanto prevede il \emph{Piano di progetto vxxx}, o essere addirittura
+quanto prevede il \emph{\pianodiprogetto}, o essere addirittura
 in anticipo.
 
 \paragraph{Rispetto del budget}
 Viene utilizzata la metrica Budget Variance Per capire se i costi di
-un processo rientrano nel budget previsto dal \emph{Piano di progetto
-  vxxx}.
+un processo rientrano nel budget previsto dal \emph{\pianodiprogetto}.
 L’obiettivo minimo è quello di avere dei costi che non superano il
 budget a disposizione per più del 10\%. Sarebbe invece ottimale che i
 costi fossero esattamente in linea con il preventivo o addirittura
@@ -350,7 +348,7 @@ ambiente. Di conseguenza, i tre elementi fondamentali di un test sono:
 \section[Visione di dettaglio della qualità]{Strategia di gestione
   della qualità nel dettaglio}
 
-Il Piano di Progetto vxxx fissa una serie di scadenze improrogabili e quindi risulta necessario definire
+Il \pianodiprogetto fissa una serie di scadenze improrogabili e quindi risulta necessario definire
 con chiarezza una strategia di qualifica efficace. Gli incrementi della documentazione o del codice
 possono essere di natura programmata, quindi prefissati nel calendario, oppure possono insorgere
 inaspettatamente. In questo caso sarà necessario programmare le dovute
@@ -361,7 +359,7 @@ Parte significativa del lavoro
 verrà svolto con l’aiuto di automatismi che segnaleranno le problematiche rilevate in modo da
 permettere una rapida correzione. L’utilizzo di software apposito permette di eseguire controlli
 mirati minimizzando l'utilizzo di risorse umane. L’implementazione di tali controlli viene descritta nelle
-Norme di Progetto vxxxx .
+\normediprogetto .
 
 
 
@@ -390,7 +388,7 @@ Per risorse tecnologiche si intendono
 tutti gli strumenti software e hardware che il gruppo Obelix intende
 utilizzare per attuare le attività di verifica su processi e
 prodotti. Per una dettagliata e accurata descrizione di tali strumenti
-si faccia riferimento nelle \emph{Norme di Progetto vxxx}.
+si faccia riferimento nelle \emph{\normediprogetto}.
 
 
 
@@ -832,31 +830,60 @@ $$
   \item Nell'appendice del seguente documento verranno inserite le misurazioni
     rilevate sulle metriche descritte nella sezione \emph{2.8.1}
   \item Le modifiche al processo vengono attuate all’inizio del processo incrementale successivo.
-    Queste attività sono programmate nel  \emph{Piano di Progetto vxxx}
+    Queste attività sono programmate nel  \emph{\pianodiprogetto}
   \end{itemize}
 
 \section{Pianificazione dei Test}
 
 Vengono riportati e descritti in questa sezione i test da implementare per garantire che il
 software prodotto rispecchi le funzionalità a fronte dei risultati attesi. 
-Tutte le attività di testing prodotte devono poter essere ripetibili e devono essere deterministiche, al fine di poter fornire delle informazioni utili a intraprendere azioni di correzione nel caso in cui i risultati ottenuti siano diversi da quelli attesi.
-Ogni test è identificato da un codice univoco la cui sintassi viene descritta nel documento Norme di Progetto vXXX
+Tutte le attività di testing prodotte devono poter essere ripetibili e
+devono essere deterministiche, al fine di poter fornire delle
+informazioni utili a intraprendere azioni di correzione nel caso in
+cui i risultati ottenuti siano diversi da quelli attesi. 
+Ogni test è identificato da un codice univoco la cui sintassi viene descritta nel documento \normediprogetto
 
 \subsection{Test di Unità}
 
-Tale tipologia di test serve per testare il corretto funzionamento delle singole unità, ossia delle più piccole componenti software singolarmente verificabili. Solitamente l’unità trova corrispondenza in un metodo di una classe tra quelli descritti nel documento Definizione di Prodotto. Per ogni test viene specificato il proprio codice univoco, la descrizione, lo stato di implementazione attuale e il risultato (Superato/Non Superato).
+Tale tipologia di test serve per testare il corretto funzionamento
+delle singole unità, ossia delle più piccole componenti software
+singolarmente verificabili. Solitamente l’unità trova corrispondenza
+in un metodo di una classe tra quelli descritti nel documento
+\definizionediprodotto. Per ogni test viene specificato il proprio
+codice univoco, la descrizione, lo stato di implementazione attuale e
+il risultato (Superato/Non Superato). 
+
+\input{unit_test}
 
 \subsection{Test di Integrazione}
 
-Tale tipologia di test serve per verificare che le varie componenti del sistema software interagiscano tra loro nel modo atteso. Per ogni test viene specificato il proprio codice univoco, la descrizione, il componente cui si fa riferimento, lo stato di implementazione attuale e il risultato (Superato/Non Superato).
+Tale tipologia di test serve per verificare che le varie componenti
+del sistema software interagiscano tra loro nel modo atteso. Per ogni
+test viene specificato il proprio codice univoco, la descrizione, il
+componente cui si fa riferimento, lo stato di implementazione attuale
+e il risultato (Superato/Non Superato). 
+
+\input{integration_test}
 
 \subsection{Test di Sistema}
 
-Tale tipologia di test serve per verificare che il comportamento dinamico complessivo dell’intero sistema sia conforme ai requisiti definiti nel documento Analisi dei Requisiti vXXX. Per ogni test viene specificato il proprio codice univoco, la descrizione,lo stato di implementazione attuale e il risultato (Superato/Non Superato).
+Tale tipologia di test serve per verificare che il comportamento
+dinamico complessivo dell’intero sistema sia conforme ai requisiti
+definiti nel documento \analisideirequisiti. Per ogni test viene
+specificato il proprio codice univoco, la descrizione,lo stato di
+implementazione attuale e il risultato (Superato/Non Superato). 
+
+\input{system_test}
 
 \subsection{Test di Validazione}
 
-Tale tipologia di test viene utilizzata durante l’attività di collaudo del prodotto finale, per accertare che il prodotto sia conforme alle attese del committente. Per ogni test viene specificato il proprio codice univoco, la descrizione, il requisito cui si fa riferimento, lo stato di implementazione attuale e il risultato (Superato/Non Superato).
+Tale tipologia di test viene utilizzata durante l’attività di collaudo
+del prodotto finale, per accertare che il prodotto sia conforme alle
+attese del committente. Per ogni test viene specificato il proprio
+codice univoco, la descrizione, il requisito cui si fa riferimento, lo
+stato di implementazione attuale e il risultato (Superato/Non
+Superato). 
+\input{validation_test}
 
   \clearpage
 
@@ -1041,15 +1068,14 @@ verificare i possibili effetti.
 
   \begin{enumerate}
   \item \textbf{Funzionalità}: il sistema prodotto deve garantire tutte
-    le funzionalità indicate nel documento \emph{Analisi dei Requisiti
-      vxxx} L'implementazione dei requisiti deve essere più completa
+    le funzionalità indicate nel documento \emph{\analisideirequisiti} L'implementazione dei requisiti deve essere più completa
     possibile
 
     \begin{itemize}
     \item \textbf{Misura}: l’unità di misura usata sarà la quantità di requisiti mappati sulle componenti del sistema create e funzionanti
     \item \textbf{Metrica}: la sufficienza è stabilita nel soddisfacimento di tutti i requisiti obbligatori
     \item \textbf{Strumenti}: per soddisfare questa qualità il sistema deve superare tutti i test previsti.
-      Per informazioni dettagliate sugli strumenti si veda  \emph{Norme di Progetto vxxx}
+      Per informazioni dettagliate sugli strumenti si veda  \emph{\normediprogetto}
     \end{itemize}
 
   \item \textbf{Affidabilità}: il sistema deve dimostrarsi il più possibile robusto e di facile ripristino in caso di errori
@@ -1069,7 +1095,7 @@ verificare i possibili effetti.
     \begin{itemize}
     \item \textbf{Misura}: l’unità di misura usata sarà una valutazione soggettiva dell’usabilità. Questo è dovuto all’inesistenza di una metrica oggettiva adatta allo scopo
     \item \textbf{Metrica}:  non esiste una metrica adeguata che determinerà la sufficienza su questa qualità
-    \item \textbf{Strumenti}: si vedano le  \emph{Norme di Progetto vxxx}
+    \item \textbf{Strumenti}: si vedano le  \emph{\normediprogetto}
     \end{itemize}
 
   \item \textbf{Efficienza}: il sistema deve fornire tutte le funzionalità nel più breve tempo possibile,
@@ -1077,7 +1103,7 @@ verificare i possibili effetti.
     \begin{itemize}
     \item \textbf{Misura}: il tempo che lo sviluppatore impiegherà per la creazione di una bolla interattiva
     \item \textbf{Metrica}: non è possibile definire una soglia oggettiva di sufficienza perché non è possibile valutare ogni possibile casistica di utilizzo
-    \item \textbf{Strumenti}: si vedano le  \emph{Norme di Progetto vxxx}
+    \item \textbf{Strumenti}: si vedano le  \emph{\normediprogetto}
     \end{itemize}
 
   \item \textbf{Manutenibilità}: il sistema deve essere comprensibile ed estensibile in modo facile e verificabile
@@ -1085,7 +1111,7 @@ verificare i possibili effetti.
     \item \textbf{Misura}: le metriche sul codice descritte nella sezione \emph{2.8.2}
       costituiscono l'unità di misura
     \item \textbf{Metrica}: il software avrà le caratteristiche di manutenibilità descritte. Questo sarà possibile se il prodotto avrà la sufficienza in tutte le metriche
-    \item \textbf{Strumenti}: si vedano le  \emph{Norme di Progetto vxxx}
+    \item \textbf{Strumenti}: si vedano le  \emph{\normediprogetto}
     \end{itemize}
 
   \item \textbf{Portabilità}: il sistema deve essere il più portabile possibile, in particolare dentro a Rocket.chat
@@ -1105,9 +1131,8 @@ verificare i possibili effetti.
 
   \subsection{Revisione dei Requisiti}
 
-  L’attività di verifica svolta dai  \emph{Verificatori}  è avvenuta come determinato dal \emph{Piano di Progetto
-    vxxx} al termine della stesura di ogni documento previsto. La verifica svolta sui documenti e
-  sui processi è avvenuta seguendo le indicazioni delle  \emph{Norme di Progetto vxxx}  e misurando le
+  L’attività di verifica svolta dai  \emph{Verificatori}  è avvenuta come determinato dal \emph{\pianodiprogetto} al termine della stesura di ogni documento previsto. La verifica svolta sui documenti e
+  sui processi è avvenuta seguendo le indicazioni delle  \emph{\normediprogetto}  e misurando le
   metriche indicate nella sezione \emph{2.8.2}
 
   \subsubsection{Verifiche sui Processi}

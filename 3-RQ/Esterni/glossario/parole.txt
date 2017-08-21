@@ -177,5 +177,6 @@ BSON
 room
 : in Rocket.Chat è una qualunque situazione in cui utenti possono comunicare tramite la chat. Queste includono chat 1:1 o di gruppo.
 
-SQA
+classNames
+: utility raccomandata per l’uso con React per l’unione condizionata di className, semplifica la gestione dei className dinamici
 

@@ -25,7 +25,7 @@ usufruire di un insieme di bolle predefinite.
 Al fine di evitare ogni ambiguità di linguaggio e massimizzare la
 comprensibilità dei documenti. I termini che necessitano di essere
 chiariti saranno marcati con una |G| in pedice alla prima occorrenza e saranno
-riportati nel Glossario. 
+riportati nel \gloss. 
 
 \subsection{Riferimenti}
 
@@ -34,8 +34,8 @@ riportati nel Glossario.
 \item \textbf{Javascript 6th edition}:\\ \url{https://exploringjs.com/es6/ch\_promises.html}
 \item \textbf{12 Factors app guidelines}:\\ \url{https://12factor.net}
 \item \textbf{SCSS}: \\ \url{http://sass-lang.com}
-\item \textbf{Piano di Progetto}: \\ Piano di Progetto v1.1.0
-\item \textbf{Piano di Qualifica}: \\  \emph{Piano di Qualifica v1.0.0} 
+\item \textbf{Piano di Progetto}: \\ \pianodiprogetto
+\item \textbf{Piano di Qualifica}: \\  \emph{\pianodiqualifica} 
 \end{itemize}
 
 \subsubsection{Normativi}
@@ -337,7 +337,7 @@ di tutti i diagrammi \glossario{UML} necessari.
 \subsubsection{Integrazione}
 
 In questo periodo si cerca di integrare le varie componenti del nostro sdk in modo che si interfaccino correttamente tra di loro.
-Per verificare ciò vengono utilizzati degli appositi test elencani nel documento "Definizione di Prodotto vXXX" nel capitolo XXXX.
+Per verificare ciò vengono utilizzati degli appositi test elencani nel documento "\pianodiqualifica".
 
 I Progettisti sono responsabili delle attività di integrazione e devono:
 \begin{itemize}
@@ -714,7 +714,7 @@ Prima di eseguire tale procedura, va aggiornato il diario delle modifiche, secon
 Per garantire la qualità del prodotto vengono adottato varie metodologie tra le quali ritroviamo i processi di verifica e di validazione successivamente illustrati. \\
 Nel caso in cui i task assegnati al team non siano soddisfatti per eventuali problematiche, questi devono essere riportati nella lista di problemi menzionata nel \textit{processo di soluzione di problemi}. \\
 Un ulteriore garanzia di qualità è data dall'assicurarsi che i requisiti principali del progetto siano soddisfatti alla fine dello sviluppo del software. Ci si può assicurare di questo attraverso una documentazione valida ed un incontro con i committenti ed i proponenti che dovranno accertarsi della validità del prodotto finale. \\
-Infine per stabilire in maniera quantitativa la qualità ottenuta abbiamo individuato delle metriche che andremo ora a esplicitare, indicando i range accettabili e quelli ottimali. Il loro valore effettivo è invece indicato nel Piano di qualifica.
+Infine per stabilire in maniera quantitativa la qualità ottenuta abbiamo individuato delle metriche che andremo ora a esplicitare, indicando i range accettabili e quelli ottimali. Il loro valore effettivo è invece indicato nel \pianodiqualifica.
 Le metriche individuate sono state suddivise in
 \begin{itemize}
 	\item\textbf{Qualità funzionale}
@@ -799,10 +799,10 @@ risultato possibile.
 
 %%%%%%%inserite in fase di RQ
 \paragraph{Metriche per la pianificazione}
-Qualsiasi eventuale valore negativo ottenuto dalle  metriche: Schedule Variance o/e Budget Variance dovrà essere  compensato entro la fine dell'attività di progetto modficando e revisionando in modo coerente il Piano di Progetto, in quanto non è possbile eccedere le ore di lavoro finali e il budget finale indicato nella pianificazione.
+Qualsiasi eventuale valore negativo ottenuto dalle  metriche: Schedule Variance o/e Budget Variance dovrà essere  compensato entro la fine dell'attività di progetto modificando e revisionando in modo coerente il Piano di Progetto, in quanto non è possibile eccedere le ore di lavoro finali e il budget finale indicato nella pianificazione.
 
 \subparagraph{Schedule Variance}
-Indica se si è in linea, in anticipo o in ritardo rispetto la pianificazione temporale prevista dal Piano di Progetto.
+Indica se si è in linea, in anticipo o in ritardo rispetto la pianificazione temporale prevista dal \pianodiprogetto.
 Per calcolare questa metrica utilizziamo la seguente formuala: SV = BCWP −BCWS, dove BCWP sono le attività completate ad un certo momento e BCWS
 le attività che, secondo la pianificazione, dovrebbero essere state completate a quel momento.
 Il range di accettazione per questa metrica è un valore superiore o uguale a zero in questo modo ci si assicura di non avere accumulato eventuali ritardi per la consegna.
@@ -866,7 +866,7 @@ Questa metrica misura l'astrattezza di ogni package tramite il seguente rapporto
 \begin{displaymath}
 {\text{Numero classi astratte e interfacce}}\over{\text{Numero totale classi}}
 \end{displaymath}
-In questa metrica non esiste un valore accettabile ma solo un valore che si vorrà ottenere. esso sarà indicato nel Piano di qualifica.
+In questa metrica non esiste un valore accettabile ma solo un valore che si vorrà ottenere. esso sarà indicato nel \pianodiqualifica.
 
 \subparagraph{Distanza dalla sequenza principale}
 Questa metrica misura il bilanciamento tra l'astrattezza e la stabilità del package da noi sviluppato. I package idealmente perfetti sono infatti quelli o compleatamente concreti e instabili(I=1, A=0) o quelli astratti e stabili (I=0, A=1). Per misurare questa metrica si utilizza quindi la seguente formula matematica:
@@ -1289,7 +1289,7 @@ Ogni ticket con etichetta di stato Completato dovrà essere verificato. Il proce
 \end{enumerate}
 
 \subsection{Procedure di supporto}
-Di seguito vengono descritte le procedure di supporto che i componenti del gruppo sono tenuti a seguire per convergere agli obiettivi definiti nel Piano di Qualifica. Il Responsabile di Progetto ha la responsabilità di gestione dell’intero progetto.
+Di seguito vengono descritte le procedure di supporto che i componenti del gruppo sono tenuti a seguire per convergere agli obiettivi definiti nel \pianodiqualifica. Il Responsabile di Progetto ha la responsabilità di gestione dell’intero progetto.
 Dovrà garantire un corretto sviluppo delle attività utilizzando gli strumenti che gli permetteranno di:
 \begin{itemize}
 	\item Coordinare e pianificare le attività
@@ -1472,7 +1472,7 @@ ad un sistema di telefonate basato su un network Peer-to-peer.
 \item \textbf{Glossario}
 
 	\begin{itemize}
-	\item termini presenti nei documenti mancanti nel glossario
+	\item termini presenti nei documenti mancanti nel \gloss
 	\end{itemize}
 
 
