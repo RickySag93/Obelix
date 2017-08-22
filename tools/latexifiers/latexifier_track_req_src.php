@@ -1,6 +1,6 @@
 <?php
 include_once("lib/lib_core.php");
-global $pathOutDdP;
+global $pathOutAdR;
 ////////////////////////////////     TRACCIAMENTO
 
 $inizioTabellaTracciamento =<<<EOF
@@ -22,7 +22,7 @@ $fineTabella =<<<EOF
 \\end{center}
 EOF;
 
-$FH = fopen($pathOutDdP."tracciamento_src_req.tex", "w");
+$FH = fopen($pathOutAdR."tracciamento_src_req.tex", "w");
 
 if($FH ===false){
 	die("ERRORE FILE");
