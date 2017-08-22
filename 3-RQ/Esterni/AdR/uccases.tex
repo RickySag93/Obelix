@@ -74,12 +74,14 @@
 \item[]\textbf{Postcondizione:} Alla bolla è stato aggiunto un componente grafico nel contenitore selezionato. 
 \item[]\textbf{Scenario:}
  Lo sviluppatore può inserire un componente grafico tra quelli supportati: \begin{itemize}
-\item Componente testo.
 \item Componente immagine.
 \item Componente campo di inserimento testo.
 \item Componente pulsante.
 \item Componente checkbox.
-\item Componente radio button. \end{itemize} \'E inoltre possibile inserire elementi realizzati dallo sviluppatore. 
+\item Componente radio button. 
+\item Componente combobox
+\end{itemize} 
+\'E inoltre possibile inserire elementi realizzati dallo sviluppatore. 
 \end{itemize}
 
 \clearpage
@@ -106,7 +108,9 @@
 \item Modifica testo mostrato nel pulsante (UC2.1.2.3).
 \item Impostazione dell'azione associata al pulsante (UC2.1.2.4).
 \item Impostazione testo della checkbox (UC2.1.2.5).
-\item Impostazione opzioni di scelta radiobutton (UC2.1.2.6). 
+\item Impostazione opzioni di scelta radiobutton (UC2.1.2.6).
+\item Impostazione classe HTML (UC2.1.2.7).
+\item Impostazione opzioni di scelta combobox (UC2.1.2.7).
 \end{enumerate} 
 \end{itemize}
 
@@ -170,6 +174,26 @@ Lo sviluppatore imposta l'azione che il sistema deve intraprendere quando l'uten
 Lo sviluppatore imposta le possibili scelte offerte dal radiobutton precedentemente selezionato. 
 \end{itemize}
 
+\subsection{Caso d'uso UC2.1.2.7: Impostazione della classe HTML di tutti i componenti.}
+\begin{itemize}
+\item[]\textbf{Descrizione:} Per ciascun componente fornito dall'SDK è possibile specificare una o più classi HTML.
+\item[]\textbf{Attori:} Sviluppatore. 
+\item[]\textbf{Precondizione:} \'E stato selezionato un componente tra quelli forniti. 
+\item[]\textbf{Postcondizione:} \'E stata specificata almeno una classe per il componente. 
+\item[]\textbf{Scenario:}
+Lo sviluppatore specifica la classe HTML per il componente selezionato 
+\end{itemize}
+
+\subsection{Caso d'uso UC2.1.2.8: Impostazione delle opzioni di scelta per il combobox.}
+\begin{itemize}
+\item[]\textbf{Descrizione:} Vengono impostate le opzioni tra cui l'utente dovrà scegliere utilizzando il combobox.
+\item[]\textbf{Attori:} Sviluppatore. 
+\item[]\textbf{Precondizione:} \'E stato selezionato un elemento di tipo combobox. 
+\item[]\textbf{Postcondizione:} Sono state impostate le opzioni tra cui scegliere nel combobox. 
+\item[]\textbf{Scenario:}
+Lo sviluppatore specifica le opzioni tra cui scegliere nel combobox 
+\end{itemize}
+
 \subsection{Caso d'uso UC2.1.3: Selezione di un componente grafico o di un contenitore.}
 \begin{itemize}
 \item[]\textbf{Descrizione:} Viene selezionato un componente grafico o un contenitore.
@@ -204,10 +228,10 @@ Lo sviluppatore può inserire un contenitore nel contenitore selezionato.
 
 \subsection{Caso d'uso UC2.2: Identificazione Mittente o Ricevente.}
 \begin{itemize}
-\item[]\textbf{Descrizione:} Ciascuna istanza di bolla viene creata da un utente e poi inviata ad uno o più altri utenti. Generalmente ci si aspetta che la bolla si comporti diversamente nelle due situazioni, per esempio fornendo una procedura di inizializzazione al mittente. \'E dunque possibile identificare l'utente corrente come mittente o meno della bolla in esecuzione.
+\item[]\textbf{Descrizione:} Ciascuna istanza di bolla viene creata da un utente e poi inviata ad uno o più altri utenti. Generalmente ci si aspetta che la bolla si comporti diversamente nelle due situazioni, per esempio fornendo una procedura di inizializzazione al mittente. \'E dunque possibile descrivere un comportamento diverso per il mittente e per il ricevente della bolla.
 \item[]\textbf{Attori:} Sviluppatore. 
 \item[]\textbf{Precondizione:} La bolla esiste. 
-\item[]\textbf{Postcondizione:} \'E stata utilizzata la funzionalità che permette di identificare l'utente. 
+\item[]\textbf{Postcondizione:} Sono stati distinti mittente e ricevente. 
 \item[]\textbf{Scenario:}
 Lo sviluppatore utilizza la funzionalità che permette di identificare a runtime se la bolla è visualizzata dal mittente o da altri utenti. 
 \end{itemize}
