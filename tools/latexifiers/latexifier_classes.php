@@ -19,7 +19,7 @@ while($res = $ans->fetch_assoc()){
    $comp = $txt = str_replace("_","\\_",pulisci_chars($res['component']));
    $comp = checkAcapo($comp);
    $img = $res['imagePath'];
-   $img = 'single-'.$key;
+   //$img = 'single-'.$key;
 
    //////////////////////////////
 
