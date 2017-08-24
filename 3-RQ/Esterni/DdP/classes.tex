@@ -92,7 +92,7 @@ I restanti metodi (insertSuccess, insertFailure, updateSuccess, updateFailure) v
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che rappresenta il componente React per la visualizzazione del contenuto della prima area laterale. \ 
+Classe che rappresenta il componente React per la visualizzazione del contenuto della prima area laterale. \\ 
 \textbf{Metodi:}
 \begin{itemize}
 
@@ -392,8 +392,9 @@ Come per tag HTML "img".
 \item width: \\
 Come per tag HTML "img".
 \item height: \\
-Come per tag HTML "img". 
-\end{itemize}
+Come per tag HTML "img".
+\end{itemize} 
+
 
 \clearpage
 
@@ -481,7 +482,7 @@ Componente React che rappresenta un pulsante. \\
 Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
 
 \item +onClick(): void 
-\ 
+\\ 
 Viene passato al "padre" l'ID del pulsante cliccato.
 
 \item +render() : React.DOM 
@@ -492,7 +493,7 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Componente React che rappresenta un pulsante che può essere cliccabile (o meno) in base all valore della props "dis". \ Questa può assumere valore \textit{true} o \textit{false}. 
+Componente React che rappresenta un pulsante che può essere cliccabile (o meno) in base al valore della props "dis". \\ Questa può assumere valore \textit{true} o \textit{false}. 
 
 
 \clearpage
@@ -558,7 +559,7 @@ Metodo che esamina this.props e this.state e restituisce un singolo elemento Rea
 
 
 \textbf{Applicazioni}\\
-Componente React che rappresenta un'immagine cliccabile.\ Richiede le stesse props del componente "Image" con l'aggiunta di "handleClick" che comunica al "padre" l'id del componente cliccato. 
+Componente React che rappresenta un'immagine cliccabile.\\ Richiede le stesse props del componente "Image" con l'aggiunta di "handleClick" che comunica al "padre" l'id del componente cliccato. 
 
 
 \clearpage
@@ -708,7 +709,7 @@ Metodo che esamina this.props e this.state e restituisce un gruppo di RadioButto
 
 
 \textbf{Applicazioni}\\
-Componente React che rappresenta un gruppo di RadioButton. \ Le opzioni vengono passate con un array attraverso la props "options". 
+Componente React che rappresenta un gruppo di RadioButton. \\ Le opzioni vengono passate con un array attraverso la props "options". 
 
 
 \clearpage
@@ -723,7 +724,7 @@ Componente React che rappresenta un gruppo di RadioButton. \ Le opzioni vengono 
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta una TextArea con a fianco un ComboBox \\
+Componente React che rappresenta una TextArea con a fianco un ComboBox \\\\
 \textbf{Metodi:} 
 \begin{itemize}
 
@@ -732,7 +733,7 @@ Componente React che rappresenta una TextArea con a fianco un ComboBox \\
 Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
 
 \item +handleChange(event : String) : void  
-\ 
+\\ 
 Comunica al "padre" il contenuto digitato nella textarea.
 
 \item +render() : React.DOM 
@@ -744,7 +745,7 @@ Metodo che esamina this.props e this.state e restituisce un componente React com
 
 \textbf{Applicazioni}\\
 Componente React che può essere utilizzato per la costruzione delle interfacce di alcune bolle.
-\ Vengono richieste anche le props per la costruzione dei degli elementi che formano il componente. 
+\\ Vengono richieste anche le props per la costruzione dei degli elementi che formano il componente. 
 
 
 \clearpage
@@ -791,7 +792,7 @@ Oltre alle props dei due componenti React, il componente si aspetta le seguenti 
 \\
 Stile CSS per il LineEdit.
 \item classespb:
-\ 
+\\ 
 Stile CSS per il PushButton.
 
 \item idle:
@@ -842,7 +843,7 @@ Nelle classi derivate ritorna il nome della bolla necessario per usare BubbleDis
 \item +bubbleButtonName(): String \\
 Nelle classi derivate ritorna il testo che deve comparire nel pulsante
 \item +secondAreaName(): String \\
-Nelle classi derivate ritorna il nome del componente React che deve essere inserito alla pressione del secondo pulsante. \'E necessario per usare BubbleDiscriminator
+Nelle classi derivate ritorna il nome del componente React che deve essere inserito alla pressione del secondo pulsante. \\'E necessario per usare BubbleDiscriminator
 \end{itemize}
 I seguenti metodi semplicemente eseguono le funzioni che vengono passate nelle props in risposta alla pressione dei pulsanti:
 \begin{itemize}
@@ -868,20 +869,20 @@ Classe base da cui derivare per ottenere i pulsanti del menu di creazione di di 
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe base astratta da cui poter derivare le classi concrete che si occupano della creazione delle istanze  di componenti grafici  \ 
+Classe base astratta da cui poter derivare le classi concrete che si occupano della creazione delle istanze  di componenti grafici  \\ 
 \textbf{Metodi:}
 \begin{itemize}
 \item +doMakeBubbleSender() : ConcreteBubble 
 \\
 Ritorna il componente React per visualizzare una bolla inviata.
 \item +doMakeBubbleReceiver() : ConcreteBubble 
-\ 
+\\
 Ritorna il componente React per visualizzare una bolla ricevuta.
 \item +doMakeConfigurationMenu() : ConcreteBubbleConfig 
 \\
 Ritorna il componente React per visualizzare il menù di creazione di una bolla da inviare.
 \item +doMakeButton() : ConcreteBubbleCreationButton 
-\ 
+\\
 Ritorna il componente React per visualizzare il bottone di creazione del menù di configurazione di una bolla da inviare.
 
 \end{itemize} 
@@ -1241,44 +1242,6 @@ Un titolo per la Lista.
 
 \clearpage
 
-\subsubsection{ListDb}
-\textbf{Componente:}  ListBubble::Configuration\\
-   \FloatBarrier
-   \begin{figure}[ht]
-   \centering
-   \includegraphics[width=0.6\textwidth]{img/single-ListDb}
-   \caption{{Diagramma per ListDb in Configuration}}
-\end{figure}
-\FloatBarrier
-\textbf{Descrizione}\\
- 
-
-
-\textbf{Applicazioni}\\
- 
-
-
-\clearpage
-
-\subsubsection{ListCheck}
-\textbf{Componente:}  ListBubble::DataManagement\\
-   \FloatBarrier
-   \begin{figure}[ht]
-   \centering
-   \includegraphics[width=0.6\textwidth]{img/single-ListCheck}
-   \caption{{Diagramma per ListCheck in DataManagement}}
-\end{figure}
-\FloatBarrier
-\textbf{Descrizione}\\
- 
-
-
-\textbf{Applicazioni}\\
- 
-
-
-\clearpage
-
 \subsubsection{ListBubbleCreator}
 \textbf{Componente:}  ListBubble::DataManagement\\
    \FloatBarrier
@@ -1319,7 +1282,7 @@ Viene utilizzata per gestire la creazione della singola istanza di bolla lista, 
    \FloatBarrier
    \begin{figure}[ht]
    \centering
-   \includegraphics[width=0.6\textwidth]{img/single-SurveyBubble}
+   \includegraphics[width=0.6\textwidth]{img/single-PollBubble}
    \caption{{Diagramma per PollBubble in PollBubble}}
 \end{figure}
 \FloatBarrier
@@ -1368,7 +1331,7 @@ Un ID per la bolla Sondaggio.
    \FloatBarrier
    \begin{figure}[ht]
    \centering
-   \includegraphics[width=0.6\textwidth]{img/single-SurveyCreator}
+   \includegraphics[width=0.6\textwidth]{img/single-PollCreator}
    \caption{{Diagramma per PollCreator in PollBubble}}
 \end{figure}
 \FloatBarrier
@@ -1403,7 +1366,7 @@ Viene utilizzata per gestire la creazione della singola istanza di bolla sondagg
    \FloatBarrier
    \begin{figure}[ht]
    \centering
-   \includegraphics[width=0.6\textwidth]{img/single-SurveyBubbleConfigMenu}
+   \includegraphics[width=0.6\textwidth]{img/single-PollBubbleConfig}
    \caption{{Diagramma per PollBubbleConfig in PollBubble}}
 \end{figure}
 \FloatBarrier
@@ -1448,7 +1411,7 @@ Viene utilizzato per rappresentare il menù di configurazione della bolla Sondag
    \FloatBarrier
    \begin{figure}[ht]
    \centering
-   \includegraphics[width=0.6\textwidth]{img/single-SurveyBubbleCreationButton}
+   \includegraphics[width=0.6\textwidth]{img/single-PollBubbleCreationButton}
    \caption{{Diagramma per PollBubbleCreationButton in PollBubble}}
 \end{figure}
 \FloatBarrier
@@ -1485,7 +1448,7 @@ Nella props "onClick" verrà ritornato il nome identificativo della bolla.
    \FloatBarrier
    \begin{figure}[ht]
    \centering
-   \includegraphics[width=0.6\textwidth]{img/single-DiceBubble}
+   \includegraphics[width=0.6\textwidth]{img/single-RandBubble}
    \caption{{Diagramma per RandBubble in RandomBubble}}
 \end{figure}
 \FloatBarrier
@@ -1519,7 +1482,7 @@ Il componente RandBubble si aspetta in entrata una props "nMax" che dovrà conte
    \FloatBarrier
    \begin{figure}[ht]
    \centering
-   \includegraphics[width=0.6\textwidth]{img/single-DiceBubbleCreator}
+   \includegraphics[width=0.6\textwidth]{img/single-RandCreator}
    \caption{{Diagramma per RandCreator in RandomBubble}}
 \end{figure}
 \FloatBarrier
@@ -1554,7 +1517,7 @@ Viene utilizzata per gestire la creazione della singola istanza di bolla estrazi
    \FloatBarrier
    \begin{figure}[ht]
    \centering
-   \includegraphics[width=0.6\textwidth]{img/single-DiceBubbleConfigMenu}
+   \includegraphics[width=0.6\textwidth]{img/single-RandBubbleConfig}
    \caption{{Diagramma per RandBubbleConfig in RandomBubble}}
 \end{figure}
 \FloatBarrier
@@ -1591,7 +1554,7 @@ Viene utilizzato per rappresentare il menù di configurazione della bolla di lan
    \FloatBarrier
    \begin{figure}[ht]
    \centering
-   \includegraphics[width=0.6\textwidth]{img/single-diceBubbleCreationButton}
+   \includegraphics[width=0.6\textwidth]{img/single-RandBubbleCreationButton}
    \caption{{Diagramma per RandBubbleCreationButton in RandomBubble}}
 \end{figure}
 \FloatBarrier
