@@ -45,6 +45,28 @@ Layout orizzontale che conterrà i componenti della bolla e li posizionerà ognu
 \end{center}
 
 \subsection{Components}
+
+\subsubsection{CheckButton}
+
+Componente Checkbox, i suoi dati vengono ritornati (ad ogni click) tramite la funzione getCheck.
+\begin{center}
+	\underline{\textit{Utilizzo}}
+	\begin{lstlisting}
+	<CheckButton
+	id= ""
+	classes= // CSS classes
+	getCheck={this.fun}
+	value="" // Valore CheckButton
+	/>
+	\end{lstlisting}
+	\underline{\textit{Funzione di ritorno}}
+	\begin{lstlisting}
+	function fun(m) {...}
+	
+	m={id:'', value:'', check:''};
+	\end{lstlisting}
+\end{center}
+
 \subsubsection{CheckBoxList}
 Una lista di Checkbox, i dati del CheckButton cliccato vengono ritornati tramite la funzione getCheck.
 \begin{center}
@@ -67,28 +89,12 @@ function fun(m) {...}
 
 m={id:'', value:'', check:''};
 \end{lstlisting}
+\underline{\textit{Esempio:}}
+\\
+\includegraphics[scale=0.6]{img/checkbox.png}
+\\
 \end{center}
 
-\subsubsection{CheckButton}
-
-Componente Checkbox, i suoi dati vengono ritornati (ad ogni click) tramite la funzione getCheck.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
-<CheckButton
-id= ""
-classes= // CSS classes
-getCheck={this.fun}
-value="" // Valore CheckButton
-/>
-\end{lstlisting}
-\underline{\textit{Funzione di ritorno}}
-\begin{lstlisting}
-function fun(m) {...}
-
-m={id:'', value:'', check:''};
-\end{lstlisting}
-\end{center}
 
 \subsubsection{ComboBox}
 Semplice elemento ComboBox. La funzione di ritorno riceve l'elemento selezionato.
@@ -102,6 +108,10 @@ options={["a","b","c"]} //array of options
 getSelection={this.fun}
 />
 \end{lstlisting}
+\underline{\textit{Esempio:}}
+\\
+\includegraphics[scale=0.9]{img/combobox.png}
+\newpage
 \end{center}
 
 \subsubsection{Image}
@@ -135,7 +145,7 @@ handleClick={this.fun}
 />
 \end{lstlisting}
 \end{center}
-\newpage
+
 
 \subsubsection{LineEdit}
 Casella di testo editabile. La funzione "fun" salva il testo digitato e viene chiamata ad ogni modifica.
@@ -149,6 +159,10 @@ updateState={this.fun}
 value="default value"
 />
 \end{lstlisting}
+\underline{\textit{Esempio:}}
+\\
+\includegraphics[scale=1]{img/lineedit.png}
+\\
 \end{center}
 
 \subsubsection{LineEditComboBox}
@@ -184,8 +198,12 @@ getText={this.fun}
 buttonName="button name"
 />
 \end{lstlisting}
+\underline{\textit{Esempio:}}
+\\
+\includegraphics[scale=0.75]{img/LEPush.png}
+\\
 \end{center}
-
+\newpage
 \subsubsection{PushButton}
 Pulsante cliccabile. La funzione "fun" viene eseguita al click sul pulsante.
 \begin{center}
@@ -198,6 +216,10 @@ handleClick={this.fun}
 buttonName="button name"
 />
 \end{lstlisting}
+\underline{\textit{Esempio:}}
+\\
+\includegraphics[scale=0.25]{img/pushB.png}
+\\
 \end{center}
 
 \subsubsection{RadioButtonGroup}
@@ -211,6 +233,10 @@ options={["a","b","c"]} //array of options
 getValue={this.fun}
 />
 \end{lstlisting}
+\underline{\textit{Esempio:}}
+\\
+\includegraphics[scale=0.6]{img/radiob.png}
+\\
 \end{center}
 
 \subsubsection{TextAreaButton}
@@ -230,8 +256,12 @@ height= // textarea height
 buttonName= // button name
 />
 \end{lstlisting}
+\underline{\textit{Esempio:}}
+\\
+\includegraphics[scale=0.4]{img/textb.png}
+\\
 \end{center}
-\newpage
+
 \subsubsection{TextAreaComboBox}
 Elemento area di testo editabile ed un ComboBox.\\
 La funzione "fun1" riceve il testo dalla TextArea mentre "fun2" l'opzione selezionata dal ComboBox.
