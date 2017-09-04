@@ -47,6 +47,21 @@ riportati nel \gloss.
 \section{Processi primari}
 
 \subsection{Fornitura}
+In questa sezione vengono fornite le norme che i membri del gruppo Obelix sono tenuti a rispettare al fine di proporsi e diventare fornitori della Proponente Red Babel e dei Committenti Prof. Tullio Vardanega e Prof. Riccardo Cardin.
+
+\subsubsection{Documentazione fornita}
+
+Di seguito vengono elencati i documenti forniti alla Proponente Red Babel e ai Comittenti Prof. Tullio Vardanega e Prof. Riccardo Cardin al fine di assicurare la massima trasparenza.
+\begin{itemize}
+\item \textbf{Pianificazione, consegna e completamento:} descritte all’interno del documento Piano di Progetto v4\_0\_0
+\item \textbf {Analisi:} analisi dei requisiti e dei casi d’uso del gruppo vengono definite all’interno del documento Analisi dei Requisiti v4\_0\_0
+\item \textbf {Progettazione Architetturale:} una panoramica ad alto livello dell’applicazione, assieme alle tecnologie adottate, viene descritta nel documento Specifica Tecnica v4\_0\_0
+\item \textbf{Progettazione di Dettaglio:} l’insieme delle classi, dei metodi, degli attributi e delle scelte implementative sono racchiuse nel documento Definizione di Prodotto v4\_0\_0
+\item \textbf{Verifica e Validazione:} descritte all’interno del Piano di Qualifica v4\_0\_0
+\item \textbf{Garanzia della Qualità dei processi e di prodotto:} descritte e definite nel
+sopra citato Piano di Qualifica v4\_0\_0
+\end{itemize}
+
 
 \subsubsection{Studio di fattibilità}
 
@@ -242,9 +257,9 @@ I contenuti da coprire sono i seguenti:
   \item Diagrammi di attività
   \end{itemize}
 
-\item \textbf{Diagrammi di Sequenza}:  %---------------------
+\item \textbf{Diagrammi di Sequenza}: servono a descrivere le interazioni che avvengono fra gli oggetti che devono implementare collettivamente un comportamento, rappresentando sequenze di azioni tramite scelte definite
 
-\item \textbf{Diagrammi di Attività}:  %---------------------
+\item \textbf{Diagrammi di Attività}:  descrivono il flusso di operazioni di una attività (ad esempio un algoritmo) descrivendone la logica procedurale.
 
 
 
@@ -726,6 +741,21 @@ repository bisogna specificarne le motivazioni. Questo avviene utilizzando il co
 	\item liste delle modifiche effettuate, ordinate per ogni singolo file
 \end{itemize}
 Prima di eseguire tale procedura, va aggiornato il diario delle modifiche, secondo le regole viste in \S 3.1.5.
+
+\paragraph{Comandi principali}
+
+\begin{itemize}
+  \item\textbf{git pull:} Aggiorna sovrascrivendo il repository locale con quello remoto
+  \item\textbf{git status:} Mostra lo stato attuale del repository locale con i file modificati,
+tracciati e non tracciati da Git
+  \item\textbf{git add nomefile:} Aggiunge il file alla lista dei file tracciati da Git, si può usare con il simbolo di wildcard “*”. \'E da usare sia per aggiungere nuovi file che per aggiungere le modifiche apportate ad un file, altrimenti non verranno applicate
+  \item\textbf{git rm nomefile:} Rimuove un file in modo che eseguendo un commit delle modifiche venga poi rimosso anche dal repository
+  \item\textbf{git commit -m:} Fa il commit delle modifiche effettuate salvandole sul repository locale, viene eseguito solo sui file su cui si è eseguito un il comando di aggiunta. La descrizione della modifica deve spiegare la modifica che viene salvata con il commit. L’aggiunta della descrizione è obbligatoria
+  \item\textbf{git branch:} Permette di visualizzare dei branch presenti nel repository locale
+\end{itemize}
+
+
+
 
 %%&inserimento in fase di RQ
 \newpage
@@ -1415,13 +1445,17 @@ istantanea e VoIP. Esso unisce caratteristiche presenti nei client più
 comuni (chat, salvataggio delle conversazioni, trasferimento di file)
 ad un sistema di telefonate basato su un network Peer-to-peer. 
 
-\subsection{Miglioramento} %----------------
-\subsubsection{Costituzione del Processo}
+\subsection{Miglioramento} Occorre stabilire, misurare, controllare, valutare e migliorare il ciclo di vita del software al fine di operare secondo il principio del miglioramento continuo chiamato anche PDCA.
+
+\subsubsection{Costituzione del Processo} Ogni processo dovrà essere controllato, sviluppato e monitorato costantemente al fine di garantire il raggiungimento degli obiettivi fissati nella pianificazione.
 \subsubsection{Valutazione del Processo}
+Al termine di ogni periodo verrà attivata una procedura di valutazione per ciascun processo, secondo la metodologia PDCA. Una revisione dei processi a intervalli appropriati sarà utile per garantire la loro efficienza ed e efficacia.
 \subsubsection{Miglioramento del Processo}
+Una volta completato il periodo, occorrerà definire e applicare i miglioramenti necessari ed aggiornare la relativa documentazione.
+Dati storici, tecnici e di valutazione devono essere raccolti ed analizzati all interno del documento Piano di Qualifica per capire i punti deboli e le potenzialità dei processi impiegati. L’analisi deve essere usata come feedback per migliorare i processi e indicare modifiche necessarie da applicare alle procedure, agli strumenti e alle tecnologie.
 
 
-\subsection{Formazione del Personale}  %----------------
+\subsection{Formazione del Personale} Per quanto riguarda la formazione, i membri del gruppo Obelix devono procedere in modo autonomo con lo studio individuale delle tecnologie che verranno utilizzate nel corso del progetto prendendo come riferimento, il materiale indicato nella sezione Riferimenti Informativi.
 
 \clearpage
 
