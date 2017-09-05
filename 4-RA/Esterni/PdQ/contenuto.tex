@@ -1414,3 +1414,143 @@ verificare i possibili effetti.
   	 
   	\caption{RQ-Metriche per Software}\\
   \end{longtable}
+
+  \subsection{Revisione di Accettazione}
+  
+  In questo periodo (antecedente la consegna di tale revisione) sono stati verificati i documenti ed i processi.
+  
+  \begin{itemize}
+  	\item Sono stati verificati i documenti applicando la procedura descritta nel documento \emph{Norme di progetto v5.0.0}
+  	\item \'E stata applicata \emph{l'analisi statica} secondo i criteri e le modalità indicata alla sezione \emph{2.7.1}.
+  	% \item Si è applicato il ciclo PDCA per rendere più efficiente ed efficace il processo di verifica.
+  	\item Si sono calcolate per i documenti le metriche descritte nella sezione \emph{2.8}.
+  	
+  	\item L’avanzamento dei processi è stato controllato e verificato secondo le metodiche descritte nelle \emph{Norme di Progetto v5.0.0}.
+  	
+  \end{itemize}
+  \subsubsection{Verifiche sui processi}
+  
+  Vengono qui riportati gli esiti delle verifiche sui processi produttivi.\\
+  
+  
+  \textbf{Budget Variance / Schedule Variance}
+  \begin{longtable}{|>{\centering}m{2cm}|c|c|c|c|c|}
+  	\hline
+  	\textbf{Metrica} & \textbf{Unità di misura} & \textbf{Risultato} & \textbf{Risultato massimo} & \textbf{Esito} & \textbf{Valore}\\
+  	\hline
+  	\endhead
+  	\emph{Schedule Variance} & {Attività} & \textcolor{Green}{0} & / & Superato & Ottimale\\ \hline
+  	\emph{Budget Variance} & {Euro} & \textcolor{Orange}{-38} & / & Non superato & /\\ \hline
+  	
+  	\caption{RA- BV e SV}\\
+  \end{longtable}
+  
+  
+  
+  
+  \begin{itemize}
+  	\item La data di fine della Revisione di Progettazione si è dimostrata essere il
+  	giorno stabilito nel Piano di Progetto v4.0.0 .
+  	%% Aumentando il numero di ore di lavoro giornaliere ed utilizzando tutti gli slack
+  	%% inseriti durante la pianificazione il gruppo ha compresso i tempi con conseguente
+  	%% SV positivo;
+  	\item  Il limite inferiore di accettabilità del Budget Variance è pari a 0€.
+  	Il valore ottenuto risulta essere quindi non accettabile. 
+  	%% Come già precisato, il
+  	%% gruppo per portare a termine gli obbiettivi entro le date imposte
+  	%% ha aumentato il numero di ore di lavoro giornaliere. 
+  	%% Questo ha quindi causato un aumento del BV in quanto le ore
+  	%% complessive di 
+  	%% lavoro sono state vicine a quelle preventivate, ma il periodo di lavoro è stato
+  	%% compresso.
+  \end{itemize}
+  
+  \subsubsection{Produttività}
+  
+  \begin{longtable}{|>{\centering}m{2cm}|c|c|c|c|c|}
+  	\hline
+  	\textbf{Metrica} & \textbf{Unità di misura} & \textbf{Risultato} & \textbf{Risultato massimo} & \textbf{Esito} & \textbf{Valore}\\
+  	\hline
+  	\endhead
+  	
+  	\emph{Produttività di documentazione} & {n° parole/h} & \textcolor{Green}{106} & / & Superato & Ottimale \\ \hline
+  	
+  	
+  	
+  	\emph{Produttività di codifica} & {n° linee codice/h} & \textcolor{Green}{70} & / & Superato & Accettabile \\ \hline
+  	
+  	
+  	
+  	
+  	\caption{RA-Produttività}\\
+  \end{longtable}
+  
+  
+  
+  
+  
+  
+  
+  
+  \subsubsection{Verifica dei Documenti}
+  Vengono qui riportati i valori dell'indice Gulpease per ogni documento durante l’analisi e relativo
+  esito basato sui range stabiliti nella sezione \emph{2.8.2}
+  \begin{center}
+  	\begin{tabular}{|c|c|c|}
+  		\hline
+  		\textbf{Documento} & \textbf{Valore indice} & \textbf{Esito} \\
+  		\hline
+  		\emph{Analisi dei Requisiti 4.0.0}  & 66.7 & superato \\
+  		\hline
+  		\emph{Norme di Progetto 5.0.0}   & 55.3  & superato \\
+  		\hline
+  		\emph{Piano di Progetto 5.0.0}   & 66.3 & superato \\
+  		\hline
+  		\emph{Piano di Qualifica 5.0.0}   & 65.6 & superato \\
+  		
+  		\hline
+  		\emph{Definizione di Prodotto 3.0.0}  & 69 & superato \\
+  		\hline
+  		\emph{Manuale Utente 2.0.0}  & 67.3 & superato \\
+  		\hline
+  	\end{tabular}
+  	\captionof{table}{Tabella risultati test Gulpease}
+  \end{center}
+  
+  \subsubsection{Metriche per software}
+  
+  
+  
+  
+  \begin{longtable}{|>{\centering}m{2cm}|c|c|c|c|c|}
+  	\hline
+  	\textbf{Metrica} & \textbf{Unità di misura} & \textbf{Risultato} & \textbf{Risultato massimo} & \textbf{Esito} & \textbf{Valore}\\
+  	\hline
+  	\endhead
+  	
+  	
+  	\emph{Complessità Ciclomatica media} & {Cammini} & \textcolor{Green}{2.3} & / & Superato & Ottimale\\ \hline
+  	\emph{Numero di metodi per package (max)} & {Metodi} & / & \textcolor{Green}{14} & Superato & Accettabile\\ \hline
+  	\emph{Variabili non utilizzate e non definite} & {Variabili} & / & \textcolor{Green}{0} & Superato & Ottimale\\ \hline
+  	\emph{Numero parametri per metodo (max)} & {Parametri} & / & \textcolor{Green}{5} & Superato & Accettabile\\ \hline
+  	
+  	
+  	
+  	\emph{Halstead difficulty per-function (media) } & {indice complessità} & \textcolor{Green}{3.62} & / & Superato & Ottimale\\ \hline
+  	\emph{Halstead volume per-function (media)} & {indice complessità} & \textcolor{Green}{100.82} & / & Superato & Ottimale\\ \hline
+  	\emph{Halstead effort per-function} & {indice complessità} & \textcolor{Green}{364.9684} & / & Superato & Accettabile\\ \hline
+  	
+  	
+  	\emph{Maintainability index} & {Valore} & \textcolor{Green}{73.86} & / & Superato  & Accettabile \\ \hline
+  	
+  	\emph{Statement Coverage} & {Percentuale} & \textcolor{Green}{86.2\%} & / & Superato & Ottimale\\ \hline
+  	
+  	
+  	\emph{Branch Coverage} & {Percentuale} & \textcolor{Green}{88.3\%} & / & Superato & Ottimale\\ \hline
+  	
+  	
+  	\emph{Copertura dei test} & {Percentuale} & \textcolor{Green}{100\%} & / & Superato & Ottimale\\ \hline
+  	
+  	
+  	\caption{RA-Metriche per Software}\\
+  \end{longtable}
