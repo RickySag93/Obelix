@@ -67,6 +67,13 @@ riportate nel documento \gloss
 
 \subsection{Obiettivi di qualità}
 
+In questa sezione vengono illustrati gli obiettivi fissati dal gruppo Obelix al fine di garantire la qualità di processo e di prodotto nella realizzazione di Monolith.
+Al fine di monitorare costantemente lo stato e il raggiungimento degli obiettivi il gruppo
+ha adottato standard e metriche adeguate, nelle sezioni seguenti verranno illustrati in
+dettaglio le metodologie, le metriche applicate e le rispettive scale di riferimento.
+Sia gli obiettivi che le metriche sono identificati univocamente da un codice alfanumerico
+in modo da renderli facilmente tracciabili e quindi controllabili costantemente. La classificazione di obiettivi e metriche è descritta in dettaglio nelle \normediprogetto.
+
 \subsubsection{Qualità di processo}
 %% La qualità di processo è definita dallo standard ISO/IEC 15504
 %% (SPICE). Questo standard specifica come la qualità è collegata alla
@@ -173,8 +180,6 @@ alla metrica "Indice di Gulpease" alla sezione
 \emph{2.8.2}. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
 \paragraph{Qualità del software}
 
 Al fine di garantire la qualità del prodotto software, il gruppo ha deciso di adottare lo standard
@@ -210,9 +215,42 @@ critiche del software.
 Oltre alle proprietà intrinseche del prodotto viene anche misurata la
 qualità dei test, ovvero quanto i test effettivamente verifichino
 l'assenza di anomalie nel software.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% da dire altro? ci deve essere una sezione dedicata? dove dire la
-%% strategia di verifica?
+
+\subsubsection{Tabella degli Obiettivi}
+
+\begin{center}
+	\begin{longtable}{|
+			*{1}{>{\centering\arraybackslash}p{1.7 cm}|}
+			*{1}{>{\centering\arraybackslash}p{2.3 cm}|}
+			*{1}{>{\centering\arraybackslash}p{4.0 cm}|}
+			*{1}{>{\centering\arraybackslash}p{2.4 cm}|}}
+		\hline
+		\textbf{ID} & \textbf{Nome} & \textbf{Descrizione} & \textbf{Metriche}
+		\\
+		\hline \endhead
+		\hline \endfoot
+		\hline OQPS001 & Miglioramento continuo & Capacità del processo di misurare e migliorare le proprie performance & MPS001: SPICE  \\
+		\hline OQPTD001 & Leggibilità dei documenti & I documenti devono essere leggibili e comprensibili da persone con licenza media superiore & MPTD001: Gulpease  \\
+		\hline OQPTD002 & Correttezza ortografica dei documenti & I documenti non devono presentare errori ortografici o grammaticali & MPTD002: Errori ortografici corretti  \\
+		\hline OQPTD003 & Produttività nella stesura dei documenti & Il numero di parole scritte in un'ora deve essere >= 100  & MPTD003: Produttività di documentazione  \\
+		\hline OQPTS001 & Produttività nella stesura del codice & Il numero di linee di codice scritte in un'ora deve essere >= 100  & MPTS001: Produttività di codifica  \\
+		\hline OQPTS002 & Copertura del codice & Monolith deve essere testato in ogni su parte per garantire le funzionalità previste dai requisiti  & MPTS002: Statement Coverage  \\
+		\hline  &  &  & MPTS003: Branch Coverage  \\
+		\hline OQPTS003 & Copertura dei test & La percentuale di superamento dei test deve essere >= 80\% del totale  & MPTS004: Percentuale superamento test  \\
+		\hline OQPTS004 & Manutenzione e comprensione del codice & Il codice di Monolith deve essere quanto più comprensibile e manutenibile  & MPTS005: Complessità ciclomatica media  \\
+		\hline  &  &  & MPTS006: Numero di metodi per package (max)  \\
+		\hline  &  &  & MPTS007: Variabili non utilizzate e non definite  \\
+		\hline  &  &  & MPTS008: Numero di parametri per metodo (max)  \\
+		\hline  &  &  & MPTS009: Halstead difficulty per-function (media)  \\
+		\hline  &  &  & MPTS010: Halstead volume per-function (media)  \\
+		\hline  &  &  & MPTS011: Halstead effort per-function   \\
+		\hline  &  &  & MPTS012: Maintainability index  \\
+		\hline
+		
+	\end{longtable}
+\end{center}
+
+
 
 
 
@@ -468,12 +506,6 @@ Dove:
 \end{itemize}
 
 
-
-
-
-
-
-
 \subsubsection{Metriche per i prodotti}
 
 \paragraph{Metriche per i documenti}
@@ -492,8 +524,7 @@ G = 89 + \frac{300 \times \text{numero delle frasi} - 10 \times \text{numero del
 $$
 
 Il valore risultante è un numero compreso tra 0 e 100, dove 100 indica
-la
-leggibilità massima e 0 la leggibilità minima. I documenti sono da
+la leggibilità massima e 0 la leggibilità minima. I documenti sono da
 considerare secondo le seguenti fasce:
 \begin{itemize}
 \item $ G < 80 $ sono considerati difficili per chi ha la sola licenza
@@ -727,6 +758,39 @@ $$
 	\item Range-ottimale: $[80 - 100]$
 \end{itemize}
 
+\subsection{Riassunto della relazione tra metriche e obiettivi di qualità}
+
+\begin{center}
+	\begin{longtable}{|
+			*{1}{>{\centering\arraybackslash}p{1.7 cm}|}
+			*{1}{>{\centering\arraybackslash}p{2.3 cm}|}
+			*{1}{>{\centering\arraybackslash}p{4.0 cm}|}
+			*{1}{>{\centering\arraybackslash}p{2.4 cm}|}}
+		\hline
+		\textbf{ID} & \textbf{Nome} & \textbf{Soglie di accettabilità} & \textbf{Obiettivi}
+		\\
+		\hline \endhead
+		\hline \endfoot
+		\hline MPS001 & SPICE & \makecell{\textbf{Valore minimo}: \\ livello 2 \\ \textbf{Valore ottimale}: \\ >= livello 4} &  OQPS001: Miglioramento continuo  \\
+		\hline MPTD001 & Gulpease & \makecell{\textbf{Valore minimo}: \\ >= 40 \\ \textbf{Valore ottimale}: \\ >= 50} &  OQPTD001: Leggibilità dei documenti  \\
+		\hline MPTD002 & Errori ortografici corretti & \makecell{\textbf{Valore minimo}: \\ 100 \% corretti \\ \textbf{Valore ottimale}: \\ 100 \% corretti} &  OQPTD002: Correttezza ortografica dei documenti  \\
+		\hline MPTD003 & Produttività di documentazione & \makecell{\textbf{Valore minimo}: \\ 100  \\ \textbf{Valore ottimale}: \\ >=100} &  OQPTD003: Produttività nella stesura dei documenti  \\
+		\hline MPTS001 & Produttività di codifica & \makecell{\textbf{Valore minimo}: \\ 100  \\ \textbf{Valore ottimale}: \\ >=100} &  OQPTS001: Produttività nella stesura del codice \\ 
+		\hline MPTS002 & Statement Coverage & \makecell{\textbf{Valore minimo}: \\ >= 70  \\ \textbf{Valore ottimale}: \\ >=85} &  OQPTS002: Copertura del codice \\ 
+		\hline MPTS003 & Branch Coverage & \makecell{\textbf{Valore minimo}: \\ >= 70  \\ \textbf{Valore ottimale}: \\ >=85} &  OQPTS002: Copertura del codice \\
+		\hline MPTS004 & Percentuale superamento test & \makecell{\textbf{Valore minimo}: \\ >= 80  \\ \textbf{Valore ottimale}: \\ 100} &  OQPTS003: Copertura dei test \\
+		\hline MPTS005 & Complessità ciclomatica (media) & \makecell{\textbf{Valore minimo}: \\ <=25  \\ \textbf{Valore ottimale}: \\ <=10} &  OQPTS004: Manutenzione e comprensione del codice \\
+		\hline MPTS006 & Numero di metodi per package (max) & \makecell{\textbf{Valore minimo}: \\ <=15  \\ \textbf{Valore ottimale}: \\  <=7} &  OQPTS004: Manutenzione e comprensione del codice \\
+		\hline MPTS007 & Variabile non utilizzate e non definite & \makecell{\textbf{Valore minimo}: \\ 0  \\ \textbf{Valore ottimale}: \\ 0} &  OQPTS004: Manutenzione e comprensione del codice \\
+		\hline MPTS008 & Numero di parametri per metodo (max) & \makecell{\textbf{Valore minimo}: \\ <=8  \\ \textbf{Valore ottimale}: \\ <=4} &  OQPTS004: Manutenzione e comprensione del codice \\
+		\hline MPTS009 & Halstead difficulty per-function (media) & \makecell{\textbf{Valore minimo}: \\ <=30 \\ \textbf{Valore ottimale}: \\ <=15} &  OQPTS004: Manutenzione e comprensione del codice \\
+		\hline MPTS010 & Halstead volume per-function (media) & \makecell{\textbf{Valore minimo}: \\ <=1500 \\ \textbf{Valore ottimale}: \\ <=1000} &  OQPTS004: Manutenzione e comprensione del codice \\
+		\hline MPTS011 & Halstead effort per-function & \makecell{\textbf{Valore minimo}: \\ <=400 \\ \textbf{Valore ottimale}: \\ <=300} &  OQPTS004: Manutenzione e comprensione del codice \\
+		\hline MPTS012 & Maintainability index & \makecell{\textbf{Valore minimo}: \\ >70 \\ \textbf{Valore ottimale}:\\ >90} &  OQPTS004: Manutenzione e comprensione del codice \\
+		\hline
+		
+	\end{longtable}
+\end{center}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
