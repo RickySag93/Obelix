@@ -53,13 +53,13 @@ In questa sezione vengono fornite le norme che i membri del gruppo Obelix sono t
 
 Di seguito vengono elencati i documenti forniti alla Proponente Red Babel e ai Comittenti Prof. Tullio Vardanega e Prof. Riccardo Cardin al fine di assicurare la massima trasparenza.
 \begin{itemize}
-\item \textbf{Pianificazione, consegna e completamento:} descritte all’interno del documento Piano di Progetto v4\_0\_0
-\item \textbf {Analisi:} analisi dei requisiti e dei casi d’uso del gruppo vengono definite all’interno del documento Analisi dei Requisiti v4\_0\_0
-\item \textbf {Progettazione Architetturale:} una panoramica ad alto livello dell’applicazione, assieme alle tecnologie adottate, viene descritta nel documento Specifica Tecnica v4\_0\_0
-\item \textbf{Progettazione di Dettaglio:} l’insieme delle classi, dei metodi, degli attributi e delle scelte implementative sono racchiuse nel documento Definizione di Prodotto v4\_0\_0
-\item \textbf{Verifica e Validazione:} descritte all’interno del Piano di Qualifica v4\_0\_0
+\item \textbf{Pianificazione, consegna e completamento:} descritte all’interno del documento \pianodiprogetto
+\item \textbf {Analisi:} analisi dei requisiti e dei casi d’uso del gruppo vengono definite all’interno del documento \analisideirequisiti
+\item \textbf {Progettazione Architetturale:} una panoramica ad alto livello dell’applicazione, assieme alle tecnologie adottate, viene descritta nel documento \definizionediprodotto
+\item \textbf{Progettazione di Dettaglio:} l’insieme delle classi, dei metodi, degli attributi e delle scelte implementative sono racchiuse nel documento \definizionediprodotto
+\item \textbf{Verifica e Validazione:} descritte all’interno del documento \pianodiqualifica
 \item \textbf{Garanzia della Qualità dei processi e di prodotto:} descritte e definite nel
-sopra citato Piano di Qualifica v4\_0\_0
+sopra citato \pianodiqualifica
 \end{itemize}
 
 
@@ -389,8 +389,6 @@ L'obiettivo di questo periodo è quello di integrare tutte le parti software svi
 
 \section{Processi di supporto} 
 
-\subsection{Documentazione}
-%------
 
 \subsubsection{Descrizione }
 Lo scopo del processo di documentazione è quello di illustrare le
@@ -466,16 +464,10 @@ tra utente e sistema. Questo documento è utilizzato sia
 esternamente che internamente. 
 
 
-\paragraph{Specifica Tecnica }
-I  \emph{Progettisti}  devono descrivere la progettazione ad alto livello del
-sistema e dei singoli componenti nella Specifica Tecnica. Devono
-essere definiti, inoltre, opportuni test di integrazione tra le varie
-componenti.
-
-
 
 \paragraph{Definizione di Prodotto  }
-Lo scopo di questo documento è di descrivere i dettagli implementativi del prodotto.
+Lo scopo di questo documento è di descrivere la progettazione ad alto livello del
+sistema e dei singoli componenti e i dettagli implementativi del prodotto.
 Queste informazioni saranno la base per il processo di codifica.
 
 \paragraph{Glossario  }
@@ -759,6 +751,79 @@ tracciati e non tracciati da Git
 
 %%&inserimento in fase di RQ
 \newpage
+
+
+
+
+
+
+\subsection{Garanzia di Qualità}
+\subsubsection{Classificazione metriche e obiettivi}
+Questa sezione definisce norme e struttura delle metriche, degli obiettivi di qualità,  
+delle metodologie, procedure e degli strumenti per raggiungere la qualità di processo e di prodotto.  
+Gli elementi di seguito specificati verranno utilizzati all'interno del 
+\pianodiqualifica
+
+\paragraph{Classificazione degli obiettivi}
+Gli obiettivi di qualità stabiliti dagli amministratori assieme ai verificatori inclusi nel \pianodiqualifica devono rispettare 
+la seguente notazione:
+\begin{center}
+    OQ[Tipo][Oggetto]*[ID]: [Nome]
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Tipo}: stabilisce se l'obiettivo si riferisce a prodotti o processi e può assumere i valori:
+    \begin{itemize}
+        \item \textbf{PS}: per indicare i processi (Process);
+        \item \textbf{PT}: per indicare i prodotti (Product).
+    \end{itemize}
+    \item \textbf{Oggetto}: presente solo per quanto riguarda i prodotti, indica se il prodotto si riferisce a 
+    documenti o al software Può assumere i seguenti valori:
+    \begin{itemize}
+        \item \textbf{D}: per indicare i documenti;
+        \item \textbf{S}: per indicare il software.
+    \end{itemize}
+    \item \textbf{ID}: Identifica univocamente l'obiettivo tramite un codice incrementale composto da sole cifre;
+    \item \textbf{Nome}: Titolo dell'obiettivo;
+    \item \textbf{Descrizione}: Breve descrizione dell'obiettivo di qualità.
+\end{itemize}
+
+
+\paragraph{Classificazione delle metriche}
+\MakeUppercase{è} compito degli amministratori affiancati dai verificatori fissare metriche adeguate al fine di monitorare 
+costantemente l'andamento degli obiettivi di qualità di prodotto e di processo. \\
+Tali metriche dovranno rispettare la seguente notazione:
+\begin{center}
+    M[Tipo][Oggetto]*[ID]: [Titolo]
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Tipo}: stabilisce se la metrica si riferisce a prodotti o processi e può assumere
+    i valori:
+    \begin{itemize}
+        \item \textbf{PS}: per indicare i processi (Process);
+        \item \textbf{PT}: per indicare i prodotti (Product).
+    \end{itemize}
+    \item \textbf{Oggetto}: presente solo per quanto riguarda i prodotti, indica se il prodotto si riferisce a 
+    documenti o al software Può assumere i seguenti valori:
+    \begin{itemize}
+        \item \textbf{D}: per indicare i documenti;
+        \item \textbf{S}: per indicare il software.
+    \end{itemize}
+    \item \textbf{ID}: Identifica univocamente la metrica tramite un codice incrementale composto da sole cifre;
+    \item \textbf{Titolo}: Breve descrizione della metrica.
+\end{itemize}
+
+
+
+\newpage
+
+
+
+
+
+
+
 
 \subsection{Processo di garanzia di qualità del prodotto}
 Per garantire la qualità del prodotto vengono adottato varie metodologie tra le quali ritroviamo i processi di verifica e di validazione successivamente illustrati. \\
@@ -1452,7 +1517,7 @@ ad un sistema di telefonate basato su un network Peer-to-peer.
 Al termine di ogni periodo verrà attivata una procedura di valutazione per ciascun processo, secondo la metodologia PDCA. Una revisione dei processi a intervalli appropriati sarà utile per garantire la loro efficienza ed e efficacia.
 \subsubsection{Miglioramento del Processo}
 Una volta completato il periodo, occorrerà definire e applicare i miglioramenti necessari ed aggiornare la relativa documentazione.
-Dati storici, tecnici e di valutazione devono essere raccolti ed analizzati all interno del documento Piano di Qualifica per capire i punti deboli e le potenzialità dei processi impiegati. L’analisi deve essere usata come feedback per migliorare i processi e indicare modifiche necessarie da applicare alle procedure, agli strumenti e alle tecnologie.
+Dati storici, tecnici e di valutazione devono essere raccolti ed analizzati all interno del documento \pianodiqualifica per capire i punti deboli e le potenzialità dei processi impiegati. L’analisi deve essere usata come feedback per migliorare i processi e indicare modifiche necessarie da applicare alle procedure, agli strumenti e alle tecnologie.
 
 
 \subsection{Formazione del Personale} Per quanto riguarda la formazione, i membri del gruppo Obelix devono procedere in modo autonomo con lo studio individuale delle tecnologie che verranno utilizzate nel corso del progetto prendendo come riferimento, il materiale indicato nella sezione Riferimenti Informativi.
