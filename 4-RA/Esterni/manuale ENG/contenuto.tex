@@ -1,0 +1,223 @@
+\section{Introduction}
+\subsection{intro}
+The following document explain how to install and utilize Monolith SDK.
+It provide code snippet and example on how to create a custom bubble on Rocket.chat using the SDK.
+
+\subsection{How to install}
+To install Monolith SDK on Rocket.chat you need to follow the following steps:
+\begin{enumerate}
+    \item git clone https://github.com/RocketChat/Rocket.Chat.git
+    \item cd Rocket.Chat
+    \item meteor npm start \\ when finished close meteor
+    \item meteor add templating blaze-html-templates react-meteor-data maxharris9:classnames react-template-helper
+    \item meteor npm i react react-dom bluebird simpl-schema react-addons-pure-render-mixin money request request-promise  --save
+    \item copy monolith-sdk folder inside the packages folder on Rocket.chat
+    \item meteor add monolith-sdk
+    \item meteor
+\end{enumerate}
+
+\begin{flushleft}
+If you want to use an existing Rocket.chat application start from step 4.
+\end{flushleft}
+
+\section{Class Description}
+This section explains how to use the Monolith library classes.
+
+\subsection{SingleComponents}
+\begin{flushleft}
+Singlecomponent classes represent the components that can be rendered.
+
+\paragraph{CheckButton}
+CheckButton represent a HTML <checkbox> tag.
+\begin{verbatim}
+<CheckButton
+    id="HTML id"
+    classes="CSS classes"
+    getCheck={this."function name"}
+    value="checkbox value"
+/>
+\end{verbatim}
+getCheck is a props that hold a function called when the checkbox onChange event is called and passes to the function a variable containing the state of the checkbox.
+\paragraph{CheckBoxList}
+CheckBoxList represent a group of CheckButton.
+CheckBoxList needs to have an array passed like this:
+\begin{verbatim}
+let opt=[{id: 1, value: 'Hello World'},{id: 2, value: 'Installation'}];
+
+<CheckBoxList
+    classes="CSS classes"
+    options={opt}
+    getCheck=this."function name"
+/>
+\end{verbatim}
+getCheck like the CheckButton getCheck.
+
+    \paragraph{ComboBox}
+ComboBox represent a HTML <select> tag.
+\begin{verbatim}
+<ComboBox
+    id="HTML id"
+    classes="CSS classes"
+    options={["a","b","c"]}
+    getSelection={this."function name"}
+/>
+\end{verbatim}
+getSelection is a props that hold a function called when the select onChange event is called and passes to the function a variable containing the selected option.
+    \paragraph{Image}
+Image represent a HTML <img> tag.
+
+\begin{verbatim}
+<Image
+    id="HTML id"
+    classes="CSS classes"
+    src="img source location"
+    alt="image description"
+    width="image width"
+    height="image height"
+/>
+\end{verbatim}
+
+    \paragraph{ImageButton}
+ImageButton represent a button with an image.
+\begin{verbatim}
+<ImageButton
+    id="HTML id"
+    src="img source location"
+    alt="image description"
+    width="image width"
+    height="image height"
+    handleClick={this."function name"}
+/>
+\end{verbatim}
+handleClick is a props that hold a function called when the ImageButton is clicked.
+
+    \paragraph{LineEdit}
+LineEdit represent a HTML text <input> tag.
+\begin{verbatim}
+<LineEdit
+    id="HTML id"
+    classes="CSS classes"
+    updateState={this."function name"}
+    value="default value"
+ />
+\end{verbatim}
+updateState is a props that hold a function called when onChange event of the text input is called.
+
+    \paragraph{LineEditComboBox}
+LineEditComboBox represent a HTML text <input> and a HTML <select> tag.
+\begin{verbatim}
+<LineEditComboBox
+    idle="LineEdit HTML id"
+    idcb="ComboBox  HTML id"
+    classesle="LineEdit CSS classes"
+    classescb="ComboBox CSS classes"
+    textUpdate={this."function name"}
+    options={["a","b","c"]}
+    comboUpdate={this."function name"}
+/>
+\end{verbatim}
+textUpdate is a props that hold a function passed to the LineEdit.
+comboUpdate is a props that hold a function passed to le ComboBox.
+
+    \paragraph{PushButton}
+PushButton represent a HTML <button>.
+\begin{verbatim}
+<PushButton
+    id="HTML id"
+    classes="CSS classes"
+    handleClick={this."function name"}
+    buttonName="button name"
+/>
+\end{verbatim}
+handleClick is a props that hold a function called when the button is clicked.
+
+    \paragraph{LineEditPushButton}
+LineEditPushButton represent LineEdit and a PushButton.
+\begin{verbatim}
+<LineEditPushButton
+    idle="LineEdit HTML id"
+    idpb="PushButton HTML id"
+    classesle="LineEdit CSS classes"
+    classespb="PushButton CSS classes"
+    getText={this."function name"}
+    buttonName="button name"
+/>
+\end{verbatim}
+getText is a props that hold a function called when the PushButton is clicked and passes to the function a variable containing the text of the LineEdit.
+
+    \paragraph{RadioButtonGroup}
+RadioButtonGroup represent a group of HTML radio button <input>.
+\begin{verbatim}
+<RadioButtonGroup
+    classes="CSS classes"
+    options={["a","b","c"]}
+    getValue={this."function name"}
+/>
+\end{verbatim}
+getValue is a props that hold a function called when a radio button is clicked and passes to the function a variable containing the selected radio information.
+
+    \paragraph{TextAreaButton}
+TextAreaButton represent a HTML <textarea> tag and a PushButton.
+\begin{verbatim}
+<TextAreaButton
+    idta="textArea HTML id"
+    classesta="textArea CSS classes"
+    idpb="PushButton HTML id"
+    classespb="PushButton CSS classes"
+    getText={this."function name"}
+    width="textarea width"
+    height="textarea height"
+    buttonName="button name"
+/>
+\end{verbatim}
+getText is a props that hold a function called when the PushButton is clicked and passes to the function a variable containing the text of the textarea.
+
+    \paragraph{TextAreaComboBox}
+TextAreaComboBox represent a HTML <textarea> tag and a ComboBox.
+\begin{verbatim}
+<TextAreaComboBox
+    idtx="textArea HTML id"
+    classestx="textArea CSS classes"
+    idcb="combobox HTML id"
+    classescb="combobox CSS classes"
+    width="textarea width"
+    height="textarea height"
+    textUpdate={this."function name"}
+    options={["a","b","c"]}
+    comboUpdate={this."function name"}
+/>
+\end{verbatim}
+textUpdate is a props that hold a function called when onChange event of the textarea is called.\\
+comboUpdate is a props that hold a function called when the select onChange event is called and passes to the function a variable containing the selected option.
+\end{flushleft}
+
+\subsection{Layout}
+
+Layout are classes that represent are containers that place the elements conteined in a certain way.
+
+\paragraph{VerticalLayout}
+VerticalLayout represent a container that place the elements contained in a vertically.
+
+\begin{verbatim}
+<VerticalLayout hide={"visibility state(true or false)"}>
+    <Children/>
+    <Children/>
+    .
+    .
+    .
+</VerticalLayout>
+\end{verbatim}
+
+\paragraph{HorizontalLayout}
+HorizontalLayout represent a container that place the elements contained in a horizontally.\\
+The maximum number of element that can be displayed horizontally is 12.
+
+\begin{verbatim}
+<HorizontalLayout hide={"visibility state(true or false)"}>
+    <Children/>
+    <Children/>
+    .
+    .
+    .
+</HorizontalLayout>
+\end{verbatim}
