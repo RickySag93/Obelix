@@ -20,6 +20,60 @@ To install Monolith SDK on Rocket.chat you need to follow the following steps:
 If you want to use an existing Rocket.chat application start from step 4.
 \end{flushleft}
 
+\section{Use requirements}
+
+% Requisiti generali
+\subsection{Requirements}
+In order to use Monolith the user needs to access the internet either using a laptop or desktop computer, or using a mobile cellphone or tablet. Other than that, the device which will be used to use Monolith must have a browser which supports JavaScript and has it enabled.
+
+% Requisiti da desktop o laptop
+\subsubsection{Desktop requirements}
+To access Monolith using a desktop or laptop computer, one of the following browsers is required:
+\begin{itemize}
+	\item Google Chrome v59+
+	\item Firefox v54+
+	\item Internet Explorer v11+
+	\item Safari v10+
+\end{itemize}
+
+
+
+% Sezione su come abilitare JS
+\subsubsection{Javascript}
+In order to enable JavaScript inside the different browsers' versions the next steps must be followed:
+\begin{itemize}
+	\item \textbf{Google Chrome}
+	\begin{itemize}
+		\item Next to the navigation bar, click on "Customize and control Google Chrome", and then "Settings";
+		\item Inside the "Settings" section, click on "Show advanced settings" at the bottom of the page;
+		\item Search for the "Privacy" section and click on "Content settings";
+		\item Under the "JavaScript" section inside the dialog popup, select "Allow all sites to run JavaScript (reccomended)";
+		\item Click "Done";
+		\item Close the "Section" tab;
+		\item \textbf{Note}: If you were on the application homepage while enabling JavaScript, please reload the page to make sure the changes take action.
+	\end{itemize}
+	
+	\item \textbf{Mozilla Firefox}
+	\begin{itemize}
+		\item On the address bar, type \texttt{about:config} and hit "Enter";
+		\item Click on "I accept the risk!" if an alert message shows up;
+		\item Inside the search bar, search for \texttt{javascript.enabled};
+		\item If the value below the "value" field is set to "false", right click on "false" and click "Toggle";
+		\item Close the "about:config" tab;
+		\item \textbf{Note}: If you were on the application homepage while enabling JavaScript, please reload the page to make sure the changes take action.
+	\end{itemize}
+	
+	\item \textbf{Safari}
+	\begin{itemize}
+		\item Click on "Safari" on the menu bar, and then select "Preferences";
+		\item Inside the "Preferences" window, select on "Security";
+		\item Search for the "Web contents" section, and check "Enable JavaScript"; 
+		\item Close the "Preferences" menu;
+		\item \textbf{Note}: If you were on the application homepage while enabling JavaScript, please reload the page to make sure the changes take action.
+	\end{itemize}
+\end{itemize}
+
+
 \section{Class Description}
 This section explains how to use the Monolith library classes.
 
