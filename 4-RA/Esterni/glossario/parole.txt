@@ -180,3 +180,11 @@ room
 classNames
 : utility raccomandata per l’uso con React per l’unione condizionata di className, semplifica la gestione dei className dinamici
 
+className
+: keyword di React che rappresenta le classi HTML dei componenti
+
+promise
+: Costrutto di ES6 per utilizzare la programmazione asincrona evitando i problemi delle callback tradizionali. Gli oggetti Promise sono usati per computazioni in differita e asincrone. Una Promise rappresenta un'operazione che non è ancora completata, ma lo sarà in futuro.
+
+
+

@@ -229,22 +229,22 @@ l'assenza di anomalie nel software.
 		\\
 		\hline \endhead
 		\hline \endfoot
-		\hline OQPS001 & Miglioramento continuo & Capacità del processo di misurare e migliorare le proprie performance & MPS001: SPICE  \\
-		\hline OQPTD001 & Leggibilità dei documenti & I documenti devono essere leggibili e comprensibili da persone con licenza media superiore & MPTD001: Gulpease  \\
-		\hline OQPTD002 & Correttezza ortografica dei documenti & I documenti non devono presentare errori ortografici o grammaticali & MPTD002: Errori ortografici corretti  \\
-		\hline OQPTD003 & Produttività nella stesura dei documenti & Il numero di parole scritte in un'ora deve essere >= 100  & MPTD003: Produttività di documentazione  \\
-		\hline OQPTS001 & Produttività nella stesura del codice & Il numero di linee di codice scritte in un'ora deve essere >= 100  & MPTS001: Produttività di codifica  \\
-		\hline OQPTS002 & Copertura del codice & Monolith deve essere testato in ogni su parte per garantire le funzionalità previste dai requisiti  & MPTS002: Statement Coverage  \\
-		\hline  &  &  & MPTS003: Branch Coverage  \\
-		\hline OQPTS003 & Copertura dei test & La percentuale di superamento dei test deve essere >= 80\% del totale  & MPTS004: Percentuale superamento test  \\
-		\hline OQPTS004 & Manutenzione e comprensione del codice & Il codice di Monolith deve essere quanto più comprensibile e manutenibile  & MPTS005: Complessità ciclomatica media  \\
-		\hline  &  &  & MPTS006: Numero di metodi per package (max)  \\
-		\hline  &  &  & MPTS007: Variabili non utilizzate e non definite  \\
-		\hline  &  &  & MPTS008: Numero di parametri per metodo (max)  \\
-		\hline  &  &  & MPTS009: Halstead difficulty per-function (media)  \\
-		\hline  &  &  & MPTS010: Halstead volume per-function (media)  \\
-		\hline  &  &  & MPTS011: Halstead effort per-function   \\
-		\hline  &  &  & MPTS012: Maintainability index  \\
+		
+		\hline OQD001 & Leggibilità dei documenti & I documenti devono essere leggibili e comprensibili da persone con licenza media superiore & MD001: Gulpease  \\
+		\hline OQD002 & Correttezza ortografica dei documenti & I documenti non devono presentare errori ortografici o grammaticali & MD002: Errori ortografici corretti  \\
+		\hline OQD003 & Produttività nella stesura dei documenti & Il numero di parole scritte in un'ora deve essere >= 100  & MD003: Produttività di documentazione  \\
+		\hline OQS001 & Produttività nella stesura del codice & Il numero di linee di codice scritte in un'ora deve essere >= 100  & MS001: Produttività di codifica  \\
+		\hline OQS002 & Copertura del codice & Monolith deve essere testato in ogni su parte per garantire le funzionalità previste dai requisiti  & MS002: Statement Coverage  \\
+		\hline  &  &  & MS003: Branch Coverage  \\
+		\hline OQS003 & Copertura dei test & La percentuale di superamento dei test deve essere >= 80\% del totale  & MS004: Percentuale superamento test  \\
+		\hline OQS004 & Manutenzione e comprensibilità del codice & Il codice di Monolith deve essere quanto più comprensibile e manutenibile  & MS005: Complessità ciclomatica media  \\
+		\hline  &  &  & MS006: Numero di metodi per package (max)  \\
+		\hline  &  &  & MS007: Variabili non utilizzate e non definite  \\
+		\hline  &  &  & MS008: Numero di parametri per metodo (max)  \\
+		\hline  &  &  & MS009: Halstead difficulty per-function (media)  \\
+		\hline  &  &  & MS010: Halstead volume per-function (media)  \\
+		\hline  &  &  & MS011: Halstead effort per-function   \\
+		\hline  &  &  & MS012: Maintainability index  \\
 		\hline
 		
 	\end{longtable}
@@ -741,13 +741,13 @@ verrà mai utilizzata.\\
   \item Range-ottimale: $[85 - 100]$
   \end{itemize}
 
-  \subparagraph{Copertura dei test}
+  \subparagraph{Percentuale superamento test}
 Questa metrica esamina la percentuale di successo dei test ricavati dai requisiti e dalle relative
 funzionalità che il software dovrà ottenere. Indica infatti la percentuale dei test eseguiti con
 successo.
 
 $$
-\text{Copertura dei test} = 
+\text{Percentuale superamento test} = 
 \frac{\text{Numero test superati} \times 100}
 {\text{Numero test pianificati}}
 $$
@@ -771,22 +771,22 @@ $$
 		\\
 		\hline \endhead
 		\hline \endfoot
-		\hline MPS001 & SPICE & \makecell{\textbf{Valore minimo}: \\ livello 2 \\ \textbf{Valore ottimale}: \\ >= livello 4} &  OQPS001: Miglioramento continuo  \\
-		\hline MPTD001 & Gulpease & \makecell{\textbf{Valore minimo}: \\ >= 40 \\ \textbf{Valore ottimale}: \\ >= 50} &  OQPTD001: Leggibilità dei documenti  \\
-		\hline MPTD002 & Errori ortografici corretti & \makecell{\textbf{Valore minimo}: \\ 100 \% corretti \\ \textbf{Valore ottimale}: \\ 100 \% corretti} &  OQPTD002: Correttezza ortografica dei documenti  \\
-		\hline MPTD003 & Produttività di documentazione & \makecell{\textbf{Valore minimo}: \\ 100  \\ \textbf{Valore ottimale}: \\ >=100} &  OQPTD003: Produttività nella stesura dei documenti  \\
-		\hline MPTS001 & Produttività di codifica & \makecell{\textbf{Valore minimo}: \\ 100  \\ \textbf{Valore ottimale}: \\ >=100} &  OQPTS001: Produttività nella stesura del codice \\ 
-		\hline MPTS002 & Statement Coverage & \makecell{\textbf{Valore minimo}: \\ >= 70  \\ \textbf{Valore ottimale}: \\ >=85} &  OQPTS002: Copertura del codice \\ 
-		\hline MPTS003 & Branch Coverage & \makecell{\textbf{Valore minimo}: \\ >= 70  \\ \textbf{Valore ottimale}: \\ >=85} &  OQPTS002: Copertura del codice \\
-		\hline MPTS004 & Percentuale superamento test & \makecell{\textbf{Valore minimo}: \\ >= 80  \\ \textbf{Valore ottimale}: \\ 100} &  OQPTS003: Copertura dei test \\
-		\hline MPTS005 & Complessità ciclomatica (media) & \makecell{\textbf{Valore minimo}: \\ <=25  \\ \textbf{Valore ottimale}: \\ <=10} &  OQPTS004: Manutenzione e comprensione del codice \\
-		\hline MPTS006 & Numero di metodi per package (max) & \makecell{\textbf{Valore minimo}: \\ <=15  \\ \textbf{Valore ottimale}: \\  <=7} &  OQPTS004: Manutenzione e comprensione del codice \\
-		\hline MPTS007 & Variabile non utilizzate e non definite & \makecell{\textbf{Valore minimo}: \\ 0  \\ \textbf{Valore ottimale}: \\ 0} &  OQPTS004: Manutenzione e comprensione del codice \\
-		\hline MPTS008 & Numero di parametri per metodo (max) & \makecell{\textbf{Valore minimo}: \\ <=8  \\ \textbf{Valore ottimale}: \\ <=4} &  OQPTS004: Manutenzione e comprensione del codice \\
-		\hline MPTS009 & Halstead difficulty per-function (media) & \makecell{\textbf{Valore minimo}: \\ <=30 \\ \textbf{Valore ottimale}: \\ <=15} &  OQPTS004: Manutenzione e comprensione del codice \\
-		\hline MPTS010 & Halstead volume per-function (media) & \makecell{\textbf{Valore minimo}: \\ <=1500 \\ \textbf{Valore ottimale}: \\ <=1000} &  OQPTS004: Manutenzione e comprensione del codice \\
-		\hline MPTS011 & Halstead effort per-function & \makecell{\textbf{Valore minimo}: \\ <=400 \\ \textbf{Valore ottimale}: \\ <=300} &  OQPTS004: Manutenzione e comprensione del codice \\
-		\hline MPTS012 & Maintainability index & \makecell{\textbf{Valore minimo}: \\ >70 \\ \textbf{Valore ottimale}:\\ >90} &  OQPTS004: Manutenzione e comprensione del codice \\
+		
+		\hline MD001 & Gulpease & \makecell{\textbf{Valore minimo}: \\ >= 40 \\ \textbf{Valore ottimale}: \\ >= 50} &  OQD001: Leggibilità dei documenti  \\
+		\hline MD002 & Errori ortografici corretti & \makecell{\textbf{Valore minimo}: \\ 100 \% corretti \\ \textbf{Valore ottimale}: \\ 100 \% corretti} &  OQD002: Correttezza ortografica dei documenti  \\
+		\hline MD003 & Produttività di documentazione & \makecell{\textbf{Valore minimo}: \\ 100  \\ \textbf{Valore ottimale}: \\ >=100} &  OQD003: Produttività nella stesura dei documenti  \\
+		\hline MS001 & Produttività di codifica & \makecell{\textbf{Valore minimo}: \\ 100  \\ \textbf{Valore ottimale}: \\ >=100} &  OQS001: Produttività nella stesura del codice \\ 
+		\hline MS002 & Statement Coverage & \makecell{\textbf{Valore minimo}: \\ >= 70  \\ \textbf{Valore ottimale}: \\ >=85} &  OQS002: Copertura del codice \\ 
+		\hline MS003 & Branch Coverage & \makecell{\textbf{Valore minimo}: \\ >= 70  \\ \textbf{Valore ottimale}: \\ >=85} &  OQS002: Copertura del codice \\
+		\hline MS004 & Percentuale superamento test & \makecell{\textbf{Valore minimo}: \\ >= 80  \\ \textbf{Valore ottimale}: \\ 100} &  OQS003: Copertura dei test \\
+		\hline MS005 & Complessità ciclomatica (media) & \makecell{\textbf{Valore minimo}: \\ <=25  \\ \textbf{Valore ottimale}: \\ <=10} &  OQS004: Manutenzione e comprensibilità del codice \\
+		\hline MS006 & Numero di metodi per package (max) & \makecell{\textbf{Valore minimo}: \\ <=15  \\ \textbf{Valore ottimale}: \\  <=7} &  OQS004: Manutenzione e comprensibilità del codice \\
+		\hline MS007 & Variabile non utilizzate e non definite & \makecell{\textbf{Valore minimo}: \\ 0  \\ \textbf{Valore ottimale}: \\ 0} &  OQS004: Manutenzione e comprensibilità del codice \\
+		\hline MS008 & Numero di parametri per metodo (max) & \makecell{\textbf{Valore minimo}: \\ <=8  \\ \textbf{Valore ottimale}: \\ <=4} &  OQS004: Manutenzione e comprensibilità del codice \\
+		\hline MS009 & Halstead difficulty per-function (media) & \makecell{\textbf{Valore minimo}: \\ <=30 \\ \textbf{Valore ottimale}: \\ <=15} &  OQS004: Manutenzione e comprensibilità del codice \\
+		\hline MS010 & Halstead volume per-function (media) & \makecell{\textbf{Valore minimo}: \\ <=1500 \\ \textbf{Valore ottimale}: \\ <=1000} &  OQS004: Manutenzione e comprensibilità del codice \\
+		\hline MS011 & Halstead effort per-function & \makecell{\textbf{Valore minimo}: \\ <=400 \\ \textbf{Valore ottimale}: \\ <=300} &  OQS004: Manutenzione e comprensibilità del codice \\
+		\hline MS012 & Maintainability index & \makecell{\textbf{Valore minimo}: \\ >70 \\ \textbf{Valore ottimale}:\\ >90} &  OQS004: Manutenzione e comprensibilità del codice \\
 		\hline
 		
 	\end{longtable}
@@ -887,7 +887,8 @@ Tale tipologia di test serve per verificare che il comportamento
 dinamico complessivo dell'intero sistema sia conforme ai requisiti
 definiti nel documento \analisideirequisiti. Per ogni test viene
 specificato il proprio codice univoco, la descrizione,lo stato di
-implementazione attuale e il risultato (Superato/Non Superato). 
+implementazione attuale e il risultato (Superato/Non Superato).
+I test non implementati sono relativi ai requisiti non obbligatori. 
 
 \input{system_test}
 
@@ -898,7 +899,9 @@ del prodotto finale, per accertare che il prodotto sia conforme alle
 attese del committente. Per ogni test viene specificato il proprio
 codice univoco, la descrizione, il requisito cui si fa riferimento, lo
 stato di implementazione attuale e il risultato (Superato/Non
-Superato). 
+Superato).
+I test non implementati sono relativi ai requisiti non obbligatori. 
+ 
 \input{validation_test}
 
   \clearpage
@@ -1101,7 +1104,7 @@ verificare i possibili effetti.
     \item \textbf{Metrica}: le esecuzioni dovranno spaziare il più
       possibile sulle varie parti del codice
     \item \textbf{Strumenti}: si vedano le metriche adottate per la
-      copertura a %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%METRICHE
+      copertura %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%METRICHE
     \end{itemize}
 
   \item \textbf{Usabilità}: il sistema prodotto deve risultare di facile
@@ -1345,13 +1348,8 @@ verificare i possibili effetti.
     	  \end{longtable}
     	  
 	
-
 	
-	
-    
-
-
-    \subsubsection{Verifica dei Documenti}
+   \subsubsection{Verifica dei Documenti}
     Vengono qui riportati i valori dell'indice Gulpease per ogni documento durante l’analisi e relativo
     esito basato sui range stabiliti nella sezione \emph{2.8.2}
     \begin{center}
@@ -1409,7 +1407,7 @@ verificare i possibili effetti.
   	\emph{Branch Coverage} & {Percentuale} & \textcolor{Green}{83\%} & / & Superato & Accettabile\\ \hline
   	
   	
-  	\emph{Copertura dei test} & {Percentuale} & \textcolor{Green}{82\%} & / & Superato & Accettabile\\ \hline
+  	\emph{Percentuale superamento test} & {Percentuale} & \textcolor{Green}{82\%} & / & Superato & Accettabile\\ \hline
   	
   	 
   	\caption{RQ-Metriche per Software}\\
@@ -1549,8 +1547,48 @@ verificare i possibili effetti.
   	\emph{Branch Coverage} & {Percentuale} & \textcolor{Green}{88.3\%} & / & Superato & Ottimale\\ \hline
   	
   	
-  	\emph{Copertura dei test} & {Percentuale} & \textcolor{Green}{100\%} & / & Superato & Ottimale\\ \hline
+  	\emph{Percentuale superamento test} & {Percentuale} & \textcolor{Green}{100\%} & / & Superato & Ottimale\\ \hline
   	
   	
   	\caption{RA-Metriche per Software}\\
   \end{longtable}
+
+\subsection{Riepilogo obiettivi raggiunti}
+
+Di seguito viene riportata una tabella riassuntiva, in merito al raggiungimento degli obiettivi fissati.
+
+\begin{center}
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{ID} & \textbf{Nome} & \textbf{Raggiunto SI/NO} \\
+		\hline OQD001 & Leggibilità dei documenti & SI  \\
+		\hline OQD002 & Correttezza ortografica dei documenti & SI \\
+		\hline OQD003 & Produttività nella stesura dei documenti & SI \\
+		\hline OQS001 & Produttività nella stesura del codice & SI \\
+		\hline OQS002 & Copertura del codice & SI  \\
+		\hline OQS003 & Copertura dei test & SI \\
+		\hline OQS004 & Manutenzione e comprensibilità del codice & SI  \\
+	
+		\hline
+	\end{tabular}
+\end{center}
+
+\section{Valutazioni critiche sullo svolgimento del progetto}
+
+L'obiettivo di questa appendice è quello di valutare lo svolgimento del progetto per mettere in evidenza i problemi organizzativi emersi durante l'esecuzione dei lavori al fine di proporre soluzioni utili alla loro risoluzione. A questo punto del progetto, la valutazione non può risultare utile per il miglioramento di quest'ultimo, ma potrebbe esserlo per progetti futuri. \\
+
+Il principale problema riscontrato riguarda l'organizzazione del gruppo. Soprattutto nel primo periodo, la comunicazione tra i membri è risultata complicata e non è stato sempre possibile organizzare incontri in modo che tutti i membri fossero presenti. 
+Per migliorare l'organizzazione è utile che vengano utilizzati gli strumenti adatti (Slack, Telegram, Skype) in modo più adeguato e che ogni membro del gruppo garantisca la propria disponibilità in modo più realistico. \\
+ 
+Altre difficoltà sono state riscontrate nella pianificazione delle attività. Il gruppo non è riuscito a rispettare le scadenze interne programmate causando più volte la modifica della pianificazione. 
+Per poter essere rispettata una pianificazione dovrebbe prevedere una suddivisione delle attività che permetta l'assegnazione di ognuna di esse ad una singola persona, il parallelismo dove possibile e la non sovrapposizione di attività critiche. Inoltre una sottovalutazione dei tempi nei primi periodi non rendicontati ha provocato a cascata un ritardo nei periodi successivi. Non siamo stati in grado di correggere questo problema a causa di una sottovalutazione dello stesso e per le grandi quantità di tempo spese a risolvere problemi tecnici relativi agli strumenti.  \\
+
+Altri problemi riscontrati riguardano la decomposizione e classificazione dei requisiti. Inizialmente l'analisi effettuata non teneva conto di tutti i requisiti necessari ed era limitata ai soli requisiti espliciti. Durante la prima stesura dell'analisi dei requisiti non era completamente chiaro quale fosse lo scopo del processo di Requirement Elicitation. Questo ha portato a requisiti parziali e limitati ai requisiti utente. \\
+Per effettuare un'analisi completa che tenga conto sia dei requisiti espliciti che di quelli impliciti è necessario studiare, in modo approfondito, il dominio del problema, intervistare il proponente e i possibili utenti del prodotto da realizzare. \\
+ 
+Inoltre, per quanto riguarda l'utilizzo delle tecnologie e degli strumenti scelti sono emerse diverse difficoltà che non hanno reso semplice le attività di progettazione e verifica. 
+Non siamo stati in grado di assimilare sufficientemente le tecnologie e gli strumenti inizialmente sconosciuti con cui era richiesto lavorare. Questo ha introdotto problemi nel completamento dei requisiti e in tutte le fasi della progettazione. Alcune di queste difficoltà hanno avuto strascichi fino alle prime versioni del codice. \\
+L'ovvia soluzione è richiedere a sé stessi un maggior livello di confidenza con strumenti e tecnologie prima di utilizzarli in ambito di produzione. \\
+
+Nel complesso l'insieme di tutti i fattori illustrati ha precluso la realizzazione di un modello di sviluppo veramente incrementale. Le ripetute iterazioni attraverso i periodi hanno aumentato la confusione e sottratto tempo che poteva essere impiegato per migliorare. \\
