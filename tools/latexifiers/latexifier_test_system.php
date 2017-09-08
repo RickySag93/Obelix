@@ -14,7 +14,7 @@ while($res = $ans->fetch_assoc()){
    $impl = $res['implemented'];
    $sup = $res['satisfied'];
    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   $txt = $test . ' & ' . $des . ' & ' . colorTestStatus($impl) . '\\\\' ."\n \\hline \n";
+   $txt = $test . ' & ' . $des . ' & ' . colorTestStatus($impl) .  ' & '. colorTestSup($sup) . '\\\\' ."\n \\hline \n";
    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    // Elimina gli a capo stile windows creati da PHPmyadmin
    $txt = str_replace("\r\n","\n",$txt);
@@ -44,9 +44,10 @@ $inizioTabella =<<<EOF
 \\begin{center}
 \\begin{longtable}{|
 *{1}{>{\centering\arraybackslash}p{2.8cm}|}
-*{1}{>{\centering\arraybackslash}p{6cm}|}
-*{1}{>{\centering\arraybackslash}p{3cm}|}}
-\\hline \\textbf{Test} & \\textbf{Descrizione} & \\textbf{Stato}\\\\
+*{1}{>{\centering\arraybackslash}p{5cm}|}
+*{1}{>{\centering\arraybackslash}p{2.5cm}|}
+*{1}{>{\centering\arraybackslash}p{2.5cm}|}}
+\\hline \\textbf{Test} & \\textbf{Descrizione} & \\textbf{Stato} & \\textbf{Superato} \\\\
 \\hline \\endhead
 
 
