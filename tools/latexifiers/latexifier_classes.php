@@ -62,6 +62,7 @@ EOF;
 fwrite($FH,"\\clearpage\n\n");
 $sentinella = 0;
 fwrite($FH,'\\subsection{Architettura di dettaglio - Classi del sistema Monolith}');
+fwrite($FH,"\n".'Nel caso dei componenti React la descrizione dello schema dell\'oggetto props passato come argomento al costruttore è fornita indirettamente dall\'elenco delle props.'."\n");
 foreach($classes as $k => $v){
    if(strstr($v[1],'Monolith')){
       if($sentinella){
@@ -73,6 +74,7 @@ foreach($classes as $k => $v){
 }
 $sentinella = 0;
 fwrite($FH,'\\subsection{Architettura di dettaglio - Classi delle bolle demo}');
+fwrite($FH,"\n".'Nel caso dei componenti React la descrizione dello schema dell\'oggetto props passato come argomento al costruttore è fornita indirettamente dall\'elenco delle props.'."\n");
 foreach($classes as $k => $v){
    if(!strstr($v[1],'Monolith')){
       if($sentinella){

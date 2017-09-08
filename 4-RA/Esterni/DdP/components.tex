@@ -74,14 +74,14 @@
 \subsubsection{Monolith::Database::Methods}
 \textbf{Descrizione}:\\
  Componente che contiene i principali Meteor.Methods  che riguardano le bolle:
-\\begin{itemize}
-\\item insertBubble(bubbleType, roomId, data, funDataEdit, funDataEditArgs) \\\\
-Effettua i controlli sull'input tramite il pacchetto Monolith::checks. Aggiunge i dati che devono essere presenti in ogni bolla (indipendentemente dal tipo) e in caso di successo l'operazione viene eseguita sul database.\\\\
+\begin{itemize}
+\item insertBubble(bubbleType, roomId, data, funDataEdit, funDataEditArgs) \\
+Effettua i controlli sull'input tramite il pacchetto Monolith::checks. Aggiunge i dati che devono essere presenti in ogni bolla (indipendentemente dal tipo) e in caso di successo l'operazione viene eseguita sul database.\\
 Gli ultimi due argomenti sono opzionali e sono il nome di un Meteor.Method e i suoi eventuali argomenti. In caso tale argomento sia presente il metodo indicato viene usato sull'oggetto data prima di effettuare i controlli. In questo modo è possibile stabilire operazioni da svolgere lato server.
-\\item updateBubble(bubbleId, funDataEdit, funDataEditArgs)\\\\
-\\item removeBubble(bubbleId) \\\\
+\item updateBubble(bubbleId, funDataEdit, funDataEditArgs)\\
+\item removeBubble(bubbleId) \\
 La bolla con l'id passato come argomento viene eliminata dal database,
-\\end{itemize} 
+\end{itemize} 
 
 
 \clearpage
@@ -93,12 +93,31 @@ La bolla con l'id passato come argomento viene eliminata dal database,
 
 \clearpage
 
-\subsubsection{Monolith::SideAreas::SideArea1\_pkg}
+\subsubsection{Monolith::SideAreas::ReceiveOperations}
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/sd2_pkg}
+   \caption{Diagramma per Monolith::SideAreas::ReceiveOperations.}
+\end{figure}
+\FloatBarrier
+\textbf{Descrizione}:\\
+ Componente per la visualizzazione delle bolle ricevute nella seconda side area 
+\\ \textbf{Classi contenute}:\\
+\begin{itemize}
+\item ReceivedBubble
+\item SideArea2
+\end{itemize}
+
+
+\clearpage
+
+\subsubsection{Monolith::SideAreas::SendOperations}
    \FloatBarrier
    \begin{figure}[ht]
    \centering
 \includegraphics[width=\textwidth,keepaspectratio]{img/sd1_pkg}
-   \caption{Diagramma per Monolith::SideAreas::SideArea1\_pkg.}
+   \caption{Diagramma per Monolith::SideAreas::SendOperations.}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}:\\
@@ -114,33 +133,14 @@ La bolla con l'id passato come argomento viene eliminata dal database,
 
 \clearpage
 
-\subsubsection{Monolith::SideAreas::SideArea2\_pkg}
-   \FloatBarrier
-   \begin{figure}[ht]
-   \centering
-\includegraphics[width=\textwidth,keepaspectratio]{img/sd2_pkg}
-   \caption{Diagramma per Monolith::SideAreas::SideArea2\_pkg.}
-\end{figure}
-\FloatBarrier
-\textbf{Descrizione}:\\
- Componente per la visualizzazione delle bolle ricevute nella seconda side area 
-\\ \textbf{Classi contenute}:\\
-\begin{itemize}
-\item ReceivedBubble
-\item SideArea2
-\end{itemize}
-
-
-\clearpage
-
 \subsubsection{Monolith::UI}
 \textbf{Descrizione}:\\
- Componente contenente tutti i pacchetti che servono per comporre e gestire la parte visuale dell'applicazione delle bolle \\\\
-\\textbf{Dipendenze}
-\\begin{itemize}
-\\item React
-\\item classNames
-\\end{itemize} 
+ Componente contenente tutti i pacchetti che servono per comporre e gestire la parte visuale dell'applicazione delle bolle \\
+\textbf{Dipendenze}
+\begin{itemize}
+\item React
+\item classNames
+\end{itemize} 
 
 
 \clearpage
@@ -260,63 +260,97 @@ Bootstrap
 \clearpage
 
 \subsubsection{ListBubble}
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/ListGeneral}
+   \caption{Diagramma per ListBubble.}
+\end{figure}
+\FloatBarrier
 \textbf{Descrizione}:\\
  Componente contenente i pacchetti necessari per la creazione della bolla lista. 
-
-
-\clearpage
-
-\subsubsection{ListBubble::CheckListCreation}
-\textbf{Descrizione}:\\
- Componente che si occupa della creazione delle check list. 
 \\ \textbf{Classi contenute}:\\
 \begin{itemize}
-\item ListBubbleConfig
-\item ListBubbleCreationButton
+\item AbsList
 \end{itemize}
-
-
-\clearpage
-
-\subsubsection{ListBubble::CheckListReading}
-\textbf{Descrizione}:\\
- Componente che si occupa della lettura e dell'utilizzo delle check list. 
-\\ \textbf{Classi contenute}:\\
-\begin{itemize}
-\item ListBubble
-\end{itemize}
-
-
-\clearpage
-
-\subsubsection{ListBubble::Configuration}
-\textbf{Descrizione}:\\
- Componente che gestisce l'area di configurazione della bolla e il pulsante apposito da inserire nel menu iniziale di creazione. 
 
 
 \clearpage
 
 \subsubsection{ListBubble::DataManagement}
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/ListDataManagement}
+   \caption{Diagramma per ListBubble::DataManagement.}
+\end{figure}
+\FloatBarrier
 \textbf{Descrizione}:\\
- Componente che si occupa di tutte le operazioni di gestione dei dati che non sono gestite da Monolith. Usa il database MongoDB. 
+ Componente per la gestione del salvataggio e recupero dei dati sul database sia per le liste che per le checklist 
+
+
+\clearpage
+
+\subsubsection{ListBubble::DataManagement::CheckListDb}
+\textbf{Descrizione}:\\
+ Componente che si occupa di creare e configurare la collezione in cui sono memorizzate le checklist 
+
+
+\clearpage
+
+\subsubsection{ListBubble::DataManagement::ListMethod}
+\textbf{Descrizione}:\\
+ Componente che contiene i Meteor.Method per le operazioni server-side sulle liste 
+
+
+\clearpage
+
+\subsubsection{ListBubble::GuiCheckList}
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+\includegraphics[width=\textwidth,keepaspectratio]{img/ListGuiCheckList}
+   \caption{Diagramma per ListBubble::GuiCheckList.}
+\end{figure}
+\FloatBarrier
+\textbf{Descrizione}:\\
+ Componente che contiene le classi di interfaccia grafica per la creazione delle checklist e le classi accessorie per la corretta visualizzazione 
 \\ \textbf{Classi contenute}:\\
 \begin{itemize}
-\item ListBubbleCreator
+\item CheckListConfig
+\item CheckListCreation
+\item CheckListCreator
+\item CheckListEditing
 \end{itemize}
 
 
 \clearpage
 
-\subsubsection{ListBubble::Receiver}
+\subsubsection{ListBubble::GuiList}
+   \FloatBarrier
+ %  \begin{sidewaysfigure}[ht]
+%\begin{center}
+ \makebox[\textwidth][c]{
+\rotatebox{90}{
+% \centering
+\begin{minipage}{0.8\textheight}
+   \includegraphics[width=\textwidth,keepaspectratio]{img/ListGuiList}
+  \captionof{figure}{Diagramma per ListBubble::GuiList.}
+\end{minipage}}
+}
+%\end{center}
+%\end{sidewaysfigure}
+\FloatBarrier
 \textbf{Descrizione}:\\
- Componente che gestisce la visualizzazione della bolla da parte del ricevente. 
-
-
-\clearpage
-
-\subsubsection{ListBubble::Sender}
-\textbf{Descrizione}:\\
- Componente che gestisce la visualizzazione della bolla da parte del mittente. 
+ Componente che contiene le classi di interfaccia grafica per la bolla lista e le classi accessorie per la corretta visualizzazione 
+\\ \textbf{Classi contenute}:\\
+\begin{itemize}
+\item ListBubble
+\item ListBubbleConfig
+\item ListBubbleCreationButton
+\item ListCheckListNavigation
+\item ListCreator
+\end{itemize}
 
 
 \clearpage
