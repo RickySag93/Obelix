@@ -1,6 +1,8 @@
 \clearpage
 
-\subsection{Architettura di dettaglio - Classi del sistema Monolith}\subsubsection{Check}
+\subsection{Architettura di dettaglio - Classi del sistema Monolith}
+Nel caso dei componenti React la descrizione dello schema dell'oggetto props passato come argomento al costruttore è fornita indirettamente dall'elenco delle props.
+\subsubsection{Check}
 \textbf{Componente:}  Monolith::checks\\
    \FloatBarrier
    \begin{figure}[ht]
@@ -16,7 +18,10 @@ Classe che rappresenta i controlli da eseguire lato server sull'input dell'utent
 Il costruttore riceve il nome con cui verrà registrato il controllo da eseguire e la descrizione dello schema dei dati. Il secondo argomento viene utilizzato per inizializzare un oggetto SimpleSchema.
 \item +validate(dataObj:Object):boolean \\
 Viene controllato che l'oggetto fornito come argomento corrisponda allo schema.
-\end{itemize} 
+\end{itemize}
+\emph{dataObj} è un oggetto Javascript formato da soli attributi (non funzioni) che viene validato rispetto allo schema registrato nel check del tipo corrispondente. Per ciascuna istanza della classe check si può trovare lo schema dei dati in \S 3.6
+
+\emph{schema} rappresenta lo schema che devono avere i dati relativi alla bolla per poter essere inseriti nel database. Le definizioni degli schemi seguono la notazione SimpleSchema descritta in \S 3.6 
 
 
 \textbf{Applicazioni}\\
@@ -35,13 +40,16 @@ Prima di ogni inserimento sul database i dati vengono verificati utilizzando que
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che contiene una mappa statica che associa i controlli (classe check) alle stringhe che li descrivono. 
+Classe che contiene una mappa statica che associa i controlli (classe check) alle stringhe che li descrivono. Tutti i metodi sono statici. Si tratta di un modo per rappresentare nel formalismo UML quello che in JavaScript è un oggetto globale.
 \begin{itemize}
 \item +registerCheck(check: Check) \\
 Inserisce un check nella mappa
 \item +execCheck(checkName:String, dataObj: Object):boolean \\
 Esegue il check con il nome checkName sull'oggetto dataObj e ritorna un booleano che descrive la conformità dei dati. In caso il check non sia presente nella mappa allora viene lanciato un errore.
-\end{itemize} 
+\end{itemize}
+\emph{dataObj} è un oggetto Javascript formato da soli attributi (non funzioni) che viene validato rispetto allo schema registrato nel check del tipo corrispondente. Per ciascuna istanza della classe check si può trovare lo schema dei dati in \S 3.6
+
+\emph{L'utilizzo di oggetti globali non costituisce una soluzione ideale. Per la motivazione si veda \S 3.7} 
 
 
 \textbf{Applicazioni}\\
@@ -67,32 +75,121 @@ Il costruttore chiede una stringa corrispondente al nome della bolla. Per ogni b
 Ciascuno dei seguenti metodi ritorna una promise:
 \begin{itemize} 
 \item +insert(data: Object, serverSideOps, serverSideOpsArg) \\
-Richiama il Meteor.Method insertBubble fornendo automaticamente alcuni parametri necessari e specificando la funzione lato server da eseguire sul database. 
+Richiama il Meteor.Method insertBubble fornendo automaticamente alcuni parametri necessari e specificando la funzione lato server da eseguire sul database. data è un oggetto che contiene i dati da inserire nel database e la sua struttura dipende dai vari tipi di bolla.
+
+La descrizione degli schemi realizzati da Obelix è in \S 3.6.
+
 \item +update(bubbleId, serverSideOps, serverSideOpsArgs) \\
 Richiama il Meteor.Method updateBubble specificando la funzione lato server da eseguire sul database.
 \item +remove(bubbleId) \\
-Metodo statico che richiama il Meteor.method per rimuovere la bolla con l'id passato come agomento
+Metodo che richiama il Meteor.method per rimuovere la bolla con l'id passato come argomento
 \end{itemize}
-I restanti metodi (insertSuccess, insertFailure, updateSuccess, updateFailure) vengono invocati automaticamente al successo o al fallimento di una delle operazioni sopra descritte e semplicemente stampano un messaggio sulla console. In caso di necessità possono essere ridefinite derivando la classe. 
+I restanti metodi (insertSuccess, insertFailure, updateSuccess, updateFailure) vengono invocati automaticamente al successo o al fallimento di una delle operazioni sopra descritte e semplicemente stampano un messaggio sulla console. In caso di necessità possono essere ridefiniti derivando la classe.
+
+\emph{serverSideOps} è il nome di un Meteor.Method che può essere eseguito sui dati inviati prima dell'inserimento effettivo sul database. Nel caso dell'update è l'unico modo per effettuare modifiche. 
+
+\emph{serverSideOpsArgs} è l'argomento di serverSideOps e può essere di qualunque tipo a seconda del caso. 
 
 
 \textbf{Applicazioni}\\
- 
+Ogni tipo di bolla deve istanziare questa classe. Per ciascuna bolla, quindi, viene utilizzata come interfaccia alle operazioni di database. Assicura l'utilizzo corretto dei Meteor.Method da utilizzare per assicurare il corretto funzionamento di Monolith. 
+
+
+\clearpage
+
+\subsubsection{SideArea2}
+\textbf{Componente:}  Monolith::SideAreas::ReceiveOperations\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-SideArea2.png}
+   \caption{{Diagramma per SideArea2 in ReceiveOperations}}
+\end{figure}
+\FloatBarrier
+\textbf{Descrizione}\\
+Classe che rappresenta il componente React per la visualizzazione del contenuto della seconda area laterale.
+Non viene esportata direttamente, al suo posto si esporta SideArea2Container. Questa è realizzata con createContainer di react-meteor-data (si veda sezione \S 2.16).
+ \\
+\textbf{Metodi:} 
+\begin{itemize}
+
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +render() : React.DOM 
+\\
+Metodo che esamina this.props e this.state e restituisce un componente che funge da contenitore per la seconda area laterale.
+
+\end{itemize}
+
+
+\textbf{Props:} 
+\begin{itemize}
+\item bubbles: 
+\\
+Array di oggetti che rappresentano le bolle che verranno passate al SentBubbles
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}\\
+Viene utilizzata all'apertura della seconda area laterale per visualizzare dello storico delle bolle ricevute. 
+
+
+\clearpage
+
+\subsubsection{ReceivedBubble}
+\textbf{Componente:}  Monolith::SideAreas::ReceiveOperations\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-ReceivedBubble.png}
+   \caption{{Diagramma per ReceivedBubble in ReceiveOperations}}
+\end{figure}
+\FloatBarrier
+\textbf{Descrizione}\\
+Classe che rappresenta il componente React per la visualizzazione dello storico delle bolle ricevute. \\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+\item +render() : React.DOM 
+\\
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+\end{itemize}
+
+
+\textbf{Props:} 
+\begin{itemize}
+\item bubbles: 
+\\
+Array di oggetti che rappresentano le bolle che verranno istanziate dal bubbleDiscriminator
+
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}\\
+Viene utilizzata dalla SideArea2 per la visualizzazione dello storico delle bolle ricevute. 
 
 
 \clearpage
 
 \subsubsection{SideArea1}
-\textbf{Componente:}  Monolith::SideAreas::SideArea1\_pkg\\
+\textbf{Componente:}  Monolith::SideAreas::SendOperations\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-SideArea1.png}
-   \caption{{Diagramma per SideArea1 in SideArea1\_pkg}}
+   \caption{{Diagramma per SideArea1 in SendOperations}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che rappresenta il componente React per la visualizzazione del contenuto della prima area laterale. \\ 
+Classe che rappresenta il componente React per la visualizzazione del contenuto della prima area laterale. \\
+Non viene esportata direttamente, al suo posto si esporta SideArea1Container. Questa è realizzata con createContainer di react-meteor-data (si veda sezione \S 2.16).
+ 
 \textbf{Metodi:}
 \begin{itemize}
 
@@ -104,6 +201,15 @@ Costruttore della sottoclasse di React.Component in cui è necessario chiamare s
 \\
 Metodo che esamina this.props e this.state e restituisce un componente che funga da contenitore per la prima area laterale.
 
+\end{itemize}
+
+
+\textbf{Props:} 
+\begin{itemize}
+\item bubbles: 
+\\
+Array di oggetti che rappresentano le bolle che verranno passate al SentBubbles
+
 \end{itemize} 
 
 
@@ -114,12 +220,12 @@ Viene utilizzata all'apertura della prima area laterale per visualizzare il men�
 \clearpage
 
 \subsubsection{BubbleMenu}
-\textbf{Componente:}  Monolith::SideAreas::SideArea1\_pkg\\
+\textbf{Componente:}  Monolith::SideAreas::SendOperations\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-BubbleMenu.png}
-   \caption{{Diagramma per BubbleMenu in SideArea1\_pkg}}
+   \caption{{Diagramma per BubbleMenu in SendOperations}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -132,6 +238,13 @@ Costruttore della sottoclasse di React.Component in cui è necessario chiamare s
 \item +render() : React.DOM 
 \\
 Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+\end{itemize}
+
+\textbf{Props}:
+\begin{itemize}
+\item createConfigArea
+\\
+Metodo di SideArea1 che permette di inserire un componente React nell'area adibita al menu di configurazione. Viene passata ai bottoni.
 \end{itemize} 
 
 
@@ -142,12 +255,12 @@ Viene utilizzata dalla SideArea1 per la visualizzazione del menù contenente i p
 \clearpage
 
 \subsubsection{ConfigArea}
-\textbf{Componente:}  Monolith::SideAreas::SideArea1\_pkg\\
+\textbf{Componente:}  Monolith::SideAreas::SendOperations\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-ConfigArea.png}
-   \caption{{Diagramma per ConfigArea in SideArea1\_pkg}}
+   \caption{{Diagramma per ConfigArea in SendOperations}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -161,12 +274,12 @@ Viene utilizzato da SideArea1 per mostrare componenti grafici a scomparsa
 \clearpage
 
 \subsubsection{SentBubbles}
-\textbf{Componente:}  Monolith::SideAreas::SideArea1\_pkg\\
+\textbf{Componente:}  Monolith::SideAreas::SendOperations\\
    \FloatBarrier
    \begin{figure}[ht]
    \centering
    \includegraphics[width=0.6\textwidth]{img/single-SentBubble.png}
-   \caption{{Diagramma per SentBubbles in SideArea1\_pkg}}
+   \caption{{Diagramma per SentBubbles in SendOperations}}
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
@@ -183,70 +296,21 @@ Costruttore della sottoclasse di React.Component in cui è necessario chiamare s
 \\
 Metodo che esamina this.props e this.state e restituisce un componente che raccolga lo storico delle bolle inviate.
 
+\end{itemize}
+
+
+\textbf{Props:} 
+\begin{itemize}
+\item bubbles: 
+\\
+Array di oggetti che rappresentano le bolle che verranno istanziate dal bubbleDiscriminator
+
+
 \end{itemize} 
 
 
 \textbf{Applicazioni}\\
 Viene utilizzata dalla SideArea1 per la visualizzazione dello storico delle bolle inviate. 
-
-
-\clearpage
-
-\subsubsection{SideArea2}
-\textbf{Componente:}  Monolith::SideAreas::SideArea2\_pkg\\
-   \FloatBarrier
-   \begin{figure}[ht]
-   \centering
-   \includegraphics[width=0.6\textwidth]{img/single-SideArea2.png}
-   \caption{{Diagramma per SideArea2 in SideArea2\_pkg}}
-\end{figure}
-\FloatBarrier
-\textbf{Descrizione}\\
-Classe che rappresenta il componente React per la visualizzazione del contenuto della seconda area laterale. \\
-\textbf{Metodi:} 
-\begin{itemize}
-
-\item +constructor(props : Object) : React.Component 
-\\
-Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
-
-\item +render() : React.DOM 
-\\
-Metodo che esamina this.props e this.state e restituisce un componente che funge da contenitore per la seconda area laterale.
-
-\end{itemize} 
-
-
-\textbf{Applicazioni}\\
-Viene utilizzata all'apertura della seconda area laterale per visualizzare dello storico delle bolle ricevute. 
-
-
-\clearpage
-
-\subsubsection{ReceivedBubble}
-\textbf{Componente:}  Monolith::SideAreas::SideArea2\_pkg\\
-   \FloatBarrier
-   \begin{figure}[ht]
-   \centering
-   \includegraphics[width=0.6\textwidth]{img/single-ReceivedBubble.png}
-   \caption{{Diagramma per ReceivedBubble in SideArea2\_pkg}}
-\end{figure}
-\FloatBarrier
-\textbf{Descrizione}\\
-Classe che rappresenta il componente React per la visualizzazione dello storico delle bolle ricevute. \\
-\textbf{Metodi:} 
-\begin{itemize}
-\item +constructor(props : Object) : React.Component 
-\\
-Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
-\item +render() : React.DOM 
-\\
-Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
-\end{itemize} 
-
-
-\textbf{Applicazioni}\\
-Viene utilizzata dalla SideArea2 per la visualizzazione dello storico delle bolle ricevute. 
 
 
 \clearpage
@@ -276,6 +340,17 @@ Metodo che esamina this.props e this.state e restituisce un contenitore di eleme
 \item +countMyChildren() : int
 \\
 Metodo che ritorna un intero contente il numero di componenti figli, utilizzato per impostare la classe bootstrap corretta.
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item hide: 
+\\
+Booleano che provoca l'inserimento o meno di una classe HTML che nasconde il componente
+\item classNames: 
+\\
+Array di stringhe che rappresentano classi HTML
 
 \end{itemize} 
 
@@ -307,6 +382,15 @@ Costruttore della sottoclasse di React.Component in cui è necessario chiamare s
 \item +render() : React.DOM 
 \\
 Metodo che esamina this.props e this.state e restituisce un elemento "div" contenenti i figli ed utilizzando lo stile CSS passato nella props "classNames".
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+
+\item classNames: 
+\\
+Array di stringhe che rappresentano classi HTML
 
 \end{itemize} 
 
@@ -342,6 +426,17 @@ Metodo che esamina this.props e this.state e restituisce un contenitore di eleme
 \item +countMyChildren() : int \\
 Metodo che ritorna un intero contente il numero di componenti figli, utilizzato per impostare la classe bootstrap corretta.
 
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item hide: 
+\\
+Booleano che provoca l'inserimento o meno di una classe HTML che nasconde il componente
+\item classNames: 
+\\
+Array di stringhe che rappresentano classi HTML
+
 \end{itemize} 
 
 
@@ -370,6 +465,29 @@ Costruttore della sottoclasse di React.Component in cui è necessario chiamare s
 \item +render() : React.DOM 
 \\
 Metodo che esamina this.props e this.state e restituisce un immagine con le proprietà datele.
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item id: 
+\\
+Codice di identificazione univoco
+\item classes: 
+\\
+Array di stringhe che rappresentano classi HTML
+\item src
+\\
+Come l'omonimo attributo HTML
+\item alt
+\\
+Come l'omonimo attributo HTML
+\item width
+\\
+Come l'omonimo attributo HTML
+\item height
+\\
+Come l'omonimo attributo HTML
+
 \end{itemize} 
 
 
@@ -423,6 +541,19 @@ Comunica alla funzione "padre" l'opzione selezionata.
 \\
 Metodo che esamina this.props e this.state e restituisce un singolo elemento combobox con le opzione passategli nelle props.
 
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item options: 
+\\
+Array di opzioni contenenti, per ciascuna di esse, una stringa.
+\item classes: 
+\\
+Array di stringhe che rappresentano classi HTML
+\item id:
+\\
+Stringa codice identificativo
 \end{itemize} 
 
 
@@ -454,6 +585,23 @@ Comunica la stringa digitata al "padre".
 \item +render() : React.DOM 
 \\
 Metodo che esamina this.props e this.state e restituisce un singolo elemento React che rappresenta un input di testo.
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item id: 
+\\
+Codice di identificazione univoco
+\item classes: 
+\\
+Array di stringhe che rappresentano classi HTML
+\item value:
+\\
+Stringa che rappresenta il contenuto del campo di testo
+\item placeholder
+\\
+Come l'omonimo attributo HTML
+
 \end{itemize} 
 
 
@@ -489,6 +637,26 @@ Viene passato al "padre" l'ID del pulsante cliccato.
 \\
 Metodo che esamina this.props e this.state e restituisce un singolo elemento React che rappresenta un pulsante eventualmente cliccabile.
 
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item id: 
+\\
+Identificativo univoco 
+\item classes: 
+\\
+Array di stringhe che rappresentano classi HTML
+\item buttonName
+\\
+Stringa che deve comparire nel bottone
+\item dis
+\\
+Booleano per impostare la disabilitazione del pulsante
+\item handleClick()
+\\
+Funzione che viene eseguita alla pressione del pulsante
+
 \end{itemize} 
 
 
@@ -516,13 +684,31 @@ Componente React che rappresenta un elemento di checkbox. \\
 \\
 Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
 
-\item +changeCheck(event : String) : void  
+\item +changeCheck(event : Object) : void  
 \\
-Comunica l’opzione selezionata tramite il metodo del genitore. 
+Comunica l’opzione selezionata tramite il metodo del genitore. event è l'oggetto generato dal DOM in seguito alla selezione di un elemento.
 
 \item +render() : React.DOM 
 \\
 Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+
+\item classes: 
+\\
+Array di stringhe che rappresentano classi HTML
+\item id:
+\\
+Identificativo univoco 
+\item value:
+\\
+Stringa che deve essere associata al pulsante
+\item getCheck():
+\\
+Funzione che restituisce un oggetto contenente l'id, il value e un booleano che rappresenta la pressione o meno del pulsante
 
 \end{itemize} 
 
@@ -555,6 +741,32 @@ Comunica l'Id dell'immagine cliccata al "padre".
 \item +render() : React.DOM 
 \\
 Metodo che esamina this.props e this.state e restituisce un singolo elemento React che rappresenta un'immagine cliccabile.
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item id: 
+\\
+Codice di identificazione univoco
+\item classes: 
+\\
+Array di stringhe che rappresentano classi HTML
+\item src
+\\
+Come l'omonimo attributo HTML
+\item alt
+\\
+Come l'omonimo attributo HTML
+\item width
+\\
+Come l'omonimo attributo HTML
+\item height
+\\
+Come l'omonimo attributo HTML
+\item onClick()
+\\
+Funzione da eseguire alla pressione del pulsante
+
 \end{itemize} 
 
 
@@ -583,6 +795,7 @@ Costruttore della sottoclasse di React.Component in cui è necessario chiamare s
 
 \item +getCheck (n : Object) : void \\
 Funzione che passa al "padre" i dati del CheckButton cliccato. 
+n è l'oggetto ritorna da CheckButton
 
 \item +render() : React.DOM 
 \\
@@ -638,6 +851,38 @@ Una volta cliccato il pulsante, passa al "padre" il testo raccolto.
 \\
 Metodo che esamina this.props e this.state e restituisce un componente React che unisce una TextArea ad un pulsate di invio.
 
+\end{itemize}
+
+
+\textbf{Props:} 
+\begin{itemize}
+\item classespb: 
+\\
+Array di classi HTML per il PushButton
+\item classesta: 
+\\
+Array di classi HTML per la TextArea
+\item idpb: 
+\\
+Identificativo univoco per il PushButton
+\item idta: 
+\\
+Identificativo univoco per la TextArea
+\item width: 
+\\
+Come l'attributo HTML omonimo per la TextArea
+\item height: 
+\\
+Come l'attributo HTML omonimo per la TextArea
+\item buttonName: 
+\\
+Stringa da rappresentare nel pulsante
+\item getText(): 
+\\
+Funzione che restituisce il contenuto della TextArea
+
+
+
 \end{itemize} 
 
 
@@ -669,6 +914,31 @@ Costruttore della sottoclasse di React.Component in cui è necessario chiamare s
 \\
 Metodo che esamina this.props e this.state e restituisce un input di testo affiancato da una ComboBox.
 
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item idle: 
+\\
+Identificativo univoco per la LineEdit
+\item idcb:
+\\
+Identificativo univoco per il ComboBox
+\item classesle:
+\\
+Classe HTML per LineEdit
+\item classescb: 
+\\
+Classe HTML per il ComboBox
+\item comboUpdate()
+\\
+Funzione che riporta la modifica dello stato del ComboBox
+\item options
+\\
+Array di stringhe per il ComboBox
+\item textUpdate()
+\\
+Funzione che riporta la modifica dello stato del LineEdit
 \end{itemize} 
 
 
@@ -699,11 +969,22 @@ Costruttore della sottoclasse di React.Component in cui è necessario chiamare s
 
 \item +handleChange(event : Object): void 
 \\
-Viene passato al "padre" il valore selezionato.
+Viene passato al "padre" il valore selezionato. event è l'oggetto generato dal DOM alla scelta di un'opzione
 
 \item +render() : React.DOM 
 \\
 Metodo che esamina this.props e this.state e restituisce un gruppo di RadioButton con le opzioni che sono state date.
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item options: 
+\\
+Array di opzioni contenenti, per ciascuna di esse, una stringa.
+\item getValue(): 
+\\
+Funzione che viene eseguita alla selezione di un'opzione
 
 \end{itemize} 
 
@@ -739,6 +1020,40 @@ Comunica al "padre" il contenuto digitato nella textarea.
 \item +render() : React.DOM 
 \\
 Metodo che esamina this.props e this.state e restituisce un componente React composto da una textArea ed un ComboBox.
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item classescb: 
+\\
+Array di classi HTML per il ComboBox
+\item classestx: 
+\\
+Array di classi HTML per la TextArea
+\item idcb: 
+\\
+Identificativo univoco per il ComboBox
+\item idtx: 
+\\
+Identificativo univoco per la TextArea
+\item width: 
+\\
+Come l'attributo HTML omonimo per la TextArea
+\item height: 
+\\
+Come l'attributo HTML omonimo per la TextArea
+\item options: 
+\\
+Array di opzioni per il ComboBox
+\item textUpdate(): 
+\\
+Funzione che restituisce il contenuto della TextArea
+\item comboUpdate():
+\\
+Funzione che restituisce il valore selezionato nel ComboBox
+
+
 
 \end{itemize} 
 
@@ -779,6 +1094,29 @@ Salva nello state il testo presente nel LineEdit.
 \item +render() : React.DOM 
 \\
 Metodo che esamina this.props e this.state e restituisce un componente React composto da un input di testo ed un pulsante di invio.
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item classesle: 
+\\
+classi HTML per il LineEdit
+\item classespb: 
+\\
+classi HTML per il PushButton
+\item idle
+\\
+Identificativo univoco per LineEdit
+\item idpb
+\\
+Identificativo univoco per PushButton
+\item buttonName
+\\
+testo da mostrare nel bottone
+\item getText()
+\\
+Funzione che riporta il cambiamento di stato del LineEdit
 
 \end{itemize} 
 
@@ -850,7 +1188,23 @@ I seguenti metodi semplicemente eseguono le funzioni che vengono passate nelle p
 \item +handleClick():void
 \item +handleSecondButton():void
 \end{itemize}
-Il metodo render crea uno o due pulsanti a seconda che sia definito o meno il testo da inserire nel secondo pulsante nelle props. 
+Il metodo render crea uno o due pulsanti a seconda che sia definito o meno il testo da inserire nel secondo pulsante nelle props.
+
+\textbf{Props:} 
+\begin{itemize}
+\item onClick(): 
+\\
+Funzione da eseguire alla pressione del secondo bottone 
+\item id: 
+\\
+Stringa codice d'identificazione
+\item secondButtonName
+\\
+Stringa che contiene il testo da visualizzare nel secondo bottone
+\item classes
+\\
+Elenco di classi HTML
+\end{itemize} 
 
 
 \textbf{Applicazioni}\\
@@ -923,7 +1277,7 @@ Classe base da cui derivare per costruire i menù di configurazione delle bolle.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Classe che contiene i metodi che ritornano le funzionalità necessarie per la rappresentazione delle bolle.
+Classe che contiene i metodi che ritornano le funzionalità necessarie per la rappresentazione delle bolle. Tutti i metodi sono statici. Si tratta di un modo per rappresentare nel formalismo UML quello che in JavaScript è un oggetto globale.
 
 \textbf{Attributi:}
 \begin{itemize}
@@ -943,14 +1297,18 @@ Ritorna il componente React della stringa passata come parametro per visualizzar
 \item  +useDoMakeButton( bubbleType: string) : ConcreteBubbleCreationButton \\
 Ritorna il componente React della stringa passata come parametro per visualizzare il bottone di creazione del menù di configurazione di una bolla da inviare.
 
-\end{itemize} 
+\end{itemize}
+
+\emph{L'utilizzo di oggetti globali non costituisce una soluzione ideale. Per la motivazione si veda \S 3.7} 
 
 
 \textbf{Applicazioni}\\
 Viene utilizzata quando si deve creare una nuova bolla, ritornando l'oggetto della bolla appena selezionata. 
 
 
-\subsection{Architettura di dettaglio - Classi delle bolle demo}\subsubsection{CurrencyBubble}
+\subsection{Architettura di dettaglio - Classi delle bolle demo}
+Nel caso dei componenti React la descrizione dello schema dell'oggetto props passato come argomento al costruttore è fornita indirettamente dall'elenco delle props.
+\subsubsection{CurrencyBubble}
 \textbf{Componente:}  CurrencyBubble\\
    \FloatBarrier
    \begin{figure}[ht]
@@ -971,6 +1329,23 @@ Costruttore della sottoclasse di React.Component in cui è necessario chiamare s
 \item +render() : React.DOM 
 \\
 Metodo che esamina this.props e this.state e restituisce la CurrencyBubble a conversione avvenuta.
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item curr\_in: 
+\\
+Stringa che rappresenta la valuta in ingresso
+\item curr\_out: 
+\\
+Stringa che rappresenta la valuta in uscita
+\item value\_in
+\\
+Numero che rappresenta l'importo in ingresso
+\item value\_out
+\\
+Numero che rappresenta l'importo in uscita
 
 \end{itemize} 
 
@@ -1009,7 +1384,7 @@ Valore finale di conversione.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della singola istanza di bolla convertitore di valuta, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+Istanziazione concreta della classe Monolith::UI::uiConstruction::BubbleCreator che gestisce la creazione della singola istanza di bolla convertitore di valuta, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
 \\
 \textbf{Metodi:} 
 \begin{itemize}
@@ -1071,6 +1446,15 @@ Salva i dati raccolti e li passa al "padre".
 \item +render() : React.DOM
 \\
 Metodo che esamina this.props e this.state, costruisce un array di opzioni modificabili e restituisce l'interfaccia grafica per il menù di creazione.
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item closeMenu(): 
+\\
+Funzione che permette al componente di cancellarsi. Viene utilizzato in caso di esito positivo dell'invio.
+
+
 \end{itemize} 
 
 
@@ -1106,7 +1490,10 @@ Metodo che ritorna il nome presente sul pulsante.
 \\
 Metodo che ritorna il nome identificativo della bolla .
 
-\end{itemize} 
+\end{itemize}
+
+\textbf{Props:} 
+Non sono presenti props utilizzate direttamente. Vedere la superclasse AbsButton 
 
 
 \textbf{Applicazioni}\\
@@ -1117,77 +1504,235 @@ Nella props "onClick" verrà ritornato il nome identificativo della bolla.
 
 \clearpage
 
-\subsubsection{ListBubbleConfig}
-\textbf{Componente:}  ListBubble::CheckListCreation\\
+\subsubsection{AbsList}
+\textbf{Componente:}  ListBubble\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-AbsList.png}
+   \caption{{Diagramma per AbsList in ListBubble}}
+\end{figure}
+\FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta il menù per la costruzione di una bolla Lista.
+Componente React astratto che implementa alcuni metodi per la gestione di una lista al di fuori delle funzionalità grafiche che verranno implementate nelle derivate.
 \\
 \textbf{Metodi:} 
 \begin{itemize}
 \item +constructor(props : Object) : React.Component 
 \\
-Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+Costruttore della sottoclasse di React.Component. La classe è astratta e dunque non può essere istanziata. Pertanto props dipende dalle specifiche classi derivate.
 
-\item +addOpt() : void 
+\item +addOpt(element : String) : void 
 \\
-Aggiunge un campo opzione in più ad ogni click sul tasto apposito.
+Metodo che aggiunge un elemento alla lista.
+\item +delOpt(id:int):void
+\\
+Metodo che cancella dalla lista l'elemento con l'id dato
+\item +optChange(text: String,id: int): void
+\\
+Metodo che modifica un elemento della lista
+\item titleChange(txt: String): void
+\\
+Metodo che modifica il titolo della lista
 
-\item +titleChange() : void 
-\\
-Salva il titolo che viene dato alla Lista.
-
-\item +optChange() : void 
-\\
-Salva il valore che viene dato ad ogni opzione.
-
-\item +send() : void 
-\\
-Salva i dati raccolti e li passa al "padre".
-
-\item +render() : React.DOM
-\\
-Metodo che esamina this.props e this.state, costruisce un array di opzioni modificabili e restituisce l'interfaccia grafica per il menù di creazione.
 \end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per rappresentare il menù di configurazione della bolla Lista. Il componente React si aspetta, nella props "send", una funzione che raccolga un oggetto contenente i dati della bolla. 
+Viene utilizzata per evitare la duplicazione del codice nei vari componenti grafici che gestiscono liste. 
 
 
 \clearpage
 
-\subsubsection{ListBubbleCreationButton}
-\textbf{Componente:}  ListBubble::CheckListCreation\\
+\subsubsection{CheckListConfig}
+\textbf{Componente:}  ListBubble::GuiCheckList\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-CheckListConfig.png}
+   \caption{{Diagramma per CheckListConfig in GuiCheckList}}
+\end{figure}
+\FloatBarrier
 \textbf{Descrizione}\\
-Componente React che rappresenta il pulsante per creare una bolla Lista.
-\\
+Componente React che rappresenta il menu principale per la creazione delle checklist. \\
 \textbf{Metodi:} 
 \begin{itemize}
-\item +constructor(props : Object) : React.Component 
+
+\item +constructor(props : Object)
 \\
 Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
 
-\item +bubbleButtonName() : String 
+\item +removeList(id : String) : void  
 \\
-Metodo che ritorna il nome presente sul pulsante.
+Metodo che rimuove una checklist dal database lato server
 
-\item +bubbleName() : String 
+\item +render() : React.DOM 
 \\
-Metodo che ritorna il nome identificativo della bolla .
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\item +display(position : int): void
+\\
+Metodo che rende visibile la checklist con l'indice selezionato
+
+\item +openListCreator(): void
+\\
+Metodo che gestisce l'apertura del menu di creazione di una nuova checklist
+\item +closeCreationMenu(): void
+\\
+Metodo che gestisce la chiusura del menu di creazione di una nuova checklist
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+
+\item lists: 
+\\
+Array di oggetti, ciascuno dei quali rappresenta una checklist
+
 
 \end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per rappresentare il pulsante per la creazione di una bolla Lista.
+Viene utilizzata per permettere la creazione, la modifica, l'eliminazione di checklists personalizzate 
 
-Nella props "onClick" verrà ritornato il nome identificativo della bolla. 
+
+\clearpage
+
+\subsubsection{CheckListCreator}
+\textbf{Componente:}  ListBubble::GuiCheckList\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-CheckListCreator.png}
+   \caption{{Diagramma per CheckListCreator in GuiCheckList}}
+\end{figure}
+\FloatBarrier
+\textbf{Descrizione}\\
+Istanziazione concreta della classe Monolith::UI::uiConstruction::BubbleCreator che viene utilizzata per inserire un componente grafico nell'area adibita al menu di configurazione delle bolle. A questo fine tutti i metodi tranne quello per creare menu di configurazione ritornano null.
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(bubbleName: String)
+\item +doMakeBubbleSender() : React.DOM 
+\item +doMakeBubbleReceiver() : React.DOM  
+\item +doMakeConfigurationMenu() : React.DOM  
+\\
+Metodo che gestisce la creazione dell'area di configurazione della bolla.
+\item +doMakeButton() : React.DOM  
+\end{itemize} 
+
+
+\textbf{Applicazioni}\\
+Viene utilizzata per far funzionare un menu dedicato all'interno del sistema Monolith 
+
+
+\clearpage
+
+\subsubsection{CheckListEditing}
+\textbf{Componente:}  ListBubble::GuiCheckList\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-CheckListEditing.png}
+   \caption{{Diagramma per CheckListEditing in GuiCheckList}}
+\end{figure}
+\FloatBarrier
+\textbf{Descrizione}\\
+Componente React che gestisce la modifica delle checklists esistenti. \\
+\textbf{Metodi:} 
+\begin{itemize}
+
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +save() : void  
+\\
+Metodo che salva le modifiche alla checklist sul database
+
+\item +render() : React.DOM 
+\\
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+
+\item title: 
+\\
+Stringa che rappresenta il titolo della checklist
+\item ops:
+\\
+Array di stringhe che rappresenta gli elementi della checklist
+\item hide:
+\\
+Booleano che determina se la lista sarà visibile o meno
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}\\
+Viene utilizzata per modificare le checklist esistenti 
+
+
+\clearpage
+
+\subsubsection{CheckListCreation}
+\textbf{Componente:}  ListBubble::GuiCheckList\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-CheckListCreation.png}
+   \caption{{Diagramma per CheckListCreation in GuiCheckList}}
+\end{figure}
+\FloatBarrier
+\textbf{Descrizione}\\
+Componente React che gestisce la creazione di una nuova checklist \\
+\textbf{Metodi:} 
+\begin{itemize}
+
+\item +constructor(props : Object)
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +saveToDb() : void  
+\\
+Metodo che salva la checklist creata sul database
+
+\item +render() : React.DOM 
+\\
+Metodo che esamina this.props e this.state e restituisce un singolo elemento React che può essere una rappresentazione di un componente DOM nativo o un altro componente composito.
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item closeMenu(): 
+\\
+Funzione che permette al componente di cancellarsi. Viene utilizzato in caso di esito positivo dell'invio.
+
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}\\
+Viene utilizzata per la creazione delle nuove checklists all'interno del menu dedicato 
 
 
 \clearpage
 
 \subsubsection{ListBubble}
-\textbf{Componente:}  ListBubble::CheckListReading\\
+\textbf{Componente:}  ListBubble::GuiList\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-ListBubble.png}
+   \caption{{Diagramma per ListBubble in GuiList}}
+\end{figure}
+\FloatBarrier
 \textbf{Descrizione}\\
 Componente React che rappresenta l'interfaccia grafica di una ListBubble
 \\
@@ -1201,50 +1746,216 @@ Costruttore della sottoclasse di React.Component in cui è necessario chiamare s
 \\
 Metodo che esamina this.props e this.state e restituisce elemento CheckBoxList 
 
-\item +changeCheck(m : Object) : void \\
-Metodo che passa al "padre" i dati relativi alla checkbox cliccata.
+\item +checkItem(position : int) : void 
+\\
+Metodo che riporta le spunte effettuate sul database lato server
+
+\item +buttonSymbol(position:int): Object
+\\
+Metodo utilizzato dal render per determinare il comportamento dei pulsanti in caso il loro item corrispondente sia stato spuntato o meno. Nello specifico ritorna un oggetto che contiene il simbolo da visualizzare nel pulsante e un booleano che descrive lo stato di abilitazione del pulsante.
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item title: 
+\\
+Stringa che rappresenta il titolo della lista 
+\item ops: 
+\\
+Array di oggetti formati da:
+\begin{itemize}
+\item item:String
+\\
+Rappresenta il testo dell'elemento della lista
+\item check:boolean
+\\
+Rappresenta se l'item è stato spuntato o meno
+\item id:int
+\\
+Identificativo numerico
+\end{itemize}
+
+
 \end{itemize} 
 
 
 \textbf{Applicazioni}\\
 Viene utilizzata per rappresentare graficamente la bolla Lista.
-Il componente ListBubble si aspetta in entrata una props "stat" che dovrà contenere un oggetto con i seguenti dati: \\
-\begin{itemize}
-\item \textit{op}:
-\\
-Un array di opzioni aventi un campo "id" ed un campo "value".
-\item \textit{title}:
-\\
-Un titolo per la Lista.
-\end{itemize} 
+Viene istanziata automaticamente dal meccanismo di BubbleCreator nel pacchetto uiConstruction. 
 
 
 \clearpage
 
-\subsubsection{ListBubbleCreator}
-\textbf{Componente:}  ListBubble::DataManagement\\
+\subsubsection{ListCreator}
+\textbf{Componente:}  ListBubble::GuiList\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-ListCreator.png}
+   \caption{{Diagramma per ListCreator in GuiList}}
+\end{figure}
+\FloatBarrier
 \textbf{Descrizione}\\
-Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della singola istanza di bolla lista, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+Istanziazione concreta della classe Monolith::UI::uiConstruction::BubbleCreator che gestisce la creazione della singola istanza di bolla lista, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::uiConstruction::BubbleDiscriminator.
 \\
 \textbf{Metodi:} 
 \begin{itemize}
-\item +doMakeBubbleSender() : ListBubble 
+\item +constructor(bubbleName: String)
+\item +doMakeBubbleSender(props: Object) : React.DOM 
 \\
 Metodo che gestisce la creazione della bolla vista dal mittente.
-\item +doMakeBubbleReceiver() : ListBubble 
+\item +doMakeBubbleReceiver(props: Object) : React.DOM 
 \\
 Metodo che gestisce la creazione della bolla vista dal ricevente.
-\item +doMakeConfigurationMenu() : ListBubbleConfig 
+\item +doMakeConfigurationMenu(closeMenufun: Function) : React.DOM  
 \\
 Metodo che gestisce la creazione dell'area di configurazione della bolla.
-\item +doMakeButton() : ListBubbleCreationButton 
+\item +doMakeButton(createConfigArea: Function) : React.DOM 
 \\
-Metodo che gestisce la creazione dello specifico pulsante da inserire nel menu iniziale di creazione.
+Metodo che gestisce la creazione della singola istanza di pulsante da inserire nel menu iniziale di creazione. Viene lasciata l'implementazione della super classe.
 \end{itemize} 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per gestire la creazione della singola istanza di bolla lista, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante. 
+Viene utilizzata per la creazione della singola istanza di bolla lista, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante 
+
+
+\clearpage
+
+\subsubsection{ListBubbleConfig}
+\textbf{Componente:}  ListBubble::GuiList\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-ListBubbleConfig.png}
+   \caption{{Diagramma per ListBubbleConfig in GuiList}}
+\end{figure}
+\FloatBarrier
+\textbf{Descrizione}\\
+Componente React che rappresenta il menù per la costruzione di una bolla Lista.
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object) : React.Component 
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +display\_checklist() : void 
+\\
+Metodo che attiva o disattiva la visualizzazione della checklist
+
+\item +send() : void 
+\\
+Salva i dati raccolti nel database
+
+\item +render() : React.DOM
+\\
+Metodo che esamina this.props e this.state, costruisce un array di opzioni modificabili e restituisce l'interfaccia grafica per il menù di creazione.
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item closeMenu(): 
+\\
+Funzione che permette al componente di cancellarsi. Viene utilizzato in caso di esito positivo dell'invio.
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}\\
+Viene utilizzato per rappresentare il menù di configurazione della bolla Lista. 
+
+
+\clearpage
+
+\subsubsection{ListCheckListNavigation}
+\textbf{Componente:}  ListBubble::GuiList\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-ListCheckListNavigation.png}
+   \caption{{Diagramma per ListCheckListNavigation in GuiList}}
+\end{figure}
+\FloatBarrier
+\textbf{Descrizione}\\
+Componente React che permette la visualizzazione delle checklists e l'aggiunta dei loro elementi alla lista.  \\
+\textbf{Metodi:} 
+\begin{itemize}
+
+\item +constructor(props : Object)
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento.
+
+\item +hide(selection : int) : void  
+\\
+Metodo che attiva o disattiva la visualizzazione della lista selezionata.
+
+\item +addToList(item: String) : void
+\\
+Metodo che esegue props.add
+
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+
+\item lists: 
+\\
+Array di oggetti, ciascuno dei quali rappresenta una lista formata da:
+\begin{itemize}
+\item title: String
+\item ops: Array of Strings
+
+\end{itemize}
+\item add(item: String)
+\\
+Metodo del genitore per aggiungere un elemento alla lista in costruzione in un ListBubbleConfig
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}\\
+Viene utilizzata per visualizzare le checklist durante la creazione delle liste e per aggiungere propri elementi alle liste 
+
+
+\clearpage
+
+\subsubsection{ListBubbleCreationButton}
+\textbf{Componente:}  ListBubble::GuiList\\
+   \FloatBarrier
+   \begin{figure}[ht]
+   \centering
+   \includegraphics[width=0.6\textwidth]{img/single-ListBubbleCreationButton.png}
+   \caption{{Diagramma per ListBubbleCreationButton in GuiList}}
+\end{figure}
+\FloatBarrier
+\textbf{Descrizione}\\
+Componente React che rappresenta il pulsante per creare una bolla Lista. Inoltre viene aggiunto un pulsante secondario per accedere al menu di creazione delle checklist.
+\\
+\textbf{Metodi:} 
+\begin{itemize}
+\item +constructor(props : Object)  
+\\
+Costruttore della sottoclasse di React.Component in cui è necessario chiamare super (props) ed è possibile inizializzare lo stato per i dati soggetti a cambiamento. Le props vengono usate solo dalla super classe.
+
+\item +bubbleButtonName() : String 
+\\
+Metodo che ritorna il nome presente sul pulsante.
+
+\item +bubbleName() : String 
+\\
+Metodo che ritorna il nome identificativo della bolla .
+
+\item +secondAreaName() : String
+\\
+Metodo che ritorna il nome del componente grafico da costruire in risposta alla pressione del secondo pulsante
+
+\end{itemize} 
+
+
+\textbf{Applicazioni}\\
+Viene utilizzato per rappresentare il pulsante per la creazione di una bolla Lista. 
 
 
 \clearpage
@@ -1274,6 +1985,22 @@ Metodo che esamina this.props e this.state e restituisce una lista di PushButton
 \item +addVoto(id : String) : void \\
 Metodo che da un voto all'opzione selezionata. Permette di votare una sola volta.
 
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item title: 
+\\
+Stringa che rappresenta il titolo del sondaggio
+\item options: 
+\\
+Array di oggetti formati da un id numerico, una stringa e un numero che rappresenta il numero di voti per quell'opzione.
+\item \_id:
+\\
+id della bolla nel database
+\item voted
+\\
+Array degli id degli utenti che hanno votato
 \end{itemize} 
 
 
@@ -1308,7 +2035,7 @@ Un ID per la bolla Sondaggio.
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della singola istanza di bolla sondaggio, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+Istanziazione concreta della classe Monolith::UI::uiConstruction::BubbleCreator che gestisce la creazione della singola istanza di bolla sondaggio, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
 \\
 \textbf{Metodi:} 
 \begin{itemize}
@@ -1369,6 +2096,15 @@ Salva i dati raccolti e li passa al "padre".
 
 \item +render() : React.DOM \\
 Metodo che esamina this.props e this.state, costruisce un array di opzioni modificabili e restituisce l'interfaccia grafica per il menù di creazione.
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item closeMenu(): 
+\\
+Funzione che permette al componente di cancellarsi. Viene utilizzato in caso di esito positivo dell'invio.
+
+
 \end{itemize} 
 
 
@@ -1404,7 +2140,10 @@ Metodo che ritorna il nome presente sul pulsante.
 \\
 Metodo che ritorna il nome identificativo della bolla .
 
-\end{itemize} 
+\end{itemize}
+
+\textbf{Props:} 
+Non sono presenti props utilizzate direttamente. Vedere la superclasse AbsButton 
 
 
 \textbf{Applicazioni}\\
@@ -1439,6 +2178,20 @@ Metodo che esamina this.props e this.state e restituisce il numero random calcol
 
 \item +calcolate() : void \\
 Metodo che passa al "padre" il nuovo numero random estratto.
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item \_id: 
+\\
+id della bolla nel database
+\item range: 
+\\
+Numero che rappresenta il massimo valore tra quelli estraibili
+\item value
+\\
+Numero che rappresenta il valore casuale estratto
+
 \end{itemize} 
 
 
@@ -1459,7 +2212,7 @@ Il componente RandBubble si aspetta in entrata una props "nMax" che dovrà conte
 \end{figure}
 \FloatBarrier
 \textbf{Descrizione}\\
-Istanziazione concreta della classe Monolith::UI::Bubbles::BubbleCreator che gestisce la creazione della singola istanza di bolla estrazione di numero casuale, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
+Istanziazione concreta della classe Monolith::UI::uiConstruction::BubbleCreator che gestisce la creazione della singola istanza di bolla estrazione di numero casuale, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe Monolith::UI::Bubbles::BubbleDiscriminator.
 \\
 \textbf{Metodi:} 
 \begin{itemize}
@@ -1512,6 +2265,13 @@ Salva i dati raccolti e li passa al "padre".
 
 \item +render() : React.DOM \\
 Metodo che esamina this.props e this.state e restituisce l'interfaccia grafica per il menù di creazione.
+\end{itemize}
+
+\textbf{Props:} 
+\begin{itemize}
+\item closeMenu(): 
+\\
+Funzione che permette al componente di cancellarsi. Viene utilizzato in caso di esito positivo dell'invio.
 \end{itemize} 
 
 
@@ -1547,7 +2307,10 @@ Metodo che ritorna il nome presente sul pulsante.
 \\
 Metodo che ritorna il nome identificativo della bolla .
 
-\end{itemize} 
+\end{itemize}
+
+\textbf{Props:} 
+Non sono presenti props utilizzate direttamente. Vedere la superclasse AbsButton 
 
 
 \textbf{Applicazioni}\\

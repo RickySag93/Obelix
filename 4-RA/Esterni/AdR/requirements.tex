@@ -52,7 +52,7 @@ RObFu10.3.1 & \makecell{Obbligatorio \\ Funzionale} & L'utente deve poter visual
 RObFu10.3.1.1 & \makecell{Obbligatorio \\ Funzionale} & L'utente deve visualizzare un messaggio appropriato nel caso in cui non ci siano bolle nello storico in ingresso. & \makecell{UC3.3.3}\\
 \hline
 
-RObFu11 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve avere a disposizione gli strumenti per creare una bolla funzionante. & \makecell{UC0}\\
+RObFu11 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve avere a disposizione gli strumenti per creare una bolla funzionante. & \makecell{UC1\\UC2\\UC3}\\
 \hline
 
 RObFu11.1 & \makecell{Obbligatorio \\ Funzionale} & Lo sviluppatore deve poter creare le proprie bolle a partire dalla bolla vuota. & \makecell{UC1}\\
@@ -416,9 +416,7 @@ RObQu08 & \makecell{Obbligatorio \\ Qualitativo} & Monolith deve essere corredat
 RObQu08.1 & \makecell{Obbligatorio \\ Qualitativo} & Il manuale deve spiegare come installare Monolith in ambiente Rochet.Chat. & \makecell{Capitolato\\Interno}\\
 \hline
 
-RObQu16 & \makecell{Obbligatorio \\ Qualitativo} & La documentazione formale standard deve essere
-
-scritta in italiano. & \makecell{Capitolato\\Verbale20170301}\\
+RObQu16 & \makecell{Obbligatorio \\ Qualitativo} & La documentazione formale standard deve essere scritta in italiano. & \makecell{Capitolato\\Verbale20170301}\\
 \hline
 
 RObQu17 & \makecell{Obbligatorio \\ Qualitativo} & La bolla presentata come Demo deve essere documentata. & \makecell{Interno}\\
@@ -473,7 +471,13 @@ RObDi11.2.1.2.4 & \makecell{Obbligatorio \\ Dichiarativo} & I layout offerti dai
 RObDi12 & \makecell{Obbligatorio \\ Dichiarativo} & Il codice sorgente di Monolith e delle bolle deve essere disponibile su GitHub. & \makecell{Capitolato}\\
 \hline
 
-RObDi13 & \makecell{Obbligatorio \\ Dichiarativo} & Monolith deve supportare i browser in cui è eseguibile Rocket.Chat. & \makecell{Interno}\\
+RObDi13 & \makecell{Obbligatorio \\ Dichiarativo} & Monolith deve supportare i seguenti browser: 
+\begin{itemize}
+\item Google Chrome v59+
+\item Firefox v54+
+\item Internet Explorer v11+
+\item Safari v10+
+\end{itemize} & \makecell{Interno}\\
 \hline
 
 RObDi14 & \makecell{Obbligatorio \\ Dichiarativo} & L'interfaccia del sistema Monolith deve essere responsive. & \makecell{Interno}\\

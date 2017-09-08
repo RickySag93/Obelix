@@ -3,9 +3,9 @@
 require_once("configurazione.php");
 
 global $repoPath;
-$pathOutDdP = $repoPath.'3-RQ/Esterni/DdP/';
-$pathOutAdR = $repoPath.'3-RQ/Esterni/AdR/';
-$pathOutPdQ = $repoPath.'3-RQ/Esterni/PdQ/';
+$pathOutDdP = $repoPath.'4-RA/Esterni/DdP/';
+$pathOutAdR = $repoPath.'4-RA/Esterni/AdR/';
+$pathOutPdQ = $repoPath.'4-RA/Esterni/PdQ/';
 
 class database
 {
@@ -65,7 +65,7 @@ function compare_uc($a,$b){
 
 function check_punto($s){
    $s = trim($s);
-   if(preg_match('/\.$/',$s))
+   if(preg_match('/\.$/',$s) || preg_match('/}$/',$s))
       return $s;
    else
       return $s . '.';
