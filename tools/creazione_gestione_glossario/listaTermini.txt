@@ -1,14 +1,16 @@
-API
 Abstract Syntax Tree
+API
 Asana
 Astah
-BSON
 Baseline
 Bolla interattiva
+BSON
 Bug
-CSSHint
+className
+classNames
 Committente
 Complexity-report
+CSSHint
 Demo
 Design Pattern
 Diagramma di Gantt
@@ -18,8 +20,8 @@ Google Calendar
 Google Chrome DevTools
 Google Drive
 Halstead
-JSHint
 JavaScript
+JSHint
 Karma
 LATEX
 Linguaggio di scripting
@@ -31,17 +33,22 @@ Microsoft Windows
 Milestone
 MySQL
 Node.js
-PDCA
 Package
+PDCA
 Peer-to-peer
+promise
 Proponente
 React
 Repository
+responsive
 Rocket.chat
+room
 SDK
-SQL
+sidearea
 Slack
 Software Quality Management
+SQL
+tabbar
 Tag
 Task
 Team
@@ -51,7 +58,3 @@ Ticketing
 UML
 W3C
 Webapp
-responsive
-room
-sidearea
-tabbar

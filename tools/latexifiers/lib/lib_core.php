@@ -13,9 +13,9 @@ class database
    function __construct()
    {
       // $this->conn = new mysqli("", "root", "", "Meridian2");
-		global $username ,$passwd;
-		$port = argumentHandler();
-		//echo "\n$username\n$passwd\n$port\n";
+      global $username ,$passwd;
+      $port = argumentHandler();
+      //echo "\n$username\n$passwd\n$port\n";
       $this->conn = new mysqli("127.0.0.1", $username ,$passwd , "nrigato-ES", $port); // 23306
       if($this->conn->connect_error)
       {
@@ -161,38 +161,49 @@ function argumentHandler(){
 
 
 function colorTestStatus($status){
-  $status = trim($status);
-  if($status == 'Implementato'){
-    $status = "\\textcolor{ForestGreen}{". $status. "}";
-  }
-  if($status == 'Non Implementato'){
-    $status = "\\textcolor{Red}{".$status."}";
-  }
-	return $status;
+   $status = trim($status);
+   if($status == 'Implementato'){
+      $status = "\\textcolor{ForestGreen}{". $status. "}";
+   }
+   if($status == 'Non Implementato'){
+      $status = "\\textcolor{Red}{".$status."}";
+   }
+   return $status;
 }
 
+
+function colorTestSup($sup){
+   $sup = trim($sup);
+   if($sup == 'Superato'){
+      $sup = "\\textcolor{ForestGreen}{". $sup. "}";
+   }
+   if($sup == 'Non Superato'){
+      $sup = "\\textcolor{Red}{".$sup."}";
+   }
+   return $sup;
+}
 
 function str_lreplace($search, $replace, $subject)
 {
-    $pos = strrpos($subject, $search);
+   $pos = strrpos($subject, $search);
 
-    if($pos !== false)
-    {
-        $subject = substr_replace($subject, $replace, $pos, strlen($search));
-    }
+   if($pos !== false)
+   {
+      $subject = substr_replace($subject, $replace, $pos, strlen($search));
+   }
 
-    return $subject;
+   return $subject;
 }
 
 /*
-function dumpDB(){
-	global $username ,$passwd;
-	$port = argumentHandler();
-	//
-	$return_var = NULL;
-	$output = NULL;
-	$command = "/usr/bin/mysqldump -u $username -h 127.0.0.1 -p$pass nrigato-ES > $dump_directory";
-	exec($command, $output, $return_var);
-}
-*/
+   function dumpDB(){
+   global $username ,$passwd;
+   $port = argumentHandler();
+   //
+   $return_var = NULL;
+   $output = NULL;
+   $command = "/usr/bin/mysqldump -u $username -h 127.0.0.1 -p$pass nrigato-ES > $dump_directory";
+   exec($command, $output, $return_var);
+   }
+ */
 ?>

@@ -73,9 +73,9 @@ open( my $gltex, ">:encoding(UTF-8)", 'contenuto.tex' );
 my $f_letter = '';
 my $itemize_aperto = 'n';
 my $num = 1;
-foreach my $k ( sort keys %dizionario ) {
+foreach my $k ( sort { "\L$a" cmp "\L$b" } keys %dizionario ) {
     my $letter = substr($k,0,1);
-    if($letter ne $f_letter){
+    if(uc $letter ne uc $f_letter){
       # se cambio lettera allora controllo se ho una vecchia lettera da chiudere
       if($itemize_aperto eq 'y'){
         print $gltex '\end{itemize}'."\n".'\newpage'."\n\n";
