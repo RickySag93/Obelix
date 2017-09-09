@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 pdflatex = pdflatex -interaction=nonstopmode
-file = presentazione_RQ
-filenewname = PresentazioneRQ.pdf
+file = presentazione_RA
+filenewname = PresentazioneRA.pdf
 
 doc:
 	$(pdflatex) $(file).tex
