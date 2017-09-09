@@ -48,12 +48,16 @@ occorrenza e saranno riportati nel \gloss.
 \subsubsection{Informativi}
 \begin{itemize}
 	\item \textbf{Slide del corso di Ingegneria del Software}:
-     \\  \url{http://www.math.unipd.it/~tullio/IS-1/2016/ }
-\item \textbf{Documentazione React}
-\item \textbf{Documentazione Meteor}
-\item \textbf{Documentazione ECMAScript 6} 
-\item \textbf{Libro Design Patterns} Design Patterns, Elementi per il
-  riuso di software a oggetti. Gamma, Helm, Johnson, Vlissides.
+     	\\  \url{http://www.math.unipd.it/~tullio/IS-1/2016/ }
+	\item \textbf{Documentazione React} :  
+		\\  \url{https://facebook.github.io/react/docs/installation.html}
+	\item \textbf{Documentazione Meteor} : 
+		\\  \url{https://guide.meteor.com/}
+	\item \textbf{Documentazione ECMAScript 6}  : 
+		\\  \url{https://github.com/rse/es6-features} ,
+		\\  \url{http://ccoenraets.github.io/es6-tutorial/}
+	\item \textbf{Libro Design Patterns} Design Patterns, Elementi per il
+  riuso di software a oggetti. Gamma, Helm, Johnson, Vlissides. (Sezioni dedicate ai design pattern utilizzati.)
 
 \end{itemize}
 
@@ -747,8 +751,6 @@ Product definisce l'interfaccia implementata da ConcreteProduct,
 creator definisce il factory method che restituisce una interfaccia di
 tipo product, ConcreteCreator definisce il metodo factory effettivo
 per la creazione di un’istanza particolare di tipo Product. 
-Utilizzato in tal modo nella classe BubbleCreator dal gruppo Obelix.
-
 
 I motivi che portano alla scelta del suo utilizzo sono:
 
@@ -758,6 +760,16 @@ I motivi che portano alla scelta del suo utilizzo sono:
 \item La gestione del ciclo di vita degli oggetti gestiti deve essere centralizzata in modo da assicurare un comportamento coerente all'interno dell'applicazione
 
 \end{itemize}
+
+\paragraph{Utilizzo nel progetto}
+
+\begin{center}
+	\includegraphics[scale=0.22]{img/esempio1.png}
+	\captionof{figure}{Utilizzo Factory Method}
+\end{center}
+
+BubbleCreator gestisce la creazione della singola istanza del tipo di bolla selezionato, della singola istanza di menù di configurazione della bolla e della singola istanza di pulsante tramite l'utilizzo della classe BubbleDiscriminator.
+
 
 \subsubsection{Template Method}
 Questo pattern permette di definire la struttura di un algoritmo
@@ -792,8 +804,24 @@ Tale pattern presenta i seguenti vantaggi/svantaggi:
      “hook” che POSSONO ma NON SONO OBBLIGATE a ridefinire. 
 \end{itemize}
 
-Utilizzato dal gruppo nella classe BubbleDatabase con una funzione polimorfa che ritorna il nome della bolla in base all'istanza.
 Questa scelta è dovuta al fatto di dover sviluppare comportamenti comuni a più bolle, quindi si è deciso di far in modo da centralizzarli ed evitare la duplicazione del codice.
+
+\paragraph{Utilizzo nel progetto}
+
+\begin{center}
+	\includegraphics[scale=0.30]{img/esempio2.png}
+	\captionof{figure}{Utilizzo Template Method}
+\end{center}
+
+I metodi insertSuccess, insertFailure, updateSuccess, updateFailureBubbleDatabase possono essere ridefiniti derivando la classe BubbleDatabase.
+
+\begin{center}
+	\includegraphics[scale=0.35]{img/esempio3.jpg}
+	\captionof{figure}{Utilizzo Template Method}
+\end{center}
+
+I metodi bubbleName e bubbleButtonName possono essere ridefiniti derivando la classe AbsButton.
+
 
 \subsubsection{Proxy Pattern}
 Invece che chiamare direttamente i metodi di un oggetto li facciamo chiamare da un terzo attore che si occupa di invocare concretamente i metodi sull'oggetto e di restituirci i valori in caso di metodi con valori di ritorno. 
