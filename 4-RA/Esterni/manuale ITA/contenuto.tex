@@ -51,10 +51,11 @@ Per installare Monolith SDK su Rocket.chat è necessario eseguire i seguenti pas
   meteor add templating blaze-html-templates 
 		react-meteor-data maxharris9:classnames
 		react-template-helper	
-  meteor npm i react react-dom bluebird simpl-schema 
+  meteor npm i react react-dom bluebird simple-schema 
   		react-addons-pure-render-mixin money 
   		request request-promise  --save
   # copiare monolith-sdk all'interno di Rocket.chat/packages
+  # eseguire nella directory principale di Rocket.chat:
   meteor add monolith-sdk
   meteor
 \end{lstlisting}
@@ -83,7 +84,7 @@ meteor add monolith-demo
 \end{lstlisting}
 
 
-\section{Utilizzo dell'SDK per la creazione di una bolla}
+\section[Come creare una bolla]{Utilizzo dell'SDK per la creazione di una bolla}
 
 \subsection{La bolla vuota come punto di partenza}
 Viene fornito monolith-emptybubble come punto di partenza per lo sviluppo di una nuova bolla. La prima cosa da fare è scegliere un nome per la bolla. Da adesso sarà usato <yourbubble> per indicare il nuovo progetto. Dopo aver scaricato la directory modificare i file come segue:
@@ -108,115 +109,133 @@ Viene fornito monolith-emptybubble come punto di partenza per lo sviluppo di una
 
 \subsection{Componenti grafici essenziali}
 Questi sono i componenti essenziali che devono essere realizzati. \'E possibile semplificare il lavoro utilizzando i componenti grafici forniti con l'SDK.
+
 \subsubsection{emptyBubble.jsx}
+\'E possibile realizzare due versioni di questo componente, per il mittente e per il ricevente, oppure usarne una come nell'esempio. Basta modificare <yourbubble>Creator.js.
+
+Deve essere realizzato un componente React che dovrà ricevere nelle props tutti i dati della bolla per la persistenza. Se è necessario, è possibile modificare lo stato della bolla sul server utilizzando <yourbubble>Db.
 
 \subsubsection{emptyBubbleConfig.jsx}
+Deve essere realizzato un componente React che dovrà ricevere nelle props una funzione \emph{closeMenu}. Utilizzare la funzione per chiudere il menu quando la configurazione della bolla è terminata, come nell'esempio:
+
+\begin{lstlisting}
+send(){
+	let insProm = <yourbubble>Db.insert({...});
+	insProm.then(
+		(result) => {this.props.closeMenu();},
+		(error) => {console.log(error);}
+	);
+}
+\end{lstlisting}
+
+L'esempio usa la sintassi delle promise. Se l'operazione viene eseguita il menu si chiude. 
+
+Per inserire la bolla nel database lato server bisogna usare <yourbubble>Db.
+
 \subsubsection{emptyBubbleCreationButton.jsx}
+Questo componente rappresenta il pulsante nel menu per cominciare la configurazione di <yourbubble>. Per un utilizzo di base basta semplicemente inserire <yourbubble> nel file dato.
+
+Se sono necessari due pulsanti (come in monolith-demo) è possibile ridefinire il metodo \emph{secondAreaName}. Bisogna anche passare come props \emph{secondButtonName}. Si noti che sarà necessario un secondo configmenu e un creator
+rinominati di conseguenza.
 
 \subsection{Descrizione dello schema dei dati}
+In <yourbubble>Check.js è necessario definire uno schema per validare i dati da inserire nel database. Definire lo schema usando la sintassi SimpleSchema: \url{https://www.npmjs.com/package/simpl-schema}
 
 \subsection{Configurazione del database e possibili usi}
 
-\subsection{Funzionalità non di base}
+In <yourbubble>Db.js basta semplicemente inserire il nome corretto per la propria bolla. In <yourbubble>Methods.js è possibile inserire i metodi Meteor da chiamare per l'inserimento o la modifica della bolla:
 
+\subsubsection{Metodi per l'inserimento}
+\emph{L'uso è opzionale}. 
+\begin{lstlisting}
+newDataObj method(dataObj);
+\end{lstlisting}
+
+Viene modificato l'oggetto dei dati inviato dal client prima di essere controllato. Si noti che l'oggetto modificato deve essere restituito. \'E possibile chiamare il metodo inserendo il nome del metodo come argomento di <yourbubble>Db.
+
+\subsubsection{Metodi per la modifica}
+\emph{L'uso è obbligatorio}. 
+\begin{lstlisting}
+boolean method(bubbleId, argument);
+\end{lstlisting}
+
+In questo metodo è necessario inserire tutte le operazioni di modifica del database per <yourbubble>. Deve restituire true in caso di successo, false in caso di fallimento. \'E possibile chiamare il metodo  inserendo
+il nome del metodo come argomento di <yourbubble>Db.
 
 \section{Descrizione delle classi utilizzabili}
-\subsection{Layout}
-\subsubsection{VerticalLayout}
-Layout verticale che conterrà i componenti della bolla e li posizionerà ognuno sotto al proprio precedente. La props \textit{hide} permette di nascondere la vista del layout (tramite valori \textit{true/false}).
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
-<VerticalLayout hide={}>
-<Children/>
-<Children/>
-.
-.
-.
-</VerticalLayout>
-\end{lstlisting}
-\end{center}
+Questa sezione spiega come utilizzare le classi della libreria Monolith.
 
-
-\subsubsection{HorizontalalLayout}
-Layout orizzontale che conterrà i componenti della bolla e li posizionerà ognuno di fianco al proprio precedente. La props \textit{hide} permette di nascondere la vista del layout (tramite valori \textit{true/false}).
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
-<HorizontalLayout hide={}>
-<Children/>
-<Children/>
-.
-.
-.
-</HorizontalLayout>
-\end{lstlisting}
-\end{center}
-
-\subsection{Components}
-
+\subsection{SingleComponents}
+Le classi SingleComponents rappresentano i componenti che possono essere renderizzati.
+\begin{flushleft}
 \subsubsection{CheckButton}
-
-Componente Checkbox, i suoi dati vengono ritornati (ad ogni click) tramite la funzione getCheck.
-\begin{center}
-	\underline{\textit{Utilizzo}}
-	\begin{lstlisting}
-	<CheckButton
-	id= ""
-	classes= // CSS classes
-	getCheck={this.fun}
-	value="" // Valore CheckButton
-	/>
-	\end{lstlisting}
-	\underline{\textit{Funzione di ritorno}}
-	\begin{lstlisting}
-	function fun(m) {...}
+CheckButton rappresenta il tag HTML <checkbox>.
+\begin{verbatim}
+<CheckButton
+	id="HTML id"
+	classes="CSS classes"
+	getCheck={this.functionName}
+	value="checkbox value"
+/>
+\end{verbatim}
 	
-	m={id:'', value:'', check:''};
-	\end{lstlisting}
-\end{center}
+getCheck è una props associata a una funzione che viene chiamata quando l'evento onChange della checkbox è chiamato e passa alla funzione una variabile contenente lo stato del checkbox.
+
+\begin{verbatim}
+functionName(m){...}
+
+m={id:"id", value:"value", check:[true/false]};
+\end{verbatim}
+
 
 \subsubsection{CheckBoxList}
-Una lista di Checkbox, i dati del CheckButton cliccato vengono ritornati tramite la funzione getCheck.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
+CheckBoxList rappresenta un gruppo di CheckButton. 
+CheckBoxList ha bisogno di ricevere un array come questo: 
+\begin{verbatim}
+let opt=[{id: 1, value: 'Hello World'},{id: 2, value: 'Installation'}];
 
 <CheckBoxList
-classes= // CSS classes
-options={opt}
-getCheck={this.fun}
+	classes="CSS classes"
+	options={opt}
+	getCheck={this.functionName}
 />
-\end{lstlisting}
-\underline{\textit{Esempio opzioni}}
-\begin{lstlisting}
-var opt=[{id: 1, value: 'Hello World'},{id: 2, value: 'value'}];
-\end{lstlisting}
-\underline{\textit{Funzione di ritorno}}
-\begin{lstlisting}
-function fun(m) {...}
+\end{verbatim}
+getCheck come CheckButton getCheck.
+\begin{verbatim}
+functionName(m){...}
 
-m={id:'', value:'', check:''};
-\end{lstlisting}
+m={id:"id", value:"value", check:[true/false]};
+\end{verbatim}
+
+\begin{center}
+
 \underline{\textit{Esempio:}}
 \\
 \includegraphics[scale=0.53]{img/checkbox.png}
 \\
 \end{center}
 
-
 \subsubsection{ComboBox}
-Semplice elemento ComboBox. La funzione di ritorno riceve l'elemento selezionato.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
+ComboBox rappresenta il tag HTML <select>.
+\begin{verbatim}
 <ComboBox
-id= ""
-classes= // CSS classes
-options={["a","b","c"]} //array of options
-getSelection={this.fun}
+	id="HTML id"
+	classes="CSS classes"
+	options={["a","b","c"]}
+	getSelection={this.functionName}
 />
-\end{lstlisting}
+\end{verbatim}
+
+getSelection è una props associata a una funzione che viene chiamata quando l'evento onChange della select è chiamato e passa alla funzione una variabile contenente l'opzione selezionata.
+
+\begin{verbatim}
+functionName(m){...}
+
+m="selected option";
+\end{verbatim}
+
+\begin{center}
+
 \underline{\textit{Esempio:}}
 \\
 \includegraphics[scale=0.9]{img/combobox.png}
@@ -224,50 +243,61 @@ getSelection={this.fun}
 \end{center}
 
 \subsubsection{Image}
-Semplice elemento Immagine senza funzione di ritorno.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
-<Image
-id= ""
-classes= // CSS classes
-src= // like HTML "src" attribute
-alt=  // like HTML "alt" attribute
-width=  // like HTML "width" attribute
-height=  // like HTML "height" attribute
-/>
-\end{lstlisting}
-\end{center}
-\newpage
-\subsubsection{ImageButton}
-Elemento Immagine cliccabile come pulsante. La funzione di ritorno viene avviata quando l'immagine viene cliccata.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
-<ImageButton
-id= ""
-src= // like HTML "src" attribute
-alt=  // like HTML "alt" attribute
-width=  // like HTML "width" attribute
-height=  // like HTML "height" attribute
-handleClick={this.fun}
-/>
-\end{lstlisting}
-\end{center}
+Image rappresenta il tag HTML <img>.
 
+\begin{verbatim}
+<Image
+	id="HTML id"
+	classes="CSS classes"
+	src="img source location"
+	alt="image description"
+	width="image width"
+	height="image height"
+/>
+\end{verbatim}
+
+\subsubsection{ImageButton}
+ImageButton rappresenta un'immagine cliccabile come se fosse un pulsante.
+\begin{verbatim}
+<ImageButton
+	id="HTML id"
+	src="img source location"
+	alt="image description"
+	width="image width"
+	height="image height"
+	handleClick={this.functionName}
+/>
+\end{verbatim}
+
+handleClick è una props associata a una funzione che viene chiamata quando l'ImageButton viene cliccato.
+
+\begin{verbatim}
+functionName(id){...}
+id="id of the clicked button"
+\end{verbatim}
 
 \subsubsection{LineEdit}
-Casella di testo editabile. La funzione "fun" salva il testo digitato e viene chiamata ad ogni modifica.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
+LineEdit rappresenta il tag HTML di testo <input>.
+
+\begin{verbatim}
 <LineEdit
-id= ""
-classes= // CSS classes
-updateState={this.fun}
-value="default value"
+	id="HTML id"
+	classes="CSS classes"
+	updateState={this.functionName}
+	value="default value"
 />
-\end{lstlisting}
+\end{verbatim}
+
+updateState è una props associata a una funzione che viene chiamata quando l'evento onChange del text input è chiamato.
+
+\begin{verbatim}
+updateState(text,id){...}
+
+text="text of the text input"
+id="id of the text input"
+\end{verbatim}
+
+\begin{center}
 \underline{\textit{Esempio:}}
 \\
 \includegraphics[scale=1]{img/lineedit.png}
@@ -275,73 +305,101 @@ value="default value"
 \end{center}
 
 \subsubsection{LineEditComboBox}
-Elemento formato da una casella di testo editabile e una ComboBox.\\
-La funzione "fun1" riceve il testo dalla LineEdit mentre "fun2" l'opzione selezionata dal ComboBox.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
+LineEditComboBox rappresenta il tag HTML di testo <input> e il tag HTML <select>.
+\begin{verbatim}
 <LineEditComboBox
-idle= // lineEdit id
-idcb= // comboBox id
-classesle= // lineEdit CSS classes
-classescb= // comboBox CSS classes
-textUpdate={this.fun1}
-options={["a","b","c"]} //array of option
-comboUpdate={this.fun2}
+	idle="LineEdit HTML id"
+	idcb="ComboBox  HTML id"
+	classesle="LineEdit CSS classes"
+	classescb="ComboBox CSS classes"
+	textUpdate={this.functionName1}
+	options={["a","b","c"]}
+	comboUpdate={this.functionName2}
 />
-\end{lstlisting}
+\end{verbatim}
+
+textUpdate è una props associata a una funzione che viene passata al LineEdit.
+comboUpdate è una props associata a una funzione che viene passata al ComboBox
+
+\begin{verbatim}
+functionName1(text,id){...}
+
+text="text of the text input"
+id="id of the text input"
+
+functionName2(m){...}
+
+m="selected option";
+\end{verbatim}
+
+\subsubsection{PushButton}
+PushButton rappresenta il tag HTML <button>.
+\begin{verbatim}
+<PushButton
+id="HTML id"
+classes="CSS classes"
+handleClick={this.functionName}
+buttonName="button name"
+/>
+\end{verbatim}
+handleClick è una props associata a una funzione che viene chiamata quando il pulsante viene cliccato.
+\begin{verbatim}
+functionName(id){...}
+
+id="id of the button"
+\end{verbatim}
+
+
+\begin{center}
+	\underline{\textit{Esempio:}}
+	\\
+	\includegraphics[scale=0.25]{img/pushB.png}
+	\\
 \end{center}
 
 \subsubsection{LineEditPushButton}
-Elemento formato da una casella di testo editabile e un pulsante cliccabile.\\
-La funzione "fun" riceve il testo dalla LineEdit quando il PushButton viene cliccato.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
+LineEditPushButton rappresenta un LineEdit e un PushButton.
+\begin{verbatim}
 <LineEditPushButton
-idle= // lineEdit id
-idpb= // pushButton id
-classesle= // lineEdit CSS classes
-classespb= // pushButton CSS classes
-getText={this.fun}
-buttonName="button name"
+	idle="LineEdit HTML id"
+	idpb="PushButton HTML id"
+	classesle="LineEdit CSS classes"
+	classespb="PushButton CSS classes"
+	getText={this.functionName}
+	buttonName="button name"
 />
-\end{lstlisting}
+\end{verbatim}
+getText è una props associata a una funzione che viene chiamata quando il PushButton viene cliccato e passa alla funzione una variabile contenente il testo del LineEdit.
+\begin{verbatim}
+functionName(text){...}
+
+text="text of the LineEdit"
+\end{verbatim}
+
+\begin{center}
 \underline{\textit{Esempio:}}
 \\
 \includegraphics[scale=0.75]{img/LEPush.png}
 \\
 \end{center}
 
-\subsubsection{PushButton}
-Pulsante cliccabile. La funzione "fun" viene eseguita al click sul pulsante.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
-<PushButton
-id= ""
-classes= // CSS classes
-handleClick={this.fun}
-buttonName="button name"
-/>
-\end{lstlisting}
-\underline{\textit{Esempio:}}
-\\
-\includegraphics[scale=0.25]{img/pushB.png}
-\\
-\end{center}
-\newpage
 \subsubsection{RadioButtonGroup}
-Elemento formato da un gruppo di RadioButton. La funzione "fun" restituisce l'opzione selezionata ad ogni cambiamento.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
+RadioButtonGroup rappresenta un gruppo di tag HTML radio button <input>.
+\begin{verbatim}
 <RadioButtonGroup
-classes= // CSS classes
-options={["a","b","c"]} //array of options
-getValue={this.fun}
+	classes="CSS classes"
+	options={["a","b","c"]}
+	getValue={this.functionName}
 />
-\end{lstlisting}
+\end{verbatim}
+getValue è una props associata a una funzione che viene chiamata quando un radio button viene cliccato e passa alla funzione una variabile contenente l'informazione sul radio button selezionato.
+\begin{verbatim}
+functionName(value){...}
+
+value="value of the selected radio button"
+\end{verbatim}
+
+\begin{center}
 \underline{\textit{Esempio:}}
 \\
 \includegraphics[scale=0.6]{img/radiob.png}
@@ -349,22 +407,28 @@ getValue={this.fun}
 \end{center}
 
 \subsubsection{TextAreaButton}
-Elemento area di testo editabile ed un PushButton.\\
-La funzione "fun" riceve il testo dalla TextArea quando il PushButton viene cliccato.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
+
+TextAreaButton rappresenta il tag HTML <textarea> e un PushButton.
+\begin{verbatim}
 <TextAreaButton
-idta= // textArea id
-classesta= // textArea CSS classes
-idpb= // PushButton id
-classespb= // CSS classes
-getText={this.fun}
-width= // textarea width
-height= // textarea height
-buttonName= // button name
+	idta="textArea HTML id"
+	classesta="textArea CSS classes"
+	idpb="PushButton HTML id"
+	classespb="PushButton CSS classes"
+	getText={this.functionName}
+	width="textarea width"
+	height="textarea height"
+	buttonName="button name"
 />
-\end{lstlisting}
+\end{verbatim}
+getText è una props associata a una funzione che viene chiamata quando il PushButton viene cliccato e passa alla funzione una variabile contenente il testo della textarea.
+\begin{verbatim}
+functionName(text){...}
+
+text="text of the textarea"
+\end{verbatim}
+
+\begin{center}
 \underline{\textit{Esempio:}}
 \\
 \includegraphics[scale=0.5]{img/textB.png}
@@ -372,27 +436,65 @@ buttonName= // button name
 \end{center}
 
 \subsubsection{TextAreaComboBox}
-Elemento area di testo editabile ed un ComboBox.\\
-La funzione "fun1" riceve il testo dalla TextArea mentre "fun2" l'opzione selezionata dal ComboBox.
-\begin{center}
-\underline{\textit{Utilizzo}}
-\begin{lstlisting}
+TextAreaComboBox rappresenta il tag HTML <textarea> e un ComboBox.
+\begin{verbatim}
 <TextAreaComboBox
-idtx= //textArea id
-classestx= // textArea CSS classes
-idcb= //combobox id
-classescb= // combobox CSS classes
-width= // textarea width
-height= // textarea height
-textUpdate={this.fun1}
-options={["a","b","c"]} // array of options
-comboUpdate={this.fun2}
+	idtx="textArea HTML id"
+	classestx="textArea CSS classes"
+	idcb="combobox HTML id"
+	classescb="combobox CSS classes"
+	width="textarea width"
+	height="textarea height"
+	textUpdate={this.functionName1}
+	options={["a","b","c"]}
+	comboUpdate={this.functionName2}
 />
-\end{lstlisting}
-\end{center}
+\end{verbatim}
+textUpdate è una props associata a una funzione che viene chiamata quando l'evento onChange della textarea è chiamato.\\
+comboUpdate è una props associata a una funzione che viene chiamata quando l'evento onChange della select  è chiamato e passa alla funzione una variabile contenente l'opzione selezionata.
+\begin{verbatim}
+functionName1(text){...}
+
+text="text of the textarea"
+
+functionName2(m){...}
+
+m="selected option";
+\end{verbatim}
+\end{flushleft}
+
+\subsection{Layout}
+Layout sono classi che rappresentano contenitori che posizionano gli elementi contenuti in un certo modo.
+\begin{flushleft}
+\subsubsection{VerticalLayout}
+VerticalLayout rappresenta un contenitore che posiziona gli elementi contenuti uno sotto l'altro. La props \textit{hide} permette di nascondere la vista del layout (tramite valori \textit{true/false}).
+\begin{verbatim}
+	<VerticalLayout hide={}>
+	<Children/>
+	<Children/>
+	.
+	.
+	.
+	</VerticalLayout>
+\end{verbatim}
+
+
+\subsubsection{HorizontalalLayout}
+HorizontalLayout rappresenta un contenitore che posiziona gli elementi contenuti uno accanto all'altro. La props \textit{hide} permette di nascondere la vista del layout (tramite valori \textit{true/false}).
+
+\begin{verbatim}
+	<HorizontalLayout hide={}>
+	<Children/>
+	<Children/>
+	.
+	.
+	.
+	</HorizontalLayout>
+\end{verbatim}
+\end{flushleft}
 
 \section{Utilizzo delle bolle}
-Vengono fornite alcune bolle tipo le quali vengono create tramite il menù presente nella SideArea1.\\
+Vengono fornite alcune bolle tipo che possono essere create tramite il menù apposito presente nella tabbar laterale di Rochet.chat.\\
 
 \includegraphics[scale=0.75]{img/menu.png}
 \newpage
@@ -408,7 +510,7 @@ Una volta inviata cliccando su \textbf{Send} il risultato sarà:\\
 \newpage
 \subsection{PollBubble}
 La \textit{PollBubble} è una bolla che permette di creare un sondaggio da lanciare ai membri della chat in questione.\\
-Una volta arrivati al menù di configurazione si impostano la domanda e le varie opzioni (che si possono aggiungere con il pulsante \textbf{Add}).
+Utilizzando il menù di configurazione è possibile impostare la domanda e le varie opzioni (che si possono aggiungere con il pulsante \textbf{Add}).
 \\
 
 \includegraphics[scale=0.75]{img/pollConfig.png}
@@ -417,9 +519,9 @@ Una volta inviata cliccando su \textbf{Send} il risultato sarà:\\
 
 \includegraphics[scale=0.74]{img/poll.png}
 \\
-Ora che la bolla è stata creata sarà possibile votare cliccando sull'opzione desiderata.
-\subsection{DiceBubble}
-La \textit{DiceBubble} è una bolla che lancia un certo tipo di dado (a scelta in base al numero di facce) e ne ritorna un risultato casuale.\\
+Dopo che la bolla è stata inviata sarà possibile votare cliccando sull'opzione desiderata. \'E possibile esprimere il voto una volta sola.
+\subsection{RandomBubble}
+La \textit{RandomBubble} è una bolla che lancia un certo tipo di dado (a scelta in base al numero di facce) e ne ritorna un risultato casuale.\\
 Dal menù di configurazione bisognerà scegliere il numero di facce del dado.\\
 
 \includegraphics[scale=0.75]{img/randConfig.png}
@@ -437,7 +539,7 @@ Attraverso il pulsante \textbf{Re-roll} si potrà rilanciare il dado.
 \subsection{Checklist}
 
 \begin{flushleft}
-Le Checklist sono delle liste di elementi che possono essere selezionate e inserite i altre liste.
+Le Checklist sono delle liste di elementi che possono essere selezionati e inseriti in altre liste.
 Per creare una nuova checklist selezionare il pulsante \textbf{Set Checklist}.\\
 \begin{center}
 \includegraphics[scale=0.75]{img/menu.png}
@@ -448,28 +550,28 @@ Una volta selezionato il pulsante \textbf{Set Checklist} dal menù di creazione 
 \includegraphics[scale=0.75]{img/checklist_conf.png}
 \end{center}
 
-Nel menù di configurazione bisogna inserire il nome della checklist e una o più opzioni.
-Per aggiungere una opzione bisogna selezionare il pulsante \textbf{Add}.
+Nel menù di configurazione bisogna inserire il nome della checklist e uno o più elementi.
+Per aggiungere un' opzione bisogna selezionare il pulsante \textbf{Add}.
 
 Una volta completata la compilazione premendo il pulsante \textbf{Send} la checklist verrà inviata al server e sarà disponibile nella creazione delle liste.
 \end{flushleft}
 
 \subsection{Lista}
 \begin{flushleft}
-La \textit{Lista} è una bolla che permette di creare una lista nella quale è possibile aggiungere degli elementi dalle checklist precedentemente definite.
+La \textit{Lista} è una bolla che permette di creare una lista nella quale è possibile aggiungere degli elementi prelevandoli dalle checklist precedentemente definite o inserendoli manualmente.
 
-Per crare una nuova lista selezionare il pulsante \textbf{Lista} dal menù di creazione delle bolle.\\
+Per creare una nuova lista selezionare il pulsante \textbf{ListBubble} dal menù di creazione delle bolle.\\
 \begin{center}
 \includegraphics[scale=0.75]{img/menu.png}
 \end{center}
 \newpage
-Una volta selezionato il pulsante \textbf{Lista} si aprirà il menù di configurazione della lista.\\
+Una volta selezionato il pulsante \textbf{ListBubble} si aprirà il menù di configurazione della lista.\\
 \begin{center}
 \includegraphics[scale=0.75]{img/list_conf.png}
 \end{center}
 
 Nel menù di configurazione bisogna inserire il nome della lista e una o più opzioni.
-Per aggiungere una opzione bisogna selezionare il pulsante \textbf{Add} oppure si può selezionare degli elementi da inserire nella lista delle checklist.
+Per aggiungere una opzione bisogna selezionare il pulsante \textbf{Add} oppure si possono prelevare gli elementi dalla lista delle checklist.
 Per aprire il menù di selezione delle checklist bisogna premere il pulsante \textbf{Checklists} nel menù di configurazione della lista.\\
 \begin{center}
 \includegraphics[scale=0.75]{img/list_checklist1.png}
@@ -478,9 +580,89 @@ Per aprire il menù di selezione delle checklist bisogna premere il pulsante \te
 Premendolo nuovamente il menù delle checklist verrà chiuso.
 Una volta selezionate le checklist bisogna premere il pulsante \textbf{Add checklist} per aggiungerle alla lista.\\
 \begin{center}
-\includegraphics[scale=0.75]{img/list_checklist2.png}
+\includegraphics[scale=0.65]{img/list_checklist2.png}
 \end{center}
 
 Una volta completata la compilazione premendo il pulsante \textbf{Send} la lista verrà inviata al server e sarà visualizza nell'area contenente le bolle inviate.
 
+\begin{center}
+	\includegraphics[scale=0.70]{img/list_checklist.png}
+\end{center}
+
+\'E possibile spuntare gli elementi della lista.
+
 \end{flushleft}
+
+\newpage
+
+\appendix
+\setcounter{secnumdepth}{0}
+\section{Glossario}
+
+\subsection*{B}
+\begin{itemize}
+\item 
+\textbf{Bolla}: messaggio che può essere inviato all'interno della chat. Aggiunge alle funzionalità base della chat, nuove funzionalità che sono accessibili direttamente dalla conversazione senza il bisogno di ricorrere all'apertura di applicazioni diverse.
+\item
+\textbf{Bug}: Il termine inglese bug, in italiano baco, identifica in informatica un errore nella scrittura del codice sorgente di un programma software. Meno comunemente, il termine bug può indicare un difetto di progettazione in un componente hardware, che ne causa un comportamento imprevisto o comunque diverso da quello specificato dal produttore.
+\end{itemize}
+\newpage
+
+\subsection*{D}
+\begin{itemize}
+\item
+\textbf{Demo}: il demo (abbreviazione dell'inglese demonstration, che significa prova, dimostrazione) è un campione dimostrativo della produzione di musicisti, scrittori, programmatori e autori in genere. \'E prodotto e distribuito dallo stesso autore o da suoi produttori/agenti, solitamente in maniera gratuita, allo scopo di promuovere l'autore presso enti in grado di operare una distribuzione/produzione di più ampio raggio (case editrici, case discografiche, aziende produttrici e così via).
+\end{itemize}
+\newpage
+
+\subsection*{G}
+\begin{itemize}
+	\item
+    \textbf{Git}: è un software di controllo versione distribuito utilizzabile da interfaccia a riga di comando, creato da Linus Torvalds nel 2005.
+	\item
+	\textbf{Github}: è un servizio di hosting per progetti software. Il nome deriva dal fatto che GitHub è un servizio sostitutivo del software dell'omonimo strumento di controllo versione distribuito, Git.
+\end{itemize}
+\newpage
+
+\subsection*{M}
+\begin{itemize}
+	\item
+	\textbf{Meteor}: Meteor, or MeteorJS, is a free and open-source JavaScript web framework written using Node.js. Meteor allows for rapid prototyping and produces cross-platform (Android, iOS, Web) code. It integrates with MongoDB and uses the Distributed Data Protocol and a publish-subscribe pattern to automatically propagate data changes to clients without requiring the developer to write any synchronization code. On the client, Meteor depends on jQuery and can be used with any JavaScript UI widget library.
+	\item
+	\textbf{Monolith}: Monolith is an open source Rocket.chat library developed by NPE Developers which helps Meteor developers to build interactive bubbles.
+\end{itemize}
+\newpage
+
+\subsection*{R}
+\begin{itemize}
+	\item
+    \textbf{React}: è una libreria Javascript open source che permette di costruire interfacce utente.
+    \item
+    \textbf{Repository}: un repository (letteralmente deposito o ripostiglio) è un ambiente di un sistema informativo (ad es. di tipo ERP), in cui vengono gestiti i metadati.
+	\item
+	\textbf{Rocket.Chat}: web chat open source. Sistema che permette agli utenti di comunicare in tempo reale utilizzando interfacce web facilmente accessibili.
+\end{itemize}
+\newpage
+
+\subsection*{S}
+\begin{itemize}
+	\item
+	\textbf{SDK}: software development kit (SDK, traducibile in italiano come "pacchetto di sviluppo per applicazioni"), in informatica, indica genericamente un insieme di strumenti per lo sviluppo e la documentazione di software. Nel contesto del progetto indica tutto Monolith a parte le bolle d'esempio e la Demo.
+	\item
+    \textbf{sidearea}: per sidearea si intende una delle due aree che Monolith crea in Rocket.Chat alla pressione dei pulsanti nella tabbar. Si tratta di una parte dello schermo sulla destra che diventa fullscreen in visualizzazione mobile.
+\end{itemize}
+\newpage
+
+\subsection*{T}
+\begin{itemize}
+\item
+\textbf{tabbar}: in Rocket.Chat è la parte della finestra di chat più a destra su cui si trovano alcuni pulsanti. \'E qui che Monolith aggiunge i suoi pulsanti.
+\end{itemize}
+\newpage
+
+\subsection*{W}
+\begin{itemize}
+\item
+\textbf{Webapp}: in informatica l'espressione applicazione web, ovvero web-application in inglese, indica genericamente tutte le applicazioni distribuite web-based. Nell'ingegneria del software e nella programmazione Web essa indica infatti un'applicazione accessibile/fruibile via web per mezzo di un network, come ad esempio una Intranet all'interno di un sistema informatico o attraverso la Rete Internet, ovvero in una architettura tipica di tipo client-server, che offre determinati servizi all'utente client
+\end{itemize}
+\newpage
