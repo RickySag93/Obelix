@@ -1,11 +1,8 @@
 \frametitle{Bubble Menu}
-%[caption=My Javascript Example]
-	\begin{center}
-	\includegraphics[width=.5\textwidth]{code/hellobubbleconfig.png}
-	\vfill
-	{
-	\vfill
-	\includegraphics[width=.3\textwidth]{code/config.png}
-	\vfill
-	}
-	\end{center}
+  %[caption=My Javascript Example]
+  \begin{minipage}{.65\textwidth}
+      \includegraphics[width=\textwidth]{code/hellobubbleconfig.png}
+  \end{minipage}
+  \begin{minipage}{.34\textwidth}
+      \includegraphics[width=\textwidth]{code/config.png}
+  \end{minipage}
