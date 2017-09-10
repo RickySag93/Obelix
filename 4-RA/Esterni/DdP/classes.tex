@@ -492,26 +492,7 @@ Come l'omonimo attributo HTML
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per rappresentare un immagine all'interno di una bolla.
-Image può avere le seguenti props:
-\begin{itemize}
-\item classes:
-\\
-Stile CSS per il componente.
-\item id:
-\\
-Un Id per il componente React.
-\item src: 
-\\
-Come per tag HTML "img".
-\item alt: 
-\\
-Come per tag HTML "img".
-\item width: \\
-Come per tag HTML "img".
-\item height: \\
-Come per tag HTML "img".
-\end{itemize} 
+Viene utilizzato per rappresentare un immagine all'interno di una bolla. 
 
 
 \clearpage
@@ -606,8 +587,7 @@ Come l'omonimo attributo HTML
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per costruire eventuali interfacce grafiche delle bolle. \\
-Si aspetta una props "id" per distinguere il componente. 
+Viene utilizzato per costruire eventuali interfacce grafiche delle bolle. \\ 
 
 
 \clearpage
@@ -771,7 +751,7 @@ Funzione da eseguire alla pressione del pulsante
 
 
 \textbf{Applicazioni}\\
-Componente React che rappresenta un'immagine cliccabile.\\ Richiede le stesse props del componente "Image" con l'aggiunta di "handleClick" che comunica al "padre" l'id del componente cliccato. 
+Componente React che rappresenta un'immagine cliccabile.\\ 
 
 
 \clearpage
@@ -943,8 +923,7 @@ Funzione che riporta la modifica dello stato del LineEdit
 
 
 \textbf{Applicazioni}\\
-Componente React che unisce LineEdit e ComboBox.\\
-Accetta le props per la costruzione dei due componenti interni e ne ritorna i risultati al "padre" tramite le props "textUpdate" e "comboUpdate". 
+Componente React che unisce LineEdit e ComboBox.\\ 
 
 
 \clearpage
@@ -1059,8 +1038,7 @@ Funzione che restituisce il valore selezionato nel ComboBox
 
 
 \textbf{Applicazioni}\\
-Componente React che può essere utilizzato per la costruzione delle interfacce di alcune bolle.
-\\ Vengono richieste anche le props per la costruzione dei degli elementi che formano il componente. 
+Componente React che può essere utilizzato per la costruzione delle interfacce di alcune bolle. 
 
 
 \clearpage
@@ -1122,24 +1100,7 @@ Funzione che riporta il cambiamento di stato del LineEdit
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per costruire alcune interfacce grafiche delle bolle.
-Oltre alle props dei due componenti React, il componente si aspetta le seguenti props:
-\begin{itemize}
-
-\item classesle:
-\\
-Stile CSS per il LineEdit.
-\item classespb:
-\\ 
-Stile CSS per il PushButton.
-
-\item idle:
-\\
-ID per il LineEdit.
-\item idpb: 
-\\
-ID per il PushButton.
-\end{itemize} 
+Viene utilizzato per costruire alcune interfacce grafiche delle bolle. 
 
 
 \clearpage
@@ -1351,25 +1312,7 @@ Numero che rappresenta l'importo in uscita
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per rappresentare graficamente la bolla di conversione valuta.
-Il componente CurrencyBubble si aspetta in entrata le props contenetenti i dati di conversione: \\
-\begin{itemize}
-\item \textit{curr\_in}:
-\\
-Valore della valuta base.
-
-\item \textit{curr\_out}:
-\\
-Valore della valuta d'uscita.
-
-\item \textit{value\_in}:
-\\
-Valore di conversione iniziale.
-
-\item \textit{value\_out}:
-\\
-Valore finale di conversione.
-\end{itemize} 
+Viene utilizzata per rappresentare graficamente la bolla di conversione valuta. 
 
 
 \clearpage
@@ -1459,7 +1402,7 @@ Funzione che permette al componente di cancellarsi. Viene utilizzato in caso di 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per rappresentare il menù di configurazione della bolla di conversione valuta. Il componente React si aspetta, nella props "send", una funzioni che raccolga un oggetto contenente i dati della bolla. 
+Viene utilizzato per rappresentare il menù di configurazione della bolla di conversione valuta. 
 
 
 \clearpage
@@ -1497,9 +1440,7 @@ Non sono presenti props utilizzate direttamente. Vedere la superclasse AbsButton
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per rappresentare il pulsante per la creazione di una bolla di conversione valuta.
-
-Nella props "onClick" verrà ritornato il nome identificativo della bolla. 
+Viene utilizzato per rappresentare il pulsante per la creazione di una bolla di conversione valuta. 
 
 
 \clearpage
@@ -2005,22 +1946,7 @@ Array degli id degli utenti che hanno votato
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per rappresentare graficamente la bolla Sondaggio.
-Il componente PollBubble si aspetta in entrata i seguenti dati: \\
-\begin{itemize}
-\item \textit{op}:
-\\
-Un array di opzioni.
-\item \textit{title}:
-\\
-Un titolo per il sondaggio.
-\item \textit{num}:
-\\
-Il numero delle opzioni.
-\item \textit{id}:
-\\
-Un ID per la bolla Sondaggio.
-\end{itemize} 
+Viene utilizzata per rappresentare graficamente la bolla Sondaggio. 
 
 
 \clearpage
@@ -2109,7 +2035,7 @@ Funzione che permette al componente di cancellarsi. Viene utilizzato in caso di 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per rappresentare il menù di configurazione della bolla Sondaggio. Il componente React si aspetta, nella props "send", una funzione che raccolga un oggetto contenente i dati della bolla. 
+Viene utilizzato per rappresentare il menù di configurazione della bolla Sondaggio. 
 
 
 \clearpage
@@ -2147,9 +2073,7 @@ Non sono presenti props utilizzate direttamente. Vedere la superclasse AbsButton
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per rappresentare il pulsante per la creazione di una bolla Sondaggio.
-
-Nella props "onClick" verrà ritornato il nome identificativo della bolla. 
+Viene utilizzato per rappresentare il pulsante per la creazione di una bolla Sondaggio. 
 
 
 \clearpage
@@ -2196,8 +2120,7 @@ Numero che rappresenta il valore casuale estratto
 
 
 \textbf{Applicazioni}\\
-Viene utilizzata per rappresentare graficamente la bolla Random.
-Il componente RandBubble si aspetta in entrata una props "nMax" che dovrà contenere il numero delle facce del dado. 
+Viene utilizzata per rappresentare graficamente la bolla Random. 
 
 
 \clearpage
@@ -2276,7 +2199,7 @@ Funzione che permette al componente di cancellarsi. Viene utilizzato in caso di 
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per rappresentare il menù di configurazione della bolla di lancio casuale di dadi. Il componente React si aspetta, nella props "send", una funzioni che raccolga un oggetto contenente i dati della bolla. 
+Viene utilizzato per rappresentare il menù di configurazione della bolla di lancio casuale di dadi. 
 
 
 \clearpage
@@ -2314,8 +2237,6 @@ Non sono presenti props utilizzate direttamente. Vedere la superclasse AbsButton
 
 
 \textbf{Applicazioni}\\
-Viene utilizzato per rappresentare il pulsante per la creazione di una bolla di lancio casuale di dadi.
-
-Nella props "onClick" verrà ritornato il nome identificativo della bolla. 
+Viene utilizzato per rappresentare il pulsante per la creazione di una bolla di lancio casuale di dadi. 
 
 
