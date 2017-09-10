@@ -549,20 +549,140 @@ pacchetto presente in \S 1.4.2
 		label: 'Value converted'
 }
 \end{lstlisting}
+Vengono memorizzati la valuta in ingresso e in uscita, così come il
+valore in ingresso e il valore, calcolato, in uscita.
 
-\subsubsection{Bolla Lista}
+
+\subsubsection{Bolla Lista - demo}
 \begin{lstlisting}
+{
+	title:{
+		label: 'Title of list',
+		type: String
+	},
+	ops:{
+		label: 'Elements of list',
+		type: Array
+	},
+	'ops.$': {
+		type: Object
+	},
+	'ops.$.item':{
+		type: String
+	},
+	'ops.$.check':{
+		type: Boolean
+	},
+	'ops.$.id':{
+		type: Number
+	}
+}
 \end{lstlisting}
+Vengono memorizzati il titolo della lista e un array di elementi. Per
+ciascun elemento che compone la lista è presente la stringa da
+mostrare, un indice necessario per la ricerca sul database e un
+booleano che rappresenta se quell'elemento della lista è stato
+spuntato o meno.
+
 
 \subsubsection{Bolla Poll}
 \begin{lstlisting}
+{
+	title: {
+		type: String,
+		label: 'Title of poll'
+	},
+	options: {
+		type: Array,
+		label: 'List of options with vote result',
+		minCount: 2
+	},
+	'options.$': {
+		type: Object
+	},
+	'options.$.id': {
+		type: Number
+	},
+	'options.$.val': {
+		type: String
+	},
+	'options.$.votes': {
+		type: Number
+	},
+	voted:{
+		type: Array
+	},
+	'voted.$': {
+		type: String
+	}
+}
 \end{lstlisting}
+Vengono memorizzati un titolo per il sondaggio, un array di opzioni e
+un array di votanti. Ciascuna opzione è composta da un identificativo,
+una stringa da visualizzare e il numero di prefenze accordate a tale
+opzione.
+Vengono memorizzati inoltre gli utenti che hanno già espresso un voto
+in tale sondaggio con lo scopo di impedire che si voti più di una volta.
 
 \subsubsection{Bolla Random}
 \begin{lstlisting}
+{
+	value:{
+		label: 'Value to be converted',
+		type: SimpleSchema.Integer
+	},
+	range:{
+		label: 'Max of random number',
+		type: SimpleSchema.Integer
+	}
+}
 \end{lstlisting}
 
+Vengono memorizzati due valori: il numero casuale estratto e il
+range in cui si può estrarre un eventuale nuovo numero.
+
 \subsection{Giustificazione dell'utilizzo di oggetti globali}
+
+Nell'architettura sono presenti due classi indicate come completamente
+statiche: \emph{CheckHandler} e \emph{BubbleDiscriminator}.
+In realtà l'utilizzo di metodi e attributi statici vuole rappresentare
+oggetti globali. In entrambi i casi la scelta di utilizzare oggetti
+invece che tipi da istanziare è motivata dalla necessità di avere una
+lista di stringhe (utilizzate come chiavi per accedere a oggetti)
+ che deve poter essere accessibile in scrittura anche
+da fuori il pacchetto principale. Inoltre è necessario garantire che
+tali liste siano inizializzate prima di altri componenti
+dell'applicazione.
+
+
+L'utilizzo di oggetti globali è considerato un antipattern ed è un
+segno di \emph{code smell}. Nonostante questo tale scelta è stata
+portata avanti perchè non si è visto altro modo di risolvere tali
+necessità.
+
+
+In un periodo avanzato ci si è resi conto che può essere possibile
+risolvere il difetto di design utilizzando il pattern \emph{dependency
+injection}. Tale pattern rende possibile demandare il controllo
+dell'ordine di caricamento a degli oggetti appositi.
+
+Sfortunatamente il progetto era progredito troppo perchè fosse
+possibile alterare l'architettura in tempo utile e perciò la modifica
+non è stata effettuata. In caso il software prodotto avesse una
+versione successiva questa correzione è da considerarsi prioritaria.
+
+I vantaggi che si prevede di ottenere da tali modifiche sono in primo
+luogo di mantenibilità: alcune parti del software prodotto sono più
+complesse di quanto potrebbero essere al solo scopo di garantire
+l'ordine di caricamento. In secondo luogo si prevede di semplificare
+l'utilizzo dell'sdk, rendendo non più necessari alcuni compiti che
+vengono al momento lasciati allo sviluppatore utente di Monolith.
+
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Standard di Progetto}
