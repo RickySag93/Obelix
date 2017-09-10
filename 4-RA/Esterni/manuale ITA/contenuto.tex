@@ -2,14 +2,125 @@
 \section{Introduzione}
 \subsection{Cos'è Monolith SDK?}
 Monolith SDK è un pacchetto \glossario{Meteor} che consente la creazione di bolle interattive in ambiente \glossario{Rocket.chat}.\\
-Lo Sviluppatore avrà la possibilità di usare i componenti della SDK per costruire le proprie bolle da integrare a quelle già esistenti sulla piattaforma di \glossario{Rocket.chat}.
+Lo sviluppatore avrà la possibilità di usare i componenti della SDK per costruire le proprie bolle da integrare a quelle già esistenti sulla piattaforma di \glossario{Rocket.chat}.
 \subsection{Scopo del documento}
-Questo documento rappresenta il manuale utente per l'applicazione Monolith SDK nel quale vengono descritte dettagliatamente tutte le caratteristiche dell'applicativo utilizzabili dall'utente.
-Il manuale sarà diviso in sezioni per essere maggiormente comprensibile e spiegherà le varie componenti che l'utente potrà utilizzare per costruire la propria bolla.
+Questo documento rappresenta il manuale utente per l'applicazione Monolith SDK nel quale vengono descritte dettagliatamente tutte le caratteristiche dell'applicativo utilizzabili dallo sviluppatore.
+Il manuale sarà diviso in sezioni per essere maggiormente comprensibile e spiegherà le varie feature che lo sviluppatore potrà utilizzare per costruire la propria bolla.
+\subsection{Organizzazione dei repository}
+Vengono forniti 4 repository:
+\begin{itemize}
+	\item \textbf{monolith-sdk} \\
+	Contiene il codice per l'SDK. Sono fornite le funzionalità di Monolith. Tutti gli altri pacchetti dipendono da questo. \\
+	\url{}
+	\item \textbf{monolith-hello} \\
+	Contiene il codice per l'esempio più semplice possibile su come usare l'SDK Monolith. \\
+	\url{}
+	\item \textbf{monolith-demo} \\
+	Contiene il codice per la demo ufficiale di Monolith. Rappresenta un caso d'uso più complesso rispetto a monolith-hello. Vedere la descrizione per maggiori dettagli. \\
+	\url{}
+	\item \textbf{monolith-emptybubble} \\
+	Contiene il codice per la bolla vuota. Contiene i file che si possono usare come base per costruire la propria bolla. Vedere la guida allo sviluppo per maggiori dettagli. \\
+	\url{}
+\end{itemize}
+
+\subsection{Comunicazione dei bug}
+Nel caso si riscontrino degli errori o dei problemi durante il normale utilizzo dell'applicazione si prega di comunicarlo al team di sviluppo aprendo un issue sul nostro repository Github:
+\url{https://github.com/ObelixSWE/monolith-sdk/issues} \\
+Il team si impegna a lavorare per migliorare l'applicazione e per risolvere qualunque bug venga segnalato.
+
+\section{Requisiti per l'installazione e l'utilizzo}
+\subsection{Installazione}
+Monolith è stato realizzato e testato su Meteor v1.5.1 e Rocket.chat v0.59. Non si garantisce il funzionamento per versioni precedenti.
+\subsection{Utilizzo}
+L'esecuzione lato client è supportata sui seguenti browsers:
+\begin{itemize}
+	\item Google Chrome v59+
+	\item Firefox v54+
+	\item Internet Explorer v11+
+	\item Safari v10+
+\end{itemize}
+Come per qualunque applicazione Meteor il browser deve avere JavaScript attivato.
+
+\section{Installazione}
+\subsection{Installazione dell'SDK}
+Per installare Monolith SDK su Rocket.chat è necessario eseguire i seguenti passi:
+\begin{lstlisting}
+  git clone https://github.com/RocketChat/Rocket.Chat.git
+  cd Rocket.Chat
+  meteor npm start # al termine chiudere meteor
+  meteor add templating blaze-html-templates 
+		react-meteor-data maxharris9:classnames
+		react-template-helper	
+  meteor npm i react react-dom bluebird simpl-schema 
+  		react-addons-pure-render-mixin money 
+  		request request-promise  --save
+  # copiare monolith-sdk all'interno di Rocket.chat/packages
+  meteor add monolith-sdk
+  meteor
+\end{lstlisting}
+
+\subsection{Installazione di monolith-hello}
+\textbf{Prerequisito}: monolith-sdk deve essere già installato come spiegato in \S 2.1. \\
+Per installare monolith-hello su Rocket.chat è necessario eseguire i seguenti passi: 
+
+\begin{lstlisting}
+# scaricare il contenuto del repository monolith-hello e 
+# inserire la directory all'interno di Rocket.chat/packages
+# eseguire nella directory principale di Rocket.chat:
+meteor add monolith-hello
+\end{lstlisting}
 
 
-\section{Utilizzo}
+\subsection{Installazione di monolith-demo}
+\textbf{Prerequisito}: monolith-sdk deve essere già installato come spiegato in \S 2.1. \\
+Per installare monolith-demo su Rocket.chat è necessario eseguire i seguenti passi: 
 
+\begin{lstlisting}
+# scaricare il contenuto del repository monolith-demo e 
+# inserire la directory all'interno di Rocket.chat/packages
+# eseguire nella directory principale di Rocket.chat:
+meteor add monolith-demo
+\end{lstlisting}
+
+
+\section{Utilizzo dell'SDK per la creazione di una bolla}
+
+\subsection{La bolla vuota come punto di partenza}
+Viene fornito monolith-emptybubble come punto di partenza per lo sviluppo di una nuova bolla. La prima cosa da fare è scegliere un nome per la bolla. Da adesso sarà usato <yourbubble> per indicare il nuovo progetto. Dopo aver scaricato la directory modificare i file come segue:
+\begin{itemize}
+	\item Rinominare la directory principale e tutti i file utilizzando <yourbubble>
+	\item \textbf{package.js}
+		\begin{itemize}
+			\item Cambiare il nome del package  in <yourbubble> in Package.describe name.
+			\item Rinominare i files all'interno di api.addFiles. 
+		\end{itemize}
+	\item \textbf{client/main.js}: correggere il percorso del file.
+	\item \textbf{server/main.js}: correggere il percorso del file.
+	\item \textbf{server/Methods.js}: scrivere i Meteor.Method. \'E richiesto per la modifica, ma è opzionale per l'inserimento. L'utilizzo viene spiegato in \S 4.4.
+	\item \textbf{lib/emptyDb.js}: rinominare la collezione utilizzando <yourbubble>.
+	\item \textbf{lib/emptyCheck.js}: rinominare l'oggetto check e inserire lo schema dei dati come descritto in \S 4.3.
+	\item \textbf{lib/emptyBubble.jsx}: Componente grafico. Vedere \S 4.2 per maggiori dettagli.
+	\item \textbf{lib/emptyBubbleConfig.jsx}: Componente grafico. Vedere \S 4.2 per maggiori dettagli.	
+	\item \textbf{lib/emptyBubbleCreationButton.jsx}: Componente grafico. Vedere \S 4.2 per maggiori dettagli.
+	\item \textbf{lib/emptyCreator.jsx}: sostituire <yourbubble> al posto di empty.
+		
+\end{itemize}
+
+\subsection{Componenti grafici essenziali}
+Questi sono i componenti essenziali che devono essere realizzati. \'E possibile semplificare il lavoro utilizzando i componenti grafici forniti con l'SDK.
+\subsubsection{emptyBubble.jsx}
+
+\subsubsection{emptyBubbleConfig.jsx}
+\subsubsection{emptyBubbleCreationButton.jsx}
+
+\subsection{Descrizione dello schema dei dati}
+
+\subsection{Configurazione del database e possibili usi}
+
+\subsection{Funzionalità non di base}
+
+
+\section{Descrizione delle classi utilizzabili}
 \subsection{Layout}
 \subsubsection{VerticalLayout}
 Layout verticale che conterrà i componenti della bolla e li posizionerà ognuno sotto al proprio precedente. La props \textit{hide} permette di nascondere la vista del layout (tramite valori \textit{true/false}).
@@ -280,7 +391,7 @@ comboUpdate={this.fun2}
 \end{lstlisting}
 \end{center}
 
-\section{Bolle}
+\section{Utilizzo delle bolle}
 Vengono fornite alcune bolle tipo le quali vengono create tramite il menù presente nella SideArea1.\\
 
 \includegraphics[scale=0.75]{img/menu.png}
@@ -321,7 +432,7 @@ Attraverso il pulsante \textbf{Re-roll} si potrà rilanciare il dado.
 
 \newpage
 
-\section{DEMO - Lista con Checklist}
+\section{Utilizzo della DEMO - Lista con Checklist}
 
 \subsection{Checklist}
 
